@@ -28,16 +28,20 @@ Ohjelma saa syötteenä luokitellun aineiston esimerkiksi kartan, jossa eri tyyp
 * kuinka suurilla verkoilla ja fyysisillä alueilla reittejä pystyy edes laskemaan järkevässä ajassa?
 * 5m spatiaalisella resoluutiolla neliökilometrin areenalla 40 000 solmua ja n.160 000/320 000 kaarta?
 
-* yhden tyyppisen alueen sisällä ei ikänä kannata tehdä mutkaa. Riittäisikö siis tallentaa vain alueiden reunat ja tallentaa aluiden sisäiset etäisyydet kaariin, jotka kulkisivat reunasolmusta toiseen. Ongelmana alueet joiden muoto sellainen, että suora reitti reunasolmusta toiseen kulkee alueen ulkopuolella.
+* yhden tyyppisen alueen sisällä ei ikänä kannata tehdä mutkaa. Riittäisikö siis tallentaa vain alueiden reunat ja tallentaa aluiden sisäiset etäisyydet kaariin, jotka kulkisivat jokaisesta alueen reunasolmusta kaikkiin alueen reunasolmuihin. 
+* Ongelmana alueet joiden muoto sellainen, että suora reitti reunasolmusta toiseen kulkee alueen ulkopuolella. -> pitäisi jotenkin kaaren lisäyksessä tarkistaa kulkeeko kaari alueen ulkopuolella. 
+* seurauksena verkko jossa paljon kaaria suhteessa solmujen määrään.
+* luultavasti vaikeuttaisi huomattavasti esim. korkeusvaihteluiden huomioimisen toteuttamista.
 
 
 #Jatkokehitettävää: (tuskin toteutuu koska aikarajoiteet...)
 * lyhyimmän reitin esittäminen käyttäjälle visuaalisesti
 * alku ja loppupisteen valinta visuaalisesti
 
+
 * vaihtoehtoiset kulkuvälineet (kävellen , polkupyörällä...)
 * vapaan kokoiset areenat (alustetaan vain osa areenaa sen perusteella, missä alku ja loppupiste sijaitsee)
 * maastotyyppi kirjasto, tallennetaan eri maastotyypeille tähänasti toteutuneiden reittien perusteella laskettu vauhti tiedostoon, jotta kun halutaan siirtyä uudelle alueelle, voidaan verkolle laskea painot ilman toteutuneita reittejä alueella.
 
 * kulkusuunnasta riippuvat nopeudet (esim ylä- vs alamäki)
-* maastojen haastavuuden komensointi. Esim jos laskennallisesti lyhin reitti on suora viiva metsän läpi, ei se todellisuudessa välttämättä ole nopein reitti, sillä metsässä on vaikea kävellä suoraan. Toisaalta tietä pitkin kävellessä toteutuneen ja laskennallisen polun pituudet kohtaavat varmaankin varsin hyvin.
+* maastojen haastavuuden kompensointi. Esim jos laskennallisesti lyhin reitti on suora viiva metsän läpi, ei se todellisuudessa välttämättä ole nopein reitti, sillä metsässä on vaikea kävellä suoraan. Toisaalta tietä pitkin kävellessä toteutuneen ja laskennallisen polun pituudet kohtaavat varmaankin varsin hyvin. -> jonkin lainen oppiminen perustuen siihen että ehdotettua reittiä käydään testaamassa.
