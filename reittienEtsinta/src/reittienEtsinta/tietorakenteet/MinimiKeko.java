@@ -21,36 +21,36 @@ public class MinimiKeko {
         this.keonKoko = 0;
     }
 
-    private int parentInd(int i) {
+    private int vanhempi(int i) {
         return i / 2;
     }
 
-    private int leftChildInd(int i) {
+    private int vasenLapsi(int i) {
         return 2 * i;
     }
 
-    private int rightChildInd(int i) {
+    private int oikeaLapsi(int i) {
         return 2 * i + 1;
     }
 
     private void heapify(int i) {
-        int l = this.leftChildInd(i);
-        int r = this.rightChildInd(i);
+        int v = this.vasenLapsi(i);
+        int o = this.oikeaLapsi(i);
         int pienempi;
 
-        if (r <= this.keonKoko) {
-            if (this.keko[l] < this.keko[r]) {
-                pienempi = l;
+        if (o <= this.keonKoko) {
+            if (this.keko[v] < this.keko[o]) {
+                pienempi = v;
             } else {
-                pienempi = r;
+                pienempi = o;
             }
 
             if (this.keko[i] > this.keko[pienempi]) {
                 this.vaihda(i, pienempi);
                 this.heapify(pienempi);
             }
-        } else if (l == this.keonKoko && this.keko[i] > this.keko[l]) {
-            this.vaihda(i, l);
+        } else if (v == this.keonKoko && this.keko[i] > this.keko[v]) {
+            this.vaihda(i, v);
         }
     }
 
@@ -63,9 +63,9 @@ public class MinimiKeko {
     public void lisaa(int solmu) {
         this.keonKoko++;
         int i = this.keonKoko;
-        while (i > 1 && this.keko[this.parentInd(i)] > solmu) {
-            this.keko[i] = keko[this.parentInd(i)];
-            i = this.parentInd(i);
+        while (i > 1 && this.keko[this.vanhempi(i)] > solmu) {
+            this.keko[i] = keko[this.vanhempi(i)];
+            i = this.vanhempi(i);
         }
         this.keko[i] = solmu;
 
@@ -74,9 +74,9 @@ public class MinimiKeko {
     public void paivita(int i, int uusiArvo) {
         if (uusiArvo < this.keko[i]) {
             this.keko[i] = uusiArvo;
-            while (i > 1 && this.keko[this.parentInd(i)] > this.keko[i]) {
-                this.vaihda(i, this.parentInd(i));
-                i = this.parentInd(i);
+            while (i > 1 && this.keko[this.vanhempi(i)] > this.keko[i]) {
+                this.vaihda(i, this.vanhempi(i));
+                i = this.vanhempi(i);
             }
         }
 
