@@ -8,6 +8,8 @@ package reittienEtsinta;
 import reittienEtsinta.tietorakenteet.MinimiKeko;
 import java.util.Arrays;
 import java.util.Random;
+import reittienEtsinta.tietorakenteet.Verkko;
+import reittienEtsinta.tietorakenteet.VerkkoSolmu;
 
 /**
  *
@@ -20,31 +22,34 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-/*
-         Verkko verkko = new Verkko(new int[]{0, 1, 0}, new int[]{1, 2, 2}, new int[]{5, 3, 1}, 3, new int[]{0, 0, 0}, new int[]{0, 0, 0});
-         verkko.aStar(0, 1);
-         System.out.println(Arrays.toString(verkko.alkuun));
+
+        Verkko verkko = new Verkko(new int[]{1, 2, 4, 5, 1, 3, 1}, new int[]{2, 3, 5, 6, 6, 0, 4}, new int[]{4, 3, 1, 3,4,1,1}, 7, new int[]{3, 0, 4, 4, 3, 3, 0}, new int[]{2, 0, 0, 3, 3, 4, 4});
+        verkko.aStar(1, 0);
+        System.out.println(Arrays.toString(verkko.getSolmut()));
+
+        /*
+        
+         Verkko verkko = new Verkko(new int[]{0,0, 1, 2,2, 3}, new int[]{1,2, 4, 3,4, 4}, new int[]{5, 3, 4, 7, 2, 1}, 5);
+         verkko.aStar(1, 3);
+         System.out.println(verkko.getSolmut()[0].getAlkuun());
+         
+         System.out.println(Arrays.toString(verkko.getSolmut()));
          */
-        MinimiKeko minkek = new MinimiKeko(100);
+        /* MINIMIKEKOTESTI
+         MinimiKeko minkek = new MinimiKeko(100);
 
-        Random random = new Random();
+         Random random = new Random();
         
-        for (int i = 0; i < 10; i++) {
-            minkek.lisaa(random.nextInt(100));
-        }
+         for (int i = 0; i < 10; i++) {
+         minkek.lisaa(new VerkkoSolmu(i, -1, random.nextInt(100), random.nextInt(100)));
+         }
         
-        System.out.println("------");
-        while (!minkek.tyhja()) {
-            System.out.println(minkek.otaPienin());
-        }
-
+         System.out.println("------");
+         while (!minkek.tyhja()) {
+         System.out.println(minkek.otaPienin().getId());
+         }
+        
+         */
     }
 
 }
-/*
- 0---5---1
- \     /
- 1   3
- \ /
- 2
- */
