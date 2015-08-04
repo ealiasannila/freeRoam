@@ -14,19 +14,32 @@ public class VerkkoSolmu {
 
     private int x;
     private int y;
-    private int id;
-    private int polku;
-    private long alkuun;
-    private long loppuun;
+    private int polkuX;
+    private int polkuY;
+    private double alkuun;
+    private double loppuun;
     private int kekoI;
+    private int maasto;
 
-    public VerkkoSolmu(int id, int polku, long alkuun, int x, int y) {
-        this.id = id;
-        this.polku = polku;
-        this.alkuun = alkuun;
-        this.loppuun = loppuun;
+
+    public VerkkoSolmu(int x, int y, int maasto, double loppuun) {
         this.x = x;
         this.y = y;
+        this.polkuX = -1;
+        this.polkuY = -1;
+        this.alkuun = Double.MAX_VALUE;
+        this.maasto = maasto;
+        this.loppuun = loppuun;
+        
+    }
+    
+    
+    public int getMaasto() {
+        return maasto;
+    }
+
+    public void setMaasto(int maasto) {
+        this.maasto = maasto;
     }
 
     public int getKekoI() {
@@ -38,42 +51,27 @@ public class VerkkoSolmu {
     }
 
     
-    public long getArvio() {
-        if (this.alkuun == Long.MAX_VALUE) {
+    public double getArvio() {
+        if (this.alkuun == Double.MAX_VALUE) {
             return this.alkuun;
         }
         return this.alkuun + this.loppuun;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getPolku() {
-        return polku;
-    }
-
-    public void setPolku(int polku) {
-        this.polku = polku;
-    }
-
-    public long getAlkuun() {
+    public double getAlkuun() {
         return alkuun;
     }
 
-    public void setAlkuun(long alkuun) {
+    public void setAlkuun(double alkuun) {
         this.alkuun = alkuun;
     }
 
-    public long getLoppuun() {
+    public double getLoppuun() {
         return loppuun;
     }
 
-    public void setLoppuun(long loppuun) {
+    public void setLoppuun(double loppuun) {
         this.loppuun = loppuun;
     }
 
@@ -93,11 +91,27 @@ public class VerkkoSolmu {
     public void setY(int y) {
         this.y = y;
     }
+
+    public int getPolkuX() {
+        return polkuX;
+    }
+
+    public void setPolkuX(int polkuX) {
+        this.polkuX = polkuX;
+    }
+
+    public int getPolkuY() {
+        return polkuY;
+    }
+
+    public void setPolkuY(int polkuY) {
+        this.polkuY = polkuY;
+    }
     
     
     
     public String toString() {
-        return "A:" + this.getAlkuun() + " L: " + this.loppuun + " Id: " + this.getId() + "\n";
+        return "" + this.getAlkuun() ;
     }
 
 }

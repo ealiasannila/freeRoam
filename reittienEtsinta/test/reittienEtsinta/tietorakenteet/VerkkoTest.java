@@ -5,24 +5,29 @@
  */
 package reittienEtsinta.tietorakenteet;
 
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
 
 /**
  *
  * @author elias
  */
 public class VerkkoTest {
+
     private Verkko verkko;
-    
+
     public VerkkoTest() {
     }
-    
+
     @Before
     public void setUp() {
-        this.verkko = new Verkko(new int[]{1, 2, 4, 5, 1, 3, 1}, new int[]{2, 3, 5, 6, 6, 0, 4}, new int[]{4, 3, 1, 3,4,1,1}, 8, new int[]{3, 0, 4, 4, 3, 3, 0, 10}, new int[]{2, 0, 0, 3, 3, 4, 4, 10});
-        
+        MaastoKirjasto kirjasto = new MaastoKirjasto();
+        kirjasto.lisaaVauhti(1, 1);
+
+        verkko = new Verkko(3, kirjasto);
     }
 
     /**
@@ -30,26 +35,22 @@ public class VerkkoTest {
      */
     @Test
     public void testAStar() {
-        verkko.aStar(1, 0);
-        assertEquals(8,verkko.getSolmut()[0].getAlkuun());
-        assertEquals(0, verkko.getSolmut()[1].getAlkuun());
-        assertEquals(7, verkko.getSolmut()[3].getAlkuun());
-        assertEquals(Long.MAX_VALUE, verkko.getSolmut()[7].getAlkuun());
+        verkko.aStar(0, 0, 2,2);
+        for (int i = 0; i < 3; i++) {
+            System.out.println(Arrays.toString(verkko.getSolmut()[i]));
+        }
+        assertTrue(2.8284271247461903 - verkko.getSolmu(2, 2).getAlkuun() < 0.0001);
+        assertTrue(2.8284271247461903 - verkko.getSolmu(2, 2).getAlkuun() > -0.0001);
         
     }
-    
+
     @Test
-    public void arvioTest(){
-        verkko.aStar(1, 0);
-        assertEquals(3, verkko.getSolmut()[1].getArvio());
-    }
-    
-    @Test
-    public void pysahtymisTest(){
-        verkko.aStar(3, 2);
-        assertEquals(Long.MAX_VALUE, verkko.getSolmut()[1].getAlkuun());
+    public void arvioTest() {
+        verkko.aStar(0, 0, 2,2);
+        assertTrue(2.8284271247461903 - verkko.getSolmu(0, 0).getArvio()< 0.0001);
+        assertTrue(2.8284271247461903 - verkko.getSolmu(0, 0).getArvio()> -0.0001);
+
     }
 
 
-    
 }

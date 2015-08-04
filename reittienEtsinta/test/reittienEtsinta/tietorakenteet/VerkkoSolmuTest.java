@@ -22,15 +22,14 @@ public class VerkkoSolmuTest {
 
     @Before
     public void setUp() {
-        this.solmu = new VerkkoSolmu(1, -1, Long.MAX_VALUE, 0, 0);
+        this.solmu = new VerkkoSolmu(0, 0, 0, 10.0);
     }
 
     @Test
     public void testGetArvio() {
-        this.solmu.setLoppuun(10);
-        assertEquals(Long.MAX_VALUE, this.solmu.getArvio());
-        this.solmu.setAlkuun(10);
-        assertEquals(20, this.solmu.getArvio());
+        assertTrue(Double.MAX_VALUE - this.solmu.getArvio() < 0.001);
+        this.solmu.setAlkuun(10.0);
+        assertTrue(20.0 - this.solmu.getArvio() < 0.001);
 
     }
 

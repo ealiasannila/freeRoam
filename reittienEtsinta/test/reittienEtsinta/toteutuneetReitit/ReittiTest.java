@@ -35,7 +35,7 @@ public class ReittiTest {
      */
     @Test
     public void testVauhti() {
-        assertEquals(60, this.reitti.vauhti(0, 2));
+        assertTrue(Math.abs(60.35533905932738 - this.reitti.vauhti(0, 2))<0.001);
     }
     
 }

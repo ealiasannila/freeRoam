@@ -10,6 +10,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Stack;
+import reittienEtsinta.Apumetodit;
+import reittienEtsinta.KuvanLukija;
+import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
+import reittienEtsinta.toteutuneetReitit.Reitti;
 
 /**
  *
@@ -17,103 +22,146 @@ import java.util.PriorityQueue;
  */
 public class Verkko {
 
-    private int[][] vm;
-    private VerkkoSolmu[] solmut;
-    private int[] solmuX;
-    private int[] solmuY;
+    private VerkkoSolmu[][] solmut;
+    private MaastoKirjasto maastoKirjasto;
+    private KuvanLukija kuvanLukija;
 
-    public Verkko(int[] mista, int[] minne, int[] painot, int solmujenMaara, int[] solmuX, int[] solmuY) {
-        luoVm(mista, minne, painot, solmujenMaara);
-        this.solmut = new VerkkoSolmu[vm.length];
-        this.solmuX = solmuX;
-        this.solmuY = solmuY;
-    }
+    public Verkko(int koko, MaastoKirjasto maastokirjasto, KuvanLukija kuvanLukija) {
 
-    private void luoVm(int[] mista, int[] minne, int[] paino, int solmujenMaara) {
-        this.vm = new int[solmujenMaara][solmujenMaara];
-        for (int i = 0; i < mista.length; i++) {
-            vm[mista[i]][minne[i]] = paino[i];
-            vm[minne[i]][mista[i]] = paino[i];
-        }
-        for (int i = 0; i < vm.length; i++) {
-            System.out.println(Arrays.toString(vm[i]));
-        }
-        System.out.println("---");
+        this.maastoKirjasto = maastokirjasto;
+        this.kuvanLukija = kuvanLukija;
+        this.solmut = new VerkkoSolmu[koko][koko];
 
     }
 
-    private long arvioiEtaisyys(int solmu, int maali) {
+    private void alustus(int lahtoX, int lahtoY, int maaliX, int maaliY) {
 
-        return (long) Math.sqrt(
-                Math.pow(Math.abs(this.solmut[solmu].getY() - this.solmut[maali].getY()), 2)
-                + Math.pow(Math.abs(this.solmut[solmu].getX() - this.solmut[maali].getX()), 2));
+        for (int y = 0; y < this.solmut.length; y++) {
+            for (int x = 0; x < this.solmut.length; x++) {
+                this.solmut[y][x] = new VerkkoSolmu(x, y, this.kuvanLukija.getMaasto(x, y), Apumetodit.pisteidenEtaisyys(lahtoX, lahtoY, maaliX, maaliY));
+            }
+        }
+
+        this.solmut[lahtoY][lahtoX].setAlkuun(0);
 
     }
 
-    private void alustus(int lahtoSolmu, int maaliSolmu) {
+    private boolean loysaa(int solmuX, int solmuY, int naapuriX, int naapuriY) {
 
-        for (int i = 0; i < this.vm.length; i++) {
-            this.solmut[i] = new VerkkoSolmu(i, -1, Long.MAX_VALUE, this.solmuX[i], this.solmuY[i]);
-
-        }
-        for (int i = 0; i < this.vm.length; i++) {
-            this.solmut[i].setLoppuun(this.arvioiEtaisyys(i, maaliSolmu));
-
-        }
-        this.solmut[lahtoSolmu].setAlkuun(0);
-
-    }
-
-    private boolean loysaa(int solmu, int naapuri) {
-        if (solmut[solmu].getAlkuun() == Long.MAX_VALUE) {
+        VerkkoSolmu solmu = solmut[solmuY][solmuX];
+        VerkkoSolmu naapuri = solmut[naapuriY][naapuriX];
+        if (solmu.getAlkuun() == Double.MAX_VALUE || this.maastoKirjasto.haeVauhti(naapuri.getMaasto()) < 0.0001) { //jos vauhti on liian pieni ei solmuun voi mennä
             return false;
         }
-        if (solmut[naapuri].getAlkuun() > solmut[solmu].getAlkuun() + vm[solmu][naapuri]) {
-            solmut[naapuri].setAlkuun(solmut[solmu].getAlkuun() + vm[solmu][naapuri]);
-            solmut[naapuri].setPolku(solmu);
+
+        double kaarenVauhti = 1 / (this.maastoKirjasto.haeVauhti(solmu.getMaasto()) + this.maastoKirjasto.haeVauhti(naapuri.getMaasto())) / 2;
+
+        //liikutaan vinottain
+        if (solmuX != naapuriX && solmuY != naapuriY) {
+            kaarenVauhti *= Math.sqrt(2.0);
+        }
+
+        if (naapuri.getAlkuun() > solmu.getAlkuun() + kaarenVauhti) {
+            naapuri.setAlkuun(solmu.getAlkuun() + kaarenVauhti);
+
+            naapuri.setPolkuX(solmuX);
+            naapuri.setPolkuY(solmuY);
             return true;
         }
         return false;
     }
 
-    public boolean aStar(int lahtoSolmu, int maaliSolmu) {
-        alustus(lahtoSolmu, maaliSolmu);
+    public boolean aStar(int lahtoX, int lahtoY, int maaliX, int maaliY) {
+        alustus(lahtoX, lahtoY, maaliX, maaliY);
 
-        MinimiKeko keko = new MinimiKeko(vm.length);
+        MinimiKeko keko = new MinimiKeko(solmut.length * solmut.length + 1);
 
-        for (int i = 0; i < vm.length; i++) {
-            keko.lisaa(solmut[i]);
+        for (int y = 0; y < solmut.length; y++) {
+            for (int x = 0; x < solmut.length; x++) {
+                keko.lisaa(solmut[y][x]);
+            }
         }
 
-        while (!keko.tyhja()) { 
-            System.out.println(keko);
+        while (!keko.tyhja()) {
+            VerkkoSolmu solmu = keko.otaPienin();
+            int solmuX = solmu.getX();
+            int solmuY = solmu.getY();
 
-            int solmu = keko.otaPienin().getId();
-            System.out.println(solmu);
-            
-            for (int naapuri = 0; naapuri < vm.length; naapuri++) {
+            for (int nY = -1; nY <= 1; nY++) {
+                for (int nX = -1; nX <= 1; nX++) {
+                    if (nY == 0 && nX == 0) {
+                        continue;
+                    }
+                    int naapuriX = solmuX + nX;
+                    int naapuriY = solmuY + nY;
 
-                if (solmu == maaliSolmu) {    //voiko jo pysäyttää?
-                    return true;
-                }
+                    if (naapuriX < 0 || naapuriX >= solmut.length || naapuriY < 0 || naapuriY >= solmut.length) {
+                        continue;
+                    }
 
-                if (vm[solmu][naapuri] != 0) {
-                    if (loysaa(solmu, naapuri)) {
-                        keko.paivita(solmut[naapuri]); 
+                    if (loysaa(solmuX, solmuY, naapuriX, naapuriY)) {
+                        keko.paivita(solmut[naapuriY][naapuriX]);
                     }
 
                 }
+
             }
-        }
-        if (solmut[maaliSolmu].getAlkuun() == Long.MAX_VALUE) { //reittiä ei löytynyt
-            return false;
         }
 
         return true;
     }
 
-    public VerkkoSolmu[] getSolmut() {
+    public Reitti lyhyinReitti(int lahtoX, int lahtoY, int maaliX, int maaliY) {
+        Stack<Integer> pinoX = new Stack<>();
+        Stack<Integer> pinoY = new Stack<>();
+
+        int x = this.solmut[maaliY][maaliX].getPolkuX();
+        int y = this.solmut[maaliY][maaliX].getPolkuY();
+
+        while (x != -1 && y != -1) {
+            //System.out.println("--");
+            pinoX.push(x);
+            pinoY.push(y);
+
+            
+            x = this.solmut[y][x].getPolkuX();
+            y = this.solmut[y][x].getPolkuY();
+            //System.out.println(x);
+            //System.out.println(y);
+            
+        }
+        
+        int[] reittiX = new int[pinoX.size()];
+        int[] reittiY = new int[pinoY.size()];
+        int[] aika = new int[pinoY.size()];
+
+        for (int i = 0; i < reittiX.length; i++) {
+            reittiX[i] = pinoX.pop();
+            reittiY[i] = pinoY.pop();
+            aika[i] = (int) this.solmut[reittiY[i]][reittiX[i]].getAlkuun();
+        }
+        return new Reitti(reittiX, reittiY, aika);
+
+    }
+
+    public VerkkoSolmu getSolmu(int x, int y) {
+        return this.solmut[y][x];
+    }
+
+    public VerkkoSolmu[][] getSolmut() {
         return this.solmut;
+    }
+
+    public String toString() {
+        String tuloste = "";
+        for (int i = 0; i < this.solmut.length; i++) {
+            for (int j = 0; j < this.solmut.length; j++) {
+                    tuloste += String.format("[%02d:%02d->%02d:%02d]", solmut[i][j].getX(),solmut[i][j].getY(),solmut[i][j].getPolkuX(),solmut[i][j].getPolkuY());
+               
+            }
+            tuloste += "\n";
+        }
+        return tuloste;
     }
 
 }

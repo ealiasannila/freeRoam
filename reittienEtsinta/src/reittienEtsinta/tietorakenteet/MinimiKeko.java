@@ -88,7 +88,7 @@ public class MinimiKeko {
     }
 
     public VerkkoSolmu otaPienin() {
-
+        
         VerkkoSolmu eka = this.keko[1];
         this.keko[1] = this.keko[this.keonKoko];
         this.keko[1].setKekoI(1);
@@ -101,7 +101,7 @@ public class MinimiKeko {
     public String toString() {
         String out = "";
         for (int i = 1; i <= this.keonKoko; i++) {
-            out += "id: " + this.keko[i].getId() + " a: " + this.keko[i].getArvio() + ", ";
+            out += " a: " + this.keko[i].getArvio() + ", ";
         }
         return out;
     }

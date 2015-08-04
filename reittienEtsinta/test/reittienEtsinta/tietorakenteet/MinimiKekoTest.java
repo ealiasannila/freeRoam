@@ -28,8 +28,8 @@ public class MinimiKekoTest {
         Random random = new Random();
 
         for (int i = 0; i < 100; i++) {
-            VerkkoSolmu solmu = new VerkkoSolmu(i, -1, random.nextInt(100), 0, 0);
-            solmu.setLoppuun(random.nextInt(100));
+            VerkkoSolmu solmu = new VerkkoSolmu(0, 0, 0, random.nextInt(100));
+            solmu.setAlkuun(random.nextInt(100));
 
             minkek.lisaa(solmu);
         }
@@ -42,19 +42,27 @@ public class MinimiKekoTest {
     @Test
     public void testPaivita() {
         MinimiKeko uusiKeko = new MinimiKeko(100);
-        VerkkoSolmu paivitettava = new VerkkoSolmu(1, -1, 5, 0, 0);
-        uusiKeko.lisaa(paivitettava);
-        uusiKeko.lisaa(new VerkkoSolmu(2, -1, 2, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(3, -1, 4, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(4, -1, 2, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(3, -1, 10, 0, 0));
-
-        paivitettava.setAlkuun(1);
+        VerkkoSolmu paivitettava = new VerkkoSolmu(0, 0, 0, 0);
+        paivitettava.setAlkuun(5.0);
         
+        VerkkoSolmu solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(2);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(4);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(2);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(10);
+        uusiKeko.lisaa(solmu);
+       
+        paivitettava.setAlkuun(1);
+       
         uusiKeko.paivita(paivitettava);
         
-        
-        assertEquals("id: 1 a: 1, id: 2 a: 2, id: 3 a: 4, id: 4 a: 2, id: 3 a: 10, ", uusiKeko.toString());
+        assertEquals(" a: 2.0,  a: 4.0,  a: 2.0,  a: 10.0, ", uusiKeko.toString());
 
     }
 
@@ -64,14 +72,21 @@ public class MinimiKekoTest {
     @Test
     public void testLisaa() {
         MinimiKeko uusiKeko = new MinimiKeko(100);
-        uusiKeko.lisaa(new VerkkoSolmu(1, -1, 5, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(2, -1, 2, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(3, -1, 4, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(4, -1, 1, 0, 0));
-        uusiKeko.lisaa(new VerkkoSolmu(3, -1, 10, 0, 0));
+        
+        VerkkoSolmu solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(2);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(4);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(2);
+        uusiKeko.lisaa(solmu);
+        solmu = new VerkkoSolmu(0, 0, 0, 0);
+        solmu.setAlkuun(10);
+        uusiKeko.lisaa(solmu);
 
-        assertEquals("id: 4 a: 1, id: 2 a: 2, id: 3 a: 4, id: 1 a: 5, id: 3 a: 10, ", uusiKeko.toString());
-
+        assertEquals(" a: 2.0,  a: 4.0,  a: 2.0,  a: 10.0, ", uusiKeko.toString());
     }
 
     /**
@@ -98,10 +113,10 @@ public class MinimiKekoTest {
      */
     @Test
     public void testOtaPienin() {
-        long edellinen = -1;
+        double edellinen = -1.0;
         while (!this.minkek.tyhja()) {
-            long eka = minkek.otaPienin().getArvio();
-            if (edellinen != -1) {
+            double eka = minkek.otaPienin().getArvio();
+            if (edellinen != -1.0) {
                 assertTrue(edellinen <= eka);
             }
             edellinen = eka;
