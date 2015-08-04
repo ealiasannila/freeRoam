@@ -1,5 +1,6 @@
-1. lyhyimmän reitin etsinnän toteuttaminen verkossa.
-	-done
+? muuttuiko keko kovin tehottomaksi VerkkoSolmu rakenteen myötä? muistiviitteiden paikallisuus.
+
+1. kirjoita javadoc ja JUnit
 	
 2. vauhtien laskenta toteutuneiden polkujen perusteella
 	* polun pilkkominen osiin
@@ -10,4 +11,4 @@
 
 3. verkon painotus vauhtien perusteella. 
 4. jonkinlainen käyttöliittymä
-5. omien tietorakenteiden toteutus.
+

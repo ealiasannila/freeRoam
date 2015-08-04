@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class MinimiKeko {
 
-    public VerkkoSolmu[] keko;
+    private VerkkoSolmu[] keko;
     private int keonKoko;
 
     public MinimiKeko(int koko) {
