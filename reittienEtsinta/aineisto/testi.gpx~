@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="b-bark - http://www.b-bark.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>My position</name>
+    <time>2015-08-05T08:48:36Z</time>
+  </metadata>
+  <trk>
+    <trkseg>
+      <trkpt lon="24.7461465373635" lat="60.1530700922012">
+        <time>2015-08-05T08:23:03Z</time>
+      </trkpt>
+      <trkpt lon="24.7460969164968" lat="60.1530765462667">
+        <time>2015-08-05T08:23:04Z</time>
+      </trkpt>
+      <trkpt lon="24.7460969164968" lat="60.1530765462667">
+        <time>2015-08-05T08:23:05Z</time>
+      </trkpt>
+      <trkpt lon="24.7460654005408" lat="60.1530858501792">
+        <time>2015-08-05T08:23:06Z</time>
+    </trkseg>
+  </trk>
+</gpx>

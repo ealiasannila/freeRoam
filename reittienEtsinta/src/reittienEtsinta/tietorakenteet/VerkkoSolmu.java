@@ -6,7 +6,8 @@
 package reittienEtsinta.tietorakenteet;
 
 /**
- *
+ * Yhtä verkon solmua esittävä luokka.
+ * Käytetään solmuun liittyvän tiedon tallentamiseen.
  * @author elias
  */
 public class VerkkoSolmu {
@@ -51,6 +52,10 @@ public class VerkkoSolmu {
     }
 
     
+    /**
+     * palauttaa arvion tämän solmun kautta kulkevan reitin pituudesta.
+     * @return 
+     */
     public double getArvio() {
         if (this.alkuun == Double.MAX_VALUE) {
             return this.alkuun;

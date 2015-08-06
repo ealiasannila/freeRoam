@@ -6,10 +6,11 @@
 package reittienEtsinta.toteutuneetReitit;
 
 import java.util.HashMap;
-import reittienEtsinta.KuvanLukija;
+import reittienEtsinta.tiedostonKasittely.KuvanLukija;
 
 /**
- *
+ * Pitää kirjaa toteutuneiden reittien perusteella lasketusta nopeuksista eri maastoille (=väreille kuvassa)
+ * 
  * @author elias
  */
 public class MaastoKirjasto {
@@ -22,7 +23,11 @@ public class MaastoKirjasto {
         this.vauhtiOtostenMaara = new HashMap<>();
     }
     
-    
+    /**
+     * Lisää yksittäiselle maastotyypille vauhdin
+     * @param maasto
+     * @param vauhti 
+     */
 
     public void lisaaVauhti(int maasto, double vauhti) {
         if (!this.vauhditMaastossa.containsKey(maasto)) {
@@ -34,6 +39,11 @@ public class MaastoKirjasto {
         }
     }
 
+    /**
+     * palauttaa kysytyn maastotyypin vauhtien keskiarvon
+     * @param maasto
+     * @return 
+     */
     public double haeVauhti(int maasto) {
         if (this.vauhditMaastossa.containsKey(maasto)) {
             return this.vauhditMaastossa.get(maasto) / this.vauhtiOtostenMaara.get(maasto);
@@ -42,7 +52,18 @@ public class MaastoKirjasto {
         }
     }
 
-    public void lisaaReitti(int maastoTyyppi, int maastonAlku, int maastonLoppu, Reitti reitti) {
-        this.lisaaVauhti(maastoTyyppi, reitti.vauhti(maastonAlku, maastonLoppu));
+    /**
+     * Lisää toteutuneen reitin kaikkien pisteiden perusteella vauhdit kirjastoon.
+     * Kahden pisteen välillä kuljettu vauhti lisätään molempiin pisteisiin.
+     * @param reitti
+     * @param kuvanLukija 
+     */
+    public void lisaaReitti(Reitti reitti, KuvanLukija kuvanLukija) {
+        for (int i = 0; i < reitti.getAika().length-1; i++) {
+            double vauhti = reitti.vauhti(i, i+1);
+            this.lisaaVauhti(kuvanLukija.getMaasto(reitti.getX()[i], reitti.getY()[i]), vauhti);
+            this.lisaaVauhti(kuvanLukija.getMaasto(reitti.getX()[i+1], reitti.getY()[i+1]), vauhti);
+        }
+        
     }
 }

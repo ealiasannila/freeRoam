@@ -1,15 +1,18 @@
 ? muuttuiko keko kovin tehottomaksi VerkkoSolmu rakenteen myötä? muistiviitteiden paikallisuus.
+? miksi menee hitaaksi kun eri aluieden nopeuserot kasvavat yli 3?
 
+--Ennen-TO
 
-
-1. kirjoita javadoc ja JUnit
+1. kirjoita javadoc ajantasalle
 	
-2. vauhtien laskenta toteutuneiden polkujen perusteella
-	* polun pilkkominen osiin kuvasta
+2. viikkoraportti 2
 
+--Omaan tahtiin--
+	
+	tallenna todellinen aineisto
+	-->kokeile käsitellyllä/käsittelemättömällä sateliittikuvalla
 
-2. verkon luonti kuvasta kaaret painotettu vain etäisyyksien perusteella, ei vauhtien. 8 naapuria
+3. toteuta pino ja hajautustaulu
 
-3. verkon painotus vauhtien perusteella. 
 4. jonkinlainen käyttöliittymä
 

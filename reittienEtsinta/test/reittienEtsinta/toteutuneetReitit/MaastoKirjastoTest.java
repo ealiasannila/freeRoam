@@ -8,6 +8,7 @@ package reittienEtsinta.toteutuneetReitit;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import reittienEtsinta.tiedostonKasittely.KuvanLukija;
 
 /**
  *
@@ -15,22 +16,27 @@ import static org.junit.Assert.*;
  */
 public class MaastoKirjastoTest {
 
-    private MaastoKirjasto kirjasto = new MaastoKirjasto();
+    private MaastoKirjasto kirjasto;
+    private KuvanLukija kuvanLukija;
 
     public MaastoKirjastoTest() {
     }
 
+    
     @Before
     public void setUp() {
+        kuvanLukija = new KuvanLukija("aineisto/valkoinen_testi_200.jpg", "aineisto/valkoinen_testi_200_reitti.jpg");
+        kirjasto = new MaastoKirjasto();
     }
 
     /**
      * Test of lisaaVauhti method, of class MaastoKirjasto.
      */
     @Test
-    public void testLisaaReitti() { //mitenkähän tätäkin nyt testais...
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 5}, new int[]{0, 1}));
-        assertTrue(Math.abs(5.0 - this.kirjasto.haeVauhti(1)) <0.001);
+    public void testLisaaReitti() { //mitenkähän tätäkin nyt testais täähän on käytännössä sama kuin alla...
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 5}, new int[]{0, 1}), this.kuvanLukija);
+        assertTrue(Math.abs(5.0 - this.kirjasto.haeVauhti(this.kuvanLukija.getMaasto(0, 0))) <0.001);
+        assertTrue(Math.abs(5.0 - this.kirjasto.haeVauhti(this.kuvanLukija.getMaasto(0, 0))) >  -0.001);
     }
 
     /**
@@ -38,13 +44,15 @@ public class MaastoKirjastoTest {
      */
     @Test
     public void testHaeVauhti() {
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 1}, new int[]{0, 1}));
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 2}, new int[]{0, 1}));
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 3}, new int[]{0, 1}));
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 4}, new int[]{0, 1}));
-        this.kirjasto.lisaaReitti(1, 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 5}, new int[]{0, 1}));
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 1}, new int[]{0, 1}),this.kuvanLukija);
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 2}, new int[]{0, 1}),this.kuvanLukija);
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 3}, new int[]{0, 1}),this.kuvanLukija);
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 4}, new int[]{0, 1}),this.kuvanLukija);
+        this.kirjasto.lisaaReitti(new Reitti(new int[]{0, 0}, new int[]{0, 5}, new int[]{0, 1}),this.kuvanLukija);
 
-        assertTrue(Math.abs(3.0 - this.kirjasto.haeVauhti(1))<0.001);
+        assertTrue(Math.abs(3.0 - this.kirjasto.haeVauhti(this.kuvanLukija.getMaasto(0, 0)))<0.001);
+        assertTrue(Math.abs(3.0 - this.kirjasto.haeVauhti(this.kuvanLukija.getMaasto(0, 0)))> -0.001);
+
     }
 
 }

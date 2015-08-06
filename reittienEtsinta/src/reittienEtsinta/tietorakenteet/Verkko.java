@@ -12,11 +12,19 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Stack;
 import reittienEtsinta.Apumetodit;
-import reittienEtsinta.KuvanLukija;
+import reittienEtsinta.tiedostonKasittely.KuvanLukija;
 import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
 import reittienEtsinta.toteutuneetReitit.Reitti;
 
 /**
+ * Verkko muodostetaan siten että jokainen solmu edustaa yhtä annetun kuvan
+ * pikseliä. Jokaisesta solmusta lähtee kaari sitä ympäröiviin kahdeksaan
+ * solmuun, eli erillistä vieruslistaa ei tarvita.
+ *
+ * Verkkon solmut painotetaan maastokirjastosta saatavan maaston vauhdin mukaan,
+ * ja kahden solmun välisen kaaren paino on solmujen painojen keskiarvo.
+ *
+ * Solmun maasto saadaan kuvasta rgb arvon perusteella.
  *
  * @author elias
  */
@@ -34,6 +42,14 @@ public class Verkko {
 
     }
 
+    /**
+     * Luo verkon solmut sekä asettaa niille painot, ja etäisyysarvion loppuun.
+     *
+     * @param lahtoX
+     * @param lahtoY
+     * @param maaliX
+     * @param maaliY
+     */
     private void alustus(int lahtoX, int lahtoY, int maaliX, int maaliY) {
 
         for (int y = 0; y < this.solmut.length; y++) {
@@ -46,6 +62,17 @@ public class Verkko {
 
     }
 
+    /**
+     * Muuttaa solmun etäisyysarviota alkuun, jos löytynyt reitti solmuun on
+     * lyhyempi kuin paras tähän mennessä löytynyt Jos maastokirjastosta saatu
+     * vauhti on liian pieni ei solmuun mennä (= ylipääsemätön este)
+     *
+     * @param solmuX
+     * @param solmuY
+     * @param naapuriX
+     * @param naapuriY
+     * @return
+     */
     private boolean loysaa(int solmuX, int solmuY, int naapuriX, int naapuriY) {
 
         VerkkoSolmu solmu = solmut[solmuY][solmuX];
@@ -54,15 +81,15 @@ public class Verkko {
             return false;
         }
 
-        double kaarenVauhti = 1 / (this.maastoKirjasto.haeVauhti(solmu.getMaasto()) + this.maastoKirjasto.haeVauhti(naapuri.getMaasto())) / 2;
+        double kaarenPaino = 1 / (this.maastoKirjasto.haeVauhti(solmu.getMaasto()) + this.maastoKirjasto.haeVauhti(naapuri.getMaasto())) / 2;
 
         //liikutaan vinottain
         if (solmuX != naapuriX && solmuY != naapuriY) {
-            kaarenVauhti *= Math.sqrt(2.0);
+            kaarenPaino *= Math.sqrt(2.0);
         }
 
-        if (naapuri.getAlkuun() > solmu.getAlkuun() + kaarenVauhti) {
-            naapuri.setAlkuun(solmu.getAlkuun() + kaarenVauhti);
+        if (naapuri.getAlkuun() > solmu.getAlkuun() + kaarenPaino) {
+            naapuri.setAlkuun(solmu.getAlkuun() + kaarenPaino);
 
             naapuri.setPolkuX(solmuX);
             naapuri.setPolkuY(solmuY);
@@ -71,6 +98,16 @@ public class Verkko {
         return false;
     }
 
+    /**
+     * Etsii lyhyimmän polun lähtö ja maali koordinaattien välillä. Lopettaa
+     * etsinnän kun maali löytyy.
+     *
+     * @param lahtoX
+     * @param lahtoY
+     * @param maaliX
+     * @param maaliY
+     * @return
+     */
     public boolean aStar(int lahtoX, int lahtoY, int maaliX, int maaliY) {
         alustus(lahtoX, lahtoY, maaliX, maaliY);
 
@@ -84,17 +121,26 @@ public class Verkko {
 
         while (!keko.tyhja()) {
             VerkkoSolmu solmu = keko.otaPienin();
+
             int solmuX = solmu.getX();
             int solmuY = solmu.getY();
 
+            //maalisolmu löytynyt
+            if (solmuX == maaliX && solmuY == maaliY) {
+                return true;
+            }
+
+            //Käydään lävitse solmua ympäröivät 8 naapuria
             for (int nY = -1; nY <= 1; nY++) {
                 for (int nX = -1; nX <= 1; nX++) {
+                    //solmu itse
                     if (nY == 0 && nX == 0) {
                         continue;
                     }
                     int naapuriX = solmuX + nX;
                     int naapuriY = solmuY + nY;
 
+                    //naapuri reunan ulkopuolella
                     if (naapuriX < 0 || naapuriX >= solmut.length || naapuriY < 0 || naapuriY >= solmut.length) {
                         continue;
                     }
@@ -111,33 +157,34 @@ public class Verkko {
         return true;
     }
 
+    /**
+     * palauttaa aStar metodin etsimän lyhyimmän reitin lähtö ja maalisolmun
+     * välillä Reitti oliona.
+     *
+     */
     public Reitti lyhyinReitti(int lahtoX, int lahtoY, int maaliX, int maaliY) {
-        Stack<Integer> pinoX = new Stack<>();
-        Stack<Integer> pinoY = new Stack<>();
+        Pino pinoX = new Pino(this.solmut.length * this.solmut.length); //pitäisikö pitää kirjaa solmujen määrästä myös?/toteuttaa pino joka kasvaa tarpeen vaatiessa
+        Pino pinoY = new Pino(this.solmut.length * this.solmut.length);
 
         int x = this.solmut[maaliY][maaliX].getPolkuX();
         int y = this.solmut[maaliY][maaliX].getPolkuY();
 
         while (x != -1 && y != -1) {
-            //System.out.println("--");
-            pinoX.push(x);
-            pinoY.push(y);
+            pinoX.lisaa(x);
+            pinoY.lisaa(y);
 
-            
             x = this.solmut[y][x].getPolkuX();
             y = this.solmut[y][x].getPolkuY();
-            //System.out.println(x);
-            //System.out.println(y);
-            
+
         }
-        
-        int[] reittiX = new int[pinoX.size()];
-        int[] reittiY = new int[pinoY.size()];
-        int[] aika = new int[pinoY.size()];
+
+        int[] reittiX = new int[pinoX.koko()];
+        int[] reittiY = new int[pinoY.koko()];
+        int[] aika = new int[pinoY.koko()];
 
         for (int i = 0; i < reittiX.length; i++) {
-            reittiX[i] = pinoX.pop();
-            reittiY[i] = pinoY.pop();
+            reittiX[i] = pinoX.ota();
+            reittiY[i] = pinoY.ota();
             aika[i] = (int) this.solmut[reittiY[i]][reittiX[i]].getAlkuun();
         }
         return new Reitti(reittiX, reittiY, aika);
@@ -156,8 +203,8 @@ public class Verkko {
         String tuloste = "";
         for (int i = 0; i < this.solmut.length; i++) {
             for (int j = 0; j < this.solmut.length; j++) {
-                    tuloste += String.format("[%02d:%02d->%02d:%02d]", solmut[i][j].getX(),solmut[i][j].getY(),solmut[i][j].getPolkuX(),solmut[i][j].getPolkuY());
-               
+                tuloste += String.format("[%02d:%02d->%02d:%02d]", solmut[i][j].getX(), solmut[i][j].getY(), solmut[i][j].getPolkuX(), solmut[i][j].getPolkuY());
+
             }
             tuloste += "\n";
         }

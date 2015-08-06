@@ -8,6 +8,8 @@ package reittienEtsinta.tietorakenteet;
 import java.util.Arrays;
 
 /**
+ * Minimikeko A* yhteydessä käytettäväksi. Järjestää solmut niiden Alkuun +
+ * Loppuun arvion perusteella.
  *
  * @author elias
  */
@@ -21,18 +23,41 @@ public class MinimiKeko {
         this.keonKoko = 0;
     }
 
+    /**
+     * vanhemman indeksi keko taulukossa
+     *
+     * @param i
+     * @return
+     */
     private int vanhempi(int i) {
         return i / 2;
     }
 
+    /**
+     * vasemman lapsen indeksi keko taulukossa
+     *
+     * @param i
+     * @return
+     */
     private int vasenLapsi(int i) {
         return 2 * i;
     }
 
+    /**
+     * oikean lapsen indeksi keko taulukossa
+     * @param i
+     * @return
+     */
     private int oikeaLapsi(int i) {
         return 2 * i + 1;
     }
 
+    /**
+     * Palauttaa kekoehdon voimaan, jos kekoon (tai keossa oleviin solmuihin) on tehty muutoksia.
+     * Aloittaa keon muokkaamisen tietystä indeksistä.
+     * @param i 
+     */
+    
     private void heapify(int i) {
         int v = this.vasenLapsi(i);
         int o = this.oikeaLapsi(i);
@@ -54,6 +79,12 @@ public class MinimiKeko {
         }
     }
 
+    /**
+     * Palauttaa kekoehdon voimaan, kun solmun Alkuun arviota on vähennetty.
+     * Aloittaa muokkaamisen tietystä solmusta. --> toimisiko this.heapify(solmu.getKekoI())?
+     * @param solmu 
+     */
+    
     public void paivita(VerkkoSolmu solmu) {
         int i = solmu.getKekoI();
         while (i > 1 && this.keko[this.vanhempi(i)].getArvio() > this.keko[i].getArvio()) {
@@ -61,6 +92,12 @@ public class MinimiKeko {
             i = this.vanhempi(i);
         }
     }
+    
+    /**
+     * vaihtaa kahden solmun paikan keossa.
+     * @param a
+     * @param b 
+     */
 
     private void vaihda(int a, int b) {
         VerkkoSolmu tmp = this.keko[a];
@@ -70,6 +107,11 @@ public class MinimiKeko {
         this.keko[b].setKekoI(b);
     }
 
+    /**
+     * lisää kekoon uuden solmun, säilyttäen kekoehdon voimassa.
+     * @param solmu 
+     */
+    
     public void lisaa(VerkkoSolmu solmu) {
         this.keonKoko++;
         int i = this.keonKoko;
@@ -83,12 +125,22 @@ public class MinimiKeko {
 
     }
 
+    /**
+     * kertoo onko keko tyhjä
+     * @return 
+     */
+    
     public boolean tyhja() {
         return this.keonKoko == 0;
     }
 
+    /**
+     * ottaa keon ensimmäisen solmun ja palauttaa kekoehdon voimaan heapifyn avulla.
+     * @return 
+     */
+    
     public VerkkoSolmu otaPienin() {
-        
+
         VerkkoSolmu eka = this.keko[1];
         this.keko[1] = this.keko[this.keonKoko];
         this.keko[1].setKekoI(1);

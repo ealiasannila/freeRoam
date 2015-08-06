@@ -5,9 +5,12 @@
  */
 package reittienEtsinta;
 
+import reittienEtsinta.tiedostonKasittely.KuvanLukija;
 import reittienEtsinta.tietorakenteet.MinimiKeko;
 import java.util.Arrays;
 import java.util.Random;
+import reittienEtsinta.tiedostonKasittely.GPXLukija;
+import reittienEtsinta.tietorakenteet.Pino;
 import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.VerkkoSolmu;
 import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
@@ -23,17 +26,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //matinkyläkuvan kulmien koord, älä hukkaa.
+        GPXLukija lukija = new GPXLukija(24.743541, 60.148093, 24.753985, 60.153663, 200, "aineisto/matinkyla.gpx");
+        Reitti lueGpX = lukija.lueGpx();
+        //System.out.println(lueGpX);
+        KuvanLukija kuvanLukija = new KuvanLukija("aineisto/matinkyla_200.jpg", "aineisto/matinkyla_200_reitti.jpg");
+        //kuvanLukija.piirraReitti(lueGpX);
 
-        KuvanLukija kuvanLukija = new KuvanLukija("aineisto/testialue_200.jpg", "aineisto/testialue_200_reitti.jpg");
         MaastoKirjasto maastoKirjasto = new MaastoKirjasto();
+        maastoKirjasto.lisaaReitti(lueGpX, kuvanLukija);
+
         Verkko verkko = new Verkko(200, maastoKirjasto, kuvanLukija);
-        maastoKirjasto.lisaaReitti(kuvanLukija.getMaasto(0, 50), 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 1}, new int[]{0, 1}));
-        //maastoKirjasto.lisaaReitti(kuvanLukija.getMaasto(50, 50), 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 1}, new int[]{0, 100}));
 
-        maastoKirjasto.lisaaReitti(kuvanLukija.getMaasto(70, 0), 0, 1, new Reitti(new int[]{0, 0}, new int[]{0, 1}, new int[]{0, 2}));
-
-        verkko.aStar(0, 50, 187, 178);
-        kuvanLukija.piirraReitti(verkko.lyhyinReitti(0, 50, 187, 178));
+        verkko.aStar(4, 10, 176, 196);
+       // kuvanLukija.piirraReitti(lueGpX);
+        Reitti reitti = verkko.lyhyinReitti(4,10,176,196);
+        kuvanLukija.piirraReitti(reitti);
 
     }
 
