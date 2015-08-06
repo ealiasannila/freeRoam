@@ -7,10 +7,10 @@ Ohjelman käyttämistä tietorakenteista olen toteuttanut kuvaa mallintavan verk
 Olen kirjoittanut JUnit testejä kaikille muille luokille, paitsi GPXLukijalle ja KuvanLukijalle
 
 
-![alt tag](/aineisto/out.png)
+![alt tag](out.png)
 Ohjelman ehdottama reitti espoon matinkylässä
 
-![alt tag](/aineisto/matinkyla_200_reitti.png)
+![alt tag](matinkyla_200_reitti.png)
 Todellinen gps:llä tallennttu reitti, jonka perusteella eri värien nopeudet laskettu.
 
 kuten yllä olevista kuvista näkyy ohjelma tällähetkellä kykenee lähinnä ehdottamaan reittiä joka ei kulje rakennuksien lävitse (käsitelty punaiseksi ennen kuvan syöttämistä ohjelmaan, jotta erottuisivat harmaasta tiestöstä). Tähän varmaankin vaikuttaa seuraavat asiat:
