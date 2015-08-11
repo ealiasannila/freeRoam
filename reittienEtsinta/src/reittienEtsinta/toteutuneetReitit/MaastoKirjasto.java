@@ -19,8 +19,8 @@ public class MaastoKirjasto {
     private HashMap<Integer, Integer> vauhtiOtostenMaara;
 
     public MaastoKirjasto() {
-        this.vauhditMaastossa = new HashMap<>();
-        this.vauhtiOtostenMaara = new HashMap<>();
+        this.vauhditMaastossa = new HashMap<Integer, Double>();
+        this.vauhtiOtostenMaara = new HashMap<Integer, Integer>();
     }
     
     /**

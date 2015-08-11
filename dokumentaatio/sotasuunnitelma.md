@@ -1,17 +1,16 @@
 ? muuttuiko keko kovin tehottomaksi VerkkoSolmu rakenteen myötä? muistiviitteiden paikallisuus.
 ? miksi menee hitaaksi kun eri aluieden nopeuserot kasvavat yli 3?
 
---Ennen-TO
+muuta tiestö singlepolyiksi!!!!!!!!!
+- testaa onko sisällä, bounding box && ray
 
-1. kirjoita javadoc ajantasalle	
-2. viikkoraportti 2
+reunat geojsonista.
+	-solmut nodeja
+	-kaarien muodostus joka nodesta jokaiseen?
 
---Omaan tahtiin--
+verkon painotus:
+	- raycast onko sisällä, saa toimimaan logn?
 	
-	tallenna todellinen aineisto
-	-->kokeile käsitellyllä/käsittelemättömällä sateliittikuvalla
-
-3. toteuta pino ja hajautustaulu
 
 4. jonkinlainen käyttöliittymä
 

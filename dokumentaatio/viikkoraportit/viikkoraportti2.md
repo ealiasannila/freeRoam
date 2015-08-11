@@ -19,8 +19,7 @@ kuten yllä olevista kuvista näkyy ohjelma tällähetkellä kykenee lähinnä e
 
 * en päässyt kävelemään keskellä autotietä, joten monesti latvuston alapuolella ollut jalkakäytävä näkyy kuvassa vihreän/ruskean sävyinä, mikä sekottaa maastokirjaston toimintaa.
 * Jostain toistaiseksi tuntemattomasta syystä ohjelmaan ilmestyy bugeja (yritetään lukea taulukon ulkopuolelta reittiä purettaessa) kun nostan kuvan värien määrän yli 16 värin. Kun värien määrä vähennetään kuutentoista, eri maastoja saatetaan esittää samalla värillä.
-
-A* myös hidastuu kohtuuttomasti, jos eri maastojen väliset nopeuserot kasvavat suuriksi (havaittu pirretyllä testikuvalla ja käsin luodulla maastokirjastolla). En ole vielä ymmärtänyt miksi näin käy?
+* A* myös hidastuu kohtuuttomasti, jos eri maastojen väliset nopeuserot kasvavat suuriksi (havaittu pirretyllä testikuvalla ja käsin luodulla maastokirjastolla). En ole vielä ymmärtänyt miksi näin käy?
 * nopein reitti todellakin kulkee ainakin teoriassa pihojen poikki. Kun tallennan referenssireittiä, en kuitenkaan kävele esim. aitojen tai muiden esteiden lävitse, mutta ne eivät erotu eri värisinä kuvassa, joten ohjelma ei tiedä, että sen ehdottamalle reitille sisältyy paljon pieniä mutkia.
 
 
@@ -29,6 +28,9 @@ Seuraavaksi ajattelin tehdä oman toteutuksen hajautustaululle, testauksen GPXLu
 * kokeilla miten ohjelma toimii jos korvaan sateliittikuvan maastokartalla.
 * kokeilla miten suuria kuvia ohjelma pystyy käsittelemään. (toistaiseksi olen koittanut vain 200x200px)
 * kokeilla saada suurempia nopeuseroja eri maastojen väleille tallentamalla reitin fillarilla kävelyn sijaan.
+* tehdä tarkistuskävelyn ohjelman ehdottamaa reittiä ja verrata toteutunutta matka-aikaa esim. googlemapsin kävelyreitin ehdotukseen.
+
+Olisi myös hienoa jos ohjelma osaisi antaa matkalle reitin lisäksi aika-arvion, ja tämän toteuttaminen tuskin on kovin haasteellista. Lähinnä pisimmän polun pituus pitää kai saada jotenkin vastaamaan jotain ajan yksikköä.
 
 Mietin myös verkon toteuttamista jotenkin muuten, kuin siten että jokainen pikseli vastaa yhtä solmua. Esim siten että etsitään kuvasta samanväriset alueet ja luodaan vain pikseleiden, joiden naapureina on muun värisiä pikseleitä välille kaaria, sillä samanvärisen alueen sisällä ei jokatapauksessa kannata tehdä mutkaa. Tämän toteuttaminen saattaa kuitenkin olla hankalaa joten ajattelin tehdä ainakin hajatustaulun toteutuksen ensin. 
 
