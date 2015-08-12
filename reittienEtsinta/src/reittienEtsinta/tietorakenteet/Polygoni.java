@@ -34,7 +34,28 @@ public class Polygoni {
 
         this.lat = new double[pisteidenMaara];
         this.lon = new double[pisteidenMaara];
+        this.id = new int[pisteidenMaara];
 
+    }
+
+    public int getPisteita() {
+        return pisteita;
+    }
+
+    public double getLatmin() {
+        return latmin;
+    }
+
+    public double getLatmax() {
+        return latmax;
+    }
+
+    public double getLonmin() {
+        return lonmin;
+    }
+
+    public double getLonmax() {
+        return lonmax;
     }
 
     public boolean pisteSisalla(double pLat, double pLon) {
@@ -83,8 +104,22 @@ public class Polygoni {
 
     }
 
+    private boolean pisteSama(double lat1, double lon1, double lat2, double lon2) {
+        return (lat1 - lat2 < 0.001) && (lon1 - lon2 < 0.001);
+    }
+
+    private boolean viivatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+        return pisteSama(latp1, lonp1, latq1, lonq1) || pisteSama(latp1, lonp1, latq2, lonq2)
+                || pisteSama(latp2, lonp2, latq2, lonq2) || pisteSama(latp2, lonp2, latq1, lonq1);
+    }
+
     //ei toimi jos viivat samansuuntaiset
     private boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+        if (this.viivatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
+            System.out.println("päässä");
+            return false;
+        }
+        System.out.println("eipäässä");
         return (myotapaiva(latp1, lonp1, latp2, lonp2, latq1, lonq1) != myotapaiva(latp1, lonp1, latp2, lonp2, latq2, lonq2))
                 && (myotapaiva(latq1, lonq1, latq2, lonq2, latp1, lonp1) != myotapaiva(latq1, lonq1, latq2, lonq2, latp2, lonp2));
     }
@@ -114,7 +149,7 @@ public class Polygoni {
         this.lat[pisteita] = lat;
         this.lon[pisteita] = lon;
         this.id[pisteita] = id;
-        
+
         this.pisteita++;
     }
 
@@ -135,6 +170,7 @@ public class Polygoni {
     }
 
     public double getBBlon() {
+
         return (this.lonmax - this.lonmin) / 2 + this.lonmin;
 
     }

@@ -20,7 +20,7 @@ public class Apumetodit {
      * @param y2
      * @return 
      */
-    public static double pisteidenEtaisyys(int x1, int y1, int x2, int y2) {
+    public static double pisteidenEtaisyys(double x1, double y1, double x2, double y2) {
         return Math.sqrt(
                 Math.pow(Math.abs(y1 - y2), 2)
                 + Math.pow(Math.abs(x1 - x2), 2));

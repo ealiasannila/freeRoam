@@ -12,9 +12,11 @@ import java.util.Random;
 import reittienEtsinta.tiedostonKasittely.GPXLukija;
 import reittienEtsinta.tiedostonKasittely.GeoJsonLukija;
 import reittienEtsinta.tietorakenteet.Pino;
+import reittienEtsinta.tietorakenteet.PolygonVerkko;
 import reittienEtsinta.tietorakenteet.Polygoni;
 import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.VerkkoSolmu;
+import reittienEtsinta.tietorakenteet.Verkontekija;
 import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
 import reittienEtsinta.toteutuneetReitit.Reitti;
 
@@ -33,13 +35,16 @@ public class Main {
 
         Polygoni[] lueJson = lukija.lueJson();
 
-        Polygoni testigoni = lueJson[0];
-
-        System.out.println("true: " + testigoni.pisteSisalla(0.5, 0.5));
-        System.out.println("false: " + testigoni.pisteSisalla(2.5, 0.5));
         
-        System.out.println("true: " + testigoni.viivaLeikkaaPolygonin(2.1, 0.1, 0.1, 2.1));
-        System.out.println("false: " + testigoni.viivaLeikkaaPolygonin(5, 5, 6, 6));
+        Verkontekija verkontekija = new Verkontekija(lueJson, lueJson[0].getLatmin(), lueJson[1].getLatmax(), 
+                lueJson[0].getLonmin(), lueJson[1].getLonmax(), lueJson[0].getPisteita()+lueJson[1].getPisteita());
+        
+        verkontekija.luoVerkko();
+        
+        PolygonVerkko verkko = verkontekija.getVerkko();
+        
+        System.out.println(verkko);
+        
         
         /*
          //matinkyläkuvan kulmien koord, älä hukkaa.
