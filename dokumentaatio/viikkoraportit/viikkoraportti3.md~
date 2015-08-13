@@ -29,6 +29,7 @@ Mitä seuraavaksi?
 * naapurustojen optimointi, tällä hetkellä osa naapurustoista tarkistetaan kahdesti, tämä helppo korjata.
 * komentorivipohjaisen käyttöliittymän toteutus.
 * reitillä kuljetun ajan lisäämienn geojson tiedostoon atribuuttina.
+* toteutus ja testaus dokumentaation aloittaminen
 
 Mitä opin mm?
 * geometriaan liittyviä algoritmeja! raycasting metodi sen testaamiseen onko piste polygonin sisällä ja viivojen leikkauksen testaaminen.

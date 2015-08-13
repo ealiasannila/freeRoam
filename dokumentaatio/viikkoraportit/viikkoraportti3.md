@@ -2,6 +2,7 @@
 
 
 ![alt tag](reittiqgis.png)
+
 Ohjelman ehdottama reitti qgis paikkatieto-ohjelmassa, ruskeat parkkipaikkoja (nopeampi vauhti), lila rakennnuksia (vauhti = 0), ja valkoinen tuntematonta maastoa(vauhti hitaampi)
 
 Tällä viikolla suurin muutos ohjelmassani oli, että päädyin toteuttamaan verkon muodostuksen kuvan sijaan vektorimuotoista paikkatietoaineistoa käyttäen. Syitä tähän olivat:
