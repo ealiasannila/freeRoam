@@ -25,8 +25,9 @@ public class Verkontekija {
 
     public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu) {
         this.pisteita = pisteita;
-        int n = (int) (Math.sqrt(polygonit.length) * (0.6)); //kerroin vedetty hatusta
+        int n = (int) (Math.sqrt(polygonit.length) * (0.15)); //kerroin vedetty hatusta
         n = Math.max(n, 1);
+
 
         System.out.println("n: " + n);
 
@@ -59,18 +60,18 @@ public class Verkontekija {
     private void lisaaPolygon(Polygoni poly) {
         int x = (int) (((poly.getBBlat() - this.latmin) / (this.latmax - this.latmin)) * this.naapurustot.length);
         int y = (int) (((poly.getBBlon() - this.lonmin) / (this.lonmax - this.lonmin)) * this.naapurustot.length);
-/*
-        System.out.println("bblat: " + poly.getBBlat());
-        System.out.println("bblon: " + poly.getBBlon());
+        /*
+         System.out.println("bblat: " + poly.getBBlat());
+         System.out.println("bblon: " + poly.getBBlon());
 
-        System.out.println("latmin: " + this.latmin);
-        System.out.println("latmax: " + this.latmax);
-        System.out.println("lonmin: " + this.lonmin);
-        System.out.println("lonmax: " + this.lonmax);
+         System.out.println("latmin: " + this.latmin);
+         System.out.println("latmax: " + this.latmax);
+         System.out.println("lonmin: " + this.lonmin);
+         System.out.println("lonmax: " + this.lonmax);
 
-        System.out.println("y: " + y);
-        System.out.println("x: " + x);
-*/
+         System.out.println("y: " + y);
+         System.out.println("x: " + x);
+         */
         this.naapurustot[y][x].add(poly);
 
     }
@@ -118,45 +119,47 @@ public class Verkontekija {
     private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
    //     System.out.println("s: " + id1);
-   //     System.out.println("k: " + idk);
-
-        List<Polygoni> omat = this.naapurustot[naapurustoY][naapurustoX];
-        List<Polygoni> naapurin = this.naapurustot[kohdenaapurustoY][kohdenaapurustoX];
-
-        for (int i = 0; i < omat.size(); i++) {
-            if (omat.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-      //          System.out.println("viivaLeikkaa omassa " + i );
-                return;
+        //     System.out.println("k: " + idk);
+        
+        
+        for (int i = -1; i <= 1; i++) {
+            if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
+                continue;
             }
-
-        }
-        for (int i = 0; i < naapurin.size(); i++) {
-            if (naapurin.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-       //         System.out.println("viivaLeikkaa naapurilla "  + i);
-
-                return;
-            }
-        }
-        if (naapurustoX != kohdenaapurustoX && naapurustoY != kohdenaapurustoY) {
-            List<Polygoni> diagonaali1 = this.naapurustot[naapurustoY][kohdenaapurustoX];
-            List<Polygoni> diagonaali2 = this.naapurustot[kohdenaapurustoY][naapurustoX];
-            for (int i = 0; i < diagonaali1.size(); i++) {
-                if (diagonaali1.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-         //           System.out.println("viivaLeikkaa d1 "  + i);
-
-                    return;
+            for (int j = -1; j <= 1; j++) {
+                if (naapurustoX + j < 0 || naapurustoX + j >= this.naapurustot[naapurustoY + i].length) {
+                    continue;
                 }
+                List<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
 
-            }
-            for (int i = 0; i < diagonaali2.size(); i++) {
-                if (diagonaali2.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-           //         System.out.println("viivaLeikkaa d2 "  + i);
+                for (int k = 0; k < ruutu.size(); k++) {
+                    if (ruutu.get(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                        return;
+                    }
 
-                    return;
                 }
             }
-
         }
+          for (int i = -1; i <= 1; i++) {
+            if (kohdenaapurustoY + i < 0 || kohdenaapurustoY + i >= this.naapurustot.length) {
+                continue;
+            }
+            for (int j = -1; j <= 1; j++) {
+                if (kohdenaapurustoX + j < 0 || kohdenaapurustoX + j >= this.naapurustot[kohdenaapurustoY + i].length) {
+                    continue;
+                }
+                List<Polygoni> ruutu = this.naapurustot[kohdenaapurustoY + i][kohdenaapurustoX + j];
+
+                for (int k = 0; k < ruutu.size(); k++) {
+                    if (ruutu.get(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                        return;
+                    }
+
+                }
+            }
+        }
+        
+
 
         this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk);
 

@@ -7,6 +7,7 @@ package reittienEtsinta.tiedostonKasittely;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,13 +28,20 @@ public class GeoJsonLukija {
     double lonmin;
     double lonmax;
 
-    public GeoJsonLukija(String polku) {
+    public GeoJsonLukija() {
         this.pisteita = 0;
         this.latmax = Double.MIN_VALUE;
         this.lonmax = Double.MIN_VALUE;
         this.latmin = Double.MAX_VALUE;
         this.lonmin = Double.MAX_VALUE;
 
+        
+        
+        
+
+    }
+
+    public Polygoni[] lueJson(String polku) {
         File file = new File(polku);
 
         Scanner lukija = null;
@@ -44,10 +52,7 @@ public class GeoJsonLukija {
         }
         lukija.useDelimiter("\\Z");
         data = lukija.next();
-
-    }
-
-    public Polygoni[] lueJson() {
+        
         JSONObject obj = new JSONObject(data);
 
         JSONArray arr = obj.getJSONArray("features");

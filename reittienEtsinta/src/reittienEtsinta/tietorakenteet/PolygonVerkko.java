@@ -90,6 +90,7 @@ public class PolygonVerkko {
             this.polku[naapuri] = solmu;
             return true;
         }
+        
         return false;
     }
 
@@ -103,13 +104,10 @@ public class PolygonVerkko {
         }
 
         while (!keko.tyhja()) {
-
             int solmu = keko.otaPienin();
-            //System.out.println("s: " + solmu);
+         //   System.out.println("s: " + solmu);
             for (int naapuri = 0; naapuri < vm.length; naapuri++) {
-                if (solmu == this.maalisolmu) {
-                    return true;
-                }
+                
 
                 if (vm[solmu][naapuri] > 0.0001) {
                     //    System.out.println("n: " + naapuri);
@@ -161,8 +159,8 @@ public class PolygonVerkko {
         JSONArray features = new JSONArray();
 
         JSONObject feature = new JSONObject();
-        feature.put("type", "feature");
-        feature.put("properties", new JSONArray());
+        feature.put("type", "Feature");
+        feature.put("properties", "{ }");
 
         JSONObject geometry = new JSONObject();
         geometry.put("type", "LineString");
@@ -173,23 +171,72 @@ public class PolygonVerkko {
         coordinates.put(new JSONArray(lahtopiste));
 
         while (!pino.tyhja()) {
-            int solmu  = pino.ota();
+            int solmu = pino.ota();
+            System.out.println(solmu);
             double[] reittipiste = new double[]{this.lon[solmu], this.lat[solmu]};
             coordinates.put(new JSONArray(reittipiste));
 
         }
-        
+
         double[] maalipiste = new double[]{this.lon[this.maalisolmu], this.lat[this.maalisolmu]};
         coordinates.put(new JSONArray(maalipiste));
 
         geometry.put("coordinates", coordinates);
         feature.put("geometry", geometry);
         features.put(feature);
-        
+
         reitti.put("features", features);
-        
+
         return reitti;
-        
+
+    }
+
+    public JSONObject getVerkko() {
+
+        JSONObject verkko = new JSONObject();
+        verkko.put("type", "FeatureCollection");
+
+        JSONObject properties = new JSONObject();
+        properties.put("name", "urn:ogc:def:crs:EPSG::3047");
+
+        JSONObject crs = new JSONObject();
+        crs.put("type", "name");
+        crs.put("properties", properties);
+
+        verkko.put("crs", crs);
+
+        JSONArray features = new JSONArray();
+
+        for (int i = 0; i < this.vm.length; i++) {
+            for (int j = 0; j < this.vm[i].length; j++) {
+
+                if(vm[i][j]<0.001){
+                    continue;
+                }
+                
+                JSONObject feature = new JSONObject();
+                feature.put("type", "Feature");
+                feature.put("properties", "{ }");
+
+                JSONObject geometry = new JSONObject();
+                geometry.put("type", "LineString");
+
+                JSONArray coordinates = new JSONArray();
+
+                double[] lahtopiste = new double[]{this.lon[i], this.lat[i]};
+                coordinates.put(new JSONArray(lahtopiste));
+
+                double[] maalipiste = new double[]{this.lon[j], this.lat[j]};
+                coordinates.put(new JSONArray(maalipiste));
+
+                geometry.put("coordinates", coordinates);
+                feature.put("geometry", geometry);
+                features.put(feature);
+            }
+        }
+
+        verkko.put("features", features);
+        return verkko;
 
     }
 
