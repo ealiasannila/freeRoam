@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.toteutuneetReitit;
+package raster;
 
 import java.util.HashMap;
-import reittienEtsinta.tiedostonKasittely.KuvanLukija;
+import raster.KuvanLukija;
 
 /**
  * Pitää kirjaa toteutuneiden reittien perusteella lasketusta nopeuksista eri maastoille (=väreille kuvassa)

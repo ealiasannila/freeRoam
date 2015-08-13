@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.tiedostonKasittely;
+package raster;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import reittienEtsinta.toteutuneetReitit.Reitti;
 
 /**
  * Lukee maastoa esittävää kuvatiedostoa, ja piirtää toiseen kuvaan reitin

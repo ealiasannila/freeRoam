@@ -5,13 +5,14 @@
  */
 package reittienEtsinta.tietorakenteet;
 
+import raster.Verkko;
 import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import reittienEtsinta.tiedostonKasittely.KuvanLukija;
-import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
-import reittienEtsinta.toteutuneetReitit.Reitti;
+import raster.KuvanLukija;
+import raster.MaastoKirjasto;
+import raster.Reitti;
 
 /**
  *

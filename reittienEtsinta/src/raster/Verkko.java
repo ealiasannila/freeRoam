@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.tietorakenteet;
+package raster;
 
+import raster.MinimiKeko;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -12,9 +13,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Stack;
 import reittienEtsinta.Apumetodit;
-import reittienEtsinta.tiedostonKasittely.KuvanLukija;
-import reittienEtsinta.toteutuneetReitit.MaastoKirjasto;
-import reittienEtsinta.toteutuneetReitit.Reitti;
+import raster.KuvanLukija;
+import reittienEtsinta.tietorakenteet.Pino;
 
 /**
  * Verkko muodostetaan siten että jokainen solmu edustaa yhtä annetun kuvan

@@ -23,12 +23,10 @@ public class Verkontekija {
     private double lonmin;
     private double lonmax;
 
-    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita) {
+    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu) {
         this.pisteita = pisteita;
-        int n = (int) (Math.sqrt(polygonit.length) * (1)); //kerroin vedetty hatusta
-
-        //!!!!
-        n = 2;
+        int n = (int) (Math.sqrt(polygonit.length) * (0.6)); //kerroin vedetty hatusta
+        n = Math.max(n, 1);
 
         System.out.println("n: " + n);
 
@@ -46,7 +44,7 @@ public class Verkontekija {
         this.lonmax = lonmax;
         this.lonmin = lonmin;
 
-        this.verkko = new PolygonVerkko(pisteita);
+        this.verkko = new PolygonVerkko(pisteita, maalisolmu);
 
         this.lisaaPolygonit(polygonit);
 
@@ -61,7 +59,7 @@ public class Verkontekija {
     private void lisaaPolygon(Polygoni poly) {
         int x = (int) (((poly.getBBlat() - this.latmin) / (this.latmax - this.latmin)) * this.naapurustot.length);
         int y = (int) (((poly.getBBlon() - this.lonmin) / (this.lonmax - this.lonmin)) * this.naapurustot.length);
-
+/*
         System.out.println("bblat: " + poly.getBBlat());
         System.out.println("bblon: " + poly.getBBlon());
 
@@ -72,7 +70,7 @@ public class Verkontekija {
 
         System.out.println("y: " + y);
         System.out.println("x: " + x);
-
+*/
         this.naapurustot[y][x].add(poly);
 
     }
@@ -119,22 +117,22 @@ public class Verkontekija {
 
     private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
-        System.out.println("s: " + id1);
-        System.out.println("k: " + idk);
+   //     System.out.println("s: " + id1);
+   //     System.out.println("k: " + idk);
 
         List<Polygoni> omat = this.naapurustot[naapurustoY][naapurustoX];
         List<Polygoni> naapurin = this.naapurustot[kohdenaapurustoY][kohdenaapurustoX];
 
         for (int i = 0; i < omat.size(); i++) {
             if (omat.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-                System.out.println("viivaLeikkaa omassa " + i );
+      //          System.out.println("viivaLeikkaa omassa " + i );
                 return;
             }
 
         }
         for (int i = 0; i < naapurin.size(); i++) {
             if (naapurin.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-                System.out.println("viivaLeikkaa naapurilla "  + i);
+       //         System.out.println("viivaLeikkaa naapurilla "  + i);
 
                 return;
             }
@@ -144,7 +142,7 @@ public class Verkontekija {
             List<Polygoni> diagonaali2 = this.naapurustot[kohdenaapurustoY][naapurustoX];
             for (int i = 0; i < diagonaali1.size(); i++) {
                 if (diagonaali1.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-                    System.out.println("viivaLeikkaa d1 "  + i);
+         //           System.out.println("viivaLeikkaa d1 "  + i);
 
                     return;
                 }
@@ -152,7 +150,7 @@ public class Verkontekija {
             }
             for (int i = 0; i < diagonaali2.size(); i++) {
                 if (diagonaali2.get(i).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
-                    System.out.println("viivaLeikkaa d2 "  + i);
+           //         System.out.println("viivaLeikkaa d2 "  + i);
 
                     return;
                 }

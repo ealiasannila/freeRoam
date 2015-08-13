@@ -5,6 +5,7 @@
  */
 package reittienEtsinta.tietorakenteet;
 
+import raster.VerkkoSolmu;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

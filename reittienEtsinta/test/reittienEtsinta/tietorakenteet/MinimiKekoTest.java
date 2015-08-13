@@ -5,6 +5,8 @@
  */
 package reittienEtsinta.tietorakenteet;
 
+import raster.VerkkoSolmu;
+import raster.MinimiKeko;
 import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;

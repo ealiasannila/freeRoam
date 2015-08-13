@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.toteutuneetReitit;
+package raster;
 
 import java.util.Arrays;
 import reittienEtsinta.Apumetodit;
-import reittienEtsinta.tiedostonKasittely.KuvanLukija;
+import raster.KuvanLukija;
 
 /**
  * Kuvaa toteutunutta reittiä, tai annettua reittiehdotusta.

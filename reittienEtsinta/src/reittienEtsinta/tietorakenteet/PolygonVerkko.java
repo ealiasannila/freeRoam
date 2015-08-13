@@ -11,6 +11,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import raster.Reitti;
 import reittienEtsinta.Apumetodit;
 
 /**
@@ -30,7 +33,8 @@ public class PolygonVerkko {
     private int maalisolmu;
 
     //ei tarvitse kertoa erikseen mistä minne, tai vieruslistoja naapurit tiedätään muutoinkin
-    public PolygonVerkko(int solmujenMaara) {
+    public PolygonVerkko(int solmujenMaara, int maalisolmu) {
+        this.maalisolmu = maalisolmu;
         this.alkuun = new double[solmujenMaara];
         this.loppuun = new double[solmujenMaara];
         this.lat = new double[solmujenMaara];
@@ -43,15 +47,17 @@ public class PolygonVerkko {
 
     public void lisaaKaari(int solmu, int kohde, double lats, double lons, double latk, double lonk) {
         //lisätään kaari verkkoon ja tarpeen vaatiessa alustetaan solmut
-        if (this.loppuun[solmu] == Double.MAX_VALUE) {
+        //System.out.println(lons);
+        //System.out.println(lonk);
+        if (this.loppuun[solmu] < 0.001) {
             this.lat[solmu] = lats;
             this.lon[solmu] = lons;
             this.loppuun[solmu] = this.arvioiEtaisyys(solmu);
 
         }
-        if (this.loppuun[kohde] == Double.MAX_VALUE) {
+        if (this.loppuun[kohde] < 0.001) {
             this.lat[kohde] = latk;
-            this.lat[kohde] = lonk;
+            this.lon[kohde] = lonk;
             this.loppuun[kohde] = this.arvioiEtaisyys(kohde);
         }
 
@@ -64,16 +70,15 @@ public class PolygonVerkko {
         return Apumetodit.pisteidenEtaisyys(lat[solmu], lon[solmu], lat[this.maalisolmu], lon[this.maalisolmu]);
     }
 
-    private void alustus(int lahtoSolmu, int maaliSolmu) {
+    private void alustus(int lahtoSolmu) {
         for (int i = 0; i < this.alkuun.length; i++) {
             this.alkuun[i] = Double.MAX_VALUE;
             this.polku[i] = -1;
         }
 
         this.alkuun[lahtoSolmu] = 0;
-        this.loppuun[maaliSolmu] = 0;
+        this.loppuun[this.maalisolmu] = 0;
 
-        this.maalisolmu = maaliSolmu;
     }
 
     private boolean loysaa(int solmu, int naapuri) {
@@ -87,45 +92,111 @@ public class PolygonVerkko {
         }
         return false;
     }
-    /*
-     public boolean aStar(int lahtoSolmu, int maaliSolmu) {
-     alustus(lahtoSolmu, maaliSolmu);
 
-     MinimiKeko keko = new MinimiKeko(vm.length);
+    public boolean aStar(int lahtoSolmu) {
+        alustus(lahtoSolmu);
 
-     for (int i = 0; i < vm.length; i++) {
-     keko.lisaa(solmut[i]);
-     }
+        MinimiKekoPolygon keko = new MinimiKekoPolygon(this.alkuun, this.loppuun, this.kekoindeksit);
 
-     while (!keko.tyhja()) {
-     System.out.println(keko);
+        for (int i = 0; i < this.alkuun.length; i++) {
+            keko.lisaa(i);
+        }
 
-     int solmu = keko.otaPienin().getId();
-     System.out.println(solmu);
+        while (!keko.tyhja()) {
 
-     for (int naapuri = 0; naapuri < vm.length; naapuri++) {
+            int solmu = keko.otaPienin();
+            //System.out.println("s: " + solmu);
+            for (int naapuri = 0; naapuri < vm.length; naapuri++) {
+                if (solmu == this.maalisolmu) {
+                    return true;
+                }
 
-     if (solmu == maaliSolmu) {    //voiko jo pysäyttää?
-     return true;
-     }
+                if (vm[solmu][naapuri] > 0.0001) {
+                    //    System.out.println("n: " + naapuri);
 
-     if (vm[solmu][naapuri] != 0) {
-     if (loysaa(solmu, naapuri)) {
-     keko.paivita(solmut[naapuri]);
-     }
+                    if (loysaa(solmu, naapuri)) {
+                        keko.paivita(naapuri);
+                    }
 
-     }
-     }
-     }
-     if (this.alkuun[maaliSolmu] == Long.MAX_VALUE) { //reittiä ei löytynyt
-     return false;
-     }
+                }
+            }
+        }
+        if (this.alkuun[this.maalisolmu] == Long.MAX_VALUE) { //reittiä ei löytynyt
+            return false;
+        }
 
-     return true;
-     }
+        return true;
+    }
+
+    /**
+     * palauttaa aStar metodin etsimän lyhyimmän reitin lähtö ja maalisolmun
+     * välillä Reitti oliona.
+     *
      */
+    public JSONObject lyhyinReitti(int lahtosolmu) {
+        if (lahtosolmu == this.maalisolmu) {
+            return null;
+        }
+        Pino pino = new Pino(this.alkuun.length);
+
+        int seuraava = this.polku[this.maalisolmu];
+
+        while (seuraava != lahtosolmu) {
+            pino.lisaa(seuraava);
+            seuraava = this.polku[seuraava];
+        }
+
+        JSONObject reitti = new JSONObject();
+        reitti.put("type", "FeatureCollection");
+
+        JSONObject properties = new JSONObject();
+        properties.put("name", "urn:ogc:def:crs:EPSG::3047");
+
+        JSONObject crs = new JSONObject();
+        crs.put("type", "name");
+        crs.put("properties", properties);
+
+        reitti.put("crs", crs);
+
+        JSONArray features = new JSONArray();
+
+        JSONObject feature = new JSONObject();
+        feature.put("type", "feature");
+        feature.put("properties", new JSONArray());
+
+        JSONObject geometry = new JSONObject();
+        geometry.put("type", "LineString");
+
+        JSONArray coordinates = new JSONArray();
+
+        double[] lahtopiste = new double[]{this.lon[lahtosolmu], this.lat[lahtosolmu]};
+        coordinates.put(new JSONArray(lahtopiste));
+
+        while (!pino.tyhja()) {
+            int solmu  = pino.ota();
+            double[] reittipiste = new double[]{this.lon[solmu], this.lat[solmu]};
+            coordinates.put(new JSONArray(reittipiste));
+
+        }
+        
+        double[] maalipiste = new double[]{this.lon[this.maalisolmu], this.lat[this.maalisolmu]};
+        coordinates.put(new JSONArray(maalipiste));
+
+        geometry.put("coordinates", coordinates);
+        feature.put("geometry", geometry);
+        features.put(feature);
+        
+        reitti.put("features", features);
+        
+        return reitti;
+        
+
+    }
 
     public String toString() {
+        System.out.println("lat: " + Arrays.toString(this.lat));
+        System.out.println("lon: " + Arrays.toString(this.lon));
+
         StringBuilder builder = new StringBuilder();
         StringBuilder koord = new StringBuilder();
 
@@ -136,7 +207,7 @@ public class PolygonVerkko {
         koord.append("\n");
         builder.append(koord);
         for (int i = 0; i < this.vm.length; i++) {
-            builder.append("[ "+i+" ]");
+            builder.append("[ " + i + " ]");
             for (int j = 0; j < this.vm[i].length; j++) {
                 String s = String.format("%.1f", this.vm[i][j]);
                 builder.append("[" + s + "]");

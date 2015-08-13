@@ -22,10 +22,18 @@ public class GeoJsonLukija {
 
     String data;
     int pisteita;
+    double latmin;
+    double latmax;
+    double lonmin;
+    double lonmax;
 
     public GeoJsonLukija(String polku) {
         this.pisteita = 0;
-        
+        this.latmax = Double.MIN_VALUE;
+        this.lonmax = Double.MIN_VALUE;
+        this.latmin = Double.MAX_VALUE;
+        this.lonmin = Double.MAX_VALUE;
+
         File file = new File(polku);
 
         Scanner lukija = null;
@@ -46,16 +54,45 @@ public class GeoJsonLukija {
         Polygoni[] polygonit = new Polygoni[arr.length()];
 
         for (int i = 0; i < arr.length(); i++) {
-            polygonit[i] = this.luoPolygoni(arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0));
+            Polygoni polygoni = this.luoPolygoni(arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0));
+            if (this.latmax < polygoni.getLatmax()) {
+                this.latmax = polygoni.getLatmax();
+            }
+            if (this.lonmax < polygoni.getLonmax()) {
+                this.lonmax = polygoni.getLonmax();
+            }
+            if (this.latmin > polygoni.getLatmin()) {
+                this.latmin = polygoni.getLatmin();
+            }
+            if (this.lonmin > polygoni.getLonmin()) {
+                this.lonmin = polygoni.getLonmin();
+            }
+            polygonit[i] = polygoni;
         }
         return polygonit;
+    }
+
+    public double getLatmin() {
+        return latmin;
+    }
+
+    public double getLatmax() {
+        return latmax;
+    }
+
+    public double getLonmin() {
+        return lonmin;
+    }
+
+    public double getLonmax() {
+        return lonmax;
     }
 
     public Polygoni luoPolygoni(JSONArray pisteet) {
         Polygoni uusi = new Polygoni(pisteet.length());
 
         for (int i = 0; i < pisteet.length(); i++) {
-            uusi.lisaaPiste(pisteet.getJSONArray(i).getDouble(0), pisteet.getJSONArray(i).getDouble(1), this.pisteita);
+            uusi.lisaaPiste(pisteet.getJSONArray(i).getDouble(1), pisteet.getJSONArray(i).getDouble(0), this.pisteita);
             this.pisteita++;
         }
 

@@ -1,8 +1,9 @@
 ? muuttuiko keko kovin tehottomaksi VerkkoSolmu rakenteen myötä? muistiviitteiden paikallisuus.
 ? miksi menee hitaaksi kun eri aluieden nopeuserot kasvavat yli 3?
 
--Verkon muodostus ei ihan toimi, kaikki kaaret eivät tule, ja tulee kaaria joiden ei pitäisi tulla
-- solmut tulevat oikein?
-
-4. jonkinlainen käyttöliittymä
+1. reitti ulos geojson
+2. useamman polygon tiedoston käyttö
+3. maastokirjasto
+4. kaarien painotus polygonin mukaan
+5. viikkoraportti
 

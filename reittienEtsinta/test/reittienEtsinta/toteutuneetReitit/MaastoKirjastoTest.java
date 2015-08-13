@@ -5,10 +5,12 @@
  */
 package reittienEtsinta.toteutuneetReitit;
 
+import raster.Reitti;
+import raster.MaastoKirjasto;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import reittienEtsinta.tiedostonKasittely.KuvanLukija;
+import raster.KuvanLukija;
 
 /**
  *

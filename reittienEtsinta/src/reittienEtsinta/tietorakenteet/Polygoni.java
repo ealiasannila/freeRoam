@@ -96,6 +96,7 @@ public class Polygoni {
             if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
                 loppu = 0;
             }
+            
             if (viivatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lat[loppu], this.lon[i], this.lon[loppu])) {
                 return true;
             }
@@ -105,7 +106,7 @@ public class Polygoni {
     }
 
     private boolean pisteSama(double lat1, double lon1, double lat2, double lon2) {
-        return (lat1 - lat2 < 0.001) && (lon1 - lon2 < 0.001);
+        return (Math.abs(lat1 - lat2) < 0.001) && (Math.abs(lon1 - lon2) < 0.001);
     }
 
     private boolean viivatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
@@ -114,23 +115,32 @@ public class Polygoni {
     }
 
     //ei toimi jos viivat samansuuntaiset
-    private boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+    public boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
         if (this.viivatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
-            System.out.println("päässä");
             return false;
         }
-        System.out.println("eipäässä");
-        return (myotapaiva(latp1, lonp1, latp2, lonp2, latq1, lonq1) != myotapaiva(latp1, lonp1, latp2, lonp2, latq2, lonq2))
-                && (myotapaiva(latq1, lonq1, latq2, lonq2, latp1, lonp1) != myotapaiva(latq1, lonq1, latq2, lonq2, latp2, lonp2));
+        int p1p2q1 = myotapaiva(latp1, lonp1, latp2, lonp2, latq1, lonq1);
+        int p1p2q2 = myotapaiva(latp1, lonp1, latp2, lonp2, latq2, lonq2);
+        int q1q2p1 = myotapaiva(latq1, lonq1, latq2, lonq2, latp1, lonp1);
+        int q1q2p2 = myotapaiva(latq1, lonq1, latq2, lonq2, latp2, lonp2);
+        return (p1p2q1 != p1p2q2 && q1q2p1 != q1q2p2);
+
     }
 
-    private boolean myotapaiva(double lat1, double lon1, double lat2, double lon2, double lat3, double lon3) {
-        return kulmakerroin(lat1, lon1, lat2, lon2) > kulmakerroin(lat2, lon2, lat3, lon3);
+    private int myotapaiva(double lat1, double lon1, double lat2, double lon2, double lat3, double lon3) {
+        double erotus = (lat2-lat1)*(lon3-lon2)-(lat3-lat2)*(lon2-lon1);
+      
+        if (erotus < 0) {
+            return -1;
+        }
+        if (erotus > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+
     }
 
-    private double kulmakerroin(double lat1, double lon1, double lat2, double lon2) {
-        return (lat2 - lat1) / (lon2 - lon1);
-    }
 
     public void lisaaPiste(double lat, double lon, int id) {
         if (lat < this.latmin) {
