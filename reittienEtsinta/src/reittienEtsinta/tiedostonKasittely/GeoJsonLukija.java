@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import reittienEtsinta.tietorakenteet.Polygoni;
 
 /**
- *
+ * Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
  * @author elias
  */
 public class GeoJsonLukija {
@@ -41,6 +41,12 @@ public class GeoJsonLukija {
 
     }
 
+    /**
+     *  Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
+     *  Polygonit on tallennettu joukkona koordinaattipisteita
+     * @param polku
+     * @return 
+     */
     public Polygoni[] lueJson(String polku) {
         File file = new File(polku);
 
@@ -93,7 +99,7 @@ public class GeoJsonLukija {
         return lonmax;
     }
 
-    public Polygoni luoPolygoni(JSONArray pisteet) {
+    private Polygoni luoPolygoni(JSONArray pisteet) {
         Polygoni uusi = new Polygoni(pisteet.length());
 
         for (int i = 0; i < pisteet.length(); i++) {

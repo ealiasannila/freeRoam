@@ -9,12 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Luo polygonien pohjalta verkon, jossa laskenta tapahtuu. Ideana muodostaa
+ * jokaisen polygonin jokaisesta solmusta kaari jokaisen polygonin jokaiseen
+ * solmuun, mikäli kaari ei leikkaa polygoneja. Kuitenkin tehostamiseksi
+ * käytetään naapurustoja, eli alue jaetaan tietyn kokoisiin naapurustoihin, ja
+ * kaaria muodostotetaan vain naapuruston sisällä, ja sitä naapurustoa
+ * ympärövien naapurustojen kanssa.
  *
  * @author elias
  */
 public class Verkontekija {
 
-    private PolygonVerkko verkko;
+    private VerkkoPolygoni verkko;
     private List<Polygoni>[][] naapurustot;
     private int pisteita;
 
@@ -23,11 +29,10 @@ public class Verkontekija {
     private double lonmin;
     private double lonmax;
 
-    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu) {
+    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu, MaastoKirjastoPolygoni maastokirjasto) {
         this.pisteita = pisteita;
-        int n = (int) (Math.sqrt(polygonit.length) * (0.15)); //kerroin vedetty hatusta
+        int n = (int) (Math.sqrt(polygonit.length) * (0.5)); //kerroin vedetty hatusta n^2 = naapurustojen määrä
         n = Math.max(n, 1);
-
 
         System.out.println("n: " + n);
 
@@ -45,7 +50,7 @@ public class Verkontekija {
         this.lonmax = lonmax;
         this.lonmin = lonmin;
 
-        this.verkko = new PolygonVerkko(pisteita, maalisolmu);
+        this.verkko = new VerkkoPolygoni(pisteita, maalisolmu, maastokirjasto);
 
         this.lisaaPolygonit(polygonit);
 
@@ -57,6 +62,12 @@ public class Verkontekija {
         }
     }
 
+    /**
+     * lisää plygonin naapurustoon polygonin boundingboxin keskipisteen
+     * perusteella
+     *
+     * @param poly
+     */
     private void lisaaPolygon(Polygoni poly) {
         int x = (int) (((poly.getBBlat() - this.latmin) / (this.latmax - this.latmin)) * this.naapurustot.length);
         int y = (int) (((poly.getBBlon() - this.lonmin) / (this.lonmax - this.lonmin)) * this.naapurustot.length);
@@ -76,6 +87,9 @@ public class Verkontekija {
 
     }
 
+    /**
+     * pyytää yrittämään kaarien asetuta jokaisesta solmusta
+     */
     public void luoVerkko() {
         for (int i = 0; i < this.naapurustot.length; i++) {
             for (int j = 0; j < this.naapurustot[i].length; j++) {
@@ -89,6 +103,15 @@ public class Verkontekija {
         }
     }
 
+    /**
+     * asettaa kaaret solmusta sitä ympäröiviin naapurustoihin.
+     *
+     * @param id
+     * @param lat
+     * @param lon
+     * @param naapurustoX
+     * @param naapurustoY
+     */
     private void asetaKaaret(int id, double lat, double lon, int naapurustoX, int naapurustoY) {
         for (int i = -1; i < 2; i++) {
             if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
@@ -112,16 +135,29 @@ public class Verkontekija {
         }
     }
 
-    public PolygonVerkko getVerkko() {
+    public VerkkoPolygoni getVerkko() {
         return verkko;
     }
 
+    /**
+     * tarkistaa leikkaako kaari polygoneja, ja jos ei pyytää verkkoa luomaan
+     * kaaren
+     *
+     * @param id1
+     * @param lat1
+     * @param lon1
+     * @param idk
+     * @param latk
+     * @param lonk
+     * @param naapurustoX
+     * @param naapurustoY
+     * @param kohdenaapurustoX
+     * @param kohdenaapurustoY
+     */
     private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
    //     System.out.println("s: " + id1);
         //     System.out.println("k: " + idk);
-        
-        
         for (int i = -1; i <= 1; i++) {
             if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
                 continue;
@@ -140,7 +176,7 @@ public class Verkontekija {
                 }
             }
         }
-          for (int i = -1; i <= 1; i++) {
+        for (int i = -1; i <= 1; i++) {
             if (kohdenaapurustoY + i < 0 || kohdenaapurustoY + i >= this.naapurustot.length) {
                 continue;
             }
@@ -158,8 +194,6 @@ public class Verkontekija {
                 }
             }
         }
-        
-
 
         this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk);
 

@@ -8,7 +8,7 @@ package reittienEtsinta.tietorakenteet;
 import java.util.Arrays;
 
 /**
- *
+ * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste polygonin sisällä, tai leikkaako viiva polygonia.
  * @author elias
  */
 public class Polygoni {
@@ -58,6 +58,12 @@ public class Polygoni {
         return lonmax;
     }
 
+    /**
+     * testaa raycasting menetelmän avulla onko piste polygonin sisällä
+     * @param pLat
+     * @param pLon
+     * @return 
+     */
     public boolean pisteSisalla(double pLat, double pLon) {
         if (pLat < this.latmin || pLat > this.latmax || pLon < this.lonmin || pLon > this.lonmax) {
             return false;
@@ -85,6 +91,15 @@ public class Polygoni {
 
     }
 
+    /**
+     * testaa viivojen pisteistä muodostettujen kolmioiden kiertosuuntiin perustuen leikkaako viiva polygonin
+     * @param lat1
+     * @param lon1
+     * @param lat2
+     * @param lon2
+     * @return 
+     */
+    
     public boolean viivaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
         //ei ole bb:n sisällä
         
@@ -120,8 +135,8 @@ public class Polygoni {
                 || pisteSama(latp2, lonp2, latq2, lonq2) || pisteSama(latp2, lonp2, latq1, lonq1);
     }
 
-    //ei toimi jos viivat samansuuntaiset
-    public boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+    //ei toimi jos viivat samansuuntaiset ja päällekkäiset
+    private boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
        // System.out.println("p1: " + latp1 +"," + lonp1 +  " p2: "+ latp2 +"," + lonp2);
        // System.out.println("q1: " + latq1 +"," + lonq1 +  " q2: "+ latq2 +"," + lonq2);
         
@@ -129,17 +144,27 @@ public class Polygoni {
         //    System.out.println("päästä");
             return false;
         }
-        int p1p2q1 = myotapaiva(latp1, lonp1, latp2, lonp2, latq1, lonq1);
-        int p1p2q2 = myotapaiva(latp1, lonp1, latp2, lonp2, latq2, lonq2);
-        int q1q2p1 = myotapaiva(latq1, lonq1, latq2, lonq2, latp1, lonp1);
-        int q1q2p2 = myotapaiva(latq1, lonq1, latq2, lonq2, latp2, lonp2);
+        int p1p2q1 = kiertosuunta(latp1, lonp1, latp2, lonp2, latq1, lonq1);
+        int p1p2q2 = kiertosuunta(latp1, lonp1, latp2, lonp2, latq2, lonq2);
+        int q1q2p1 = kiertosuunta(latq1, lonq1, latq2, lonq2, latp1, lonp1);
+        int q1q2p2 = kiertosuunta(latq1, lonq1, latq2, lonq2, latp2, lonp2);
         
         //System.out.println(p1p2q1 != p1p2q2 && q1q2p1 != q1q2p2);
         return (p1p2q1 != p1p2q2 && q1q2p1 != q1q2p2);
 
     }
 
-    private int myotapaiva(double lat1, double lon1, double lat2, double lon2, double lat3, double lon3) {
+    /**
+     * kertoo onko kolmen pisteen kiertosuunta myötä (-1) vai vastapäivään(1), vai ovatko ne samalla viivalla(0)
+     * @param lat1
+     * @param lon1
+     * @param lat2
+     * @param lon2
+     * @param lat3
+     * @param lon3
+     * @return 
+     */
+    private int kiertosuunta(double lat1, double lon1, double lat2, double lon2, double lat3, double lon3) {
         double erotus = (lat2-lat1)*(lon3-lon2)-(lat3-lat2)*(lon2-lon1);
         if (erotus < 0) {
             return -1;
@@ -153,6 +178,12 @@ public class Polygoni {
     }
 
 
+    /**
+     * Lisää plygoniin pisteen, ja päivittää sen boundingboxin arvoja
+     * @param lat
+     * @param lon
+     * @param id 
+     */
     public void lisaaPiste(double lat, double lon, int id) {
         if (lat < this.latmin) {
             this.latmin = lat;

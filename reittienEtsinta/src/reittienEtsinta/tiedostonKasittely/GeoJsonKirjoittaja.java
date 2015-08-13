@@ -14,11 +14,17 @@ import java.util.logging.Logger;
 import org.json.JSONObject;
 
 /**
- *
+ * Kirjoittaa JSONObjectin annetussa polussa olevaan tiedostoon
  * @author elias
  */
 public class GeoJsonKirjoittaja {
 
+    
+    /**
+     * Kirjoittaa JSONObjectin annetussa polussa olevaan tiedostoon
+     * @param polku
+     * @param data 
+     */
     public static void kirjoita(String polku, JSONObject data) {
         PrintWriter kirjoittaja = null;
         try {

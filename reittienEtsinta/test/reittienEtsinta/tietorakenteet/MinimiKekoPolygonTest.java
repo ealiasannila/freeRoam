@@ -31,9 +31,10 @@ public class MinimiKekoPolygonTest {
         this.loppuun = new double[n];
         this.kekoindeksit = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n-1; i++) {
             this.loppuun[i] = n - i;
         }
+        this.loppuun[n-1] = n-2;
 
         this.keko = new MinimiKekoPolygon(alkuun, loppuun, kekoindeksit);
 
@@ -44,7 +45,13 @@ public class MinimiKekoPolygonTest {
      */
     @Test
     public void testPaivita() {
-
+        for (int i = 0; i < this.alkuun.length; i++) {
+            this.keko.lisaa(i);
+        }
+        this.loppuun[3] = 0.001;
+        this.keko.paivita(3);
+        
+        assertEquals(3,this.keko.otaPienin());
     }
 
     /**
@@ -59,9 +66,7 @@ public class MinimiKekoPolygonTest {
         int edellinen = this.keko.otaPienin();
         for (int i = 0; i < 9; i++) {
             int pienin = this.keko.otaPienin();
-            //System.out.println(this.alkuun[pienin]);
-            System.out.println(this.loppuun[pienin]);
-            //assertTrue(this.alkuun[pienin] + this.loppuun[pienin] <= this.alkuun[edellinen] + this.loppuun[edellinen]);
+            assertTrue(this.alkuun[pienin] + this.loppuun[pienin] >= this.alkuun[edellinen] + this.loppuun[edellinen]);
             edellinen = pienin;
         }
 

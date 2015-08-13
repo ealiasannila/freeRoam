@@ -10,19 +10,21 @@ import raster.MinimiKeko;
 import java.util.Arrays;
 import java.util.Random;
 import org.json.JSONObject;
-import reittienEtsinta.tiedostonKasittely.GPXLukija;
+import raster.GPXLukija;
 import reittienEtsinta.tiedostonKasittely.GeoJsonLukija;
 import reittienEtsinta.tietorakenteet.Pino;
-import reittienEtsinta.tietorakenteet.PolygonVerkko;
+import reittienEtsinta.tietorakenteet.VerkkoPolygoni;
 import reittienEtsinta.tietorakenteet.Polygoni;
 import raster.Verkko;
 import raster.VerkkoSolmu;
 import reittienEtsinta.tietorakenteet.Verkontekija;
 import raster.MaastoKirjasto;
 import raster.Reitti;
+import reittienEtsinta.tiedostonKasittely.GPXLukijaPolygoni;
 import reittienEtsinta.tiedostonKasittely.GeoJsonKirjoittaja;
+import reittienEtsinta.tietorakenteet.MaastoKirjastoPolygoni;
 import reittienEtsinta.tietorakenteet.MinimiKekoPolygon;
-import reittienEtsinta.tietorakenteet.ReittiPoly;
+import reittienEtsinta.tietorakenteet.ReittiPolygoni;
 
 /**
  *
@@ -37,11 +39,17 @@ public class Main {
 
         GeoJsonLukija lukija = new GeoJsonLukija();
 
-        Polygoni[] rakennukset = lukija.lueJson("aineisto/pieni/rakennukset.geojson");
-        Polygoni[] parkkikset = lukija.lueJson("aineisto/pieni/parkkikset.geojson");
-        Polygoni[] tiet = lukija.lueJson("aineisto/pieni/tiet.geojson");
+        int maastoja = 2;
+        int[] maastorajat = new int[maastoja];
 
-        Polygoni[] polygonit = new Polygoni[rakennukset.length + parkkikset.length + tiet.length];
+        Polygoni[] rakennukset = lukija.lueJson("aineisto/pieni/rakennukset.geojson");
+        maastorajat[0] = lukija.getPisteita();
+
+        Polygoni[] parkkikset = lukija.lueJson("aineisto/pieni/parkkikset.geojson");
+        maastorajat[1] = lukija.getPisteita();
+
+//Polygoni[] tiet = lukija.lueJson("aineisto/pieni/tiet.geojson");
+        Polygoni[] polygonit = new Polygoni[rakennukset.length + parkkikset.length];
 
         for (int i = 0; i < rakennukset.length; i++) {
             polygonit[i] = rakennukset[i];
@@ -50,18 +58,33 @@ public class Main {
         for (int i = 0; i < parkkikset.length; i++) {
             polygonit[i + rakennukset.length] = parkkikset[i];
         }
-        for (int i = 0; i < tiet.length; i++) {
-            polygonit[i + rakennukset.length + parkkikset.length] = tiet[i];
-        }
-
-        Random random = new Random();
-
+        /*
+         for (int i = 0; i < tiet.length; i++) {
+         polygonit[i + rakennukset.length + parkkikset.length] = tiet[i];
+         }*/
+        MaastoKirjastoPolygoni maastokirjasto = new MaastoKirjastoPolygoni(maastorajat);
+        
+        GPXLukijaPolygoni parkkisLukija = new GPXLukijaPolygoni("aineisto/testiParkkis.gpx");
+        GPXLukijaPolygoni tuntematonLukija = new GPXLukijaPolygoni("aineisto/testiTuntematon.gpx");
+        
+        ReittiPolygoni parkkisreitti = parkkisLukija.lueGpx();
+        ReittiPolygoni tuntematonreitti = tuntematonLukija.lueGpx();
+        
+        System.out.println(parkkisreitti);
+        System.out.println(tuntematonreitti);
+        
+        
+        maastokirjasto.lisaaReitti(parkkisreitti, polygonit);
+        maastokirjasto.lisaaReitti(tuntematonreitti, polygonit);
+        
+        System.out.println(maastokirjasto);
+        
         Verkontekija verkontekija = new Verkontekija(polygonit, lukija.getLatmin(), lukija.getLatmax(),
-                lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), 685);
+                lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), 685, maastokirjasto);
 
         verkontekija.luoVerkko();
 
-        PolygonVerkko verkko = verkontekija.getVerkko();
+        VerkkoPolygoni verkko = verkontekija.getVerkko();
 
         // System.out.println(verkko);
         int lahto = 59;

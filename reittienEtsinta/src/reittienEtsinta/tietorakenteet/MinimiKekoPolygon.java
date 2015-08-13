@@ -103,7 +103,7 @@ public class MinimiKekoPolygon {
     }
 
     /**
-     * Palauttaa kekoehdon voimaan, kun solmun Alkuun arviota on vähennetty.
+     * Palauttaa kekoehdon voimaan, kun solmun alkuun arviota on vähennetty.
      * Aloittaa muokkaamisen tietystä solmusta. --> toimisiko
      * this.heapify(solmu.getKekoI())?
      *

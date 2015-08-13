@@ -15,13 +15,13 @@ import raster.KuvanLukija;
  *
  * @author elias
  */
-public class ReittiPoly {
+public class ReittiPolygoni {
 
     private double[] lon;
     private double[] lat;
-    private double[] aika;
+    private int[] aika;
 
-    public ReittiPoly(double[] lon, double[] lat, double[] aika) {
+    public ReittiPolygoni(double[] lon, double[] lat, int[] aika) {
         this.lon = lon;
         this.lat = lat;
         this.aika = aika;
@@ -35,7 +35,7 @@ public class ReittiPoly {
         return lat;
     }
 
-    public double[] getAika() {
+    public int[] getAika() {
         return aika;
     }
 

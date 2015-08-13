@@ -17,10 +17,13 @@ import raster.Reitti;
 import reittienEtsinta.Apumetodit;
 
 /**
- *
+ * Verkko jossa lyhyimpien reittien etsintä tapahtuu. 
+ * Verkko muodostetaan siten, että eri polygoineista muodostuvien alueiden välillä voi liikkua vain polygonin solmusta toiseen,
+ * eikä kaaret saa leikata toista polygonia, tai polygonia itseään.
+ * 
  * @author elias
  */
-public class PolygonVerkko {
+public class VerkkoPolygoni {
 
     private double[] lat;
     private double[] lon;
@@ -32,8 +35,10 @@ public class PolygonVerkko {
 
     private int maalisolmu;
 
+    private MaastoKirjastoPolygoni maastokirjasto;
+
     //ei tarvitse kertoa erikseen mistä minne, tai vieruslistoja naapurit tiedätään muutoinkin
-    public PolygonVerkko(int solmujenMaara, int maalisolmu) {
+    public VerkkoPolygoni(int solmujenMaara, int maalisolmu, MaastoKirjastoPolygoni maastokirjasto) {
         this.maalisolmu = maalisolmu;
         this.alkuun = new double[solmujenMaara];
         this.loppuun = new double[solmujenMaara];
@@ -43,8 +48,20 @@ public class PolygonVerkko {
         this.kekoindeksit = new int[solmujenMaara];
         this.vm = new double[solmujenMaara][solmujenMaara];
 
+        this.maastokirjasto = maastokirjasto;
+        this.alustus();
+
     }
 
+    /**
+     * lisää kaaren kun verkontekijä luokassa on ensin testattu, ettei se leikkaa mitään polygonia
+     * @param solmu
+     * @param kohde
+     * @param lats
+     * @param lons
+     * @param latk
+     * @param lonk 
+     */
     public void lisaaKaari(int solmu, int kohde, double lats, double lons, double latk, double lonk) {
         //lisätään kaari verkkoon ja tarpeen vaatiessa alustetaan solmut
         //System.out.println(lons);
@@ -61,8 +78,11 @@ public class PolygonVerkko {
             this.loppuun[kohde] = this.arvioiEtaisyys(kohde);
         }
 
-        this.vm[solmu][kohde] = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);  //matka, muutetaan ajaksi maaston vauhdin mukaan
-        this.vm[kohde][solmu] = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);
+        double etaisyys = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);
+        double aika = etaisyys / this.maastokirjasto.haeVauhti(solmu, kohde);
+
+        this.vm[solmu][kohde] = aika; 
+        this.vm[kohde][solmu] = aika;
 
     }
 
@@ -70,13 +90,12 @@ public class PolygonVerkko {
         return Apumetodit.pisteidenEtaisyys(lat[solmu], lon[solmu], lat[this.maalisolmu], lon[this.maalisolmu]);
     }
 
-    private void alustus(int lahtoSolmu) {
+    private void alustus() {
         for (int i = 0; i < this.alkuun.length; i++) {
             this.alkuun[i] = Double.MAX_VALUE;
             this.polku[i] = -1;
         }
 
-        this.alkuun[lahtoSolmu] = 0;
         this.loppuun[this.maalisolmu] = 0;
 
     }
@@ -90,12 +109,17 @@ public class PolygonVerkko {
             this.polku[naapuri] = solmu;
             return true;
         }
-        
+
         return false;
     }
 
+    /**
+     * laskee lyhyimmät etäisyydet maalisolmuun lähtien lähtösolmusta.
+     * @param lahtoSolmu
+     * @return 
+     */
     public boolean aStar(int lahtoSolmu) {
-        alustus(lahtoSolmu);
+        this.alkuun[lahtoSolmu] = 0;
 
         MinimiKekoPolygon keko = new MinimiKekoPolygon(this.alkuun, this.loppuun, this.kekoindeksit);
 
@@ -105,9 +129,8 @@ public class PolygonVerkko {
 
         while (!keko.tyhja()) {
             int solmu = keko.otaPienin();
-         //   System.out.println("s: " + solmu);
+            //   System.out.println("s: " + solmu);
             for (int naapuri = 0; naapuri < vm.length; naapuri++) {
-                
 
                 if (vm[solmu][naapuri] > 0.0001) {
                     //    System.out.println("n: " + naapuri);
@@ -126,11 +149,17 @@ public class PolygonVerkko {
         return true;
     }
 
+    public int[] getPolku() {
+        return polku;
+    }
+
     /**
      * palauttaa aStar metodin etsimän lyhyimmän reitin lähtö ja maalisolmun
-     * välillä Reitti oliona.
+     * välillä GeoJson muodossa
      *
      */
+    
+    
     public JSONObject lyhyinReitti(int lahtosolmu) {
         if (lahtosolmu == this.maalisolmu) {
             return null;
@@ -191,6 +220,10 @@ public class PolygonVerkko {
 
     }
 
+    /**
+     * palauttaa verkon geojson muodossa, hyödyllistä koska verkon voi helposti visualisoida paikkatieto-ohjelmassa
+     * @return 
+     */
     public JSONObject getVerkko() {
 
         JSONObject verkko = new JSONObject();
@@ -210,10 +243,10 @@ public class PolygonVerkko {
         for (int i = 0; i < this.vm.length; i++) {
             for (int j = 0; j < this.vm[i].length; j++) {
 
-                if(vm[i][j]<0.001){
+                if (vm[i][j] < 0.001) {
                     continue;
                 }
-                
+
                 JSONObject feature = new JSONObject();
                 feature.put("type", "Feature");
                 feature.put("properties", "{ }");
@@ -241,9 +274,7 @@ public class PolygonVerkko {
     }
 
     public String toString() {
-        System.out.println("lat: " + Arrays.toString(this.lat));
-        System.out.println("lon: " + Arrays.toString(this.lon));
-
+       
         StringBuilder builder = new StringBuilder();
         StringBuilder koord = new StringBuilder();
 

@@ -3,9 +3,10 @@
 
 
 
-3. maastokirjasto
-4. kaarien painotus polygonin mukaan
+
 5. viikkoraportti
 
 6. viivamaiset kohteet
 
+7. naapurusto optimointi, nyt katsoo kaikki naapurustot kohteen ja naapurston ympäriltä, eli samoja naapurustoja katsotaan kahdesti
+8. nyt ei voi kulkea rakennusten viertä!, pitää testata vauhtia haettaessa kaarelle, kulkeeko kaari polygonin läpi, vai sen reunaa pitkin
