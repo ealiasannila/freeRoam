@@ -37,5 +37,5 @@ Mitä opin mm?
 * luomaan json tiedostoja javalla
 
 Mikä askarruttaa?
-* miten toteutan, että voi liikkua polygonin reunaa pitkin, vaikka polygonin läpi ei saisi liikkua (esim rakennukset)? toistaiseksi olen vain testannut mihin polygoniin kaaren alku ja loppupää kuuluu ja asettanut vauhdin sen perusteella.
+* miten toteutan, että voi liikkua polygonin reunaa pitkin, vaikka polygonin läpi ei saisi liikkua (esim rakennukset)? toistaiseksi olen vain testannut mihin polygoniin kaaren alku ja loppupää kuuluu ja asettanut vauhdin sen perusteella. Myöskään tällä hetkellä en ole tallettanut kaariin tietoa siitä, mihin polygoniin ne kuuluvat. (polygoneja ei oikeastaan enään ole verkon muodostamisen jälkeen)
 * miten käsittelen tilanteen jossa kysytään reittiä pisteestä, joka ei ole mikään polygonin solmu. Nyt A* kutsutaan solmustä, ei koordinaateista lähtien. Ehkä tyydyttävä ratkaisu on vain etsiä lähin solmu ja lähteä siitä liikkeelle.
