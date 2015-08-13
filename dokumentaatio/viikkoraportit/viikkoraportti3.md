@@ -35,3 +35,7 @@ Mitä seuraavaksi?
 Mitä opin mm?
 * geometriaan liittyviä algoritmeja! raycasting metodi sen testaamiseen onko piste polygonin sisällä ja viivojen leikkauksen testaaminen.
 * luomaan json tiedostoja javalla
+
+Mikä askarruttaa?
+* miten toteutan, että voi liikkua polygonin reunaa pitkin, vaikka polygonin läpi ei saisi liikkua (esim rakennukset)? toistaiseksi olen vain testannut mihin polygoniin kaaren alku ja loppupää kuuluu ja asettanut vauhdin sen perusteella.
+* miten käsittelen tilanteen jossa kysytään reittiä pisteestä, joka ei ole mikään polygonin solmu. Nyt A* kutsutaan solmustä, ei koordinaateista lähtien. Ehkä tyydyttävä ratkaisu on vain etsiä lähin solmu ja lähteä siitä liikkeelle.
