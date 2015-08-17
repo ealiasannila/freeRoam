@@ -38,6 +38,13 @@ public class MaastoKirjastoPolygoni {
         this.otostenMaara[maasto]++;
     }
 
+    /**
+     * hakee solmuun liittyvän maaston. Periaatteessa aikavaativuus n suhteessa
+     * maastojen määrään, mutta maastoja on vain muutamia
+     *
+     * @param solmu
+     * @return
+     */
     private int haeMaasto(int solmu) {
         for (int i = 0; i < this.maastorajat.length; i++) {
             if (solmu < this.maastorajat[i]) {
@@ -77,13 +84,24 @@ public class MaastoKirjastoPolygoni {
      * @param kuvanLukija
      */
     public void lisaaReitti(ReittiPolygoni reitti, Polygoni[] polygonit) {
+
         for (int i = 0; i < reitti.getAika().length - 1; i++) {
             for (int j = 0; j < polygonit.length; j++) {
-                if (polygonit[j].pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
-                    this.lisaaVauhti(this.haeMaasto(polygonit[j].getId()[0]), reitti.vauhti(i, i + 1));
+                if (polygonit[j].getClass().equals(AluePolygoni.class)) {//aluemainen kohde
+                    AluePolygoni aluepoly = (AluePolygoni) polygonit[j];
+                    if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
+                        this.lisaaVauhti(this.haeMaasto(polygonit[j].getId()[0]), reitti.vauhti(i, i + 1));
+                        return;
+                    }
+                } else { //viivamainen kohde
+                    if (polygonit[j].pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
+                        this.lisaaVauhti(this.haeMaasto(polygonit[j].getId()[0]), reitti.vauhti(i, i + 1));
+                        return;
 
+                    }
                 }
             }
+            System.out.println("muu");
             this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));
 
         }

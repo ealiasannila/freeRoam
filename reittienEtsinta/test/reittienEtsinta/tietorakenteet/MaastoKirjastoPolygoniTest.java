@@ -29,8 +29,8 @@ public class MaastoKirjastoPolygoniTest {
         maastorajat[2] = 30;
         kirjasto = new MaastoKirjastoPolygoni(maastorajat);
         reitti = new ReittiPolygoni(new double[]{0.1,0.2}, new double[]{0.1, 0.2}, new int[] {0, 1});
-        this.polygonit = new Polygoni[1];
-        this.polygonit[0] = new Polygoni(4);
+        this.polygonit = new AluePolygoni[1];
+        this.polygonit[0] = new AluePolygoni(4);
         this.polygonit[0].lisaaPiste(0, 0, 1);
         this.polygonit[0].lisaaPiste(0, 1, 2);
         this.polygonit[0].lisaaPiste(1, 1, 3);

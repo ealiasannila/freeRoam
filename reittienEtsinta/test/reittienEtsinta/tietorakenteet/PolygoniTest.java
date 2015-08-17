@@ -22,12 +22,25 @@ public class PolygoniTest {
 
     @Before
     public void setUp() {
+
         this.polygoni = new Polygoni(4);
         this.polygoni.lisaaPiste(0, 0, 1);
         this.polygoni.lisaaPiste(1, 0, 2);
         this.polygoni.lisaaPiste(1, 1, 3);
         this.polygoni.lisaaPiste(0, 1, 4);
 
+    }
+
+    /**
+     * Test of pisteenEtaisyys method, of class Polygoni.
+     */
+    @Test
+    public void testPisteenEtaisyys() {
+        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 < 0.0001);
+        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 > -0.0001);
+
+        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) < 0.0001);
+        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) > -0.0001);
     }
 
     /**
@@ -77,15 +90,6 @@ public class PolygoniTest {
     }
 
     /**
-     * Test of pisteSisalla method, of class Polygoni.
-     */
-    @Test
-    public void testPisteSisalla() {
-        assertTrue(this.polygoni.pisteSisalla(0.5, 0.5));
-        assertFalse(this.polygoni.pisteSisalla(1.5, 1.5));
-    }
-
-    /**
      * Test of viivaLeikkaaPolygonin method, of class Polygoni.
      */
     @Test
@@ -93,7 +97,6 @@ public class PolygoniTest {
         assertTrue(this.polygoni.viivaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
         assertFalse(this.polygoni.viivaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
     }
-
 
     /**
      * Test of lisaaPiste method, of class Polygoni.

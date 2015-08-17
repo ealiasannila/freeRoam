@@ -6,26 +6,31 @@
 package reittienEtsinta.tietorakenteet;
 
 import java.util.Arrays;
+import reittienEtsinta.Apumetodit;
 
 /**
- * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste polygonin sisällä, tai leikkaako viiva polygonia.
+ * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste
+ * polygonin sisällä, tai leikkaako viiva polygonia.
+ *
  * @author elias
  */
 public class Polygoni {
 
-    private double[] lat;
-    private double[] lon;
-    private int[] id;
+    protected double[] lat;
+    protected double[] lon;
+    protected int[] id;
 
     //boundingbox
-    private double latmin;
-    private double latmax;
-    private double lonmin;
-    private double lonmax;
+    protected double latmin;
+    protected double latmax;
+    protected double lonmin;
+    protected double lonmax;
 
     private int pisteita;
+    protected boolean alue;
 
     public Polygoni(int pisteidenMaara) {
+        this.alue = false;
         this.pisteita = 0;
         this.latmin = Double.MAX_VALUE;
         this.latmax = Double.MIN_VALUE;
@@ -59,69 +64,36 @@ public class Polygoni {
     }
 
     /**
-     * testaa raycasting menetelmän avulla onko piste polygonin sisällä
-     * @param pLat
-     * @param pLon
-     * @return 
-     */
-    public boolean pisteSisalla(double pLat, double pLon) {
-        if (pLat < this.latmin || pLat > this.latmax || pLon < this.lonmin || pLon > this.lonmax) {
-            return false;
-        }
-
-        int leikkaukset = 0;
-
-        for (int i = 0; i < this.lat.length; i++) {
-
-            int loppu = i + 1;
-            if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
-                loppu = 0;
-            }
-
-            if ((this.lat[i] <= pLat && this.lat[loppu] > pLat) || (this.lat[i] > pLat && this.lat[loppu] <= pLat)) {
-                double osuusViivasta = (pLat - this.lat[i]) / (this.lat[loppu] - this.lat[i]);
-                if (pLon < this.lon[i] + osuusViivasta * (this.lon[loppu] - this.lon[i])) {
-                    leikkaukset++;
-                }
-
-            }
-        }
-
-        return leikkaukset % 2 != 0;
-
-    }
-
-    /**
-     * testaa viivojen pisteistä muodostettujen kolmioiden kiertosuuntiin perustuen leikkaako viiva polygonin
+     * testaa viivojen pisteistä muodostettujen kolmioiden kiertosuuntiin
+     * perustuen leikkaako viiva polygonin
+     *
      * @param lat1
      * @param lon1
      * @param lat2
      * @param lon2
-     * @return 
+     * @return
      */
-    
     public boolean viivaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
         //ei ole bb:n sisällä
-        
+
         if ((lat1 < this.latmin && lat2 < this.latmin) || (lat1 > this.latmax && lat2 > this.latmax)
                 || (lon1 < this.lonmin && lon2 < this.lonmin) || (lon1 > this.lonmax && lon2 > this.lonmax)) {
-         //   System.out.println("bb");
+            //   System.out.println("bb");
             return false;
         }
-                
-        //System.out.println("jotain");
 
+        //System.out.println("jotain");
         for (int i = 0; i < this.lat.length; i++) {
             int loppu = i + 1;
             if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
                 loppu = 0;
             }
-            if (viivatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i],  this.lon[i], this.lat[loppu], this.lon[loppu])) {
-               // System.out.println("leikkaa");
+            if (viivatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[loppu], this.lon[loppu])) {
+                // System.out.println("leikkaa");
                 return true;
             }
         }
-        
+
         return false;
 
     }
@@ -137,35 +109,37 @@ public class Polygoni {
 
     //ei toimi jos viivat samansuuntaiset ja päällekkäiset
     private boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
-       // System.out.println("p1: " + latp1 +"," + lonp1 +  " p2: "+ latp2 +"," + lonp2);
-       // System.out.println("q1: " + latq1 +"," + lonq1 +  " q2: "+ latq2 +"," + lonq2);
-        
+        // System.out.println("p1: " + latp1 +"," + lonp1 +  " p2: "+ latp2 +"," + lonp2);
+        // System.out.println("q1: " + latq1 +"," + lonq1 +  " q2: "+ latq2 +"," + lonq2);
+
         if (this.viivatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
-        //    System.out.println("päästä");
+            //    System.out.println("päästä");
             return false;
         }
         int p1p2q1 = kiertosuunta(latp1, lonp1, latp2, lonp2, latq1, lonq1);
         int p1p2q2 = kiertosuunta(latp1, lonp1, latp2, lonp2, latq2, lonq2);
         int q1q2p1 = kiertosuunta(latq1, lonq1, latq2, lonq2, latp1, lonp1);
         int q1q2p2 = kiertosuunta(latq1, lonq1, latq2, lonq2, latp2, lonp2);
-        
+
         //System.out.println(p1p2q1 != p1p2q2 && q1q2p1 != q1q2p2);
         return (p1p2q1 != p1p2q2 && q1q2p1 != q1q2p2);
 
     }
 
     /**
-     * kertoo onko kolmen pisteen kiertosuunta myötä (-1) vai vastapäivään(1), vai ovatko ne samalla viivalla(0)
+     * kertoo onko kolmen pisteen kiertosuunta myötä (-1) vai vastapäivään(1),
+     * vai ovatko ne samalla viivalla(0)
+     *
      * @param lat1
      * @param lon1
      * @param lat2
      * @param lon2
      * @param lat3
      * @param lon3
-     * @return 
+     * @return
      */
     private int kiertosuunta(double lat1, double lon1, double lat2, double lon2, double lat3, double lon3) {
-        double erotus = (lat2-lat1)*(lon3-lon2)-(lat3-lat2)*(lon2-lon1);
+        double erotus = (lat2 - lat1) * (lon3 - lon2) - (lat3 - lat2) * (lon2 - lon1);
         if (erotus < 0) {
             return -1;
         }
@@ -177,12 +151,12 @@ public class Polygoni {
 
     }
 
-
     /**
      * Lisää plygoniin pisteen, ja päivittää sen boundingboxin arvoja
+     *
      * @param lat
      * @param lon
-     * @param id 
+     * @param id
      */
     public void lisaaPiste(double lat, double lon, int id) {
         if (lat < this.latmin) {
@@ -203,6 +177,40 @@ public class Polygoni {
         this.id[pisteita] = id;
 
         this.pisteita++;
+    }
+
+    
+    //ei laske vikasta ekaan
+    public double pisteenEtaisyys(double lat, double lon) {
+        double etaisyys = Double.MAX_VALUE;
+        for (int i = 0; i < this.lat.length-1; i++) {
+            double ehdokas = this.pisteJanasta(lat, lon, this.lat[i], this.lon[i], this.lat[i+1], this.lon[i+1]);
+            if (etaisyys > ehdokas) {
+                etaisyys = ehdokas;
+            }   
+        }
+        return etaisyys;
+    }
+
+    private double pisteJanasta(double latp, double lonp, double latj1, double lonj1, double latj2, double lonj2) {
+        double jananpituusToiseen = Apumetodit.pisteidenEtaisyysToiseen(latj1, lonj1, latj2, lonj2);
+        if (jananpituusToiseen == 0) {
+            return Apumetodit.pisteidenEtaisyys(latp, lonp, latj1, lonj1);
+        }
+        double latjana = latj2 - latj1;
+        double lonjana = lonj2 - lonj1;
+
+        double kerroin = ((lonp - lonj1) * lonjana + (latp - latj1) * latjana) / jananpituusToiseen;
+        if (kerroin < 0.0) {
+            return Apumetodit.pisteidenEtaisyys(latj1, lonj1, latp, lonp);
+        }
+        if (kerroin > 1.0) {
+            return Apumetodit.pisteidenEtaisyys(latj2, lonj2, latp, lonp);
+        }
+
+        return Apumetodit.pisteidenEtaisyys(latp, lonp,
+                latj1 + kerroin * latjana,
+                lonj1 + kerroin * lonjana);
     }
 
     public double[] getLat() {

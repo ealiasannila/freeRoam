@@ -13,15 +13,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import reittienEtsinta.tietorakenteet.AluePolygoni;
 import reittienEtsinta.tietorakenteet.Polygoni;
 
 /**
  * Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
+ *
  * @author elias
  */
 public class GeoJsonLukija {
 
-    String data;
     int pisteita;
     double latmin;
     double latmax;
@@ -35,17 +36,14 @@ public class GeoJsonLukija {
         this.latmin = Double.MAX_VALUE;
         this.lonmin = Double.MAX_VALUE;
 
-        
-        
-        
-
     }
 
     /**
-     *  Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
-     *  Polygonit on tallennettu joukkona koordinaattipisteita
+     * Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
+     * Polygonit on tallennettu joukkona koordinaattipisteita
+     *
      * @param polku
-     * @return 
+     * @return
      */
     public Polygoni[] lueJson(String polku) {
         File file = new File(polku);
@@ -57,15 +55,23 @@ public class GeoJsonLukija {
             Logger.getLogger(GeoJsonLukija.class.getName()).log(Level.SEVERE, null, ex);
         }
         lukija.useDelimiter("\\Z");
-        data = lukija.next();
-        
+        String data = lukija.next();
+
         JSONObject obj = new JSONObject(data);
 
         JSONArray arr = obj.getJSONArray("features");
         Polygoni[] polygonit = new Polygoni[arr.length()];
 
         for (int i = 0; i < arr.length(); i++) {
-            Polygoni polygoni = this.luoPolygoni(arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0));
+
+            Polygoni polygoni = null;
+            if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("LineString")) {//viivamainen
+                JSONArray pisteet = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates");
+                polygoni = this.luoPolygoni(pisteet, new Polygoni(pisteet.length()));
+            } else if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("Polygon")) { //aluemainen
+                JSONArray pisteet = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0);
+                polygoni = this.luoPolygoni(pisteet, new AluePolygoni(pisteet.length()) );
+            }
             if (this.latmax < polygoni.getLatmax()) {
                 this.latmax = polygoni.getLatmax();
             }
@@ -99,8 +105,8 @@ public class GeoJsonLukija {
         return lonmax;
     }
 
-    private Polygoni luoPolygoni(JSONArray pisteet) {
-        Polygoni uusi = new Polygoni(pisteet.length());
+    
+    private Polygoni luoPolygoni(JSONArray pisteet, Polygoni uusi) {
 
         for (int i = 0; i < pisteet.length(); i++) {
             uusi.lisaaPiste(pisteet.getJSONArray(i).getDouble(1), pisteet.getJSONArray(i).getDouble(0), this.pisteita);

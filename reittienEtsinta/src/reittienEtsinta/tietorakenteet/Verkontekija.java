@@ -31,7 +31,7 @@ public class Verkontekija {
 
     public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu, MaastoKirjastoPolygoni maastokirjasto) {
         this.pisteita = pisteita;
-        int n = (int) (Math.sqrt(polygonit.length) * (0.5)); //kerroin vedetty hatusta n^2 = naapurustojen määrä
+        int n = (int) (Math.sqrt(polygonit.length) * (0.2)); //kerroin vedetty hatusta n^2 = naapurustojen määrä
         n = Math.max(n, 1);
 
         System.out.println("n: " + n);
@@ -156,7 +156,12 @@ public class Verkontekija {
      */
     private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
-   //     System.out.println("s: " + id1);
+        if (Math.abs(lat1 - latk) < 0.1 && Math.abs(lon1 - lonk) < 0.1) {
+            this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk);
+            return;
+        }
+
+        //     System.out.println("s: " + id1);
         //     System.out.println("k: " + idk);
         for (int i = -1; i <= 1; i++) {
             if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
