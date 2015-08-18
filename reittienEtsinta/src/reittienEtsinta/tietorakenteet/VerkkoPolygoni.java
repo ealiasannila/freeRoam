@@ -17,10 +17,11 @@ import raster.Reitti;
 import reittienEtsinta.Apumetodit;
 
 /**
- * Verkko jossa lyhyimpien reittien etsintä tapahtuu. 
- * Verkko muodostetaan siten, että eri polygoineista muodostuvien alueiden välillä voi liikkua vain polygonin solmusta toiseen,
- * eikä kaaret saa leikata toista polygonia, tai polygonia itseään.
- * 
+ * Verkko jossa lyhyimpien reittien etsintä tapahtuu. Verkko muodostetaan siten,
+ * että eri polygoineista muodostuvien alueiden välillä voi liikkua vain
+ * polygonin solmusta toiseen, eikä kaaret saa leikata toista polygonia, tai
+ * polygonia itseään.
+ *
  * @author elias
  */
 public class VerkkoPolygoni {
@@ -54,15 +55,17 @@ public class VerkkoPolygoni {
     }
 
     /**
-     * lisää kaaren kun verkontekijä luokassa on ensin testattu, ettei se leikkaa mitään polygonia
+     * lisää kaaren kun verkontekijä luokassa on ensin testattu, ettei se
+     * leikkaa mitään polygonia
+     *
      * @param solmu
      * @param kohde
      * @param lats
      * @param lons
      * @param latk
-     * @param lonk 
+     * @param lonk
      */
-    public void lisaaKaari(int solmu, int kohde, double lats, double lons, double latk, double lonk) {
+    public void lisaaKaari(int solmu, int kohde, double lats, double lons, double latk, double lonk, boolean oma, boolean ulko) {
         //lisätään kaari verkkoon ja tarpeen vaatiessa alustetaan solmut
         //System.out.println(lons);
         //System.out.println(lonk);
@@ -79,9 +82,9 @@ public class VerkkoPolygoni {
         }
 
         double etaisyys = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);
-        double aika = etaisyys / this.maastokirjasto.haeVauhti(solmu, kohde);
+        double aika = etaisyys / this.maastokirjasto.haeVauhti(solmu, kohde, oma, ulko);
 
-        this.vm[solmu][kohde] = aika; 
+        this.vm[solmu][kohde] = aika;
         this.vm[kohde][solmu] = aika;
 
     }
@@ -94,6 +97,12 @@ public class VerkkoPolygoni {
         for (int i = 0; i < this.alkuun.length; i++) {
             this.alkuun[i] = Double.MAX_VALUE;
             this.polku[i] = -1;
+        }
+
+        for (int i = 0; i < vm.length; i++) {
+            for (int j = 0; j < vm[i].length; j++) {
+                vm[i][j] = Double.MAX_VALUE;
+            }
         }
 
         this.loppuun[this.maalisolmu] = 0;
@@ -115,8 +124,9 @@ public class VerkkoPolygoni {
 
     /**
      * laskee lyhyimmät etäisyydet maalisolmuun lähtien lähtösolmusta.
+     *
      * @param lahtoSolmu
-     * @return 
+     * @return
      */
     public boolean aStar(int lahtoSolmu) {
         this.alkuun[lahtoSolmu] = 0;
@@ -132,14 +142,10 @@ public class VerkkoPolygoni {
             //   System.out.println("s: " + solmu);
             for (int naapuri = 0; naapuri < vm.length; naapuri++) {
 
-                if (vm[solmu][naapuri] > 0.0001) {
-                    //    System.out.println("n: " + naapuri);
-
-                    if (loysaa(solmu, naapuri)) {
-                        keko.paivita(naapuri);
-                    }
-
+                if (loysaa(solmu, naapuri)) {
+                    keko.paivita(naapuri);
                 }
+
             }
         }
         if (this.alkuun[this.maalisolmu] == Long.MAX_VALUE) { //reittiä ei löytynyt
@@ -158,8 +164,6 @@ public class VerkkoPolygoni {
      * välillä GeoJson muodossa
      *
      */
-    
-    
     public JSONObject lyhyinReitti(int lahtosolmu) {
         if (lahtosolmu == this.maalisolmu) {
             return null;
@@ -201,7 +205,7 @@ public class VerkkoPolygoni {
 
         while (!pino.tyhja()) {
             int solmu = pino.ota();
-            System.out.println(solmu);
+            // System.out.println(solmu);
             double[] reittipiste = new double[]{this.lon[solmu], this.lat[solmu]};
             coordinates.put(new JSONArray(reittipiste));
 
@@ -221,8 +225,10 @@ public class VerkkoPolygoni {
     }
 
     /**
-     * palauttaa verkon geojson muodossa, hyödyllistä koska verkon voi helposti visualisoida paikkatieto-ohjelmassa
-     * @return 
+     * palauttaa verkon geojson muodossa, hyödyllistä koska verkon voi helposti
+     * visualisoida paikkatieto-ohjelmassa
+     *
+     * @return
      */
     public JSONObject getVerkko() {
 
@@ -274,7 +280,7 @@ public class VerkkoPolygoni {
     }
 
     public String toString() {
-       
+
         StringBuilder builder = new StringBuilder();
         StringBuilder koord = new StringBuilder();
 
@@ -287,8 +293,12 @@ public class VerkkoPolygoni {
         for (int i = 0; i < this.vm.length; i++) {
             builder.append("[ " + i + " ]");
             for (int j = 0; j < this.vm[i].length; j++) {
-                String s = String.format("%.1f", this.vm[i][j]);
-                builder.append("[" + s + "]");
+                if (this.vm[i][j] == Double.MAX_VALUE) {
+                    builder.append("[max]");
+                } else {
+                    String s = String.format("%.1f", this.vm[i][j]);
+                    builder.append("[" + s + "]");
+                }
             }
 
             builder.append("\n");

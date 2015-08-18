@@ -1,12 +1,16 @@
-? muuttuiko keko kovin tehottomaksi VerkkoSolmu rakenteen myötä? muistiviitteiden paikallisuus.
-? miksi menee hitaaksi kun eri aluieden nopeuserot kasvavat yli 3?
-
 ? onko järkeä kattoa bb jos koko polyssa on keskimäärin 5-6 kulmaa...
 
+5. lista tietorakenne - array pohjainen
 
-6. viivamaiset kohteet
--teiden risteyksissä ilmeisesti ajatellaan leikkaavan päässä. ->risteyksissä ei muodostu tarpeellisia kaaria
+6. käli:
+ - verkon luonti vain istunnon alussa
+ - parametrit String args[]
 
+joku mättää vauhdeissa
 
 7. naapurusto optimointi, nyt katsoo kaikki naapurustot kohteen ja naapurston ympäriltä, eli samoja naapurustoja katsotaan kahdesti
-8. nyt ei voi kulkea rakennusten viertä!, pitää testata vauhtia haettaessa kaarelle, kulkeeko kaari polygonin läpi, vai sen reunaa pitkin
+ - valitse naapurustot bb min max arvojen, ei bb keskipisteen mukaan
+
+8. testaus:
+ - maastokirjasto ulkoreunat
+ - 

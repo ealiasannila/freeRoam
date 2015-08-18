@@ -31,7 +31,7 @@ public class Verkontekija {
 
     public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu, MaastoKirjastoPolygoni maastokirjasto) {
         this.pisteita = pisteita;
-        int n = (int) (Math.sqrt(polygonit.length) * (0.2)); //kerroin vedetty hatusta n^2 = naapurustojen määrä
+        int n = (int) this.pisteita/200; //max solmujen maara naapurustossa
         n = Math.max(n, 1);
 
         System.out.println("n: " + n);
@@ -96,7 +96,7 @@ public class Verkontekija {
                 for (int k = 0; k < this.naapurustot[i][j].size(); k++) {
                     Polygoni polygoni = this.naapurustot[i][j].get(k);
                     for (int l = 0; l < polygoni.getId().length; l++) {
-                        this.asetaKaaret(polygoni.getId()[l], polygoni.getLat()[l], polygoni.getLon()[l], j, i);
+                        this.asetaKaaret(l, polygoni.getId()[l], polygoni.getLat()[l], polygoni.getLon()[l], j, i, polygoni);
                     }
                 }
             }
@@ -112,21 +112,41 @@ public class Verkontekija {
      * @param naapurustoX
      * @param naapurustoY
      */
-    private void asetaKaaret(int id, double lat, double lon, int naapurustoX, int naapurustoY) {
-        for (int i = -1; i < 2; i++) {
+    private void asetaKaaret(int lahtosolmuIndeksi, int id, double lat, double lon, int naapurustoX, int naapurustoY, Polygoni lahto) {
+        for (int i = -2; i <= 2; i++) {
             if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
                 continue;
             }
-            for (int j = -1; j < 2; j++) {
+            for (int j = -2; j <= 2; j++) {
                 if (naapurustoX + j < 0 || naapurustoX + j >= this.naapurustot[naapurustoY + i].length) {
                     continue;
                 }
 
                 for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].size(); k++) {
                     Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].get(k);
-                    for (int l = 0; l < kohde.getId().length; l++) {
-                        if (kohde.getId()[l] != id) {
-                            this.asetaKaari(id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoY + i, naapurustoX + j);
+                    if (kohde == lahto) {
+                        if (lahto.getClass() == AluePolygoni.class) {//alueamainen kohde, asetetaan kaaret alueen läpi joka solmuun
+                            for (int l = 0; l < kohde.getId().length; l++) {
+                                if (kohde.getId()[l] != id) {
+                                    if (lahtosolmuIndeksi + 1 == l) { //reunaa pitkin seuraava solmu
+                                        this.verkko.lisaaKaari(id, kohde.getId()[lahtosolmuIndeksi + 1], lat, lon, kohde.getLat()[lahtosolmuIndeksi + 1], kohde.getLon()[lahtosolmuIndeksi + 1], true, true);
+                                    } else { //kaari alueen läpi
+                                        this.asetaKaari(id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoY + i, naapurustoX + j, true);
+                                    }
+                                }
+                            }
+                        } else {// viivamainen kohde asetetaan omat kaaret vain seuraavaan solmuun.
+                            if (lahtosolmuIndeksi + 1 == kohde.getId().length) {
+                                continue;
+                            }
+                            //ei tarvitse tarkistaa leikkaako, koska mennään ainoastaan alueen ulkokaarta pitkin
+                            this.verkko.lisaaKaari(id, kohde.getId()[lahtosolmuIndeksi + 1], lat, lon, kohde.getLat()[lahtosolmuIndeksi + 1], kohde.getLon()[lahtosolmuIndeksi + 1], true, false);
+                        }
+                    } else { // asetetaan kaaret tuntemattoman alueen läpi muihin kohteisiin
+                        for (int l = 0; l < kohde.getId().length; l++) {
+                            if (kohde.getId()[l] != id) {
+                                this.asetaKaari(id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoY + i, naapurustoX + j, false);
+                            }
                         }
                     }
                 }
@@ -154,20 +174,20 @@ public class Verkontekija {
      * @param kohdenaapurustoX
      * @param kohdenaapurustoY
      */
-    private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
+    private void asetaKaari(int id1, double lat1, double lon1, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY, boolean oma) {
 
         if (Math.abs(lat1 - latk) < 0.1 && Math.abs(lon1 - lonk) < 0.1) {
-            this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk);
+            this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk, oma, false);
             return;
         }
 
         //     System.out.println("s: " + id1);
         //     System.out.println("k: " + idk);
-        for (int i = -1; i <= 1; i++) {
+        for (int i = -2; i <= 2; i++) {
             if (naapurustoY + i < 0 || naapurustoY + i >= this.naapurustot.length) {
                 continue;
             }
-            for (int j = -1; j <= 1; j++) {
+            for (int j = -2; j <= 2; j++) {
                 if (naapurustoX + j < 0 || naapurustoX + j >= this.naapurustot[naapurustoY + i].length) {
                     continue;
                 }
@@ -181,11 +201,11 @@ public class Verkontekija {
                 }
             }
         }
-        for (int i = -1; i <= 1; i++) {
+        for (int i = -2; i <= 2; i++) {
             if (kohdenaapurustoY + i < 0 || kohdenaapurustoY + i >= this.naapurustot.length) {
                 continue;
             }
-            for (int j = -1; j <= 1; j++) {
+            for (int j = -2; j <= 2; j++) {
                 if (kohdenaapurustoX + j < 0 || kohdenaapurustoX + j >= this.naapurustot[kohdenaapurustoY + i].length) {
                     continue;
                 }
@@ -200,7 +220,7 @@ public class Verkontekija {
             }
         }
 
-        this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk);
+        this.verkko.lisaaKaari(id1, idk, lat1, lon1, latk, lonk, oma, false);
 
     }
 

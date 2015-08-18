@@ -30,10 +30,10 @@ public class VerkkoPolygoniTest {
         maastorajat[2] = 30;
         kirjasto = new MaastoKirjastoPolygoni(maastorajat);
         this.verkko = new VerkkoPolygoni(4, 0, kirjasto);
-        
-        this.verkko.lisaaKaari(0, 1, 0, 0, 0, 1);
-        this.verkko.lisaaKaari(1, 2, 0, 1, 1, 1);
-        
+
+        this.verkko.lisaaKaari(0, 1, 0, 0, 0, 1, true, true);
+        this.verkko.lisaaKaari(1, 2, 0, 1, 1, 1, true, true);
+
     }
 
     /**
@@ -41,16 +41,15 @@ public class VerkkoPolygoniTest {
      */
     @Test
     public void testLisaaKaari() {
+        //System.out.println(verkko.toString());
         assertEquals(("[   ][ 0 ][ 1 ][ 2 ][ 3 ]\n"
-                + "[ 0 ][0.0][100000.0][0.0][0.0]\n"
-                + "[ 1 ][100000.0][0.0][100000.0][0.0]\n"
-                + "[ 2 ][0.0][100000.0][0.0][0.0]\n"
-                + "[ 3 ][0.0][0.0][0.0][0.0]\n"),
-        verkko.toString()
-    
+                + "[ 0 ][max][100000.0][max][max]\n"
+                + "[ 1 ][100000.0][max][100000.0][max]\n"
+                + "[ 2 ][max][100000.0][max][max]\n"
+                + "[ 3 ][max][max][max][max]\n"),
+                verkko.toString()
+        );
 
-    );
-    
     }
 
     /**
@@ -59,7 +58,7 @@ public class VerkkoPolygoniTest {
     @Test
     public void testAStar() {
         verkko.aStar(2);
-        assertEquals("[1, 2, -1, -1]",Arrays.toString(verkko.getPolku()));
+        assertEquals("[1, 2, -1, -1]", Arrays.toString(verkko.getPolku()));
     }
 
     /**

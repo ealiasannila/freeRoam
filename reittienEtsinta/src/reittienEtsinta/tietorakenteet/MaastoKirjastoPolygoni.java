@@ -51,7 +51,7 @@ public class MaastoKirjastoPolygoni {
                 return i;
             }
         }
-        return this.maastorajat.length - 1;
+        return -1;
     }
 
     private double haeMaastolla(int maasto) {
@@ -62,13 +62,16 @@ public class MaastoKirjastoPolygoni {
     }
 
     /**
-     * palauttaa solmun ja kohdesolmun välisen maaston vauhdin.
+     * palauttaa solmun ja kohdesolmun välisen maaston vauhdin. niin rikki... :(
      *
      * @param maasto
      * @return
      */
-    public double haeVauhti(int solmu, int kohde) {
-        if (this.haeMaasto(solmu) == this.haeMaasto(kohde)) {
+    public double haeVauhti(int solmu, int kohde, boolean oma, boolean ulko) {
+        if (oma) {
+            if (ulko) {
+                return Math.max(this.haeMaastolla(this.haeMaasto(solmu)), this.haeMaastolla(this.vauhtiMaastossa.length - 1));
+            }
             return this.haeMaastolla(this.haeMaasto(solmu));
         } else {
             return this.haeMaastolla(this.vauhtiMaastossa.length - 1); //luokittelematon maasto polygonien välillä
