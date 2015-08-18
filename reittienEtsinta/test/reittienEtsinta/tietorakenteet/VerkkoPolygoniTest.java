@@ -24,15 +24,11 @@ public class VerkkoPolygoniTest {
 
     @Before
     public void setUp() {
-        int[] maastorajat = new int[3];
-        maastorajat[0] = 10;
-        maastorajat[1] = 20;
-        maastorajat[2] = 30;
-        kirjasto = new MaastoKirjastoPolygoni(maastorajat);
-        this.verkko = new VerkkoPolygoni(4, 0, kirjasto);
+        kirjasto = new MaastoKirjastoPolygoni(3);
+        this.verkko = new VerkkoPolygoni(4, kirjasto);
 
-        this.verkko.lisaaKaari(0, 1, 0, 0, 0, 1, true, true);
-        this.verkko.lisaaKaari(1, 2, 0, 1, 1, 1, true, true);
+        this.verkko.lisaaKaari(0, 1, 1, 0, 0, 0, 1, true);
+        this.verkko.lisaaKaari(1, 2, 1, 0, 1, 1, 1, true);
 
     }
 
@@ -57,7 +53,8 @@ public class VerkkoPolygoniTest {
      */
     @Test
     public void testAStar() {
-        verkko.aStar(2);
+        this.verkko.alustus(2, 0);
+        verkko.aStar();
         assertEquals("[1, 2, -1, -1]", Arrays.toString(verkko.getPolku()));
     }
 

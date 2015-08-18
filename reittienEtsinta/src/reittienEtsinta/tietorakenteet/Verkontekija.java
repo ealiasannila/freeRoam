@@ -21,7 +21,7 @@ import java.util.List;
 public class Verkontekija {
 
     private VerkkoPolygoni verkko;
-    private List<Polygoni>[][] naapurustot;
+    private PolygoniLista[][] naapurustot;
     private int pisteita;
 
     private double latmin;
@@ -29,18 +29,18 @@ public class Verkontekija {
     private double lonmin;
     private double lonmax;
 
-    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, int maalisolmu, MaastoKirjastoPolygoni maastokirjasto) {
+    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjastoPolygoni maastokirjasto) {
         this.pisteita = pisteita;
         int n = (int) this.pisteita / 300; //max solmujen maara naapurustossa
         n = Math.max(n, 1);
 
         System.out.println("n: " + n);
 
-        this.naapurustot = new List[n][n];
+        this.naapurustot = new PolygoniLista[n][n];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                this.naapurustot[i][j] = new ArrayList<Polygoni>();
+                this.naapurustot[i][j] = new PolygoniLista(8);
 
             }
         }
@@ -50,7 +50,7 @@ public class Verkontekija {
         this.lonmax = lonmax;
         this.lonmin = lonmin;
 
-        this.verkko = new VerkkoPolygoni(pisteita, maalisolmu, maastokirjasto);
+        this.verkko = new VerkkoPolygoni(pisteita, maastokirjasto);
 
         this.lisaaPolygonit(polygonit);
 
@@ -83,7 +83,7 @@ public class Verkontekija {
          System.out.println("y: " + y);
          System.out.println("x: " + x);
          */
-        this.naapurustot[y][x].add(poly);
+        this.naapurustot[y][x].lisaa(poly);
 
     }
 
@@ -93,8 +93,8 @@ public class Verkontekija {
     public void luoVerkko() {
         for (int i = 0; i < this.naapurustot.length; i++) {
             for (int j = 0; j < this.naapurustot[i].length; j++) {
-                for (int k = 0; k < this.naapurustot[i][j].size(); k++) {
-                    Polygoni polygoni = this.naapurustot[i][j].get(k);
+                for (int k = 0; k < this.naapurustot[i][j].koko(); k++) {
+                    Polygoni polygoni = this.naapurustot[i][j].ota(k);
                     for (int l = 0; l < polygoni.getId().length; l++) {
                         this.asetaKaaret(l, polygoni.getId()[l], polygoni.getLat()[l], polygoni.getLon()[l], j, i, polygoni);
                     }
@@ -122,15 +122,15 @@ public class Verkontekija {
                     continue;
                 }
 
-                for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].size(); k++) {
-                    Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].get(k);
+                for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].koko(); k++) {
+                    Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].ota(k);
                     if (kohde.getId()[0] == lahto.getId()[0]) {
                         if (lahto.getClass() == AluePolygoni.class) {//alueamainen kohde, asetetaan kaaret alueen läpi joka solmuun
                             for (int l = 0; l < kohde.getId().length; l++) {
                                 
                                 if (kohde.getId()[l] != id) {
                                     
-                                    if (lahtosolmuIndeksi  == l - 1 || lahtosolmuIndeksi  == l + 1 ) { //reunaa pitkin seuraava solmu
+                                    if (lahtosolmuIndeksi  == l - 1 || lahtosolmuIndeksi  == l + 1 ) { //reunaa pitkin seuraava solmu, täytyy asettaa kahdesti koska muutoin tulee asetetuksi else kohdassa...
                                         this.verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
                                         continue;
                                     }
@@ -202,10 +202,10 @@ public class Verkontekija {
                 if (naapurustoX + j < 0 || naapurustoX + j >= this.naapurustot[naapurustoY + i].length) {
                     continue;
                 }
-                List<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
+                PolygoniLista ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
 
-                for (int k = 0; k < ruutu.size(); k++) {
-                    if (ruutu.get(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                for (int k = 0; k < ruutu.koko(); k++) {
+                    if (ruutu.ota(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
                         return;
                     }
 
@@ -220,10 +220,10 @@ public class Verkontekija {
                 if (kohdenaapurustoX + j < 0 || kohdenaapurustoX + j >= this.naapurustot[kohdenaapurustoY + i].length) {
                     continue;
                 }
-                List<Polygoni> ruutu = this.naapurustot[kohdenaapurustoY + i][kohdenaapurustoX + j];
+                PolygoniLista ruutu = this.naapurustot[kohdenaapurustoY + i][kohdenaapurustoX + j];
 
-                for (int k = 0; k < ruutu.size(); k++) {
-                    if (ruutu.get(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                for (int k = 0; k < ruutu.koko(); k++) {
+                    if (ruutu.ota(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
                         return;
                     }
 

@@ -45,6 +45,7 @@ public class MaastoKirjastoPolygoni {
      */
     private double haeMaastolla(int maasto) {
         if (this.otostenMaara[maasto] == 0) {
+            //System.out.println("ei otoksia");
             return 0.00001;
         }
         return this.vauhtiMaastossa[maasto] / this.otostenMaara[maasto];
