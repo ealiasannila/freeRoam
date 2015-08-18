@@ -19,12 +19,10 @@ public class MaastoKirjastoPolygoni {
 
     private double[] vauhtiMaastossa;
     private int[] otostenMaara;
-    private int[] maastorajat;
 
-    public MaastoKirjastoPolygoni(int[] maastorajat) {
-        this.vauhtiMaastossa = new double[maastorajat.length + 1];
-        this.otostenMaara = new int[maastorajat.length + 1];
-        this.maastorajat = maastorajat;
+    public MaastoKirjastoPolygoni(int maastoja) {
+        this.vauhtiMaastossa = new double[maastoja + 1];
+        this.otostenMaara = new int[maastoja + 1];
     }
 
     /**
@@ -33,7 +31,7 @@ public class MaastoKirjastoPolygoni {
      * @param maasto
      * @param vauhti
      */
-    private void lisaaVauhti(int maasto, double vauhti) {
+    public void lisaaVauhti(int maasto, double vauhti) {
         this.vauhtiMaastossa[maasto] += vauhti;
         this.otostenMaara[maasto]++;
     }
@@ -45,15 +43,6 @@ public class MaastoKirjastoPolygoni {
      * @param solmu
      * @return
      */
-    private int haeMaasto(int solmu) {
-        for (int i = 0; i < this.maastorajat.length; i++) {
-            if (solmu < this.maastorajat[i]) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     private double haeMaastolla(int maasto) {
         if (this.otostenMaara[maasto] == 0) {
             return 0.00001;
@@ -65,17 +54,20 @@ public class MaastoKirjastoPolygoni {
      * palauttaa solmun ja kohdesolmun välisen maaston vauhdin. niin rikki... :(
      *
      * @param maasto
+     * @param ulko
      * @return
      */
-    public double haeVauhti(int solmu, int kohde, boolean oma, boolean ulko) {
-        if (oma) {
-            if (ulko) {
-                return Math.max(this.haeMaastolla(this.haeMaasto(solmu)), this.haeMaastolla(this.vauhtiMaastossa.length - 1));
-            }
-            return this.haeMaastolla(this.haeMaasto(solmu));
-        } else {
-            return this.haeMaastolla(this.vauhtiMaastossa.length - 1); //luokittelematon maasto polygonien välillä
+    public double haeVauhti(int maasto, boolean ulko) {
+        if (ulko) {
+            return Math.max(this.haeMaastolla(maasto), this.haeMaastolla(this.vauhtiMaastossa.length - 1));
         }
+        if (maasto == -1) {
+            return this.haeMaastolla(this.vauhtiMaastossa.length - 1); //luokittelematon maasto polygonien välillä
+
+        }
+
+        return this.haeMaastolla(maasto);
+
     }
 
     /**
@@ -93,18 +85,20 @@ public class MaastoKirjastoPolygoni {
                 if (polygonit[j].getClass().equals(AluePolygoni.class)) {//aluemainen kohde
                     AluePolygoni aluepoly = (AluePolygoni) polygonit[j];
                     if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
-                        this.lisaaVauhti(this.haeMaasto(polygonit[j].getId()[0]), reitti.vauhti(i, i + 1));
+                        this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
+                        System.out.println("alue: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
                         return;
                     }
                 } else { //viivamainen kohde
                     if (polygonit[j].pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
-                        this.lisaaVauhti(this.haeMaasto(polygonit[j].getId()[0]), reitti.vauhti(i, i + 1));
+                        this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
+                        System.out.println("viiva: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
                         return;
 
                     }
                 }
             }
-            System.out.println("muu");
+            System.out.println("muu: " + (this.vauhtiMaastossa.length - 1) + " v: " + reitti.vauhti(i, i + 1));
             this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));
 
         }

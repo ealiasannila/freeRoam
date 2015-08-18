@@ -45,7 +45,7 @@ public class GeoJsonLukija {
      * @param polku
      * @return
      */
-    public Polygoni[] lueJson(String polku) {
+    public Polygoni[] lueJson(String polku, int maasto) {
         File file = new File(polku);
 
         Scanner lukija = null;
@@ -67,10 +67,10 @@ public class GeoJsonLukija {
             Polygoni polygoni = null;
             if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("LineString")) {//viivamainen
                 JSONArray pisteet = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates");
-                polygoni = this.luoPolygoni(pisteet, new Polygoni(pisteet.length()));
+                polygoni = this.luoPolygoni(maasto, pisteet, new Polygoni(pisteet.length()));
             } else if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("Polygon")) { //aluemainen
                 JSONArray pisteet = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0);
-                polygoni = this.luoPolygoni(pisteet, new AluePolygoni(pisteet.length()) );
+                polygoni = this.luoPolygoni(maasto, pisteet, new AluePolygoni(pisteet.length()) );
             }
             if (this.latmax < polygoni.getLatmax()) {
                 this.latmax = polygoni.getLatmax();
@@ -106,13 +106,13 @@ public class GeoJsonLukija {
     }
 
     
-    private Polygoni luoPolygoni(JSONArray pisteet, Polygoni uusi) {
+    private Polygoni luoPolygoni(int maasto, JSONArray pisteet, Polygoni uusi) {
 
         for (int i = 0; i < pisteet.length(); i++) {
             uusi.lisaaPiste(pisteet.getJSONArray(i).getDouble(1), pisteet.getJSONArray(i).getDouble(0), this.pisteita);
             this.pisteita++;
         }
-
+        uusi.setMaasto(maasto);
         return uusi;
     }
 

@@ -26,8 +26,8 @@ import reittienEtsinta.Apumetodit;
  */
 public class VerkkoPolygoni {
 
-    private double[] lat;
-    private double[] lon;
+    public double[] lat;
+    public double[] lon;
     private double[] alkuun;
     private double[] loppuun;
     private int[] polku;
@@ -65,7 +65,7 @@ public class VerkkoPolygoni {
      * @param latk
      * @param lonk
      */
-    public void lisaaKaari(int solmu, int kohde, double lats, double lons, double latk, double lonk, boolean oma, boolean ulko) {
+    public void lisaaKaari(int solmu, int kohde, int maasto, double lats, double lons, double latk, double lonk, boolean ulko) {
         //lisätään kaari verkkoon ja tarpeen vaatiessa alustetaan solmut
         //System.out.println(lons);
         //System.out.println(lonk);
@@ -82,7 +82,7 @@ public class VerkkoPolygoni {
         }
 
         double etaisyys = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);
-        double aika = etaisyys / this.maastokirjasto.haeVauhti(solmu, kohde, oma, ulko);
+        double aika = etaisyys / this.maastokirjasto.haeVauhti(maasto, ulko);
 
         this.vm[solmu][kohde] = aika;
         this.vm[kohde][solmu] = aika;
@@ -148,7 +148,7 @@ public class VerkkoPolygoni {
 
             }
         }
-        if (this.alkuun[this.maalisolmu] == Long.MAX_VALUE) { //reittiä ei löytynyt
+        if (this.alkuun[this.maalisolmu] == Double.MAX_VALUE) { //reittiä ei löytynyt
             return false;
         }
 
@@ -203,15 +203,31 @@ public class VerkkoPolygoni {
         double[] lahtopiste = new double[]{this.lon[lahtosolmu], this.lat[lahtosolmu]};
         coordinates.put(new JSONArray(lahtopiste));
 
+        int edellinen = lahtosolmu;
         while (!pino.tyhja()) {
             int solmu = pino.ota();
-            // System.out.println(solmu);
+            System.out.println("kaari: " + edellinen + " - " + solmu);
+            System.out.println(" aika: " + this.haeKaari(edellinen, solmu));
+            double etaisyys = Apumetodit.pisteidenEtaisyys(this.lat[edellinen], this.lon[edellinen], this.lat[solmu], this.lon[solmu]);
+            System.out.println(" etaiysys: " + etaisyys);
+            double vauhti = etaisyys / this.haeKaari(edellinen, solmu);
+            System.out.println(" vauhti: " + vauhti);
+            System.out.println("--");
+
+            edellinen = solmu;
             double[] reittipiste = new double[]{this.lon[solmu], this.lat[solmu]};
             coordinates.put(new JSONArray(reittipiste));
 
         }
 
         double[] maalipiste = new double[]{this.lon[this.maalisolmu], this.lat[this.maalisolmu]};
+        System.out.println("kaari: " + edellinen + " - " + maalisolmu);
+
+        System.out.println(" aika: " + this.haeKaari(edellinen, maalisolmu));
+        double etaisyys = Apumetodit.pisteidenEtaisyys(this.lat[edellinen], this.lon[edellinen], this.lat[maalisolmu], this.lon[maalisolmu]);
+        System.out.println(" etaiysys: " + etaisyys);
+        double vauhti = etaisyys / this.haeKaari(edellinen, maalisolmu);
+        System.out.println(" vauhti: " + vauhti);
         coordinates.put(new JSONArray(maalipiste));
 
         geometry.put("coordinates", coordinates);
@@ -222,6 +238,10 @@ public class VerkkoPolygoni {
 
         return reitti;
 
+    }
+
+    public double haeKaari(int alku, int loppu) {
+        return this.vm[alku][loppu];
     }
 
     /**

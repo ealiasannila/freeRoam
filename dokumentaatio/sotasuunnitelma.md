@@ -6,7 +6,9 @@
  - verkon luonti vain istunnon alussa
  - parametrit String args[]
 
-joku mättää vauhdeissa
+6. rakennuksen reunaa pitkin mönkiminen ei toimi
+7. jostain syystä menee rakennuksen läpi..
+ - eri polygon, ei kuitenkaan leikkaa kuin itsensä
 
 7. naapurusto optimointi, nyt katsoo kaikki naapurustot kohteen ja naapurston ympäriltä, eli samoja naapurustoja katsotaan kahdesti
  - valitse naapurustot bb min max arvojen, ei bb keskipisteen mukaan

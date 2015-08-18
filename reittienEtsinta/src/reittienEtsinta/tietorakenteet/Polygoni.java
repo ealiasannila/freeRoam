@@ -19,6 +19,16 @@ public class Polygoni {
     protected double[] lat;
     protected double[] lon;
     protected int[] id;
+    protected int maasto;
+
+    public int getMaasto() {
+        return maasto;
+    }
+
+    public void setMaasto(int maasto) {
+        this.maasto = maasto;
+    }
+    
 
     //boundingbox
     protected double latmin;

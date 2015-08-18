@@ -70,9 +70,9 @@ public class MinimiKekoPolygon {
      */
     private double arvio(int i) {
         if (this.alkuun[i] == Double.MAX_VALUE) {
-            return Double.MAX_VALUE;
+            return Double.MAX_VALUE*0.00001;
         }
-        return this.alkuun[i] + this.loppuun[i];
+        return this.alkuun[i] + this.loppuun[i]*0.00001; //0.00001 = minimivauhti jota voidaan kulkea
     }
 
     /**
