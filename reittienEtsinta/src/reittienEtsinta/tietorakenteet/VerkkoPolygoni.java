@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package reittienEtsinta.tietorakenteet;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.PriorityQueue;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import raster.Reitti;
 import reittienEtsinta.Apumetodit;
 
 /**
@@ -97,6 +86,11 @@ public class VerkkoPolygoni {
         return Apumetodit.pisteidenEtaisyys(lat[solmu], lon[solmu], lat[this.maalisolmu], lon[this.maalisolmu]);
     }
 
+    /**
+     * Alustaa A* käyttämät alkuun loppuun ja polku taulukot uutta reitin etsintää varten. Ei alusta vierusmatriisia
+     * @param lahtosolmu
+     * @param maalisolmu 
+     */
     public void alustus(int lahtosolmu, int maalisolmu) {
         this.maalisolmu = maalisolmu;
         this.lahtosolmu = lahtosolmu;
@@ -125,6 +119,7 @@ public class VerkkoPolygoni {
 
     /**
      * laskee lyhyimmät etäisyydet maalisolmuun lähtien lähtösolmusta.
+     * Heuristiikkafunktiona suora etäisyys * minimivauhti, lopettaa etsinnän kun reitti löytyy.
      *
      * @param lahtoSolmu
      * @return
@@ -140,9 +135,8 @@ public class VerkkoPolygoni {
         while (!keko.tyhja()) {
             int solmu = keko.otaPienin();
             if (solmu == this.maalisolmu) {
-                return true;
+                return true; 
             }
-            //   System.out.println("s: " + solmu);
             for (int naapuri = 0; naapuri < vm.length; naapuri++) {
 
                 if (loysaa(solmu, naapuri)) {
@@ -164,10 +158,10 @@ public class VerkkoPolygoni {
 
     /**
      * palauttaa aStar metodin etsimän lyhyimmän reitin lähtö ja maalisolmun
-     * välillä GeoJson muodossa
+     * välillä ReittiPolygoni muodossa
      *
      */
-    public JSONObject lyhyinReitti() {
+    public ReittiPolygoni lyhyinReitti() {
         if (this.lahtosolmu == this.maalisolmu) {
             return null;
         }
@@ -180,70 +174,28 @@ public class VerkkoPolygoni {
             seuraava = this.polku[seuraava];
         }
 
-        JSONObject reitti = new JSONObject();
-        reitti.put("type", "FeatureCollection");
+        double[] reittilat = new double[pino.koko() + 2];
+        double[] reittilon = new double[pino.koko() + 2];
+        int[] reittiaika = new int[pino.koko() + 2];
 
-        JSONObject properties = new JSONObject();
-        properties.put("name", "urn:ogc:def:crs:EPSG::3047");
-
-        JSONObject crs = new JSONObject();
-        crs.put("type", "name");
-        crs.put("properties", properties);
-
-        reitti.put("crs", crs);
-
-        JSONArray features = new JSONArray();
-
-        JSONObject feature = new JSONObject();
-        feature.put("type", "Feature");
-        feature.put("properties", "{ }");
-
-        JSONObject geometry = new JSONObject();
-        geometry.put("type", "LineString");
-
-        JSONArray coordinates = new JSONArray();
-
-        double[] lahtopiste = new double[]{this.lon[lahtosolmu], this.lat[lahtosolmu]};
-        coordinates.put(new JSONArray(lahtopiste));
-
-        //int edellinen = lahtosolmu;
+        this.asetaReittiPist(reittilat, reittilon, reittiaika, 0, this.lahtosolmu);
+        int i = 1;
         while (!pino.tyhja()) {
             int solmu = pino.ota();
-            /*
-             System.out.println("kaari: " + edellinen + " - " + solmu);
-             System.out.println(" aika: " + this.haeKaari(edellinen, solmu));
-             double etaisyys = Apumetodit.pisteidenEtaisyys(this.lat[edellinen], this.lon[edellinen], this.lat[solmu], this.lon[solmu]);
-             System.out.println(" etaiysys: " + etaisyys);
-             double vauhti = etaisyys / this.haeKaari(edellinen, solmu);
-             System.out.println(" vauhti: " + vauhti);
-             System.out.println("--");
-
-             edellinen = solmu;
-             */
-            double[] reittipiste = new double[]{this.lon[solmu], this.lat[solmu]};
-            coordinates.put(new JSONArray(reittipiste));
+            this.asetaReittiPist(reittilat, reittilon, reittiaika, i, solmu);
+            i++;
 
         }
+        this.asetaReittiPist(reittilat, reittilon, reittiaika, i, this.maalisolmu);
 
-        double[] maalipiste = new double[]{this.lon[this.maalisolmu], this.lat[this.maalisolmu]};
-        /*        System.out.println("kaari: " + edellinen + " - " + maalisolmu);
+        return new ReittiPolygoni(reittilon, reittilat, reittiaika);
 
-         System.out.println(" aika: " + this.haeKaari(edellinen, maalisolmu));
-         double etaisyys = Apumetodit.pisteidenEtaisyys(this.lat[edellinen], this.lon[edellinen], this.lat[maalisolmu], this.lon[maalisolmu]);
-         System.out.println(" etaiysys: " + etaisyys);
-         double vauhti = etaisyys / this.haeKaari(edellinen, maalisolmu);
-         System.out.println(" vauhti: " + vauhti);
-         */
-        coordinates.put(new JSONArray(maalipiste));
+    }
 
-        geometry.put("coordinates", coordinates);
-        feature.put("geometry", geometry);
-        features.put(feature);
-
-        reitti.put("features", features);
-
-        return reitti;
-
+    private void asetaReittiPist(double[] reittilat, double[] reittilon, int[] reittiaika, int i, int solmu) {
+        reittilat[i] = this.lat[solmu];
+        reittilon[i] = this.lon[solmu];
+        reittiaika[i] = (int) this.alkuun[solmu];
     }
 
     public int haeLahinSolmu(double lat, double lon) {
@@ -264,8 +216,7 @@ public class VerkkoPolygoni {
     }
 
     /**
-     * palauttaa verkon geojson muodossa, hyödyllistä koska verkon voi helposti
-     * visualisoida paikkatieto-ohjelmassa
+     * palauttaa verkon geojson muodossa, käytetään verkon visualisointiin debuggauksen yhteydessä. Ei vaikuta ohjelman toimintaan
      *
      * @return
      */

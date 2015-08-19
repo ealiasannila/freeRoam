@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package reittienEtsinta.tietorakenteet;
 
 /**
- *
+ * Listatietorakenne johon voidaan tallettaa Polygon olioita. 
+ * Käyttää sisäiseen toteutukseen taulukkoa, jota kasvatetaan tarpeen mukaan
  * @author elias
  */
 public class PolygoniLista {

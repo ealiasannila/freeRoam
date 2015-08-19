@@ -51,12 +51,13 @@ public class GeoJsonLukija {
      * @param polku
      * @return
      */
-    private JSONObject lataaJsonObject(String polku) {
-        File file = new File(polku);
+  
+
+    private JSONObject lataaJsonObject(File tiedosto) {
 
         Scanner lukija = null;
         try {
-            lukija = new Scanner(file);
+            lukija = new Scanner(tiedosto);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GeoJsonLukija.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -66,8 +67,12 @@ public class GeoJsonLukija {
         return new JSONObject(data);
     }
 
-    public ReittiPolygoni lueReitti(String polku) {
-        JSONObject obj = this.lataaJsonObject(polku);
+    public ReittiPolygoni lueReitti(String polku){
+        return this.lueReitti(new File(polku));
+    }
+    
+    public ReittiPolygoni lueReitti(File tiedosto) {
+        JSONObject obj = this.lataaJsonObject(tiedosto);
         JSONArray arr = obj.getJSONArray("features");
 
         double[] lat = new double[arr.length()];
@@ -80,7 +85,7 @@ public class GeoJsonLukija {
             lon[i] = piste.getDouble(0);
 
             String aikaString = arr.getJSONObject(i).getJSONObject("properties").getString("time");
-          
+
             DateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss", Locale.ENGLISH);
             Date timestamp = null;
             try {
@@ -90,15 +95,20 @@ public class GeoJsonLukija {
             }
             int sekunnit = (int) timestamp.getTime() / 1000;
             aika[i] = sekunnit;
-            
+
         }
         ReittiPolygoni reitti = new ReittiPolygoni(lon, lat, aika);
-        System.out.println(reitti);
         return reitti;
     }
 
-    public Polygoni[] luePolygonit(String polku, int maasto) {
-        JSONObject obj = this.lataaJsonObject(polku);
+    public Polygoni[] luePolygonit(String polku, int maasto){
+        File tiedosto = new File(polku);
+
+        return this.luePolygonit(tiedosto, maasto);
+    }
+    
+    public Polygoni[] luePolygonit(File tiedosto, int maasto) {
+        JSONObject obj = this.lataaJsonObject(tiedosto);
 
         JSONArray arr = obj.getJSONArray("features");
         Polygoni[] polygonit = new Polygoni[arr.length()];

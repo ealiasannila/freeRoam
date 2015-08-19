@@ -94,8 +94,8 @@ public class PolygoniTest {
      */
     @Test
     public void testViivaLeikkaaPolygonin() {
-        assertTrue(this.polygoni.viivaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
-        assertFalse(this.polygoni.viivaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
+        assertFalse(this.polygoni.janaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
     }
 
     /**

@@ -205,7 +205,7 @@ public class Verkontekija {
                 PolygoniLista ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
 
                 for (int k = 0; k < ruutu.koko(); k++) {
-                    if (ruutu.ota(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                    if (ruutu.ota(k).janaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
                         return;
                     }
 
@@ -223,7 +223,7 @@ public class Verkontekija {
                 PolygoniLista ruutu = this.naapurustot[kohdenaapurustoY + i][kohdenaapurustoX + j];
 
                 for (int k = 0; k < ruutu.koko(); k++) {
-                    if (ruutu.ota(k).viivaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
+                    if (ruutu.ota(k).janaLeikkaaPolygonin(lat1, lon1, latk, lonk)) {
                         return;
                     }
 

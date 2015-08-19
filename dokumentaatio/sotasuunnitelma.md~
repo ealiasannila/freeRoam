@@ -3,9 +3,9 @@
 
 
 6. käli:
- - verkon luonti vain istunnon alussa
  - parametrit String args[]
 
+5. muuta toteutuneiden reittien lukeminen GeoJson.
 
 7. menee rakennuksen läpi kun kaksi rakennusta täysin vierekkäin.. KORJATTU AINEISTOSSA jää ehkäpä featureksi
  - eri polygon -> asetetaan tuntematon maasto, ei kuitenkaan leikkaa mitään.

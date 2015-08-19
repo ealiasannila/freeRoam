@@ -45,12 +45,14 @@ public class MaastoKirjastoPolygoniTest {
      */
     @Test
     public void testHaeVauhti() {
-        this.kirjasto.lisaaReitti(reitti, polygonit);
+        this.kirjasto.lisaaReitti(reitti, polygonit);        
+
         this.kirjasto.lisaaReitti(reittiUlko, polygonit);
        
         assertTrue(0.14142135623730953 - this.kirjasto.haeVauhti(1,  false) < 0.0001);
         assertTrue(0.14142135623730953 - this.kirjasto.haeVauhti(1,  false) > -0.0001);
         
+      
         assertTrue(0.14142135623730953*2 - this.kirjasto.haeVauhti(1, true) < 0.0001);
         assertTrue(0.14142135623730953*2 - this.kirjasto.haeVauhti(1,  true) > -0.0001);
     }

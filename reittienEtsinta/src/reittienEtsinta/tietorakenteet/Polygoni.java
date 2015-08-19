@@ -9,8 +9,7 @@ import java.util.Arrays;
 import reittienEtsinta.Apumetodit;
 
 /**
- * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste
- * polygonin sisällä, tai leikkaako viiva polygonia.
+ * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata leikkaako viiva polygonia, tai kuinka lähellä piste on polygonin reunoja.
  *
  * @author elias
  */
@@ -83,7 +82,7 @@ public class Polygoni {
      * @param lon2
      * @return
      */
-    public boolean viivaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
+    public boolean janaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
         //ei ole bb:n sisällä
 
         if ((lat1 < this.latmin && lat2 < this.latmin) || (lat1 > this.latmax && lat2 > this.latmax)
@@ -98,7 +97,7 @@ public class Polygoni {
             if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
                 loppu = 0;
             }
-            if (viivatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[loppu], this.lon[loppu])) {
+            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[loppu], this.lon[loppu])) {
                 // System.out.println("leikkaa");
                 return true;
             }
@@ -108,21 +107,52 @@ public class Polygoni {
 
     }
 
+    /**
+     * testaa ovatko kaksi pistetä samat
+     * @param lat1
+     * @param lon1
+     * @param lat2
+     * @param lon2
+     * @return 
+     */
     private boolean pisteSama(double lat1, double lon1, double lat2, double lon2) {
         return (Math.abs(lat1 - lat2) < 0.001) && (Math.abs(lon1 - lon2) < 0.001);
     }
 
-    private boolean viivatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+    /**
+     * testaa kohtaavatko kaksi viivaa päässä, jos kohtaavat emme halua tulkita sitä leikkaukseksi
+     * @param latp1
+     * @param lonp1
+     * @param latp2
+     * @param lonp2
+     * @param latq1
+     * @param lonq1
+     * @param latq2
+     * @param lonq2
+     * @return 
+     */
+    private boolean janatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
         return pisteSama(latp1, lonp1, latq1, lonq1) || pisteSama(latp1, lonp1, latq2, lonq2)
                 || pisteSama(latp2, lonp2, latq2, lonq2) || pisteSama(latp2, lonp2, latq1, lonq1);
     }
 
-    //ei toimi jos viivat samansuuntaiset ja päällekkäiset
-    private boolean viivatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+    /**
+     * testaa leikkaavatko kaksi janaa
+     * @param latp1
+     * @param lonp1
+     * @param latp2
+     * @param lonp2
+     * @param latq1
+     * @param lonq1
+     * @param latq2
+     * @param lonq2
+     * @return 
+     */
+    private boolean janatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
         // System.out.println("p1: " + latp1 +"," + lonp1 +  " p2: "+ latp2 +"," + lonp2);
         // System.out.println("q1: " + latq1 +"," + lonq1 +  " q2: "+ latq2 +"," + lonq2);
 
-        if (this.viivatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
+        if (this.janatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
             //    System.out.println("päästä");
             return false;
         }
@@ -190,7 +220,12 @@ public class Polygoni {
     }
 
     
-    //ei laske vikasta ekaan
+    /**
+     * antaa pisteen etäisyyden polygonin kaarista. Ei testaa etäisyyttä ensimmäisen ja viimeisen pisteeen väliseen kaareen
+     * @param lat
+     * @param lon
+     * @return 
+     */
     public double pisteenEtaisyys(double lat, double lon) {
         double etaisyys = Double.MAX_VALUE;
         for (int i = 0; i < this.lat.length-1; i++) {
@@ -202,6 +237,16 @@ public class Polygoni {
         return etaisyys;
     }
 
+    /**
+     * antaa pisteen etäsiyyden janasta
+     * @param latp
+     * @param lonp
+     * @param latj1
+     * @param lonj1
+     * @param latj2
+     * @param lonj2
+     * @return 
+     */
     private double pisteJanasta(double latp, double lonp, double latj1, double lonj1, double latj2, double lonj2) {
         double jananpituusToiseen = Apumetodit.pisteidenEtaisyysToiseen(latj1, lonj1, latj2, lonj2);
         if (jananpituusToiseen == 0) {
