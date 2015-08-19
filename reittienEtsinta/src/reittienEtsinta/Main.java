@@ -44,6 +44,7 @@ public class Main {
         Polygoni[] rakennukset = lukija.luePolygonit("aineisto/matinkyla/rakennukset.geojson", 0);
         Polygoni[] parkkikset = lukija.luePolygonit("aineisto/matinkyla/parkkikset.geojson", 1);
         Polygoni[] tiet = lukija.luePolygonit("aineisto/matinkyla/tiet.geojson", 2);
+
         Polygoni[] polygonit = new Polygoni[rakennukset.length + parkkikset.length + tiet.length];
 
         for (int i = 0; i < rakennukset.length; i++) {
@@ -59,30 +60,14 @@ public class Main {
         }
 
         MaastoKirjastoPolygoni maastokirjasto = new MaastoKirjastoPolygoni(maastoja);
-        
+
         GeoJsonLukija reittilukija = new GeoJsonLukija();
-        maastokirjasto.lisaaReitti(reittilukija.lueReitti("aineisto/matinkyla/matinkyla.geojson"), polygonit);
+        ReittiPolygoni reitti = reittilukija.lueReitti("aineisto/matinkyla/matinkyla.geojson");
+        maastokirjasto.lisaaReitti(reitti, polygonit);
+      //  GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/mallireitti.geojson", GeoJsonKirjoittaja.muunnaJson(reitti));
+
         System.out.println(maastokirjasto);
-        
-        /*
-        GPXLukijaPolygoni parkkisLukija = new GPXLukijaPolygoni("aineisto/testiParkkis.gpx");
-        GPXLukijaPolygoni tuntematonLukija = new GPXLukijaPolygoni("aineisto/testiTuntematon.gpx");
-        GPXLukijaPolygoni tieLukija = new GPXLukijaPolygoni("aineisto/testiTie.gpx");
 
-        ReittiPolygoni parkkisreitti = parkkisLukija.lueGpx();
-        ReittiPolygoni tuntematonreitti = tuntematonLukija.lueGpx();
-        ReittiPolygoni tiereitti = tieLukija.lueGpx();
-
-        maastokirjasto.lisaaReitti(parkkisreitti, polygonit);
-        maastokirjasto.lisaaReitti(tiereitti, polygonit);
-        maastokirjasto.lisaaReitti(tuntematonreitti, polygonit);
-        */
-        
-        /*
-         maastokirjasto.lisaaVauhti(1, 3);
-         maastokirjasto.lisaaVauhti(2, 3);
-         maastokirjasto.lisaaVauhti(3, 2);
-         */
         Verkontekija verkontekija = new Verkontekija(polygonit, lukija.getLatmin(), lukija.getLatmax(),
                 lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), maastokirjasto);
 
@@ -92,22 +77,21 @@ public class Main {
         Kayttoliittyma kali = new Kayttoliittyma(verkko);
         kali.kaynnista();
 
-        // System.out.println(verkko);
-       /*
-        int lahto = 59;
-        verkko.alustus(lahto, rakennukset[rakennukset.length - 50].getId()[0]);
+        /*
+         int lahto = 59;
+         verkko.alustus(lahto, rakennukset[rakennukset.length - 50].getId()[0]);
 
-        System.out.println("a*");
-        verkko.aStar();
-        System.out.println("reitti");
+         System.out.println("a*");
+         verkko.aStar();
+         System.out.println("reitti");
 
-        JSONObject lyhyinReitti = verkko.lyhyinReitti();
-        System.out.println("kirjoita");
-        GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/reitti.geojson", lyhyinReitti);
+         JSONObject lyhyinReitti = verkko.lyhyinReitti();
+         System.out.println("kirjoita");
+         GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/reitti.geojson", lyhyinReitti);
         
         
-        //GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/verkko.geojson", verkko.getVerkko());
-*/
+         //GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/verkko.geojson", verkko.getVerkko());
+         */
         /*
          //matinkyläkuvan kulmien koord, älä hukkaa.
          GPXLukija lukija = new GPXLukija(24.743541, 60.148093, 24.753985, 60.153663, 200, "aineisto/matinkyla.gpx");

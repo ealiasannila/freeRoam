@@ -11,7 +11,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONArray;
 import org.json.JSONObject;
+import reittienEtsinta.tietorakenteet.ReittiPolygoni;
 
 /**
  * Kirjoittaa JSONObjectin annetussa polussa olevaan tiedostoon
@@ -39,4 +41,48 @@ public class GeoJsonKirjoittaja {
             kirjoittaja.close();
         }
     }
+    
+    public static JSONObject muunnaJson(ReittiPolygoni kirjoitettava){
+        JSONObject reitti = new JSONObject();
+        reitti.put("type", "FeatureCollection");
+
+        JSONObject properties = new JSONObject();
+        properties.put("name", "urn:ogc:def:crs:EPSG::3047");
+
+        JSONObject crs = new JSONObject();
+        crs.put("type", "name");
+        crs.put("properties", properties);
+
+        reitti.put("crs", crs);
+
+        JSONArray features = new JSONArray();
+
+        JSONObject feature = new JSONObject();
+        feature.put("type", "Feature");
+        feature.put("properties", "{ }");
+
+        JSONObject geometry = new JSONObject();
+        geometry.put("type", "LineString");
+
+        JSONArray coordinates = new JSONArray();
+
+        for (int i = 0; i < kirjoitettava.getAika().length; i++) {
+            
+            double[] reittipiste = new double[]{kirjoitettava.getLon()[i], kirjoitettava.getLat()[i]};
+            coordinates.put(new JSONArray(reittipiste));
+
+        }
+
+        
+
+        geometry.put("coordinates", coordinates);
+        feature.put("geometry", geometry);
+        features.put(feature);
+
+        reitti.put("features", features);
+
+        return reitti;
+
+    }
+    
 }

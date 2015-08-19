@@ -80,20 +80,21 @@ public class GeoJsonLukija {
             lon[i] = piste.getDouble(0);
 
             String aikaString = arr.getJSONObject(i).getJSONObject("properties").getString("time");
-
-            DateFormat format = new SimpleDateFormat("yyyy\\/MM\\/dd hh:mm:ss", Locale.ENGLISH);
+          
+            DateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss", Locale.ENGLISH);
             Date timestamp = null;
             try {
                 timestamp = format.parse(aikaString);
             } catch (ParseException ex) {
+                System.out.println("format ex");
             }
             int sekunnit = (int) timestamp.getTime() / 1000;
             aika[i] = sekunnit;
-            aika[i] -= aika[0];
             
         }
-
-        return new ReittiPolygoni(lon, lat, aika);
+        ReittiPolygoni reitti = new ReittiPolygoni(lon, lat, aika);
+        System.out.println(reitti);
+        return reitti;
     }
 
     public Polygoni[] luePolygonit(String polku, int maasto) {

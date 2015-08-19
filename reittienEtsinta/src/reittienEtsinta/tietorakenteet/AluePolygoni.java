@@ -8,30 +8,32 @@ package reittienEtsinta.tietorakenteet;
 import java.util.Arrays;
 
 /**
- * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste polygonin sisällä, tai leikkaako viiva polygonia.
+ * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste
+ * polygonin sisällä, tai leikkaako viiva polygonia.
+ *
  * @author elias
  */
-public class AluePolygoni extends Polygoni{
-    
+public class AluePolygoni extends Polygoni {
 
     public AluePolygoni(int pisteidenMaara) {
         super(pisteidenMaara);
         alue = true;
     }
-    
-    
-    
-    
+
     /**
      * testaa raycasting menetelmän avulla onko piste polygonin sisällä
+     *
      * @param pLat
      * @param pLon
-     * @return 
+     * @return
      */
     public boolean pisteSisalla(double pLat, double pLon) {
         if (pLat < this.latmin || pLat > this.latmax || pLon < this.lonmin || pLon > this.lonmax) {
+       //     System.out.println("bbout");
+
             return false;
         }
+        //System.out.println("bbin");
 
         int leikkaukset = 0;
 

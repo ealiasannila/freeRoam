@@ -80,26 +80,27 @@ public class MaastoKirjastoPolygoni {
      * @param kuvanLukija
      */
     public void lisaaReitti(ReittiPolygoni reitti, Polygoni[] polygonit) {
-
+       // System.out.println("lisään: n=" + reitti.getAika().length);
         for (int i = 0; i < reitti.getAika().length - 1; i++) {
             for (int j = 0; j < polygonit.length; j++) {
                 if (polygonit[j].getClass().equals(AluePolygoni.class)) {//aluemainen kohde
                     AluePolygoni aluepoly = (AluePolygoni) polygonit[j];
+                  //  System.out.println(reitti.getLat()[i] + " lat " + reitti.getLon()[i] + " lon");
                     if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
                         this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
-                        System.out.println("alue: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
-                        return;
+               //         System.out.println("alue: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
+                        continue;
                     }
                 } else { //viivamainen kohde
                     if (polygonit[j].pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
                         this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
-                        System.out.println("viiva: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
-                        return;
+              //          System.out.println("viiva: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
+                        continue;
 
                     }
                 }
             }
-            System.out.println("muu: " + (this.vauhtiMaastossa.length - 1) + " v: " + reitti.vauhti(i, i + 1));
+          //  System.out.println("muu: " + (this.vauhtiMaastossa.length - 1) + " v: " + reitti.vauhti(i, i + 1));
             this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));
 
         }

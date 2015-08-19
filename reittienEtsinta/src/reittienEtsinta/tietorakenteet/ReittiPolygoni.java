@@ -74,14 +74,18 @@ public class ReittiPolygoni {
      * @return
      */
     public double vauhti(int alku, int loppu) {
-        return this.matka(alku, loppu) / this.aika(alku, loppu);
+      /*  System.out.println("m: " + this.matka(alku, loppu));
+        System.out.println("a: " + this.aika(alku, loppu));
+
+        System.out.println("v: " + (this.matka(alku, loppu) / this.aika(alku, loppu)));
+        */return this.matka(alku, loppu) / this.aika(alku, loppu);
     }
 
     public String toString() {
-    
-        return "lon: " + Arrays.toString(this.lon) + 
-                "\nlat: " + Arrays.toString(this.lat) + 
-                "\naika: " + Arrays.toString(this.aika);
+
+        return "lon: " + Arrays.toString(this.lon)
+                + "\nlat: " + Arrays.toString(this.lat)
+                + "\naika: " + Arrays.toString(this.aika);
     }
 
 }
