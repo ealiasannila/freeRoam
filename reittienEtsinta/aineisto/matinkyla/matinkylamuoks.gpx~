@@ -1,0 +1,4748 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="90.000000000000000" minlon="180.000000000000000" maxlat="6670891.028947882354259" maxlon="375254.088610048638657"/></metadata>        
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>0</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>1</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>2</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>3</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>4</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>5</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>6</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>7</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670603.178730326704681" lon="374869.076060990919359">
+  <time>2015-08-18T15:53:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>8</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670602.163319614715874" lon="374867.076050637057051">
+  <time>2015-08-18T15:53:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>9</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670601.372814291156828" lon="374865.055774546111934">
+  <time>2015-08-18T15:53:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>10</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670599.664980488829315" lon="374860.89911623368971">
+  <time>2015-08-18T15:53:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>11</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670597.851449431851506" lon="374857.102107826096471">
+  <time>2015-08-18T15:53:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>12</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670595.974985666573048" lon="374853.233088270470034">
+  <time>2015-08-18T15:53:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>13</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670591.431170175783336" lon="374846.222500821109861">
+  <time>2015-08-18T15:53:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>14</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670588.479189761914313" lon="374843.755826094362419">
+  <time>2015-08-18T15:53:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>15</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670585.196521359495819" lon="374842.218616682745051">
+  <time>2015-08-18T15:53:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>16</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670581.701852141879499" lon="374841.144546498951968">
+  <time>2015-08-18T15:53:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>17</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670578.040285783819854" lon="374841.401404540287331">
+  <time>2015-08-18T15:53:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>18</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670574.214010093361139" lon="374842.10439211060293">
+  <time>2015-08-18T15:53:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>19</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670570.403896386735141" lon="374842.607671400299296">
+  <time>2015-08-18T15:53:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>20</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670566.862888243980706" lon="374841.522701494162902">
+  <time>2015-08-18T15:53:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>21</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670563.703198258765042" lon="374839.393552321242169">
+  <time>2015-08-18T15:53:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>22</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670560.870705432258546" lon="374836.437264996930026">
+  <time>2015-08-18T15:53:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>23</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670558.386381534859538" lon="374832.039794621116016">
+  <time>2015-08-18T15:53:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>24</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670556.512569368816912" lon="374827.546736134216189">
+  <time>2015-08-18T15:53:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>25</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670551.811812216416001" lon="374819.114868333796039">
+  <time>2015-08-18T15:53:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>26</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670547.950148290023208" lon="374816.477357967931312">
+  <time>2015-08-18T15:53:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>27</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670542.64524388499558" lon="374816.161109884444159">
+  <time>2015-08-18T15:53:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>28</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670533.307962109334767" lon="374821.761632351553999">
+  <time>2015-08-18T15:53:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>29</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670527.773006335832179" lon="374824.078230471466668">
+  <time>2015-08-18T15:53:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>30</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670523.3768309969455" lon="374826.149630951229483">
+  <time>2015-08-18T15:53:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>31</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670519.754436079412699" lon="374828.815655132348184">
+  <time>2015-08-18T15:53:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>32</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670513.199188160710037" lon="374832.285049222758971">
+  <time>2015-08-18T15:53:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>33</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670510.785219331271946" lon="374835.402198976662476">
+  <time>2015-08-18T15:53:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>34</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670512.142417934723198" lon="374837.241617498628329">
+  <time>2015-08-18T15:53:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>35</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670513.050838544033468" lon="374839.638561053900048">
+  <time>2015-08-18T15:54:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>36</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670515.430702795274556" lon="374843.538834067876451">
+  <time>2015-08-18T15:54:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>37</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.913962774910033" lon="374850.977538467966951">
+  <time>2015-08-18T15:54:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>38</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.949259438551962" lon="374854.047917502059136">
+  <time>2015-08-18T15:54:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>39</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.51183866430074" lon="374857.00900983082829">
+  <time>2015-08-18T15:54:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>40</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.367105104029179" lon="374859.332728228589986">
+  <time>2015-08-18T15:54:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>41</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.367105104029179" lon="374859.332728228589986">
+  <time>2015-08-18T15:54:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>42</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670517.367105104029179" lon="374859.332728228589986">
+  <time>2015-08-18T15:54:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>43</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670515.628823706880212" lon="374861.266712840006221">
+  <time>2015-08-18T15:54:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>44</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670513.060255107469857" lon="374862.892912598210387">
+  <time>2015-08-18T15:54:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>45</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670511.177160806022584" lon="374864.416769655887038">
+  <time>2015-08-18T15:54:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>46</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670509.044504161924124" lon="374865.862248142249882">
+  <time>2015-08-18T15:54:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>47</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670506.861895333044231" lon="374867.12904434761731">
+  <time>2015-08-18T15:54:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>48</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670504.94525040499866" lon="374868.814767562667839">
+  <time>2015-08-18T15:54:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>49</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670503.568354103714228" lon="374870.835618035809603">
+  <time>2015-08-18T15:54:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>50</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670503.255945072509348" lon="374873.419089120463468">
+  <time>2015-08-18T15:54:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>51</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670503.854035809636116" lon="374876.150076312478632">
+  <time>2015-08-18T15:54:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>52</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670504.605996734462678" lon="374879.026035150222015">
+  <time>2015-08-18T15:54:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>53</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670505.575045174919069" lon="374882.384451108868234">
+  <time>2015-08-18T15:54:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>54</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670507.446589533239603" lon="374887.767009056173265">
+  <time>2015-08-18T15:54:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>55</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670512.617892635986209" lon="374897.19762960774824">
+  <time>2015-08-18T15:54:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>56</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670515.357025306671858" lon="374902.069530707085505">
+  <time>2015-08-18T15:54:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>57</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670521.456363461911678" lon="374910.861128481570631">
+  <time>2015-08-18T15:54:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>58</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670523.450120584107935" lon="374915.674968059349339">
+  <time>2015-08-18T15:54:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>59</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670525.506434588693082" lon="374921.119672773696948">
+  <time>2015-08-18T15:54:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>60</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670529.511516568250954" lon="374925.853102405730169">
+  <time>2015-08-18T15:54:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>61</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670533.497976115904748" lon="374930.311105876404326">
+  <time>2015-08-18T15:54:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>62</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670537.649267666041851" lon="374938.426036628196016">
+  <time>2015-08-18T15:54:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>63</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670540.888602491468191" lon="374942.877153322682716">
+  <time>2015-08-18T15:54:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>64</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670543.983211479149759" lon="374947.463042415154632">
+  <time>2015-08-18T15:54:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>65</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670546.9287209995091" lon="374950.395161889027804">
+  <time>2015-08-18T15:54:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>66</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670549.01660698838532" lon="374954.094410152290948">
+  <time>2015-08-18T15:54:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>67</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670550.200631327927113" lon="374956.35632272309158">
+  <time>2015-08-18T15:54:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>68</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670550.008856741711497" lon="374963.894554968457669">
+  <time>2015-08-18T15:54:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>69</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670547.384664793498814" lon="374966.878831353038549">
+  <time>2015-08-18T15:54:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>70</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670544.51440132688731" lon="374969.682398645556532">
+  <time>2015-08-18T15:54:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>71</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670541.657883475534618" lon="374972.63081482052803">
+  <time>2015-08-18T15:54:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>72</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670537.920385494828224" lon="374975.935738841362763">
+  <time>2015-08-18T15:54:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>73</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670534.218470406718552" lon="374979.293113529798575">
+  <time>2015-08-18T15:54:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>74</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670530.62174167484045" lon="374982.57956618379103">
+  <time>2015-08-18T15:54:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>75</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670527.037520623765886" lon="374985.773306030663662">
+  <time>2015-08-18T15:54:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>76</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670523.620472776703537" lon="374988.996040464611724">
+  <time>2015-08-18T15:54:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>77</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670520.40138893108815" lon="374992.714549521158915">
+  <time>2015-08-18T15:54:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>78</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670520.40138893108815" lon="374992.714549521158915">
+  <time>2015-08-18T15:54:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>79</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670511.706872385926545" lon="375003.856374318827875">
+  <time>2015-08-18T15:54:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>80</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670507.694670559838414" lon="375007.273079487960786">
+  <time>2015-08-18T15:54:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>81</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670503.846339338459074" lon="375010.541688743862323">
+  <time>2015-08-18T15:54:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>82</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670500.191561389714479" lon="375014.16154726332752">
+  <time>2015-08-18T15:54:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>83</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670496.739062145352364" lon="375017.876799761899747">
+  <time>2015-08-18T15:54:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>84</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670489.899104258976877" lon="375025.044074984441977">
+  <time>2015-08-18T15:54:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>85</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670487.202718800865114" lon="375027.681338518625125">
+  <time>2015-08-18T15:54:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>86</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670484.604221480898559" lon="375030.461663797846995">
+  <time>2015-08-18T15:54:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>87</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670481.924282168969512" lon="375033.164698690350633">
+  <time>2015-08-18T15:54:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>88</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670479.226633892394602" lon="375035.839189650607295">
+  <time>2015-08-18T15:55:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>89</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670476.57485119998455" lon="375038.538535009429324">
+  <time>2015-08-18T15:55:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>90</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670474.019054015167058" lon="375041.436765605409164">
+  <time>2015-08-18T15:55:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>91</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670471.434472250752151" lon="375044.357305671321228">
+  <time>2015-08-18T15:55:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>92</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670465.974801533855498" lon="375049.950969026540406">
+  <time>2015-08-18T15:55:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>93</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670463.159931875765324" lon="375053.049965863232501">
+  <time>2015-08-18T15:55:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>94</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670459.895709787495434" lon="375056.450351196166594">
+  <time>2015-08-18T15:55:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>95</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670456.555888948962092" lon="375059.8761098717805">
+  <time>2015-08-18T15:55:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>96</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670453.216388535685837" lon="375063.292570917867124">
+  <time>2015-08-18T15:55:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>97</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670449.890321435406804" lon="375066.863189728639554">
+  <time>2015-08-18T15:55:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>98</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670446.326083268038929" lon="375070.295290249516256">
+  <time>2015-08-18T15:55:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>99</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670442.75079636182636" lon="375073.503466012480203">
+  <time>2015-08-18T15:55:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>100</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670439.188331782817841" lon="375076.609622346120887">
+  <time>2015-08-18T15:55:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>101</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670432.263128110207617" lon="375083.266556098766159">
+  <time>2015-08-18T15:55:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>102</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670428.763432275503874" lon="375086.724175732582808">
+  <time>2015-08-18T15:55:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>103</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670424.137529855594039" lon="375091.703656592580955">
+  <time>2015-08-18T15:55:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>104</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670420.974086724221706" lon="375095.163435518508777">
+  <time>2015-08-18T15:55:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>105</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670416.715849164873362" lon="375098.949193180771545">
+  <time>2015-08-18T15:55:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>106</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670413.218525055795908" lon="375102.611849993467331">
+  <time>2015-08-18T15:55:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>107</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670409.308841221965849" lon="375106.861271804373246">
+  <time>2015-08-18T15:55:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>108</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670405.221708854660392" lon="375111.109313931432553">
+  <time>2015-08-18T15:55:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>109</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670397.61197467893362" lon="375118.940015507629141">
+  <time>2015-08-18T15:55:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>110</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670393.528204599395394" lon="375122.81560302694561">
+  <time>2015-08-18T15:55:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>111</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670389.318655289709568" lon="375127.366902614245191">
+  <time>2015-08-18T15:55:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>112</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670384.848861687816679" lon="375130.782241517736111">
+  <time>2015-08-18T15:55:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>113</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670380.754263571463525" lon="375133.604899745318107">
+  <time>2015-08-18T15:55:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>114</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670376.573029055260122" lon="375135.954208658309653">
+  <time>2015-08-18T15:55:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>115</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670372.167807492427528" lon="375138.845475284440909">
+  <time>2015-08-18T15:55:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>116</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670367.890654951334" lon="375142.365214008954354">
+  <time>2015-08-18T15:55:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>117</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670363.52567021921277" lon="375144.349656351376325">
+  <time>2015-08-18T15:55:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>118</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670357.812450373545289" lon="375147.792550096171908">
+  <time>2015-08-18T15:55:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>119</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670352.919034254737198" lon="375150.206125917320605">
+  <time>2015-08-18T15:55:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>120</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670342.523135969415307" lon="375155.087073614646215">
+  <time>2015-08-18T15:55:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>121</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670337.76809333730489" lon="375157.826751977903768">
+  <time>2015-08-18T15:55:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>122</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670332.931814911775291" lon="375159.660111500532366">
+  <time>2015-08-18T15:55:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>123</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670327.139114463701844" lon="375162.145559702417813">
+  <time>2015-08-18T15:55:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>124</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670322.713099685497582" lon="375164.00221856252756">
+  <time>2015-08-18T15:55:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>125</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670318.394292376935482" lon="375166.277054504898842">
+  <time>2015-08-18T15:55:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>126</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670315.016272188164294" lon="375167.535987506445963">
+  <time>2015-08-18T15:55:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>127</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670312.321530953980982" lon="375168.208053603302687">
+  <time>2015-08-18T15:55:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>128</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670310.105823705904186" lon="375169.35287459945539">
+  <time>2015-08-18T15:55:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>129</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670308.639252056367695" lon="375171.543212995864451">
+  <time>2015-08-18T15:55:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>130</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670307.804565832950175" lon="375173.009862780745607">
+  <time>2015-08-18T15:55:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>131</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670307.804565832950175" lon="375173.009862780745607">
+  <time>2015-08-18T15:55:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>132</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670307.804565832950175" lon="375173.009862780745607">
+  <time>2015-08-18T15:55:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>133</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670307.713757395744324" lon="375176.225140042835847">
+  <time>2015-08-18T15:55:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>134</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670308.07510191667825" lon="375179.879651526338421">
+  <time>2015-08-18T15:55:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>135</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670308.72633973415941" lon="375183.80019863700727">
+  <time>2015-08-18T15:55:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>136</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670310.968861660920084" lon="375186.806157749320846">
+  <time>2015-08-18T15:55:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>137</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670317.349900086410344" lon="375190.088097548345104">
+  <time>2015-08-18T15:55:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>138</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670321.228448040783405" lon="375189.493585860938765">
+  <time>2015-08-18T15:55:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>139</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670325.070838426239789" lon="375187.766064680938143">
+  <time>2015-08-18T15:55:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>140</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670329.272270350717008" lon="375185.64556839177385">
+  <time>2015-08-18T15:55:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>141</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670333.799522897228599" lon="375183.284665941610001">
+  <time>2015-08-18T15:55:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>142</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670337.941182876937091" lon="375180.99913199810544">
+  <time>2015-08-18T15:56:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>143</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670337.941182876937091" lon="375180.99913199810544">
+  <time>2015-08-18T15:56:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>144</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670341.847501813434064" lon="375178.766136976482812">
+  <time>2015-08-18T15:56:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>145</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670349.138825789093971" lon="375174.794733897899278">
+  <time>2015-08-18T15:56:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>146</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670356.311857261694968" lon="375170.730826500453986">
+  <time>2015-08-18T15:56:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>147</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670359.836865993216634" lon="375168.447608710732311">
+  <time>2015-08-18T15:56:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>148</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670359.836865993216634" lon="375168.447608710732311">
+  <time>2015-08-18T15:56:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>149</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670366.74297365732491" lon="375163.717931198771112">
+  <time>2015-08-18T15:56:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>150</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670369.973820988088846" lon="375161.294299102388322">
+  <time>2015-08-18T15:56:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>151</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670373.088416090235114" lon="375158.99246368574677">
+  <time>2015-08-18T15:56:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>152</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670375.251658975146711" lon="375157.193838607810903">
+  <time>2015-08-18T15:56:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>153</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670377.403353170491755" lon="375155.460026876826305">
+  <time>2015-08-18T15:56:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>154</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670379.435008613392711" lon="375153.684868915064726">
+  <time>2015-08-18T15:56:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>155</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670383.419428508728743" lon="375149.708042892976664">
+  <time>2015-08-18T15:56:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>156</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670385.845238563604653" lon="375147.606322402949445">
+  <time>2015-08-18T15:56:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>157</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670388.774307393468916" lon="375145.540376953722443">
+  <time>2015-08-18T15:56:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>158</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670391.870213879272342" lon="375143.787509679736104">
+  <time>2015-08-18T15:56:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>159</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670395.03649322502315" lon="375142.162793721246999">
+  <time>2015-08-18T15:56:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>160</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670398.388150341808796" lon="375140.306865927414037">
+  <time>2015-08-18T15:56:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>161</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670401.633416158147156" lon="375137.73472938046325">
+  <time>2015-08-18T15:56:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>162</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670405.355448727495968" lon="375134.056397304811981">
+  <time>2015-08-18T15:56:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>163</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670409.169727158732712" lon="375129.864240542228799">
+  <time>2015-08-18T15:56:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>164</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670413.11377605702728" lon="375124.605305688339286">
+  <time>2015-08-18T15:56:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>165</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670421.273651584982872" lon="375115.708194940467365">
+  <time>2015-08-18T15:56:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>166</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670425.493953427299857" lon="375111.390186942764558">
+  <time>2015-08-18T15:56:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>167</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670429.524601515382528" lon="375107.42900430195732">
+  <time>2015-08-18T15:56:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>168</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670433.516322440467775" lon="375103.787864626268856">
+  <time>2015-08-18T15:56:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>169</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670437.593455639667809" lon="375100.107726842397824">
+  <time>2015-08-18T15:56:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>170</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670440.929635473527014" lon="375096.239339157822542">
+  <time>2015-08-18T15:56:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>171</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670444.526937879621983" lon="375092.384514338336885">
+  <time>2015-08-18T15:56:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>172</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670453.905989957042038" lon="375085.270959934045095">
+  <time>2015-08-18T15:56:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>173</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670456.265568260103464" lon="375081.276171593926847">
+  <time>2015-08-18T15:56:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>174</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670459.367986717261374" lon="375077.688610322598834">
+  <time>2015-08-18T15:56:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>175</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670462.18702778313309" lon="375073.644289270159788">
+  <time>2015-08-18T15:56:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>176</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670465.054672970436513" lon="375070.915007814473938">
+  <time>2015-08-18T15:56:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>177</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670467.627269874326885" lon="375069.167692019545939">
+  <time>2015-08-18T15:56:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>178</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670470.946563795208931" lon="375070.729267158487346">
+  <time>2015-08-18T15:56:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>179</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670474.24814707133919" lon="375072.26229190180311">
+  <time>2015-08-18T15:56:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>180</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670477.623495319858193" lon="375074.920249267539475">
+  <time>2015-08-18T15:56:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>181</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670483.112338667735457" lon="375082.996862650616094">
+  <time>2015-08-18T15:56:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>182</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670484.757121378555894" lon="375087.640397013805341">
+  <time>2015-08-18T15:56:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>183</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670485.936999837867916" lon="375093.315984207438305">
+  <time>2015-08-18T15:56:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>184</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670487.763846323825419" lon="375097.825993642560206">
+  <time>2015-08-18T15:56:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>185</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670489.280619106255472" lon="375103.485107614193112">
+  <time>2015-08-18T15:56:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>186</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670491.725184858776629" lon="375108.784614426025655">
+  <time>2015-08-18T15:56:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>187</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670494.41712764184922" lon="375113.952822808583733">
+  <time>2015-08-18T15:56:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>188</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670496.081384343095124" lon="375118.848485171096399">
+  <time>2015-08-18T15:56:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>189</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670497.67115545924753" lon="375123.736947587225586">
+  <time>2015-08-18T15:56:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>190</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670499.970747453160584" lon="375128.630958808702417">
+  <time>2015-08-18T15:56:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>191</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670503.048684159293771" lon="375137.552109295967966">
+  <time>2015-08-18T15:56:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>192</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670504.444161863997579" lon="375141.563017426989973">
+  <time>2015-08-18T15:56:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>193</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670505.977359248325229" lon="375146.193377857503947">
+  <time>2015-08-18T15:56:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>194</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670507.378410085104406" lon="375149.766682174813468">
+  <time>2015-08-18T15:56:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>195</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670508.902021775953472" lon="375153.581680578296073">
+  <time>2015-08-18T15:56:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>196</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670510.43558535259217" lon="375157.653165959171019">
+  <time>2015-08-18T15:57:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>197</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670512.82638452667743" lon="375161.516322971321642">
+  <time>2015-08-18T15:57:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>198</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670515.532617889344692" lon="375164.346984823641833">
+  <time>2015-08-18T15:57:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>199</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670518.710697451606393" lon="375166.215682552312501">
+  <time>2015-08-18T15:57:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>200</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670526.047030390240252" lon="375168.878019263385795">
+  <time>2015-08-18T15:57:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>201</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670529.801801745779812" lon="375169.997899038367905">
+  <time>2015-08-18T15:57:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>202</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670533.579403889365494" lon="375170.173128946102224">
+  <time>2015-08-18T15:57:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>203</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670537.264850565232337" lon="375169.488283703685738">
+  <time>2015-08-18T15:57:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>204</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670540.71072593703866" lon="375168.157236191269476">
+  <time>2015-08-18T15:57:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>205</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670544.161846776492894" lon="375166.397902582655661">
+  <time>2015-08-18T15:57:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>206</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670547.655205466784537" lon="375164.495636300765909">
+  <time>2015-08-18T15:57:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>207</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670554.970582094043493" lon="375160.641765363281593">
+  <time>2015-08-18T15:57:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>208</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670558.653897808864713" lon="375158.648178923293017">
+  <time>2015-08-18T15:57:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>209</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670562.30906225182116" lon="375156.658295029774308">
+  <time>2015-08-18T15:57:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>210</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670565.994898101314902" lon="375154.865063641627785">
+  <time>2015-08-18T15:57:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>211</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670569.73147630225867" lon="375153.502029124414548">
+  <time>2015-08-18T15:57:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>212</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670573.403510459698737" lon="375152.388288905844092">
+  <time>2015-08-18T15:57:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>213</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670576.444958738982677" lon="375151.411416486196686">
+  <time>2015-08-18T15:57:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>214</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670578.936651486903429" lon="375150.392533011559863">
+  <time>2015-08-18T15:57:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>215</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670581.326967664062977" lon="375149.332940041262191">
+  <time>2015-08-18T15:57:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>216</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670584.650963726453483" lon="375147.192081733548548">
+  <time>2015-08-18T15:57:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>217</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670584.650963726453483" lon="375147.192081733548548">
+  <time>2015-08-18T15:57:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>218</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670585.174595050513744" lon="375145.2585501705762">
+  <time>2015-08-18T15:57:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>219</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670585.174595050513744" lon="375145.2585501705762">
+  <time>2015-08-18T15:57:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>220</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670585.388727347366512" lon="375143.086272673681378">
+  <time>2015-08-18T15:57:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>221</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670585.388727347366512" lon="375143.086272673681378">
+  <time>2015-08-18T15:57:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>222</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670586.724045971408486" lon="375140.910275424306747">
+  <time>2015-08-18T15:57:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>223</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670589.032657437026501" lon="375138.958382247830741">
+  <time>2015-08-18T15:57:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>224</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670590.715008305385709" lon="375138.661747954669409">
+  <time>2015-08-18T15:57:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>225</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670592.87732111942023" lon="375139.084701616433449">
+  <time>2015-08-18T15:57:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>226</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670594.505334358662367" lon="375140.108859684783965">
+  <time>2015-08-18T15:57:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>227</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670595.991317914798856" lon="375141.18872190779075">
+  <time>2015-08-18T15:57:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>228</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670597.523799922317266" lon="375142.27482450439129">
+  <time>2015-08-18T15:57:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>229</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670599.294813093729317" lon="375142.940590767480899">
+  <time>2015-08-18T15:57:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>230</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670601.181447030045092" lon="375143.503179925610311">
+  <time>2015-08-18T15:57:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>231</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670604.641253321431577" lon="375144.505906077916734">
+  <time>2015-08-18T15:57:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>232</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670604.641253321431577" lon="375144.505906077916734">
+  <time>2015-08-18T15:57:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>233</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670606.971530619077384" lon="375144.934577128966339">
+  <time>2015-08-18T15:57:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>234</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670606.971530619077384" lon="375144.934577128966339">
+  <time>2015-08-18T15:57:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>235</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670609.737143349833786" lon="375144.102011987823062">
+  <time>2015-08-18T15:57:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>236</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670611.320335552096367" lon="375143.699542062648106">
+  <time>2015-08-18T15:57:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>237</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670611.320335552096367" lon="375143.699542062648106">
+  <time>2015-08-18T15:57:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>238</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670614.372824282385409" lon="375143.221382355026435">
+  <time>2015-08-18T15:57:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>239</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.785535274073482" lon="375143.149887926934753">
+  <time>2015-08-18T15:57:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>240</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.785535274073482" lon="375143.149887926934753">
+  <time>2015-08-18T15:57:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>241</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.785535274073482" lon="375143.149887926934753">
+  <time>2015-08-18T15:57:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>242</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.785535274073482" lon="375143.149887926934753">
+  <time>2015-08-18T15:57:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>243</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.574260444380343" lon="375143.844197363650892">
+  <time>2015-08-18T15:57:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>244</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.574260444380343" lon="375143.844197363650892">
+  <time>2015-08-18T15:57:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>245</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.574260444380343" lon="375143.844197363650892">
+  <time>2015-08-18T15:57:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>246</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670620.790379757992923" lon="375143.784634340147022">
+  <time>2015-08-18T15:57:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>247</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670620.790379757992923" lon="375143.784634340147022">
+  <time>2015-08-18T15:57:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>248</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.027435225434601" lon="375142.836267626378685">
+  <time>2015-08-18T15:57:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>249</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670625.985641700215638" lon="375142.657614044263028">
+  <time>2015-08-18T15:58:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>250</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670625.985641700215638" lon="375142.657614044263028">
+  <time>2015-08-18T15:58:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>251</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670628.751041417010128" lon="375142.654021521448158">
+  <time>2015-08-18T15:58:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>252</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670628.751041417010128" lon="375142.654021521448158">
+  <time>2015-08-18T15:58:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>253</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670630.8983368370682" lon="375142.969344223849475">
+  <time>2015-08-18T15:58:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>254</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670630.8983368370682" lon="375142.969344223849475">
+  <time>2015-08-18T15:58:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>255</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.080001709982753" lon="375142.550008618680295">
+  <time>2015-08-18T15:58:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>256</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.080001709982753" lon="375142.550008618680295">
+  <time>2015-08-18T15:58:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>257</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.080001709982753" lon="375142.550008618680295">
+  <time>2015-08-18T15:58:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>258</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.687757684849203" lon="375140.889483805047348">
+  <time>2015-08-18T15:58:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>259</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.687757684849203" lon="375140.889483805047348">
+  <time>2015-08-18T15:58:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>260</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.687757684849203" lon="375140.889483805047348">
+  <time>2015-08-18T15:58:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>261</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.687757684849203" lon="375140.889483805047348">
+  <time>2015-08-18T15:58:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>262</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670634.307457793504" lon="375142.717566827253904">
+  <time>2015-08-18T15:58:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>263</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670634.307457793504" lon="375142.717566827253904">
+  <time>2015-08-18T15:58:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>264</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.873633574694395" lon="375145.031359740416519">
+  <time>2015-08-18T15:58:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>265</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.873633574694395" lon="375145.031359740416519">
+  <time>2015-08-18T15:58:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>266</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.873633574694395" lon="375145.031359740416519">
+  <time>2015-08-18T15:58:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>267</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.909740844741464" lon="375146.713818557793275">
+  <time>2015-08-18T15:58:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>268</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.909740844741464" lon="375146.713818557793275">
+  <time>2015-08-18T15:58:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>269</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.909740844741464" lon="375146.713818557793275">
+  <time>2015-08-18T15:58:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>270</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.909740844741464" lon="375146.713818557793275">
+  <time>2015-08-18T15:58:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>271</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.909740844741464" lon="375146.713818557793275">
+  <time>2015-08-18T15:58:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>272</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670632.789891883730888" lon="375148.049527987779584">
+  <time>2015-08-18T15:58:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>273</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670631.552362933754921" lon="375149.548886739183217">
+  <time>2015-08-18T15:58:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>274</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670630.174882483668625" lon="375150.768707424111199">
+  <time>2015-08-18T15:58:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>275</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670628.381278181448579" lon="375152.137354411184788">
+  <time>2015-08-18T15:58:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>276</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670626.587199043482542" lon="375153.51995804469334">
+  <time>2015-08-18T15:58:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>277</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670625.077338428236544" lon="375154.786501299007796">
+  <time>2015-08-18T15:58:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>278</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670624.076106010004878" lon="375156.205428432673216">
+  <time>2015-08-18T15:58:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>279</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.425503224134445" lon="375157.75272850348847">
+  <time>2015-08-18T15:58:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>280</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.856506313197315" lon="375159.372666073555592">
+  <time>2015-08-18T15:58:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>281</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.856506313197315" lon="375159.372666073555592">
+  <time>2015-08-18T15:58:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>282</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.856506313197315" lon="375159.372666073555592">
+  <time>2015-08-18T15:58:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>283</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.856506313197315" lon="375159.372666073555592">
+  <time>2015-08-18T15:58:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>284</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.856506313197315" lon="375159.372666073555592">
+  <time>2015-08-18T15:58:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>285</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.848957097157836" lon="375161.239928495546337">
+  <time>2015-08-18T15:58:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>286</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.848957097157836" lon="375161.239928495546337">
+  <time>2015-08-18T15:58:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>287</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.848957097157836" lon="375161.239928495546337">
+  <time>2015-08-18T15:58:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>288</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.848957097157836" lon="375161.239928495546337">
+  <time>2015-08-18T15:58:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>289</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.671704709529877" lon="375163.689672933775">
+  <time>2015-08-18T15:58:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>290</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670624.549916859716177" lon="375166.979592869058251">
+  <time>2015-08-18T15:58:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>291</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670624.17098696436733" lon="375169.327863397658803">
+  <time>2015-08-18T15:58:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>292</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.414227205328643" lon="375171.52355132001685">
+  <time>2015-08-18T15:58:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>293</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.888249124400318" lon="375173.252070249116514">
+  <time>2015-08-18T15:58:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>294</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.888249124400318" lon="375173.252070249116514">
+  <time>2015-08-18T15:58:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>295</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.124394308775663" lon="375175.107545589562505">
+  <time>2015-08-18T15:58:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>296</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.124394308775663" lon="375175.107545589562505">
+  <time>2015-08-18T15:58:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>297</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.124394308775663" lon="375175.107545589562505">
+  <time>2015-08-18T15:58:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>298</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670620.569928363896906" lon="375176.586808897554874">
+  <time>2015-08-18T15:58:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>299</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670619.189574053511024" lon="375178.439918695250526">
+  <time>2015-08-18T15:58:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>300</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.213763531297445" lon="375180.758551579900086">
+  <time>2015-08-18T15:58:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>301</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.213763531297445" lon="375180.758551579900086">
+  <time>2015-08-18T15:58:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>302</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.258518151938915" lon="375183.022000018041581">
+  <time>2015-08-18T15:58:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>303</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.258518151938915" lon="375183.022000018041581">
+  <time>2015-08-18T15:59:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>304</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.897182693704963" lon="375184.853930408600718">
+  <time>2015-08-18T15:59:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>305</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.897182693704963" lon="375184.853930408600718">
+  <time>2015-08-18T15:59:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>306</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.897182693704963" lon="375184.853930408600718">
+  <time>2015-08-18T15:59:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>307</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.642136245034635" lon="375186.582365988637321">
+  <time>2015-08-18T15:59:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>308</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.642136245034635" lon="375186.582365988637321">
+  <time>2015-08-18T15:59:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>309</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.710013782605529" lon="375188.978458283818327">
+  <time>2015-08-18T15:59:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>310</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.710013782605529" lon="375188.978458283818327">
+  <time>2015-08-18T15:59:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>311</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.327317625284195" lon="375191.700632612279151">
+  <time>2015-08-18T15:59:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>312</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.327317625284195" lon="375191.700632612279151">
+  <time>2015-08-18T15:59:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>313</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.580528855323792" lon="375194.68983722710982">
+  <time>2015-08-18T15:59:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>314</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.580528855323792" lon="375194.68983722710982">
+  <time>2015-08-18T15:59:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>315</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.080266788601875" lon="375197.858299409272149">
+  <time>2015-08-18T15:59:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>316</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.080266788601875" lon="375197.858299409272149">
+  <time>2015-08-18T15:59:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>317</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670615.355903298594058" lon="375200.211992164317053">
+  <time>2015-08-18T15:59:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>318</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.530191673897207" lon="375201.975433550192975">
+  <time>2015-08-18T15:59:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>319</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.530191673897207" lon="375201.975433550192975">
+  <time>2015-08-18T15:59:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>320</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.530191673897207" lon="375201.975433550192975">
+  <time>2015-08-18T15:59:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>321</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.530191673897207" lon="375201.975433550192975">
+  <time>2015-08-18T15:59:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>322</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.865561214275658" lon="375203.649460189044476">
+  <time>2015-08-18T15:59:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>323</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670613.865561214275658" lon="375203.649460189044476">
+  <time>2015-08-18T15:59:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>324</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670615.320677170529962" lon="375205.636385552817956">
+  <time>2015-08-18T15:59:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>325</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670615.320677170529962" lon="375205.636385552817956">
+  <time>2015-08-18T15:59:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>326</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670616.891241130419075" lon="375207.799555031000637">
+  <time>2015-08-18T15:59:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>327</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.478835984133184" lon="375210.297169858531561">
+  <time>2015-08-18T15:59:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>328</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.478835984133184" lon="375210.297169858531561">
+  <time>2015-08-18T15:59:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>329</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.478835984133184" lon="375210.297169858531561">
+  <time>2015-08-18T15:59:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>330</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.529188133776188" lon="375212.385290856065694">
+  <time>2015-08-18T15:59:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>331</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670617.529188133776188" lon="375212.385290856065694">
+  <time>2015-08-18T15:59:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>332</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.384663478471339" lon="375215.795513022632804">
+  <time>2015-08-18T15:59:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>333</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670618.384663478471339" lon="375215.795513022632804">
+  <time>2015-08-18T15:59:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>334</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670619.897516025230289" lon="375217.73316776426509">
+  <time>2015-08-18T15:59:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>335</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.286177664995193" lon="375217.819149283634033">
+  <time>2015-08-18T15:59:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>336</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670622.286177664995193" lon="375217.819149283634033">
+  <time>2015-08-18T15:59:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>337</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.866377893835306" lon="375216.955490441294387">
+  <time>2015-08-18T15:59:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>338</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670623.866377893835306" lon="375216.955490441294387">
+  <time>2015-08-18T15:59:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>339</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670624.925791856832802" lon="375215.473329353495501">
+  <time>2015-08-18T15:59:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>340</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670624.925791856832802" lon="375215.473329353495501">
+  <time>2015-08-18T15:59:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>341</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670626.497188507579267" lon="375213.496314562449697">
+  <time>2015-08-18T15:59:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>342</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670628.78882750403136" lon="375211.767366969608702">
+  <time>2015-08-18T15:59:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>343</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670628.78882750403136" lon="375211.767366969608702">
+  <time>2015-08-18T15:59:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>344</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670630.405932526104152" lon="375209.819854949135333">
+  <time>2015-08-18T15:59:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>345</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670630.405932526104152" lon="375209.819854949135333">
+  <time>2015-08-18T15:59:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>346</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670631.14669924415648" lon="375207.544449321052525">
+  <time>2015-08-18T15:59:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>347</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670631.14669924415648" lon="375207.544449321052525">
+  <time>2015-08-18T15:59:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>348</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670632.239998760633171" lon="375205.341590898868162">
+  <time>2015-08-18T15:59:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>349</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.253105255775154" lon="375203.299002977262717">
+  <time>2015-08-18T15:59:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>350</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670633.253105255775154" lon="375203.299002977262717">
+  <time>2015-08-18T15:59:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>351</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670634.783843036741018" lon="375201.69318410748383">
+  <time>2015-08-18T15:59:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>352</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670634.783843036741018" lon="375201.69318410748383">
+  <time>2015-08-18T15:59:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>353</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670636.079728469252586" lon="375199.851169980829582">
+  <time>2015-08-18T15:59:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>354</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670636.079728469252586" lon="375199.851169980829582">
+  <time>2015-08-18T15:59:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>355</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670638.030824347399175" lon="375198.795237881015055">
+  <time>2015-08-18T15:59:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>356</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670638.030824347399175" lon="375198.795237881015055">
+  <time>2015-08-18T15:59:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>357</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670640.371389358304441" lon="375199.196279332565609">
+  <time>2015-08-18T16:00:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>358</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670642.405879125930369" lon="375200.355324143951293">
+  <time>2015-08-18T16:00:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>359</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670642.405879125930369" lon="375200.355324143951293">
+  <time>2015-08-18T16:00:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>360</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670644.289800856262445" lon="375201.546497782750521">
+  <time>2015-08-18T16:00:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>361</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670644.289800856262445" lon="375201.546497782750521">
+  <time>2015-08-18T16:00:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>362</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670646.344854730181396" lon="375202.650354923214763">
+  <time>2015-08-18T16:00:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>363</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670646.344854730181396" lon="375202.650354923214763">
+  <time>2015-08-18T16:00:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>364</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670648.500336046330631" lon="375203.822830135584809">
+  <time>2015-08-18T16:00:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>365</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670650.869660019874573" lon="375204.751101089583244">
+  <time>2015-08-18T16:00:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>366</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670650.869660019874573" lon="375204.751101089583244">
+  <time>2015-08-18T16:00:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>367</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670653.477838451042771" lon="375204.974965629982762">
+  <time>2015-08-18T16:00:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>368</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670653.477838451042771" lon="375204.974965629982762">
+  <time>2015-08-18T16:00:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>369</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670655.969447647221386" lon="375205.329917007766198">
+  <time>2015-08-18T16:00:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>370</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670655.969447647221386" lon="375205.329917007766198">
+  <time>2015-08-18T16:00:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>371</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670658.22456500865519" lon="375206.594265544146765">
+  <time>2015-08-18T16:00:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>372</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670658.22456500865519" lon="375206.594265544146765">
+  <time>2015-08-18T16:00:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>373</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670659.946964754723012" lon="375208.688066963804886">
+  <time>2015-08-18T16:00:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>374</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670661.80744828376919" lon="375210.567684149136767">
+  <time>2015-08-18T16:00:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>375</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670661.80744828376919" lon="375210.567684149136767">
+  <time>2015-08-18T16:00:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>376</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670663.593440520577133" lon="375212.440106049180031">
+  <time>2015-08-18T16:00:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>377</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670663.593440520577133" lon="375212.440106049180031">
+  <time>2015-08-18T16:00:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>378</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670664.75721786916256" lon="375214.752393920265604">
+  <time>2015-08-18T16:00:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>379</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670664.75721786916256" lon="375214.752393920265604">
+  <time>2015-08-18T16:00:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>380</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670665.763472712598741" lon="375217.026717436383478">
+  <time>2015-08-18T16:00:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>381</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670665.763472712598741" lon="375217.026717436383478">
+  <time>2015-08-18T16:00:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>382</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.140253873541951" lon="375219.405350038665347">
+  <time>2015-08-18T16:00:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>383</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.242798008956015" lon="375221.606990094762295">
+  <time>2015-08-18T16:00:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>384</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.242798008956015" lon="375221.606990094762295">
+  <time>2015-08-18T16:00:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>385</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>386</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>387</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>388</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>389</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>390</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670666.815089569427073" lon="375223.456712012994103">
+  <time>2015-08-18T16:00:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>391</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670668.163612190634012" lon="375225.556400116009172">
+  <time>2015-08-18T16:00:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>392</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670668.873987389728427" lon="375227.19193795172032">
+  <time>2015-08-18T16:00:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>393</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670669.54210499022156" lon="375229.51994291000301">
+  <time>2015-08-18T16:00:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>394</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670670.035450804978609" lon="375232.042252029117662">
+  <time>2015-08-18T16:00:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>395</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670670.151586330495775" lon="375234.668146545998752">
+  <time>2015-08-18T16:00:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>396</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670670.406121494248509" lon="375237.070554738806095">
+  <time>2015-08-18T16:00:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>397</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670670.608153884299099" lon="375239.368719324935228">
+  <time>2015-08-18T16:00:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>398</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670671.308559464290738" lon="375241.297310032416135">
+  <time>2015-08-18T16:00:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>399</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670672.38904978428036" lon="375242.489047231618315">
+  <time>2015-08-18T16:00:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>400</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670672.38904978428036" lon="375242.489047231618315">
+  <time>2015-08-18T16:00:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>401</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670672.38904978428036" lon="375242.489047231618315">
+  <time>2015-08-18T16:00:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>402</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670672.38904978428036" lon="375242.489047231618315">
+  <time>2015-08-18T16:00:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>403</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670673.399312565103173" lon="375243.822762794676237">
+  <time>2015-08-18T16:00:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>404</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670674.112218586727977" lon="375245.658634906518273">
+  <time>2015-08-18T16:00:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>405</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670674.112218586727977" lon="375245.658634906518273">
+  <time>2015-08-18T16:00:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>406</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670674.269183044321835" lon="375247.908691426971927">
+  <time>2015-08-18T16:00:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>407</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670674.269183044321835" lon="375247.908691426971927">
+  <time>2015-08-18T16:00:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>408</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670675.540218881331384" lon="375250.089555363869295">
+  <time>2015-08-18T16:00:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>409</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670675.540218881331384" lon="375250.089555363869295">
+  <time>2015-08-18T16:00:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>410</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670676.922133855521679" lon="375252.032023682142608">
+  <time>2015-08-18T16:01:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>411</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670679.391412603668869" lon="375253.317596747598145">
+  <time>2015-08-18T16:01:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>412</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670679.391412603668869" lon="375253.317596747598145">
+  <time>2015-08-18T16:01:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>413</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670682.530202809721231" lon="375253.871510655095335">
+  <time>2015-08-18T16:01:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>414</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670684.81432059686631" lon="375254.009796859521884">
+  <time>2015-08-18T16:01:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>415</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670684.81432059686631" lon="375254.009796859521884">
+  <time>2015-08-18T16:01:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>416</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670687.542394112795591" lon="375254.004853679798543">
+  <time>2015-08-18T16:01:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>417</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670690.27679072227329" lon="375254.088610048638657">
+  <time>2015-08-18T16:01:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>418</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670690.27679072227329" lon="375254.088610048638657">
+  <time>2015-08-18T16:01:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>419</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670692.868694187141955" lon="375253.967262937047053">
+  <time>2015-08-18T16:01:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>420</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670692.868694187141955" lon="375253.967262937047053">
+  <time>2015-08-18T16:01:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>421</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670694.592834584414959" lon="375252.442548569757491">
+  <time>2015-08-18T16:01:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>422</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670694.592834584414959" lon="375252.442548569757491">
+  <time>2015-08-18T16:01:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>423</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670696.359684270806611" lon="375250.760949557647109">
+  <time>2015-08-18T16:01:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>424</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670696.359684270806611" lon="375250.760949557647109">
+  <time>2015-08-18T16:01:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>425</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670698.489802461117506" lon="375249.65987749415217">
+  <time>2015-08-18T16:01:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>426</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670698.489802461117506" lon="375249.65987749415217">
+  <time>2015-08-18T16:01:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>427</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670698.489802461117506" lon="375249.65987749415217">
+  <time>2015-08-18T16:01:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>428</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670700.728645779192448" lon="375246.736944594187662">
+  <time>2015-08-18T16:01:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>429</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670700.728645779192448" lon="375246.736944594187662">
+  <time>2015-08-18T16:01:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>430</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670702.824606694281101" lon="375245.541572663292754">
+  <time>2015-08-18T16:01:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>431</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670702.824606694281101" lon="375245.541572663292754">
+  <time>2015-08-18T16:01:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>432</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670705.406894809566438" lon="375244.604922863363754">
+  <time>2015-08-18T16:01:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>433</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670708.364145665429533" lon="375244.454106754274108">
+  <time>2015-08-18T16:01:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>434</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670708.364145665429533" lon="375244.454106754274108">
+  <time>2015-08-18T16:01:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>435</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670711.413907340727746" lon="375244.604490398080088">
+  <time>2015-08-18T16:01:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>436</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670711.413907340727746" lon="375244.604490398080088">
+  <time>2015-08-18T16:01:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>437</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670714.181364786811173" lon="375244.540355010598432">
+  <time>2015-08-18T16:01:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>438</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670714.181364786811173" lon="375244.540355010598432">
+  <time>2015-08-18T16:01:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>439</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670717.177704432047904" lon="375243.79011383256875">
+  <time>2015-08-18T16:01:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>440</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670717.177704432047904" lon="375243.79011383256875">
+  <time>2015-08-18T16:01:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>441</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670719.785770261660218" lon="375242.91954551480012">
+  <time>2015-08-18T16:01:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>442</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670722.703184341080487" lon="375242.292360041115899">
+  <time>2015-08-18T16:01:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>443</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670722.703184341080487" lon="375242.292360041115899">
+  <time>2015-08-18T16:01:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>444</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670725.568727548234165" lon="375241.542327549541369">
+  <time>2015-08-18T16:01:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>445</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670725.568727548234165" lon="375241.542327549541369">
+  <time>2015-08-18T16:01:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>446</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670728.404524046927691" lon="375241.117274779418949">
+  <time>2015-08-18T16:01:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>447</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670728.404524046927691" lon="375241.117274779418949">
+  <time>2015-08-18T16:01:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>448</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670731.128322476521134" lon="375241.237937557278201">
+  <time>2015-08-18T16:01:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>449</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670731.128322476521134" lon="375241.237937557278201">
+  <time>2015-08-18T16:01:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>450</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670733.828096650540829" lon="375240.966593895631377">
+  <time>2015-08-18T16:01:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>451</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670736.398149059154093" lon="375241.487182592973113">
+  <time>2015-08-18T16:01:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>452</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670736.398149059154093" lon="375241.487182592973113">
+  <time>2015-08-18T16:01:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>453</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670739.28768362198025" lon="375241.953448140237015">
+  <time>2015-08-18T16:01:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>454</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670740.934420457109809" lon="375242.153871430142317">
+  <time>2015-08-18T16:01:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>455</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670742.559802801348269" lon="375242.432736605522223">
+  <time>2015-08-18T16:01:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>456</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670744.201947692781687" lon="375242.768056127417367">
+  <time>2015-08-18T16:01:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>457</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670745.867811338976026" lon="375243.229921588208526">
+  <time>2015-08-18T16:01:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>458</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670747.557077094912529" lon="375243.827636002446525">
+  <time>2015-08-18T16:01:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>459</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670748.964492096565664" lon="375244.746401761134621">
+  <time>2015-08-18T16:01:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>460</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670751.500818586908281" lon="375246.257776118116453">
+  <time>2015-08-18T16:01:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>461</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670751.500818586908281" lon="375246.257776118116453">
+  <time>2015-08-18T16:01:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>462</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670753.112594738602638" lon="375246.661914395808708">
+  <time>2015-08-18T16:01:59Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>463</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670753.112594738602638" lon="375246.661914395808708">
+  <time>2015-08-18T16:02:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>464</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670758.7259073657915" lon="375247.79835613706382">
+  <time>2015-08-18T16:02:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>465</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670760.689445346593857" lon="375247.748769694706425">
+  <time>2015-08-18T16:02:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>466</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670762.798062737099826" lon="375246.456053880567197">
+  <time>2015-08-18T16:02:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>467</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670762.798062737099826" lon="375246.456053880567197">
+  <time>2015-08-18T16:02:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>468</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670762.798062737099826" lon="375246.456053880567197">
+  <time>2015-08-18T16:02:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>469</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670764.093735635280609" lon="375245.443026655120775">
+  <time>2015-08-18T16:02:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>470</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670764.093735635280609" lon="375245.443026655120775">
+  <time>2015-08-18T16:02:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>471</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670766.051218044012785" lon="375242.55248628242407">
+  <time>2015-08-18T16:02:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>472</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670766.591879283078015" lon="375240.666191971395165">
+  <time>2015-08-18T16:02:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>473</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670767.155626677908003" lon="375238.925049969577231">
+  <time>2015-08-18T16:02:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>474</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670769.181306972168386" lon="375235.403489877877291">
+  <time>2015-08-18T16:02:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>475</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670770.219552891328931" lon="375233.170894486247562">
+  <time>2015-08-18T16:02:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>476</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670771.447008186019957" lon="375229.771187664708123">
+  <time>2015-08-18T16:02:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>477</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670772.474866330623627" lon="375226.471797585953027">
+  <time>2015-08-18T16:02:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>478</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670773.19194293115288" lon="375223.245653411955573">
+  <time>2015-08-18T16:02:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>479</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670773.483569507487118" lon="375220.168018434254918">
+  <time>2015-08-18T16:02:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>480</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670773.351012665778399" lon="375217.201679032761604">
+  <time>2015-08-18T16:02:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>481</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670773.093983332626522" lon="375214.324240280082449">
+  <time>2015-08-18T16:02:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>482</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670772.627707412466407" lon="375211.55610021884786">
+  <time>2015-08-18T16:02:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>483</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670771.850015195086598" lon="375208.879808637604583">
+  <time>2015-08-18T16:02:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>484</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670770.718684774823487" lon="375206.163532266276889">
+  <time>2015-08-18T16:02:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>485</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670769.374794909730554" lon="375203.379475514462683">
+  <time>2015-08-18T16:02:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>486</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670767.466159576550126" lon="375199.896268160431646">
+  <time>2015-08-18T16:02:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>487</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670765.649256768636405" lon="375196.462750542850699">
+  <time>2015-08-18T16:02:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>488</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670764.172547252848744" lon="375193.189837625715882">
+  <time>2015-08-18T16:02:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>489</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670763.046960979700089" lon="375189.756571420759428">
+  <time>2015-08-18T16:02:28Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>490</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670762.110380686819553" lon="375186.259885088773444">
+  <time>2015-08-18T16:02:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>491</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670760.413432030007243" lon="375179.030344843224157">
+  <time>2015-08-18T16:02:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>492</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670759.645000252872705" lon="375175.259960648661945">
+  <time>2015-08-18T16:02:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>493</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670758.71065179258585" lon="375171.698144615103956">
+  <time>2015-08-18T16:02:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>494</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670758.352139012888074" lon="375168.509870927548036">
+  <time>2015-08-18T16:02:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>495</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670759.632598406635225" lon="375165.749981648928951">
+  <time>2015-08-18T16:02:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>496</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670767.059359610080719" lon="375163.83745896955952">
+  <time>2015-08-18T16:02:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>497</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670775.988913072273135" lon="375164.979875213466585">
+  <time>2015-08-18T16:02:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>498</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670781.793891564011574" lon="375163.505759690247942">
+  <time>2015-08-18T16:02:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>499</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670788.007881683297455" lon="375161.817391394288279">
+  <time>2015-08-18T16:02:40Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>500</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670793.833935435861349" lon="375159.724632056313567">
+  <time>2015-08-18T16:02:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>501</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670799.545179805718362" lon="375157.437034826027229">
+  <time>2015-08-18T16:02:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>502</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670805.323012647219002" lon="375155.114458250987809">
+  <time>2015-08-18T16:02:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>503</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670816.396940322592854" lon="375150.350465507188346">
+  <time>2015-08-18T16:02:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>504</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670821.7399907335639" lon="375148.17609220452141">
+  <time>2015-08-18T16:02:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>505</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670821.7399907335639" lon="375148.17609220452141">
+  <time>2015-08-18T16:02:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>506</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670827.716518323868513" lon="375145.231634462019429">
+  <time>2015-08-18T16:02:48Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>507</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670827.716518323868513" lon="375145.231634462019429">
+  <time>2015-08-18T16:02:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>508</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670841.181274574249983" lon="375139.119497258099727">
+  <time>2015-08-18T16:02:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>509</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670844.663436378352344" lon="375136.998177188099362">
+  <time>2015-08-18T16:02:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>510</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670839.108626580797136" lon="375127.565004023606889">
+  <time>2015-08-18T16:02:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>511</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670838.477742302231491" lon="375123.049612392671406">
+  <time>2015-08-18T16:02:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>512</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670837.368389352224767" lon="375119.141937645094004">
+  <time>2015-08-18T16:02:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>513</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670835.469902570359409" lon="375114.266677190433256">
+  <time>2015-08-18T16:02:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>514</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670833.786930753849447" lon="375110.195084475330077">
+  <time>2015-08-18T16:02:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>515</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670832.235120097175241" lon="375105.564473138423637">
+  <time>2015-08-18T16:02:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>516</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670830.570027894340456" lon="375101.516766040411312">
+  <time>2015-08-18T16:03:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>517</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670828.024572531692684" lon="375094.244415837456472">
+  <time>2015-08-18T16:03:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>518</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670828.024572531692684" lon="375094.244415837456472">
+  <time>2015-08-18T16:03:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>519</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670830.579741148278117" lon="375088.896899746963754">
+  <time>2015-08-18T16:03:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>520</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670834.085600360296667" lon="375087.451675629708916">
+  <time>2015-08-18T16:03:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>521</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670838.482465296983719" lon="375086.72604384488659">
+  <time>2015-08-18T16:03:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>522</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670844.051611870527267" lon="375085.868066367867868">
+  <time>2015-08-18T16:03:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>523</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670849.4835070297122" lon="375084.651491319993511">
+  <time>2015-08-18T16:03:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>524</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670857.269545279443264" lon="375083.985506238765083">
+  <time>2015-08-18T16:03:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>525</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670861.898811995051801" lon="375082.471483676927164">
+  <time>2015-08-18T16:03:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>526</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670866.873813988640904" lon="375080.95527962729102">
+  <time>2015-08-18T16:03:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>527</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670877.414412243291736" lon="375077.589097091404255">
+  <time>2015-08-18T16:03:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>528</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.621701108291745" lon="375076.658273314475082">
+  <time>2015-08-18T16:03:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>529</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670886.761302803643048" lon="375075.257972167921253">
+  <time>2015-08-18T16:03:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>530</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670889.991985133849084" lon="375073.663701805868186">
+  <time>2015-08-18T16:03:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>531</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670890.688656363636255" lon="375070.21811532182619">
+  <time>2015-08-18T16:03:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>532</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670891.028947882354259" lon="375067.36111123720184">
+  <time>2015-08-18T16:03:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>533</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670887.83552504517138" lon="375064.299816205515526">
+  <time>2015-08-18T16:03:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>534</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670885.749773520044982" lon="375063.823566081526224">
+  <time>2015-08-18T16:03:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>535</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670885.749773520044982" lon="375063.823566081526224">
+  <time>2015-08-18T16:03:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>536</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:22Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>537</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:23Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>538</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:24Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>539</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:25Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>540</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:26Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>541</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670882.362186674959958" lon="375063.717392655438744">
+  <time>2015-08-18T16:03:27Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>542</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670880.543994924984872" lon="375061.969632384309079">
+  <time>2015-08-18T16:03:29Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>543</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670876.223240820690989" lon="375060.462531796190888">
+  <time>2015-08-18T16:03:30Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>544</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670872.620850379578769" lon="375060.628443570050877">
+  <time>2015-08-18T16:03:31Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>545</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670868.055674105882645" lon="375061.632364712830167">
+  <time>2015-08-18T16:03:32Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>546</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670863.570332583039999" lon="375063.034843622474">
+  <time>2015-08-18T16:03:33Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>547</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670858.977748546749353" lon="375064.568719495437108">
+  <time>2015-08-18T16:03:34Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>548</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670854.19095172919333" lon="375066.044753250083886">
+  <time>2015-08-18T16:03:35Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>549</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670849.402728477492929" lon="375067.562654571142048">
+  <time>2015-08-18T16:03:36Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>550</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670844.843031975440681" lon="375069.228057136002462">
+  <time>2015-08-18T16:03:37Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>551</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670840.570228816941381" lon="375070.973097403766587">
+  <time>2015-08-18T16:03:38Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>552</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670836.346961053088307" lon="375072.361249762878288">
+  <time>2015-08-18T16:03:39Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>553</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670829.865252509713173" lon="375071.213575614034198">
+  <time>2015-08-18T16:03:41Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>554</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670827.860209716483951" lon="375068.369710989878513">
+  <time>2015-08-18T16:03:42Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>555</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670826.845289228484035" lon="375064.982140022504609">
+  <time>2015-08-18T16:03:43Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>556</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670826.286496540531516" lon="375061.642715227673762">
+  <time>2015-08-18T16:03:44Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>557</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670825.752504425123334" lon="375058.67203051148681">
+  <time>2015-08-18T16:03:45Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>558</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670825.232186293229461" lon="375056.670448229240719">
+  <time>2015-08-18T16:03:46Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>559</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670825.232186293229461" lon="375056.670448229240719">
+  <time>2015-08-18T16:03:47Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>560</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:49Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>561</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:50Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>562</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:51Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>563</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:52Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>564</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:53Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>565</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:54Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>566</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:55Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>567</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:56Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>568</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670823.876750050112605" lon="375053.40631192130968">
+  <time>2015-08-18T16:03:57Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>569</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:03:58Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>570</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:00Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>571</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:01Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>572</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:02Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>573</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:03Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>574</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:04Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>575</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:05Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>576</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:06Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>577</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:07Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>578</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:08Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>579</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:09Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>580</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:10Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>581</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:11Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>582</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:12Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>583</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:13Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>584</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:14Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>585</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:15Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>586</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:16Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>587</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:17Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>588</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:18Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>589</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:19Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>590</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:20Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>591</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+<trkpt lat="6670822.237292203120887" lon="375053.266592878440861">
+  <time>2015-08-18T16:04:21Z</time>
+  <extensions>
+    <ogr:track_fid>0</ogr:track_fid>
+    <ogr:track_seg_id>0</ogr:track_seg_id>
+    <ogr:track_seg_point_id>592</ogr:track_seg_point_id>
+  </extensions>
+</trkpt>
+</gpx>

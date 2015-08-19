@@ -7,7 +7,12 @@ package reittienEtsinta.tiedostonKasittely;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import reittienEtsinta.tietorakenteet.AluePolygoni;
 import reittienEtsinta.tietorakenteet.Polygoni;
+import reittienEtsinta.tietorakenteet.ReittiPolygoni;
 
 /**
  * Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
@@ -45,7 +51,7 @@ public class GeoJsonLukija {
      * @param polku
      * @return
      */
-    public Polygoni[] lueJson(String polku, int maasto) {
+    private JSONObject lataaJsonObject(String polku) {
         File file = new File(polku);
 
         Scanner lukija = null;
@@ -57,7 +63,41 @@ public class GeoJsonLukija {
         lukija.useDelimiter("\\Z");
         String data = lukija.next();
 
-        JSONObject obj = new JSONObject(data);
+        return new JSONObject(data);
+    }
+
+    public ReittiPolygoni lueReitti(String polku) {
+        JSONObject obj = this.lataaJsonObject(polku);
+        JSONArray arr = obj.getJSONArray("features");
+
+        double[] lat = new double[arr.length()];
+        double[] lon = new double[arr.length()];
+        int[] aika = new int[arr.length()];
+
+        for (int i = 0; i < arr.length(); i++) {
+            JSONArray piste = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates");
+            lat[i] = piste.getDouble(1);
+            lon[i] = piste.getDouble(0);
+
+            String aikaString = arr.getJSONObject(i).getJSONObject("properties").getString("time");
+
+            DateFormat format = new SimpleDateFormat("yyyy\\/MM\\/dd hh:mm:ss", Locale.ENGLISH);
+            Date timestamp = null;
+            try {
+                timestamp = format.parse(aikaString);
+            } catch (ParseException ex) {
+            }
+            int sekunnit = (int) timestamp.getTime() / 1000;
+            aika[i] = sekunnit;
+            aika[i] -= aika[0];
+            
+        }
+
+        return new ReittiPolygoni(lon, lat, aika);
+    }
+
+    public Polygoni[] luePolygonit(String polku, int maasto) {
+        JSONObject obj = this.lataaJsonObject(polku);
 
         JSONArray arr = obj.getJSONArray("features");
         Polygoni[] polygonit = new Polygoni[arr.length()];
@@ -70,7 +110,7 @@ public class GeoJsonLukija {
                 polygoni = this.luoPolygoni(maasto, pisteet, new Polygoni(pisteet.length()));
             } else if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("Polygon")) { //aluemainen
                 JSONArray pisteet = arr.getJSONObject(i).getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0);
-                polygoni = this.luoPolygoni(maasto, pisteet, new AluePolygoni(pisteet.length()) );
+                polygoni = this.luoPolygoni(maasto, pisteet, new AluePolygoni(pisteet.length()));
             }
             if (this.latmax < polygoni.getLatmax()) {
                 this.latmax = polygoni.getLatmax();
@@ -105,7 +145,6 @@ public class GeoJsonLukija {
         return lonmax;
     }
 
-    
     private Polygoni luoPolygoni(int maasto, JSONArray pisteet, Polygoni uusi) {
 
         for (int i = 0; i < pisteet.length(); i++) {

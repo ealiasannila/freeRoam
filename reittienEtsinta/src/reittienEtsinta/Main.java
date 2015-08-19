@@ -41,9 +41,9 @@ public class Main {
         GeoJsonLukija lukija = new GeoJsonLukija();
         int maastoja = 3;
 
-        Polygoni[] rakennukset = lukija.lueJson("aineisto/matinkyla/rakennukset.geojson", 0);
-        Polygoni[] parkkikset = lukija.lueJson("aineisto/matinkyla/parkkikset.geojson", 1);
-        Polygoni[] tiet = lukija.lueJson("aineisto/matinkyla/tiet.geojson", 2);
+        Polygoni[] rakennukset = lukija.luePolygonit("aineisto/matinkyla/rakennukset.geojson", 0);
+        Polygoni[] parkkikset = lukija.luePolygonit("aineisto/matinkyla/parkkikset.geojson", 1);
+        Polygoni[] tiet = lukija.luePolygonit("aineisto/matinkyla/tiet.geojson", 2);
         Polygoni[] polygonit = new Polygoni[rakennukset.length + parkkikset.length + tiet.length];
 
         for (int i = 0; i < rakennukset.length; i++) {
@@ -59,7 +59,12 @@ public class Main {
         }
 
         MaastoKirjastoPolygoni maastokirjasto = new MaastoKirjastoPolygoni(maastoja);
-
+        
+        GeoJsonLukija reittilukija = new GeoJsonLukija();
+        maastokirjasto.lisaaReitti(reittilukija.lueReitti("aineisto/matinkyla/matinkyla.geojson"), polygonit);
+        System.out.println(maastokirjasto);
+        
+        /*
         GPXLukijaPolygoni parkkisLukija = new GPXLukijaPolygoni("aineisto/testiParkkis.gpx");
         GPXLukijaPolygoni tuntematonLukija = new GPXLukijaPolygoni("aineisto/testiTuntematon.gpx");
         GPXLukijaPolygoni tieLukija = new GPXLukijaPolygoni("aineisto/testiTie.gpx");
@@ -71,7 +76,8 @@ public class Main {
         maastokirjasto.lisaaReitti(parkkisreitti, polygonit);
         maastokirjasto.lisaaReitti(tiereitti, polygonit);
         maastokirjasto.lisaaReitti(tuntematonreitti, polygonit);
-
+        */
+        
         /*
          maastokirjasto.lisaaVauhti(1, 3);
          maastokirjasto.lisaaVauhti(2, 3);

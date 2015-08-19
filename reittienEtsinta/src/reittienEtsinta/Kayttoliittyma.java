@@ -33,11 +33,7 @@ public class Kayttoliittyma {
                 double latA = Double.parseDouble(komentotulkki.findInLine("[0-9]{7}"));
                 double lonM = Double.parseDouble(komentotulkki.findInLine("[0-9]{6}"));
                 double latM = Double.parseDouble(komentotulkki.findInLine("[0-9]{7}"));
-                System.out.println(lonA);
-                System.out.println(latA);
-                System.out.println(lonM);
-                System.out.println(latM);
-
+                
                 this.haeReittiKoordinaateilla(latA, lonA, latM, lonM);
                 System.out.println("Puretaan reitti");
                 JSONObject lyhyinReitti = verkko.lyhyinReitti();
@@ -78,8 +74,6 @@ public class Kayttoliittyma {
     private void haeReittiKoordinaateilla(double latA, double lonA, double latM, double lonM) {
         int alku = verkko.haeLahinSolmu(latA, lonA);
         int loppu = verkko.haeLahinSolmu(latM, lonM);
-        System.out.println(alku);
-        System.out.println(loppu);
         System.out.println("Muodostetaan reitti solmusta " + alku + " solmuun " + loppu);
         this.haeReitti(alku, loppu);
     }
