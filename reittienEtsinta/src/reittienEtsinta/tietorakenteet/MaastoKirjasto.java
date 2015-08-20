@@ -81,16 +81,15 @@ public class MaastoKirjasto {
      */
     
     public void lisaaReitti(Reitti reitti, Lista<Polygoni> polygonit) {
-        // System.out.println("lisään: n=" + reitti.getAika().length);
         for (int i = 0; i < reitti.getAika().length - 1; i++) {
             for (int j = 0; j <= polygonit.koko(); j++) {
-                if (j == polygonit.koko()) {
+                if (j == polygonit.koko()) { //Ei löytynyt polygonia, jonka alueella reittipiste olisi -> laitetaan tuntemattomaan maastoon
                     //  System.out.println("muu: " + (this.vauhtiMaastossa.length - 1) + " v: " + reitti.vauhti(i, i + 1));
                     this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));
                     break;
                 }
 
-                if (polygonit.ota(j).getClass().equals(AluePolygoni.class)) {//aluemainen kohde
+                if (polygonit.ota(j).getClass().equals(AluePolygoni.class)) {//aluemainen kohde, tarkistetaan onko piste kohteen sisällä
                     AluePolygoni aluepoly = (AluePolygoni) polygonit.ota(j);
                     //  System.out.println(reitti.getLat()[i] + " lat " + reitti.getLon()[i] + " lon");
                     if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
@@ -98,7 +97,7 @@ public class MaastoKirjasto {
                         //         System.out.println("alue: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
                         break;
                     }
-                } else { //viivamainen kohde
+                } else { //viivamainen kohde, tarkistetaan onko reittipiste riittävän lähellä viivaa
                     if (polygonit.ota(j).pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
                         this.lisaaVauhti(polygonit.ota(j).getMaasto(), reitti.vauhti(i, i + 1));
                         //          System.out.println("viiva: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));

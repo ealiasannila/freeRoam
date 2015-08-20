@@ -2,8 +2,6 @@
 
 ## Ohjelman yleisrakenne:
 
-####huom. paketissa raster olevat luokat eivät oikeastaan enään tee mitään ja alkavat olla melko turhia.
-
 - luokkakkavio tähän.
 
 Ohjelman toiminta jakautuu viiteen osaan:
@@ -29,6 +27,25 @@ Reitin etsintä tapahtuu luokssa Verkko A* algoritmia käyttäen. A* toteutus k�
 
 ### 5. Etsityn reitin kirjoittaminen tiedostoon.
 Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka GeoJsonKirjoittaja tarjoaa metodit reitin kirjoittamiseen geojson tiedostoon, jolloin sen jatkokäyttö esimerkiksi paikkatieto-ohjelmissa on helppoa.
+
+
+##Aika ja tilavaativuudet:
+
+* verkon generointi
+* reitin haku
+
+
+## Puuteet ja parannusehdotukset:
+
+###Tunnetut bugit
+* mikäli kaksi polygonia on täysin vierekkäin voi polygonin läpi muodostua kaari jonka vauhti vastaa tuntemattoman alueen vauhtia.
+* mikäli aineistossa on kovin suuria polygoneja, esimerkiksi pitkiä yhtenäisiä tiepätkiä aiheuttavat ne virheitä verkon muodostuksessa. Tämä johtuu siitä että polygonit jaetaan naapurusotihin niiden bounding boxin keskipisteen perusteella, mutta suuren polygonin vaikutus voi ulottua yli kahden naapuruston päähän.
+
+
+###Jatkokehitettävää
+* Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olis varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
+* Usean päällekkäisen muuttujan vaikutus vauhtiin. Yhdessä ylläolevan kanssa mahdollistaisi esimerkiksi korkeusvaihteluiden huomioonottamisen.
+* Ohjelmasta voisi mahdollisesti tehdä esimerkiksi QGis pluginin, jolloin reitin analysoinnin ja reittiehdotuksen antamisen, voisi tehdä paikkatieto-ohjelman sisältä graaffisesta käyttöliittymästä.
 
 
 

@@ -188,21 +188,21 @@ public class Verkko {
         double[] reittilon = new double[pino.koko() + 2];
         int[] reittiaika = new int[pino.koko() + 2];
 
-        this.asetaReittiPist(reittilat, reittilon, reittiaika, 0, this.lahtosolmu);
+        this.asetaReittiPiste(reittilat, reittilon, reittiaika, 0, this.lahtosolmu);
         int i = 1;
         while (!pino.tyhja()) {
             int solmu = pino.ota();
-            this.asetaReittiPist(reittilat, reittilon, reittiaika, i, solmu);
+            this.asetaReittiPiste(reittilat, reittilon, reittiaika, i, solmu);
             i++;
 
         }
-        this.asetaReittiPist(reittilat, reittilon, reittiaika, i, this.maalisolmu);
+        this.asetaReittiPiste(reittilat, reittilon, reittiaika, i, this.maalisolmu);
 
         return new Reitti(reittilon, reittilat, reittiaika);
 
     }
 
-    private void asetaReittiPist(double[] reittilat, double[] reittilon, int[] reittiaika, int i, int solmu) {
+    private void asetaReittiPiste(double[] reittilat, double[] reittilon, int[] reittiaika, int i, int solmu) {
         reittilat[i] = this.lat[solmu];
         reittilon[i] = this.lon[solmu];
         reittiaika[i] = (int) this.alkuun[solmu];
