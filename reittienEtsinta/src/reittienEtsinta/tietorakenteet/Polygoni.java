@@ -107,17 +107,7 @@ public class Polygoni {
 
     }
 
-    /**
-     * testaa ovatko kaksi pistetä samat
-     * @param lat1
-     * @param lon1
-     * @param lat2
-     * @param lon2
-     * @return 
-     */
-    private boolean pisteSama(double lat1, double lon1, double lat2, double lon2) {
-        return (Math.abs(lat1 - lat2) < 0.001) && (Math.abs(lon1 - lon2) < 0.001);
-    }
+
 
     /**
      * testaa kohtaavatko kaksi viivaa päässä, jos kohtaavat emme halua tulkita sitä leikkaukseksi
@@ -132,8 +122,8 @@ public class Polygoni {
      * @return 
      */
     private boolean janatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
-        return pisteSama(latp1, lonp1, latq1, lonq1) || pisteSama(latp1, lonp1, latq2, lonq2)
-                || pisteSama(latp2, lonp2, latq2, lonq2) || pisteSama(latp2, lonp2, latq1, lonq1);
+        return Apumetodit.pisteSama(latp1, lonp1, latq1, lonq1) || Apumetodit.pisteSama(latp1, lonp1, latq2, lonq2)
+                || Apumetodit.pisteSama(latp2, lonp2, latq2, lonq2) || Apumetodit.pisteSama(latp2, lonp2, latq1, lonq1);
     }
 
     /**

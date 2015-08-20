@@ -1,11 +1,5 @@
 ? onko järkeä kattoa bb jos koko polyssa on keskimäärin 5-6 kulmaa...
 
-
-
-6. käli:
- - parametrit String args[]
-
-
 7. menee rakennuksen läpi kun kaksi rakennusta täysin vierekkäin.. KORJATTU AINEISTOSSA jää ehkäpä featureksi
  - eri polygon -> asetetaan tuntematon maasto, ei kuitenkaan leikkaa mitään.
 

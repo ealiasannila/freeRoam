@@ -1,7 +1,7 @@
 #Käyttöohje
 
 ##Syötteet:
-Ohjelmalle annetaan käynnistäessä syötteenä geojson tiedostoja joissa on määritelty toteutuneet reitit, sekä eri maastotyypit.
+Ohjelmalle annetaan käynnistäessä argumentteina kansiot joissa on geojson tiedostoja joissa on määritelty toteutuneet reitit, sekä eri maastotyypit.
 
 * java reittienetsinta <kansio jossa maastotyypit> <kansio jossa toteutuneet reitit> 
 
