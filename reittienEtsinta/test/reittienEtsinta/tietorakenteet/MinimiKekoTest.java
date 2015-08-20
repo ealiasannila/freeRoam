@@ -13,15 +13,15 @@ import static org.junit.Assert.*;
  *
  * @author elias
  */
-public class MinimiKekoPolygonTest {
+public class MinimiKekoTest {
 
     private int[] kekoindeksit;
     private double[] alkuun;
     private double[] loppuun;
 
-    private MinimiKekoPolygon keko;
+    private MinimiKeko keko;
 
-    public MinimiKekoPolygonTest() {
+    public MinimiKekoTest() {
     }
 
     @Before
@@ -29,14 +29,21 @@ public class MinimiKekoPolygonTest {
         int n = 10;
         this.alkuun = new double[n];
         this.loppuun = new double[n];
-        this.kekoindeksit = new int[n];
 
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             this.loppuun[i] = n - i;
         }
-        this.loppuun[n-1] = n-2;
+        this.loppuun[n - 1] = n - 2;
 
-        this.keko = new MinimiKekoPolygon(alkuun, loppuun, kekoindeksit);
+        this.keko = new MinimiKeko(n) {
+            @Override
+            double arvio(int i) {
+                if (alkuun[i] == Double.MAX_VALUE) {
+                    return Double.MAX_VALUE * 0.00001;
+                }
+                return alkuun[i] + loppuun[i] * 0.00001; //0.00001 = minimivauhti jota voidaan kulkea
+            }
+        };
 
     }
 
@@ -50,8 +57,8 @@ public class MinimiKekoPolygonTest {
         }
         this.loppuun[3] = 0.001;
         this.keko.paivita(3);
-        
-        assertEquals(3,this.keko.otaPienin());
+
+        assertEquals(3, this.keko.otaPienin());
     }
 
     /**

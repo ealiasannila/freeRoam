@@ -6,17 +6,17 @@ package reittienEtsinta.tietorakenteet;
  * Käyttää sisäiseen toteutukseen taulukkoa, jota kasvatetaan tarpeen mukaan
  * @author elias
  */
-public class PolygoniLista {
-    private Polygoni[] lista;
+public class Lista<A> {
+    private Object[] lista;
     private int koko;
     
-    public PolygoniLista(int alkukoko) {
-        this.lista = new Polygoni[alkukoko]; 
+    public Lista(int alkukoko) {
+        this.lista = new Object[alkukoko]; 
         this.koko = 0;
     }
     
-    public void lisaa(Polygoni polygoni){
-        this.lista[koko] = polygoni;
+    public void lisaa(A alkio){
+        this.lista[koko] = alkio;
         koko++;
         if(koko==this.lista.length){
             this.kasvata();
@@ -24,15 +24,15 @@ public class PolygoniLista {
     }
     
     private void kasvata(){
-        Polygoni[] uusiLista = new Polygoni[this.lista.length*2];
+        Object[] uusiLista = new Object[this.lista.length*2];
         for (int i = 0; i < this.lista.length; i++) {
             uusiLista[i] = this.lista[i];
         }
         this.lista = uusiLista;
     }
     
-    public Polygoni ota(int i){
-        return this.lista[i];
+    public A ota(int i){
+        return (A) this.lista[i];
     }
     
     public int koko(){

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
-import raster.MinimiKeko;
+import kaatopaikka.MinimiKeko;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Stack;
 import reittienEtsinta.Apumetodit;
-import raster.KuvanLukija;
+import kaatopaikka.KuvanLukija;
 import reittienEtsinta.tietorakenteet.Pino;
 
 /**

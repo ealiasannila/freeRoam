@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
-import raster.Reitti;
+import kaatopaikka.Reitti;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -13,24 +13,24 @@ import static org.junit.Assert.*;
  *
  * @author elias
  */
-public class MaastoKirjastoPolygoniTest {
+public class MaastoKirjastoTest {
 
-    private MaastoKirjastoPolygoni kirjasto;
-    private ReittiPolygoni reitti;
-    private ReittiPolygoni reittiUlko;
-    private PolygoniLista polygonit;
+    private MaastoKirjasto kirjasto;
+    private Reitti reitti;
+    private Reitti reittiUlko;
+    private Lista<Polygoni> polygonit;
 
-    public MaastoKirjastoPolygoniTest() {
+    public MaastoKirjastoTest() {
     }
 
     @Before
     public void setUp() {
      
-        kirjasto = new MaastoKirjastoPolygoni(3);
-        reitti = new ReittiPolygoni(new double[]{0.1, 0.2}, new double[]{0.1, 0.2}, new int[]{0, 1});
-        reittiUlko = new ReittiPolygoni(new double[]{1.1,1.3}, new double[]{1.1, 1.3}, new int[] {0, 1});
+        kirjasto = new MaastoKirjasto(3);
+        reitti = new Reitti(new double[]{0.1, 0.2}, new double[]{0.1, 0.2}, new int[]{0, 1});
+        reittiUlko = new Reitti(new double[]{1.1,1.3}, new double[]{1.1, 1.3}, new int[] {0, 1});
 
-        this.polygonit = new PolygoniLista(2);
+        this.polygonit = new Lista(2);
         this.polygonit.lisaa(new AluePolygoni(4));
         this.polygonit.ota(0).lisaaPiste(0, 0, 1);
         this.polygonit.ota(0).lisaaPiste(0, 1, 2);

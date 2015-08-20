@@ -3,36 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.tietorakenteet;
+package kaatopaikka;
 
-import raster.*;
 import java.util.Arrays;
 import reittienEtsinta.Apumetodit;
-import raster.KuvanLukija;
+import kaatopaikka.KuvanLukija;
 
 /**
  * Kuvaa toteutunutta reittiä, tai annettua reittiehdotusta.
  *
  * @author elias
  */
-public class ReittiPolygoni {
+public class Reitti {
 
-    private double[] lon;
-    private double[] lat;
+    private int[] x;
+    private int[] y;
     private int[] aika;
 
-    public ReittiPolygoni(double[] lon, double[] lat, int[] aika) {
-        this.lon = lon;
-        this.lat = lat;
+    public Reitti(int[] x, int[] y, int[] aika) {
+        this.x = x;
+        this.y = y;
         this.aika = aika;
     }
 
-    public double[] getLon() {
-        return lon;
+    public int[] getX() {
+        return x;
     }
 
-    public double[] getLat() {
-        return lat;
+    public int[] getY() {
+        return y;
     }
 
     public int[] getAika() {
@@ -50,7 +49,7 @@ public class ReittiPolygoni {
         double matka = 0;
         for (int i = alku; i < loppu; i++) {
 
-            matka += Apumetodit.pisteidenEtaisyys(this.lon[i], this.lat[i], this.lon[i + 1], this.lat[i + 1]);
+            matka += Apumetodit.pisteidenEtaisyys(this.x[i], this.y[i], this.x[i + 1], this.y[i + 1]);
         }
         return matka;
     }
@@ -62,7 +61,7 @@ public class ReittiPolygoni {
      * @param loppu
      * @return
      */
-    private double aika(int alku, int loppu) {
+    private int aika(int alku, int loppu) {
         return aika[loppu] - aika[alku];
     }
 
@@ -74,18 +73,13 @@ public class ReittiPolygoni {
      * @return
      */
     public double vauhti(int alku, int loppu) {
-      /*  System.out.println("m: " + this.matka(alku, loppu));
-        System.out.println("a: " + this.aika(alku, loppu));
-
-        System.out.println("v: " + (this.matka(alku, loppu) / this.aika(alku, loppu)));
-        */return this.matka(alku, loppu) / this.aika(alku, loppu);
+        return this.matka(alku, loppu) / this.aika(alku, loppu);
     }
 
     public String toString() {
-
-        return "lon: " + Arrays.toString(this.lon)
-                + "\nlat: " + Arrays.toString(this.lat)
-                + "\naika: " + Arrays.toString(this.aika);
+        return "X: " + Arrays.toString(this.x) + 
+                "\nY: " + Arrays.toString(this.y) + 
+                "\nA: " + Arrays.toString(this.aika);
     }
 
 }

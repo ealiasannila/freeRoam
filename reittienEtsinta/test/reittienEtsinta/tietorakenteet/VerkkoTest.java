@@ -14,18 +14,18 @@ import static org.junit.Assert.*;
  *
  * @author elias
  */
-public class VerkkoPolygoniTest {
+public class VerkkoTest {
 
-    private VerkkoPolygoni verkko;
-    private MaastoKirjastoPolygoni kirjasto;
+    private Verkko verkko;
+    private MaastoKirjasto kirjasto;
 
-    public VerkkoPolygoniTest() {
+    public VerkkoTest() {
     }
 
     @Before
     public void setUp() {
-        kirjasto = new MaastoKirjastoPolygoni(3);
-        this.verkko = new VerkkoPolygoni(4, kirjasto);
+        kirjasto = new MaastoKirjasto(3);
+        this.verkko = new Verkko(4, kirjasto);
 
         this.verkko.lisaaKaari(0, 1, 1, 0, 0, 0, 1, true);
         this.verkko.lisaaKaari(1, 2, 1, 0, 1, 1, 1, true);

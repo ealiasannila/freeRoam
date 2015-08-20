@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
-import raster.Verkko;
+import kaatopaikka.Verkko;
 import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import raster.KuvanLukija;
-import raster.MaastoKirjasto;
-import raster.Reitti;
+import kaatopaikka.KuvanLukija;
+import kaatopaikka.MaastoKirjasto;
+import kaatopaikka.Reitti;
 
 /**
  *

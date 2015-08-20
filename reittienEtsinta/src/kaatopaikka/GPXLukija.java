@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reittienEtsinta.tiedostonKasittely;
+package kaatopaikka;
 
-import raster.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DateFormat;
@@ -17,8 +16,7 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import raster.Reitti;
-import reittienEtsinta.tietorakenteet.ReittiPolygoni;
+import kaatopaikka.Reitti;
 
 /**
  * Lukee gpx tedostosta koordinaatit ja muodostaa niiden perusteella uuden
@@ -26,20 +24,33 @@ import reittienEtsinta.tietorakenteet.ReittiPolygoni;
  *
  * @author elias
  */
-public class GPXLukijaPolygoni {
+public class GPXLukija {
+
+    private double kuvaVasenAlaX; //kuvan lat/lon koordinaatit
+    private double kuvaVasenAlaY;
+
+    private double kuvaOikeaYlaX;
+    private double kuvaOikeaYlaY;
+
+    private int kuvaKoko; //kuvan sivun pituus
 
     private Scanner gpxScanner;
 
-    private double[] lon;
-    private double[] lat;
+    private double[] xKoord;
+    private double[] yKoord;
     private Date[] ajat;
 
     private int pisteidenMaara;
 
-    public GPXLukijaPolygoni(String gpxPolku) {
-  
-        this.lon = new double[3000]; //max pisteiden määrä gpx tiedostossa
-        this.lat = new double[3000]; //max pisteiden määrä gpx tiedostossa
+    public GPXLukija(double kuvaVasenAlaX, double kuvaVasenAlaY, double kuvaOikeaYlaX, double kuvaOikeaYlaY, int kuvaKoko, String gpxPolku) {
+        this.kuvaVasenAlaX = kuvaVasenAlaX;
+        this.kuvaVasenAlaY = kuvaVasenAlaY;
+        this.kuvaOikeaYlaX = kuvaOikeaYlaX;
+        this.kuvaOikeaYlaY = kuvaOikeaYlaY;
+        this.kuvaKoko = kuvaKoko;
+
+        this.xKoord = new double[3000]; //max pisteiden määrä gpx tiedostossa
+        this.yKoord = new double[3000]; //max pisteiden määrä gpx tiedostossa
         this.ajat = new Date[3000]; //max pisteiden määrä gpx tiedostossa
         this.pisteidenMaara = 0;
 
@@ -50,30 +61,11 @@ public class GPXLukijaPolygoni {
         }
     }
 
-    /**
-     * lukee koordinaatit tiedostosta ja luo uuden reittiolion
-     * @return 
-     */
-    public ReittiPolygoni lueGpx() {
+    public Reitti lueGpx() {
         this.lueKoordinaatit();
-        return new ReittiPolygoni(this.kasitteleKoord(this.lon), this.kasitteleKoord(this.lat), this.kasitteleAjat());
+        return new Reitti(this.kasitteleX(), this.kasitteleY(), this.kasitteleAjat());
     }
 
-    /**
-     * lyhentää koordinaatti taulukon... ei kovin eleganttia
-     * @param koord
-     * @return 
-     */
-    
-    private double[] kasitteleKoord(double[] koord){
-        double[] ulos = new double[this.pisteidenMaara];
-        
-        for (int i = 0; i < ulos.length; i++) {
-            ulos[i] = koord[i];
-        }
-        return ulos;
-    }
-    
     private void lueKoordinaatit() {
 
         while (this.gpxScanner.hasNext()) {
@@ -87,7 +79,7 @@ public class GPXLukijaPolygoni {
                 } catch (Exception e) {
                     lond = -1.0;
                 }
-                this.lon[this.pisteidenMaara] = lond;
+                this.xKoord[this.pisteidenMaara] = lond;
 
                 this.gpxScanner.findInLine("lat=\"");
 
@@ -100,7 +92,7 @@ public class GPXLukijaPolygoni {
                 } catch (Exception e) {
                     latd = -1.0;
                 }
-                this.lat[this.pisteidenMaara] = latd;
+                this.yKoord[this.pisteidenMaara] = latd;
 
                 this.gpxScanner.nextLine();
                 this.gpxScanner.findInLine("<time>");
@@ -123,11 +115,6 @@ public class GPXLukijaPolygoni {
             this.gpxScanner.nextLine();
         }
     }
-    
-    /**
-     * muuttaa ajat date-> sekunttia lähdöstä
-     * @return 
-     */
 
     private int[] kasitteleAjat() {
         int[] ajatS = new int[this.pisteidenMaara]; //ajat sekunteina
@@ -139,6 +126,34 @@ public class GPXLukijaPolygoni {
         return ajatS;
     }
 
+    private int laskeXPiste(double lond) {
 
+        return (int) (this.kuvaKoko / (this.kuvaOikeaYlaX - this.kuvaVasenAlaX) * (lond - kuvaVasenAlaX));
+
+    }
+
+    private int laskeYPiste(double latd) {
+
+        return this.kuvaKoko - (int) (this.kuvaKoko / (this.kuvaOikeaYlaY - this.kuvaVasenAlaY) * (latd - kuvaVasenAlaY));
+
+    }
+
+    private int[] kasitteleX() {
+        int[] xPisteet = new int[this.pisteidenMaara];
+
+        for (int i = 0; i < this.pisteidenMaara; i++) {
+            xPisteet[i] = this.laskeXPiste(this.xKoord[i]);
+        }
+        return xPisteet;
+    }
+
+    private int[] kasitteleY() {
+        int[] yPisteet = new int[this.pisteidenMaara];
+
+        for (int i = 0; i < this.pisteidenMaara; i++) {
+            yPisteet[i] = this.laskeYPiste(this.yKoord[i]);
+        }
+        return yPisteet;
+    }
 
 }

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
 import java.util.HashMap;
-import raster.KuvanLukija;
+import kaatopaikka.KuvanLukija;
 
 /**
  * Pitää kirjaa toteutuneiden reittien perusteella lasketusta nopeuksista eri maastoille (=väreille kuvassa)

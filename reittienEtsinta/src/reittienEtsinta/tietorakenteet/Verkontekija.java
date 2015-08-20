@@ -21,8 +21,8 @@ import reittienEtsinta.Apumetodit;
  */
 public class Verkontekija {
 
-    private VerkkoPolygoni verkko;
-    private PolygoniLista[][] naapurustot;
+    private Verkko verkko;
+    private Lista<Polygoni>[][] naapurustot;
     private int pisteita;
 
     private double latmin;
@@ -30,7 +30,7 @@ public class Verkontekija {
     private double lonmin;
     private double lonmax;
 
-    public Verkontekija(PolygoniLista polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjastoPolygoni maastokirjasto) {
+    public Verkontekija(Lista<Polygoni> polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjasto maastokirjasto) {
         this.pisteita = pisteita;
         
         this.latmax = latmax;
@@ -44,24 +44,24 @@ public class Verkontekija {
         System.out.println("n: " + n);
 
         this.alustaNaapurustot(n);
-        this.verkko = new VerkkoPolygoni(pisteita, maastokirjasto);
+        this.verkko = new Verkko(pisteita, maastokirjasto);
 
         this.lisaaPolygonit(polygonit);
 
     }
 
     private void alustaNaapurustot(int n) {
-        this.naapurustot = new PolygoniLista[n][n];
+        this.naapurustot = new Lista[n][n];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                this.naapurustot[i][j] = new PolygoniLista(8);
+                this.naapurustot[i][j] = new Lista(8);
 
             }
         }
     }
 
-    private void lisaaPolygonit(PolygoniLista polygonit) {
+    private void lisaaPolygonit(Lista<Polygoni> polygonit) {
         for (int i = 0; i < polygonit.koko(); i++) {
             this.lisaaPolygon(polygonit.ota(i));
         }
@@ -169,7 +169,7 @@ public class Verkontekija {
         }
     }
 
-    public VerkkoPolygoni getVerkko() {
+    public Verkko getVerkko() {
         return verkko;
     }
 
@@ -223,7 +223,7 @@ public class Verkontekija {
                 if (this.naapurustoUlkona(j, naapurustoX)) {
                     continue;
                 }
-                PolygoniLista ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
+                Lista<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
 
                 for (int k = 0; k < ruutu.koko(); k++) {
                     if (ruutu.ota(k).janaLeikkaaPolygonin(latp, lonp, latk, lonk)) {

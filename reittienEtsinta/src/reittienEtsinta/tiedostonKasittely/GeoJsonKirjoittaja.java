@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import reittienEtsinta.tietorakenteet.ReittiPolygoni;
+import reittienEtsinta.tietorakenteet.Reitti;
 
 /**
  * Kirjoittaa JSONObjectin annetussa polussa olevaan tiedostoon
@@ -42,7 +42,7 @@ public class GeoJsonKirjoittaja {
         }
     }
     
-    public static JSONObject muunnaJson(ReittiPolygoni kirjoitettava){
+    public static JSONObject muunnaJson(Reitti kirjoitettava){
         JSONObject reitti = new JSONObject();
         reitti.put("type", "FeatureCollection");
 

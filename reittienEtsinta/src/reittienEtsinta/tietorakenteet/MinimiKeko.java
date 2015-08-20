@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package reittienEtsinta.tietorakenteet;
 
 import java.util.Arrays;
 
@@ -13,14 +13,18 @@ import java.util.Arrays;
  *
  * @author elias
  */
-public class MinimiKeko {
+public abstract class MinimiKeko {
 
-    private VerkkoSolmu[] keko;
+    private int[] keko;
     private int keonKoko;
 
+    private int[] kekoindeksit;
+
     public MinimiKeko(int koko) {
-        this.keko = new VerkkoSolmu[koko + 1];
+        this.keko = new int[koko + 1];
         this.keonKoko = 0;
+
+         this.kekoindeksit = new int[koko];
     }
 
     /**
@@ -45,6 +49,7 @@ public class MinimiKeko {
 
     /**
      * oikean lapsen indeksi keko taulukossa
+     *
      * @param i
      * @return
      */
@@ -53,97 +58,111 @@ public class MinimiKeko {
     }
 
     /**
-     * Palauttaa kekoehdon voimaan, jos kekoon (tai keossa oleviin solmuihin) on tehty muutoksia.
-     * Aloittaa keon muokkaamisen tietystä indeksistä.
-     * @param i 
+     * antaa arvion jonka mukaan määritellään kunkin keon alkion arvo.
+     *
+     * @param i
+     * @return
      */
+    abstract double arvio(int i);
     
+    
+
+    /**
+     * Palauttaa kekoehdon voimaan, jos kekoon (tai keossa oleviin solmuihin) on
+     * tehty muutoksia. Aloittaa keon muokkaamisen tietystä indeksistä.
+     *
+     * @param i
+     */
     private void heapify(int i) {
         int v = this.vasenLapsi(i);
         int o = this.oikeaLapsi(i);
         int pienempi;
 
         if (o <= this.keonKoko) {
-            if (this.keko[v].getArvio() < this.keko[o].getArvio()) {
+            if (this.arvio(this.keko[v]) < arvio(this.keko[o])) {
                 pienempi = v;
             } else {
                 pienempi = o;
             }
 
-            if (this.keko[i].getArvio() > this.keko[pienempi].getArvio()) {
+            if (arvio(this.keko[i]) > arvio(this.keko[pienempi])) {
                 this.vaihda(i, pienempi);
                 this.heapify(pienempi);
             }
-        } else if (v == this.keonKoko && this.keko[i].getArvio() > this.keko[v].getArvio()) {
+        } else if (v == this.keonKoko && arvio(this.keko[i]) > arvio(this.keko[v])) {
             this.vaihda(i, v);
         }
     }
 
     /**
-     * Palauttaa kekoehdon voimaan, kun solmun Alkuun arviota on vähennetty.
-     * Aloittaa muokkaamisen tietystä solmusta. --> toimisiko this.heapify(solmu.getKekoI())?
-     * @param solmu 
+     * Palauttaa kekoehdon voimaan, kun solmun alkuun arviota on vähennetty.
+     * Aloittaa muokkaamisen tietystä solmusta. --> toimisiko
+     * this.heapify(solmu.getKekoI())?
+     *
+     * @param solmu
      */
-    
-    public void paivita(VerkkoSolmu solmu) {
-        int i = solmu.getKekoI();
-        while (i > 1 && this.keko[this.vanhempi(i)].getArvio() > this.keko[i].getArvio()) {
+    public void paivita(int solmu) {
+        int i = this.kekoindeksit[solmu];
+        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(this.keko[i])) {
             this.vaihda(i, this.vanhempi(i));
             i = this.vanhempi(i);
         }
     }
-    
+
     /**
      * vaihtaa kahden solmun paikan keossa.
+     *
      * @param a
-     * @param b 
+     * @param b
      */
-
     private void vaihda(int a, int b) {
-        VerkkoSolmu tmp = this.keko[a];
+        int tmp = this.keko[a];
         this.keko[a] = this.keko[b];
-        this.keko[a].setKekoI(a);
+        this.kekoindeksit[this.keko[a]] = a;
         this.keko[b] = tmp;
-        this.keko[b].setKekoI(b);
+        this.kekoindeksit[this.keko[b]] = b;
     }
 
     /**
      * lisää kekoon uuden solmun, säilyttäen kekoehdon voimassa.
-     * @param solmu 
+     *
+     * @param solmu
      */
-    
-    public void lisaa(VerkkoSolmu solmu) {
+    public void lisaa(int solmu) {
         this.keonKoko++;
         int i = this.keonKoko;
-        while (i > 1 && this.keko[this.vanhempi(i)].getArvio() > solmu.getArvio()) {
+        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(solmu)) {
             this.keko[i] = keko[this.vanhempi(i)];
-            this.keko[i].setKekoI(i);
+            this.kekoindeksit[this.keko[i]] = i;
             i = this.vanhempi(i);
         }
         this.keko[i] = solmu;
-        solmu.setKekoI(i);
+        this.kekoindeksit[solmu] = i;
+
+        
 
     }
 
     /**
      * kertoo onko keko tyhjä
-     * @return 
+     *
+     * @return
      */
-    
     public boolean tyhja() {
         return this.keonKoko == 0;
     }
 
     /**
-     * ottaa keon ensimmäisen solmun ja palauttaa kekoehdon voimaan heapifyn avulla.
-     * @return 
+     * ottaa keon ensimmäisen solmun ja palauttaa kekoehdon voimaan heapifyn
+     * avulla.
+     *
+     * @return
      */
-    
-    public VerkkoSolmu otaPienin() {
+    public int otaPienin() {
 
-        VerkkoSolmu eka = this.keko[1];
+        int eka = this.keko[1];
         this.keko[1] = this.keko[this.keonKoko];
-        this.keko[1].setKekoI(1);
+        this.kekoindeksit[this.keko[1]] = 1;
 
         this.keonKoko--;
         this.heapify(1);
@@ -151,10 +170,7 @@ public class MinimiKeko {
     }
 
     public String toString() {
-        String out = "";
-        for (int i = 1; i <= this.keonKoko; i++) {
-            out += " a: " + this.keko[i].getArvio() + ", ";
-        }
-        return out;
+        return "hei olen keko";
+//    return "K: " + Arrays.toString(this.keko) + "\nL: " + Arrays.toString(this.loppuun) + "\nKi: " + Arrays.toString(this.kekoindeksit);
     }
 }

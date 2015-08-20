@@ -1,8 +1,7 @@
 package reittienEtsinta.tietorakenteet;
 
-import raster.*;
 import java.util.HashMap;
-import raster.KuvanLukija;
+import kaatopaikka.KuvanLukija;
 
 /**
  * Pitää kirjaa toteutuneiden reittien perusteella lasketusta nopeuksista eri
@@ -10,12 +9,12 @@ import raster.KuvanLukija;
  *
  * @author elias
  */
-public class MaastoKirjastoPolygoni {
+public class MaastoKirjasto {
 
     private double[] vauhtiMaastossa;
     private int[] otostenMaara;
 
-    public MaastoKirjastoPolygoni(int maastoja) {
+    public MaastoKirjasto(int maastoja) {
         this.vauhtiMaastossa = new double[maastoja + 1];
         this.otostenMaara = new int[maastoja + 1];
     }
@@ -75,7 +74,7 @@ public class MaastoKirjastoPolygoni {
      * @param reitti
      * @param kuvanLukija
      */
-    public void lisaaReitti(ReittiPolygoni reitti, PolygoniLista polygonit) {
+    public void lisaaReitti(Reitti reitti, Lista<Polygoni> polygonit) {
         // System.out.println("lisään: n=" + reitti.getAika().length);
         for (int i = 0; i < reitti.getAika().length - 1; i++) {
             for (int j = 0; j <= polygonit.koko(); j++) {

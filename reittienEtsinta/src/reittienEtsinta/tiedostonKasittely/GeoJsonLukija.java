@@ -20,8 +20,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import reittienEtsinta.tietorakenteet.AluePolygoni;
 import reittienEtsinta.tietorakenteet.Polygoni;
-import reittienEtsinta.tietorakenteet.PolygoniLista;
-import reittienEtsinta.tietorakenteet.ReittiPolygoni;
+import reittienEtsinta.tietorakenteet.Lista;
+import reittienEtsinta.tietorakenteet.Reitti;
 
 /**
  * Lukee GeoJson tiedoston ja muodostaa sen pohjalta polygoni taulukon
@@ -68,11 +68,11 @@ public class GeoJsonLukija {
         return new JSONObject(data);
     }
 
-    public ReittiPolygoni lueReitti(String polku){
+    public Reitti lueReitti(String polku){
         return this.lueReitti(new File(polku));
     }
     
-    public ReittiPolygoni lueReitti(File tiedosto) {
+    public Reitti lueReitti(File tiedosto) {
         JSONObject obj = this.lataaJsonObject(tiedosto);
         JSONArray arr = obj.getJSONArray("features");
 
@@ -98,17 +98,17 @@ public class GeoJsonLukija {
             aika[i] = sekunnit;
 
         }
-        ReittiPolygoni reitti = new ReittiPolygoni(lon, lat, aika);
+        Reitti reitti = new Reitti(lon, lat, aika);
         return reitti;
     }
 
-    public void luePolygonit(String polku, int maasto, PolygoniLista lista){
+    public void luePolygonit(String polku, int maasto, Lista lista){
         File tiedosto = new File(polku);
 
         this.luePolygonit(tiedosto, maasto, lista);
     }
     
-    public void luePolygonit(File tiedosto, int maasto, PolygoniLista lista) {
+    public void luePolygonit(File tiedosto, int maasto, Lista lista) {
         JSONObject obj = this.lataaJsonObject(tiedosto);
 
         JSONArray arr = obj.getJSONArray("features");

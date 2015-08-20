@@ -6,28 +6,13 @@
 package reittienEtsinta;
 
 import java.io.File;
-import raster.KuvanLukija;
-import raster.MinimiKeko;
-import java.util.Arrays;
-import java.util.Random;
-import org.json.JSONObject;
-import raster.GPXLukija;
 import reittienEtsinta.tiedostonKasittely.GeoJsonLukija;
-import reittienEtsinta.tietorakenteet.Pino;
-import reittienEtsinta.tietorakenteet.VerkkoPolygoni;
-import reittienEtsinta.tietorakenteet.AluePolygoni;
-import raster.Verkko;
-import raster.VerkkoSolmu;
+import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.Verkontekija;
-import raster.MaastoKirjasto;
-import raster.Reitti;
-import reittienEtsinta.tiedostonKasittely.GPXLukijaPolygoni;
-import reittienEtsinta.tiedostonKasittely.GeoJsonKirjoittaja;
-import reittienEtsinta.tietorakenteet.MaastoKirjastoPolygoni;
-import reittienEtsinta.tietorakenteet.MinimiKekoPolygon;
+import reittienEtsinta.tietorakenteet.MaastoKirjasto;
+import reittienEtsinta.tietorakenteet.Lista;
 import reittienEtsinta.tietorakenteet.Polygoni;
-import reittienEtsinta.tietorakenteet.PolygoniLista;
-import reittienEtsinta.tietorakenteet.ReittiPolygoni;
+import reittienEtsinta.tietorakenteet.Reitti;
 
 /**
  *
@@ -55,7 +40,7 @@ public class Main {
         GeoJsonLukija lukija = new GeoJsonLukija();
         int maastoja;
 
-        PolygoniLista polygonilista = new PolygoniLista(128);
+        Lista<Polygoni> polygonilista = new Lista(128);
 
         for (maastoja = 0; maastoja < polygonTiedostot.length; maastoja++) {
             lukija.luePolygonit(polygonTiedostot[maastoja], maastoja, polygonilista); //lisää polygonit listaan
@@ -70,14 +55,14 @@ public class Main {
         }
         File[] reittiTiedostot = reittiKansio.listFiles();
 
-        ReittiPolygoni reitti = null;
+        Reitti reitti = null;
         for (int i = 0; i < reittiTiedostot.length; i++) {
             reitti = lukija.lueReitti(reittiTiedostot[i]);
         }
         
         System.out.println("reitit luettu, ");
 
-        MaastoKirjastoPolygoni maastokirjasto = new MaastoKirjastoPolygoni(maastoja);
+        MaastoKirjasto maastokirjasto = new MaastoKirjasto(maastoja);
 
         maastokirjasto.lisaaReitti(reitti, polygonilista);
 
@@ -88,7 +73,7 @@ public class Main {
                 lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), maastokirjasto);
 
         verkontekija.luoVerkko();
-        VerkkoPolygoni verkko = verkontekija.getVerkko();
+        Verkko verkko = verkontekija.getVerkko();
 
         Kayttoliittyma kali = new Kayttoliittyma(verkko);
         kali.kaynnista();

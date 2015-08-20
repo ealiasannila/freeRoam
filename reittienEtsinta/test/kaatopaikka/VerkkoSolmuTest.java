@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
-import raster.VerkkoSolmu;
+import kaatopaikka.VerkkoSolmu;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

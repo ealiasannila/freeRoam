@@ -1,4 +1,3 @@
-
 package reittienEtsinta.tietorakenteet;
 
 import org.json.JSONArray;
@@ -13,30 +12,28 @@ import reittienEtsinta.Apumetodit;
  *
  * @author elias
  */
-public class VerkkoPolygoni {
+public class Verkko {
 
     public double[] lat;
     public double[] lon;
     private double[] alkuun;
     private double[] loppuun;
     private int[] polku;
-    private int[] kekoindeksit;
     private double[][] vm;
 
     private int maalisolmu;
     private int lahtosolmu;
 
-    private MaastoKirjastoPolygoni maastokirjasto;
+    private MaastoKirjasto maastokirjasto;
 
     //ei tarvitse kertoa erikseen mistä minne, tai vieruslistoja naapurit tiedätään muutoinkin
-    public VerkkoPolygoni(int solmujenMaara, MaastoKirjastoPolygoni maastokirjasto) {
+    public Verkko(int solmujenMaara, MaastoKirjasto maastokirjasto) {
 
         this.alkuun = new double[solmujenMaara];
         this.loppuun = new double[solmujenMaara];
         this.lat = new double[solmujenMaara];
         this.lon = new double[solmujenMaara];
         this.polku = new int[solmujenMaara];
-        this.kekoindeksit = new int[solmujenMaara];
         this.vm = new double[solmujenMaara][solmujenMaara];
 
         this.maastokirjasto = maastokirjasto;
@@ -87,9 +84,11 @@ public class VerkkoPolygoni {
     }
 
     /**
-     * Alustaa A* käyttämät alkuun loppuun ja polku taulukot uutta reitin etsintää varten. Ei alusta vierusmatriisia
+     * Alustaa A* käyttämät alkuun loppuun ja polku taulukot uutta reitin
+     * etsintää varten. Ei alusta vierusmatriisia
+     *
      * @param lahtosolmu
-     * @param maalisolmu 
+     * @param maalisolmu
      */
     public void alustus(int lahtosolmu, int maalisolmu) {
         this.maalisolmu = maalisolmu;
@@ -119,14 +118,25 @@ public class VerkkoPolygoni {
 
     /**
      * laskee lyhyimmät etäisyydet maalisolmuun lähtien lähtösolmusta.
-     * Heuristiikkafunktiona suora etäisyys * minimivauhti, lopettaa etsinnän kun reitti löytyy.
+     * Heuristiikkafunktiona suora etäisyys * minimivauhti, lopettaa etsinnän
+     * kun reitti löytyy.
      *
      * @param lahtoSolmu
      * @return
      */
     public boolean aStar() {
 
-        MinimiKekoPolygon keko = new MinimiKekoPolygon(this.alkuun, this.loppuun, this.kekoindeksit);
+        MinimiKeko keko = new MinimiKeko(this.alkuun.length) {
+
+            @Override
+            double arvio(int i) {
+                if (alkuun[i] == Double.MAX_VALUE) {
+                    return Double.MAX_VALUE * 0.00001;
+                }
+                return alkuun[i] + loppuun[i] * 0.00001; //0.00001 = minimivauhti jota voidaan kulkea
+            }
+
+        };
 
         for (int i = 0; i < this.alkuun.length; i++) {
             keko.lisaa(i);
@@ -135,7 +145,7 @@ public class VerkkoPolygoni {
         while (!keko.tyhja()) {
             int solmu = keko.otaPienin();
             if (solmu == this.maalisolmu) {
-                return true; 
+                return true;
             }
             for (int naapuri = 0; naapuri < vm.length; naapuri++) {
 
@@ -161,7 +171,7 @@ public class VerkkoPolygoni {
      * välillä ReittiPolygoni muodossa
      *
      */
-    public ReittiPolygoni lyhyinReitti() {
+    public Reitti lyhyinReitti() {
         if (this.lahtosolmu == this.maalisolmu) {
             return null;
         }
@@ -188,7 +198,7 @@ public class VerkkoPolygoni {
         }
         this.asetaReittiPist(reittilat, reittilon, reittiaika, i, this.maalisolmu);
 
-        return new ReittiPolygoni(reittilon, reittilat, reittiaika);
+        return new Reitti(reittilon, reittilat, reittiaika);
 
     }
 
@@ -216,7 +226,8 @@ public class VerkkoPolygoni {
     }
 
     /**
-     * palauttaa verkon geojson muodossa, käytetään verkon visualisointiin debuggauksen yhteydessä. Ei vaikuta ohjelman toimintaan
+     * palauttaa verkon geojson muodossa, käytetään verkon visualisointiin
+     * debuggauksen yhteydessä. Ei vaikuta ohjelman toimintaan
      *
      * @return
      */

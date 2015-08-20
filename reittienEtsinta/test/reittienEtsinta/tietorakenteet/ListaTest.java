@@ -13,18 +13,18 @@ import static org.junit.Assert.*;
  *
  * @author elias
  */
-public class PolygoniListaTest {
+public class ListaTest {
 
-    private PolygoniLista lista;
+    private Lista lista;
     private Polygoni poly1;
     private Polygoni poly2;
 
-    public PolygoniListaTest() {
+    public ListaTest() {
     }
 
     @Before
     public void setUp() {
-        lista = new PolygoniLista(2);
+        lista = new Lista(2);
         this.poly1 = new Polygoni(1);
         this.poly2 = new Polygoni(2);
 

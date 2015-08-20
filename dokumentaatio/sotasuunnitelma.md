@@ -1,10 +1,10 @@
 ? onko järkeä kattoa bb jos koko polyssa on keskimäärin 5-6 kulmaa...
 
-7. menee rakennuksen läpi kun kaksi rakennusta täysin vierekkäin.. KORJATTU AINEISTOSSA jää ehkäpä featureksi
+! menee rakennuksen läpi kun kaksi rakennusta täysin vierekkäin.. KORJATTU AINEISTOSSA jää ehkäpä featureksi
  - eri polygon -> asetetaan tuntematon maasto, ei kuitenkaan leikkaa mitään.
 
-7. naapurusto optimointi, nyt katsoo kaikki naapurustot kohteen ja naapurston ympäriltä, eli samoja naapurustoja katsotaan kahdesti
- - valitse naapurustot bb min max arvojen, ei bb keskipisteen mukaan
+! jos on kovin isoja yksittäisiä polygoneja ulottuu niiden vaikutust testattavan naapuruston ulkopuolelle eikä tarpeellisia kaaria muodosteta, ja jotain kaaria saattaa mennä läpi. Esim pitkät tie segmentit aiheuttavat.
 
-8. testaus:
+
+
 

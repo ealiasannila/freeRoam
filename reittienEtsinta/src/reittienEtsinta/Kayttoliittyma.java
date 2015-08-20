@@ -8,8 +8,8 @@ package reittienEtsinta;
 import java.util.Scanner;
 import org.json.JSONObject;
 import reittienEtsinta.tiedostonKasittely.GeoJsonKirjoittaja;
-import reittienEtsinta.tietorakenteet.ReittiPolygoni;
-import reittienEtsinta.tietorakenteet.VerkkoPolygoni;
+import reittienEtsinta.tietorakenteet.Reitti;
+import reittienEtsinta.tietorakenteet.Verkko;
 
 /**
  *
@@ -17,9 +17,9 @@ import reittienEtsinta.tietorakenteet.VerkkoPolygoni;
  */
 public class Kayttoliittyma {
 
-    private VerkkoPolygoni verkko;
+    private Verkko verkko;
 
-    public Kayttoliittyma(VerkkoPolygoni verkko) {
+    public Kayttoliittyma(Verkko verkko) {
         this.verkko = verkko;
     }
 
@@ -61,7 +61,7 @@ public class Kayttoliittyma {
 
     private void tallennaReitti(String polku) {
         System.out.println("Puretaan reitti");
-        ReittiPolygoni lyhyinReitti = verkko.lyhyinReitti();
+        Reitti lyhyinReitti = verkko.lyhyinReitti();
 
         System.out.println("Tallennetaan reitti tiedostoon " + polku);
         GeoJsonKirjoittaja.kirjoita(polku, GeoJsonKirjoittaja.muunnaJson(lyhyinReitti));

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package raster;
+package kaatopaikka;
 
-import raster.VerkkoSolmu;
-import raster.MinimiKeko;
+import kaatopaikka.VerkkoSolmu;
+import kaatopaikka.MinimiKeko;
 import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;
