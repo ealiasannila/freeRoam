@@ -1,6 +1,6 @@
 #Viikkoraportti 4
 
-![alt tag](reittiqgis.png)
+![alt tag](matinkyla.png)
 
 Ohjelmaan syötetty toteutunut reitti turkooseilla palloilla, ehdotetun reitin viiva punaisella ja reittipisteet vihreällä. Aika arvio reittiehdotukselle oli noin 6 minuuttia (polkupyörällä). Reittiä analysoimalla ohjelma antoi teille ja parkkipaikoille kutakuinkin saman nopeuden, tuntemattomille alueille noin 1/3 tästä, ja rakennuksille 0.00001 (miniminopeus).
 

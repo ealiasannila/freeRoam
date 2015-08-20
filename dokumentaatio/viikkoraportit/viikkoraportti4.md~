@@ -2,7 +2,7 @@
 
 ![alt tag](reittiqgis.png)
 
-Ohjelmaan syötetty toteutunut reitti turkooseilla palloilla, ehdotetun reitin viiva punaisella ja reittipisteet vihreällä. Aika arvio reittiehdotukselle oli noin 6 minuuttia (polkupyörällä).
+Ohjelmaan syötetty toteutunut reitti turkooseilla palloilla, ehdotetun reitin viiva punaisella ja reittipisteet vihreällä. Aika arvio reittiehdotukselle oli noin 6 minuuttia (polkupyörällä). Reittiä analysoimalla ohjelma antoi teille ja parkkipaikoille kutakuinkin saman nopeuden, tuntemattomille alueille noin 1/3 tästä, ja rakennuksille 0.00001 (miniminopeus).
 
 Viimeviikolla tehty muutos polygonpohjaiseen verkon generointiin on tällä viikolla osoittautunut hyväksi päätökseksi ja ohjelman toteutus on edennyt hyvää tahtia. Ohjelma pystyy nyt myös hallitsemaan huomattavasti suurempia alueita, kuin rasteri pohjainen versio mihin olen varsin tyytyväinen. En ole vielä ehtinyt testata kuinka suurta aineistoa ohjelma pystyy käsittelemään.
 
