@@ -32,13 +32,13 @@ public class Verkontekija {
 
     public Verkontekija(Lista<Polygoni> polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjasto maastokirjasto) {
         this.pisteita = pisteita;
-        
+
         this.latmax = latmax;
         this.latmin = latmin;
         this.lonmax = lonmax;
         this.lonmin = lonmin;
-        
-        int n = (int) this.pisteita / 300; //max solmujen maara naapurustossa
+
+        int n = (int) this.pisteita / 400; //max solmujen maara naapurustossa
         n = Math.max(n, 1);
 
         System.out.println("n: " + n);
@@ -76,7 +76,7 @@ public class Verkontekija {
     private void lisaaPolygon(Polygoni poly) {
         int x = (int) (((poly.getBBlat() - this.latmin) / (this.latmax - this.latmin)) * this.naapurustot.length);
         int y = (int) (((poly.getBBlon() - this.lonmin) / (this.lonmax - this.lonmin)) * this.naapurustot.length);
- 
+
         this.naapurustot[y][x].lisaa(poly);
 
     }
@@ -110,7 +110,7 @@ public class Verkontekija {
      * @param naapurustoX
      * @param naapurustoY
      */
-    private void asetaAlueminenKohde(Polygoni kohde, int id, int lahtosolmuIndeksi, double lat, double lon, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
+    private void asetaAlueminenKohde(Polygoni kohde, int id, int lahtosolmuIndeksi, double lat, double lon, int naapurustoX, int naapurustoY) {
         for (int l = 0; l < kohde.getId().length; l++) {
 
             if (kohde.getId()[l] != id) {
@@ -120,17 +120,24 @@ public class Verkontekija {
                 } else if ((lahtosolmuIndeksi == kohde.getId().length - 1 && l == 0) || (lahtosolmuIndeksi == 0 && l == kohde.getId().length - 1)) {//viimeisestä ekaan
                     this.verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
                 } else { //kaari alueen läpi
-                    this.asetaKaari(kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, kohdenaapurustoX, kohdenaapurustoY);
+                    this.asetaKaari(kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
                 }
             }
         }
     }
 
-    private void asetaViivamainenKohde(int id, int lahtosolmuIndeksi, Polygoni kohde, double lat, double lon) {
-        if (lahtosolmuIndeksi + 1 == kohde.getId().length) {
-            return;
+    private void asetaViivamainenKohde(int id, int lahtosolmuIndeksi, Polygoni kohde, double lat, double lon,int naapurustoX,int naapurustoY) {
+        for (int l = 0; l < kohde.getId().length; l++) {
+
+            if (kohde.getId()[l] != id) {
+
+                if (lahtosolmuIndeksi == l - 1 || lahtosolmuIndeksi == l + 1) { //reunaa pitkin seuraava solmu, täytyy asettaa kahdesti koska muutoin tulee asetetuksi else kohdassa...
+                    this.verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
+                } else { //kaari alueen läpi
+                    this.asetaKaari(-1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
+                }
+            }
         }
-        this.verkko.lisaaKaari(id, kohde.getId()[lahtosolmuIndeksi + 1], kohde.getMaasto(), lat, lon, kohde.getLat()[lahtosolmuIndeksi + 1], kohde.getLon()[lahtosolmuIndeksi + 1], true);
 
     }
 
@@ -156,9 +163,9 @@ public class Verkontekija {
                     Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].ota(k);
                     if (kohde.getId()[0] == lahto.getId()[0]) {
                         if (lahto.getClass() == AluePolygoni.class) {//alueamainen kohde, asetetaan kaaret alueen läpi joka solmuun
-                            this.asetaAlueminenKohde(kohde, id, lahtosolmuIndeksi, lat, lon, naapurustoX, naapurustoY, naapurustoX + j, naapurustoY + i);
+                            this.asetaAlueminenKohde(kohde, id, lahtosolmuIndeksi, lat, lon, naapurustoX, naapurustoY);
                         } else {// viivamainen kohde asetetaan omat kaaret vain seuraavaan solmuun.
-                            this.asetaViivamainenKohde(id, lahtosolmuIndeksi, kohde, lat, lon);
+                            this.asetaViivamainenKohde(id, lahtosolmuIndeksi, kohde, lat, lon, naapurustoX, naapurustoY);
                         }
                     } else { // asetetaan kaaret tuntemattoman alueen läpi muihin polygoneihin
                         this.asetaTuntemattomanLapi(id, kohde, lat, lon, naapurustoX, naapurustoY, naapurustoX + j, naapurustoY + i);
