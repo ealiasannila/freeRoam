@@ -75,27 +75,27 @@ public class MaastoKirjastoPolygoni {
      * @param reitti
      * @param kuvanLukija
      */
-    public void lisaaReitti(ReittiPolygoni reitti, Polygoni[] polygonit) {
+    public void lisaaReitti(ReittiPolygoni reitti, PolygoniLista polygonit) {
         // System.out.println("lisään: n=" + reitti.getAika().length);
         for (int i = 0; i < reitti.getAika().length - 1; i++) {
-            for (int j = 0; j <= polygonit.length; j++) {
-                if (j == polygonit.length) {
+            for (int j = 0; j <= polygonit.koko(); j++) {
+                if (j == polygonit.koko()) {
                     //  System.out.println("muu: " + (this.vauhtiMaastossa.length - 1) + " v: " + reitti.vauhti(i, i + 1));
                     this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));
                     break;
                 }
 
-                if (polygonit[j].getClass().equals(AluePolygoni.class)) {//aluemainen kohde
-                    AluePolygoni aluepoly = (AluePolygoni) polygonit[j];
+                if (polygonit.ota(j).getClass().equals(AluePolygoni.class)) {//aluemainen kohde
+                    AluePolygoni aluepoly = (AluePolygoni) polygonit.ota(j);
                     //  System.out.println(reitti.getLat()[i] + " lat " + reitti.getLon()[i] + " lon");
                     if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {
-                        this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
+                        this.lisaaVauhti(polygonit.ota(j).getMaasto(), reitti.vauhti(i, i + 1));
                         //         System.out.println("alue: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
                         break;
                     }
                 } else { //viivamainen kohde
-                    if (polygonit[j].pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
-                        this.lisaaVauhti(polygonit[j].getMaasto(), reitti.vauhti(i, i + 1));
+                    if (polygonit.ota(j).pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) {//etaisyys metreinä
+                        this.lisaaVauhti(polygonit.ota(j).getMaasto(), reitti.vauhti(i, i + 1));
                         //          System.out.println("viiva: " + polygonit[j].getMaasto() + " v: " + reitti.vauhti(i, i + 1));
                         break;
 

@@ -26,6 +26,7 @@ import reittienEtsinta.tiedostonKasittely.GeoJsonKirjoittaja;
 import reittienEtsinta.tietorakenteet.MaastoKirjastoPolygoni;
 import reittienEtsinta.tietorakenteet.MinimiKekoPolygon;
 import reittienEtsinta.tietorakenteet.Polygoni;
+import reittienEtsinta.tietorakenteet.PolygoniLista;
 import reittienEtsinta.tietorakenteet.ReittiPolygoni;
 
 /**
@@ -39,6 +40,11 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        if (args.length != 2) {
+            System.out.println("väärät argumentit");
+            return;
+        }
+
         File polygonKansio = new File(args[0]);
         if (!polygonKansio.isDirectory()) {
             System.out.println("anna kansio");
@@ -48,11 +54,15 @@ public class Main {
 
         GeoJsonLukija lukija = new GeoJsonLukija();
         int maastoja;
+
+        PolygoniLista polygonilista = new PolygoniLista(128);
+
         for (maastoja = 0; maastoja < polygonTiedostot.length; maastoja++) {
-            Polygoni[] polygonit = lukija.luePolygonit(polygonTiedostot[maastoja], maastoja);
-            //tee jotain
+            lukija.luePolygonit(polygonTiedostot[maastoja], maastoja, polygonilista); //lisää polygonit listaan
         }
         
+        System.out.println("polygonit luettu, " + polygonilista.koko() + " polygonia");
+
         File reittiKansio = new File(args[1]);
         if (!reittiKansio.isDirectory()) {
             System.out.println("anna kansio");
@@ -60,40 +70,21 @@ public class Main {
         }
         File[] reittiTiedostot = reittiKansio.listFiles();
 
-        for (int i = 0; maastoja < reittiTiedostot.length; maastoja++) {
-            ReittiPolygoni reitti = lukija.lueReitti(reittiTiedostot[i]);
-            //tee jotain
+        ReittiPolygoni reitti = null;
+        for (int i = 0; i < reittiTiedostot.length; i++) {
+            reitti = lukija.lueReitti(reittiTiedostot[i]);
         }
         
-        
-        
-
-        Polygoni[] rakennukset = lukija.luePolygonit("aineisto/matinkyla/rakennukset.geojson", 0);
-        Polygoni[] parkkikset = lukija.luePolygonit("aineisto/matinkyla/parkkikset.geojson", 1);
-        Polygoni[] tiet = lukija.luePolygonit("aineisto/matinkyla/tiet.geojson", 2);
-
-        Polygoni[] polygonit = new Polygoni[rakennukset.length + parkkikset.length + tiet.length];
-
-        for (int i = 0; i < rakennukset.length; i++) {
-            polygonit[i] = rakennukset[i];
-        }
-
-        for (int i = 0; i < parkkikset.length; i++) {
-            polygonit[i + rakennukset.length] = parkkikset[i];
-        }
-
-        for (int i = 0; i < tiet.length; i++) {
-            polygonit[i + rakennukset.length + parkkikset.length] = tiet[i];
-        }
+        System.out.println("reitit luettu, ");
 
         MaastoKirjastoPolygoni maastokirjasto = new MaastoKirjastoPolygoni(maastoja);
 
-        ReittiPolygoni reitti = lukija.lueReitti("aineisto/matinkyla/matinkyla.geojson");
-        maastokirjasto.lisaaReitti(reitti, polygonit);
+        maastokirjasto.lisaaReitti(reitti, polygonilista);
 
+        System.out.println("Vauhdit eri maastoissa:");
         System.out.println(maastokirjasto);
 
-        Verkontekija verkontekija = new Verkontekija(polygonit, lukija.getLatmin(), lukija.getLatmax(),
+        Verkontekija verkontekija = new Verkontekija(polygonilista, lukija.getLatmin(), lukija.getLatmax(),
                 lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), maastokirjasto);
 
         verkontekija.luoVerkko();

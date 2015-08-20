@@ -25,7 +25,7 @@ public class Kayttoliittyma {
 
     public void kaynnista() {
         Scanner lukija = new Scanner(System.in);
-        System.out.println("Komennot: \n koord <lon> <lat> <lon> <lat> \n hae <lahtosolmu> <maalisolmu> \n lopeta");
+        System.out.println("Komennot: \n koord <lon> <lat> <lon> <lat> <tiedostonimi> \n hae <lahtosolmu> <maalisolmu> <tiedostonimi> \n lopeta");
         while (true) {
             String komento = lukija.nextLine();
             if (komento.substring(0, 5).equals("koord")) {
@@ -37,21 +37,19 @@ public class Kayttoliittyma {
                 double latM = Double.parseDouble(komentotulkki.findInLine("[0-9]{7}"));
 
                 this.haeReittiKoordinaateilla(latA, lonA, latM, lonM);
-                this.tallennaReitti();
+
+                String polku = komentotulkki.next();
+                this.tallennaReitti(polku);
             }
             if (komento.substring(0, 3).equals("hae")) {
                 Scanner komentotulkki = new Scanner(komento);
                 int alku = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
                 int maali = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
 
-                if (alku != -1 && maali != -1) {
+                this.haeReitti(alku, maali);
+                String polku = komentotulkki.next();
+                this.tallennaReitti(polku);
 
-                    this.haeReitti(alku, maali);
-                    this.tallennaReitti();
-                    
-                } else {
-                    System.out.println("lähtö tai maalisolmu ei ole numero");
-                }
             } else if (komento.equals("lopeta")) {
                 return;
             } else {
@@ -61,12 +59,12 @@ public class Kayttoliittyma {
 
     }
 
-    private void tallennaReitti() {
+    private void tallennaReitti(String polku) {
         System.out.println("Puretaan reitti");
         ReittiPolygoni lyhyinReitti = verkko.lyhyinReitti();
 
-        System.out.println("Tallennetaan reitti tiedostoon aineisto/matinkyla/reitti.geojson");
-        GeoJsonKirjoittaja.kirjoita("aineisto/matinkyla/reitti.geojson", GeoJsonKirjoittaja.muunnaJson(lyhyinReitti));
+        System.out.println("Tallennetaan reitti tiedostoon " + polku);
+        GeoJsonKirjoittaja.kirjoita(polku, GeoJsonKirjoittaja.muunnaJson(lyhyinReitti));
         System.out.println("valmis");
     }
 

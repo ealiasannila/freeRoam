@@ -29,7 +29,7 @@ public class Verkontekija {
     private double lonmin;
     private double lonmax;
 
-    public Verkontekija(Polygoni[] polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjastoPolygoni maastokirjasto) {
+    public Verkontekija(PolygoniLista polygonit, double latmin, double latmax, double lonmin, double lonmax, int pisteita, MaastoKirjastoPolygoni maastokirjasto) {
         this.pisteita = pisteita;
         int n = (int) this.pisteita / 300; //max solmujen maara naapurustossa
         n = Math.max(n, 1);
@@ -56,9 +56,9 @@ public class Verkontekija {
 
     }
 
-    private void lisaaPolygonit(Polygoni[] polygonit) {
-        for (int i = 0; i < polygonit.length; i++) {
-            this.lisaaPolygon(polygonit[i]);
+    private void lisaaPolygonit(PolygoniLista polygonit) {
+        for (int i = 0; i < polygonit.koko(); i++) {
+            this.lisaaPolygon(polygonit.ota(i));
         }
     }
 

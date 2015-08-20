@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import reittienEtsinta.tietorakenteet.AluePolygoni;
 import reittienEtsinta.tietorakenteet.Polygoni;
+import reittienEtsinta.tietorakenteet.PolygoniLista;
 import reittienEtsinta.tietorakenteet.ReittiPolygoni;
 
 /**
@@ -101,17 +102,16 @@ public class GeoJsonLukija {
         return reitti;
     }
 
-    public Polygoni[] luePolygonit(String polku, int maasto){
+    public void luePolygonit(String polku, int maasto, PolygoniLista lista){
         File tiedosto = new File(polku);
 
-        return this.luePolygonit(tiedosto, maasto);
+        this.luePolygonit(tiedosto, maasto, lista);
     }
     
-    public Polygoni[] luePolygonit(File tiedosto, int maasto) {
+    public void luePolygonit(File tiedosto, int maasto, PolygoniLista lista) {
         JSONObject obj = this.lataaJsonObject(tiedosto);
 
         JSONArray arr = obj.getJSONArray("features");
-        Polygoni[] polygonit = new Polygoni[arr.length()];
 
         for (int i = 0; i < arr.length(); i++) {
 
@@ -135,9 +135,8 @@ public class GeoJsonLukija {
             if (this.lonmin > polygoni.getLonmin()) {
                 this.lonmin = polygoni.getLonmin();
             }
-            polygonit[i] = polygoni;
+            lista.lisaa(polygoni);
         }
-        return polygonit;
     }
 
     public double getLatmin() {

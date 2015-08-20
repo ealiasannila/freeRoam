@@ -1,4 +1,4 @@
-#Käyttöohje SUUNNITELMA, EI VASTAA VIELÄ OHJELMAN TOIMINTAA
+#Käyttöohje
 
 ##Syötteet:
 Ohjelmalle annetaan käynnistäessä syötteenä geojson tiedostoja joissa on määritelty toteutuneet reitit, sekä eri maastotyypit.
@@ -14,3 +14,7 @@ Kun ohjelma on käynnistetty pyydetään käyttäjää ilmoittamaan lähtö ja m
 * koord <lonLähtö> <latLähtö> <lonMaali> <latMaali> <tiedostonimi> tämä hakee lähtö ja määrnpää koordinaatteja lähimmät solmut ja laskee reitin näiden solmujen välillä.
 
 Kun lyhyin reitti on laskettu tallentaan se käyttäjän antamaan tiedostoon. Tämän jälkeen käyttäjä voi tehdä samassa verkossa uusia kyselyitä. Mikäli käyttäjä haluaa lisätä tai poistaa verkon generoinnissa käytettävää aineistoa tulee ohjelma käynnistää uudelleen. Ohjelma suljetaan komennolla lopeta.
+
+##Mallitiedostot
+Kansiossa aineisto/matinkyla/polygonit sijaitsee testiaineisto eri maastotyypeille
+Kansiossa aineisto/matinkyla/reitit sijaitsee testireitti

@@ -18,7 +18,7 @@ public class MaastoKirjastoPolygoniTest {
     private MaastoKirjastoPolygoni kirjasto;
     private ReittiPolygoni reitti;
     private ReittiPolygoni reittiUlko;
-    private Polygoni[] polygonit;
+    private PolygoniLista polygonit;
 
     public MaastoKirjastoPolygoniTest() {
     }
@@ -30,13 +30,13 @@ public class MaastoKirjastoPolygoniTest {
         reitti = new ReittiPolygoni(new double[]{0.1, 0.2}, new double[]{0.1, 0.2}, new int[]{0, 1});
         reittiUlko = new ReittiPolygoni(new double[]{1.1,1.3}, new double[]{1.1, 1.3}, new int[] {0, 1});
 
-        this.polygonit = new AluePolygoni[1];
-        this.polygonit[0] = new AluePolygoni(4);
-        this.polygonit[0].lisaaPiste(0, 0, 1);
-        this.polygonit[0].lisaaPiste(0, 1, 2);
-        this.polygonit[0].lisaaPiste(1, 1, 3);
-        this.polygonit[0].lisaaPiste(1, 0, 4);
-        polygonit[0].setMaasto(1); 
+        this.polygonit = new PolygoniLista(2);
+        this.polygonit.lisaa(new AluePolygoni(4));
+        this.polygonit.ota(0).lisaaPiste(0, 0, 1);
+        this.polygonit.ota(0).lisaaPiste(0, 1, 2);
+        this.polygonit.ota(0).lisaaPiste(1, 1, 3);
+        this.polygonit.ota(0).lisaaPiste(1, 0, 4);
+        polygonit.ota(0).setMaasto(1); 
 
     }
 
