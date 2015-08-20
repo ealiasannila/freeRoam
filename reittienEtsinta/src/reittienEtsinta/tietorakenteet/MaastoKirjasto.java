@@ -1,7 +1,6 @@
 package reittienEtsinta.tietorakenteet;
 
 import java.util.HashMap;
-import kaatopaikka.KuvanLukija;
 
 /**
  * Pitää kirjaa toteutuneiden reittien perusteella lasketusta nopeuksista eri
@@ -66,6 +65,12 @@ public class MaastoKirjasto {
 
     }
 
+    public void lisaaReitit(Lista<Reitti> lista, Lista<Polygoni> polygonit){
+        for (int i = 0; i < lista.koko(); i++) {
+            this.lisaaReitti(lista.ota(i), polygonit);
+        }
+    }
+    
     /**
      * Lisää toteutuneen reitin kaikkien pisteiden perusteella vauhdit
      * kirjastoon. Kahden pisteen välillä kuljettu vauhti lisätään molempiin
@@ -74,6 +79,7 @@ public class MaastoKirjasto {
      * @param reitti
      * @param kuvanLukija
      */
+    
     public void lisaaReitti(Reitti reitti, Lista<Polygoni> polygonit) {
         // System.out.println("lisään: n=" + reitti.getAika().length);
         for (int i = 0; i < reitti.getAika().length - 1; i++) {

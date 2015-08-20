@@ -10,17 +10,17 @@ package reittienEtsinta.tietorakenteet;
  *
  * @author elias
  */
-public class Pino {
+public class Pino<A> {
 
-    private int[] pino;
+    private Object[] pino;
     private int pinta;
 
     public Pino(int koko) {
-        this.pino = new int[koko];
+        this.pino = new Object[koko];
         this.pinta = 0;
     }
 
-    public void lisaa(int i) {
+    public void lisaa(A i) {
         this.pino[pinta] = i;
         this.pinta++;
     }
@@ -29,9 +29,9 @@ public class Pino {
         return this.pinta;
     }
     
-    public int ota() {
+    public A ota() {
         this.pinta--;
-        return this.pino[pinta];
+        return (A) this.pino[pinta];
     }
 
     public boolean tyhja() {

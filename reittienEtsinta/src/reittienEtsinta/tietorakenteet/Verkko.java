@@ -175,7 +175,7 @@ public class Verkko {
         if (this.lahtosolmu == this.maalisolmu) {
             return null;
         }
-        Pino pino = new Pino(this.alkuun.length);
+        Pino<Integer> pino = new Pino(this.alkuun.length);
 
         int seuraava = this.polku[this.maalisolmu];
 

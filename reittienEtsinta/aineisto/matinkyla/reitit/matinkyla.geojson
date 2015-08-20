@@ -2,9 +2,44 @@
 "type": "FeatureCollection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3047" } },
                                                                                 
-"features": [
-	
-{ "type": "Feature", "properties": { "track_fid": 0, "track_seg_id": 0, "track_seg_point_id": 9, "ele": null, "time": "2015\/08\/18 15:53:30", "magvar": null, "geoidheight": null, "name": null, "cmt": null, "desc": null, "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": null, "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsdata": null, "dgpsid": null }, "geometry": { "type": "Point", "coordinates": [ 374867.076050637057051, 6670602.163319614715874 ] } },
+"features": [	
+	{ 
+	"type": "Feature", 
+	"properties": 
+		{ 
+		"track_fid": 0, 
+		"track_seg_id": 0, 
+		"track_seg_point_id": 9, 
+		"ele": null, 
+		"time": "2015\/08\/18 15:53:30", 
+		"magvar": null, 
+		"geoidheight": null, 
+		"name": null, 
+		"cmt": null, 
+		"desc": null, 
+		"src": null, 
+		"link1_href": null, 
+		"link1_text": null, 
+		"link1_type": null, 
+		"link2_href": null, 
+		"link2_text": null, 
+		"link2_type": null, 
+		"sym": null, 
+		"type": null, 
+		"fix": null, 
+		"sat": null, 
+		"hdop": null, 
+		"vdop": null, 
+		"pdop": null, 
+		"ageofdgpsdata": null, 
+		"dgpsid": null 
+		}, 
+	"geometry": 
+		{ 
+		"type": "Point", 
+		"coordinates": [ 374867.076050637057051, 6670602.163319614715874 ] 
+		} 
+	},
 { "type": "Feature", "properties": { "track_fid": 0, "track_seg_id": 0, "track_seg_point_id": 10, "ele": null, "time": "2015\/08\/18 15:53:31", "magvar": null, "geoidheight": null, "name": null, "cmt": null, "desc": null, "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": null, "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsdata": null, "dgpsid": null }, "geometry": { "type": "Point", "coordinates": [ 374865.055774546111934, 6670601.372814291156828 ] } },
 { "type": "Feature", "properties": { "track_fid": 0, "track_seg_id": 0, "track_seg_point_id": 11, "ele": null, "time": "2015\/08\/18 15:53:32", "magvar": null, "geoidheight": null, "name": null, "cmt": null, "desc": null, "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": null, "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsdata": null, "dgpsid": null }, "geometry": { "type": "Point", "coordinates": [ 374860.89911623368971, 6670599.664980488829315 ] } },
 { "type": "Feature", "properties": { "track_fid": 0, "track_seg_id": 0, "track_seg_point_id": 12, "ele": null, "time": "2015\/08\/18 15:53:33", "magvar": null, "geoidheight": null, "name": null, "cmt": null, "desc": null, "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": null, "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsdata": null, "dgpsid": null }, "geometry": { "type": "Point", "coordinates": [ 374857.102107826096471, 6670597.851449431851506 ] } },

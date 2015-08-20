@@ -45,26 +45,27 @@ public class Main {
         for (maastoja = 0; maastoja < polygonTiedostot.length; maastoja++) {
             lukija.luePolygonit(polygonTiedostot[maastoja], maastoja, polygonilista); //lisää polygonit listaan
         }
-        
+
         System.out.println("polygonit luettu, " + polygonilista.koko() + " polygonia");
 
         File reittiKansio = new File(args[1]);
+        Lista<Reitti> reittilista = new Lista(2);
+
         if (!reittiKansio.isDirectory()) {
             System.out.println("anna kansio");
             return;
         }
         File[] reittiTiedostot = reittiKansio.listFiles();
 
-        Reitti reitti = null;
         for (int i = 0; i < reittiTiedostot.length; i++) {
-            reitti = lukija.lueReitti(reittiTiedostot[i]);
+            reittilista.lisaa(lukija.lueReitti(reittiTiedostot[i]));
         }
-        
-        System.out.println("reitit luettu, ");
+
+        System.out.println("reitit luettu, " + reittilista.koko() + " reittia");
 
         MaastoKirjasto maastokirjasto = new MaastoKirjasto(maastoja);
 
-        maastokirjasto.lisaaReitti(reitti, polygonilista);
+        maastokirjasto.lisaaReitit(reittilista, polygonilista);
 
         System.out.println("Vauhdit eri maastoissa:");
         System.out.println(maastokirjasto);

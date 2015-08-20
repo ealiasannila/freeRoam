@@ -7,7 +7,6 @@ package reittienEtsinta.tietorakenteet;
 
 import java.util.Arrays;
 import reittienEtsinta.Apumetodit;
-import kaatopaikka.KuvanLukija;
 
 /**
  * Kuvaa toteutunutta reittiä, tai annettua reittiehdotusta.

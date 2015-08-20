@@ -62,9 +62,19 @@ public class Kayttoliittyma {
     private void tallennaReitti(String polku) {
         System.out.println("Puretaan reitti");
         Reitti lyhyinReitti = verkko.lyhyinReitti();
+        int sekunttia = lyhyinReitti.getAika()[lyhyinReitti.getAika().length - 1];
+        int minuuttia = sekunttia / 60;
+        int tuntia = minuuttia / 60;
+        minuuttia = minuuttia % 60;
+        sekunttia = sekunttia % 60;
 
-        System.out.println("Tallennetaan reitti tiedostoon " + polku);
-        GeoJsonKirjoittaja.kirjoita(polku, GeoJsonKirjoittaja.muunnaJson(lyhyinReitti));
+        System.out.println("Aika arvio reitille: " + tuntia + "h:" + minuuttia + "m:" + sekunttia + "s");
+
+        System.out.println("Tallennetaan reitti tiedostoon " + polku + "/reitti.geojson");
+        GeoJsonKirjoittaja.kirjoita(polku + "/reitti.geojson", GeoJsonKirjoittaja.muunnaJsonReitti(lyhyinReitti));
+        
+        System.out.println("Tallennetaan reittipisteet tiedostoon " + polku + "/pisteet.geojson");
+        GeoJsonKirjoittaja.kirjoita(polku + "/pisteet.geojson", GeoJsonKirjoittaja.munnaJsonPisteet(lyhyinReitti));
         System.out.println("valmis");
     }
 

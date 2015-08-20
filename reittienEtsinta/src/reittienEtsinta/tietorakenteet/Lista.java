@@ -2,7 +2,7 @@
 package reittienEtsinta.tietorakenteet;
 
 /**
- * Listatietorakenne johon voidaan tallettaa Polygon olioita. 
+ * Listatietorakenne johon voidaan tallettaa olioita. 
  * Käyttää sisäiseen toteutukseen taulukkoa, jota kasvatetaan tarpeen mukaan
  * @author elias
  */
@@ -15,6 +15,10 @@ public class Lista<A> {
         this.koko = 0;
     }
     
+    /**
+     * lisää uuden alkion listalle
+     * @param alkio 
+     */
     public void lisaa(A alkio){
         this.lista[koko] = alkio;
         koko++;
@@ -23,6 +27,9 @@ public class Lista<A> {
         }
     }
     
+    /**
+     * tuplaa taulukon koon
+     */
     private void kasvata(){
         Object[] uusiLista = new Object[this.lista.length*2];
         for (int i = 0; i < this.lista.length; i++) {
@@ -31,10 +38,20 @@ public class Lista<A> {
         this.lista = uusiLista;
     }
     
+    /**
+     * palauttaa indeksissä i olevan alkion
+     * @param i
+     * @return 
+     */
     public A ota(int i){
         return (A) this.lista[i];
     }
     
+    
+    /**
+     * palautta listan alkioiden määrän
+     * @return 
+     */
     public int koko(){
         return koko;
     }
