@@ -47,7 +47,7 @@ public class VerkontekijaTest {
         polygonilista.lisaa(poly1);
         polygonilista.lisaa(poly2);
 
-        MaastoKirjasto maastoKirjasto = new MaastoKirjasto(1);
+        Maastokirjasto maastoKirjasto = new Maastokirjasto(1);
         maastoKirjasto.lisaaVauhti(0, 1);
         maastoKirjasto.lisaaVauhti(1, 1);
 
@@ -87,7 +87,7 @@ public class VerkontekijaTest {
         polygonilista.lisaa(poly1);
         polygonilista.lisaa(poly2);
 
-        MaastoKirjasto maastoKirjasto = new MaastoKirjasto(1);
+        Maastokirjasto maastoKirjasto = new Maastokirjasto(1);
         maastoKirjasto.lisaaVauhti(0, 2);
         maastoKirjasto.lisaaVauhti(1, 1);
 

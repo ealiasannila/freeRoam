@@ -52,8 +52,6 @@ public class GeoJsonLukija {
      * @param polku
      * @return
      */
-  
-
     private JSONObject lataaJsonObject(File tiedosto) {
 
         Scanner lukija = null;
@@ -68,10 +66,10 @@ public class GeoJsonLukija {
         return new JSONObject(data);
     }
 
-    public Reitti lueReitti(String polku){
+    public Reitti lueReitti(String polku) {
         return this.lueReitti(new File(polku));
     }
-    
+
     public Reitti lueReitti(File tiedosto) {
         JSONObject obj = this.lataaJsonObject(tiedosto);
         JSONArray arr = obj.getJSONArray("features");
@@ -102,18 +100,25 @@ public class GeoJsonLukija {
         return reitti;
     }
 
-    public void luePolygonit(String polku, int maasto, Lista lista){
+    public void luePolygonit(String polku, int maasto, Lista lista) {
         File tiedosto = new File(polku);
 
         this.luePolygonit(tiedosto, maasto, lista);
     }
-    
+
     public void luePolygonit(File tiedosto, int maasto, Lista lista) {
+        this.luePolygonit(tiedosto, maasto, lista, Integer.MAX_VALUE);
+    }
+
+    public void luePolygonit(File tiedosto, int maasto, Lista lista, int maxsolmuja) {
         JSONObject obj = this.lataaJsonObject(tiedosto);
 
         JSONArray arr = obj.getJSONArray("features");
 
         for (int i = 0; i < arr.length(); i++) {
+            if (this.getPisteita() > maxsolmuja) {
+                break;
+            }
 
             Polygoni polygoni = null;
             if (arr.getJSONObject(i).getJSONObject("geometry").getString("type").equals("LineString")) {//viivamainen

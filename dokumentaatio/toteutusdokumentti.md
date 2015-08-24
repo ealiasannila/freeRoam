@@ -43,7 +43,7 @@ Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka Ge
 
 
 ###Jatkokehitettävää
-* Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olis varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
+* Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olisi varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
 * Usean päällekkäisen muuttujan vaikutus vauhtiin. Yhdessä ylläolevan kanssa mahdollistaisi esimerkiksi korkeusvaihteluiden huomioonottamisen.
 * Ohjelmasta voisi mahdollisesti tehdä esimerkiksi QGis pluginin, jolloin reitin analysoinnin ja reittiehdotuksen antamisen, voisi tehdä paikkatieto-ohjelman sisältä graaffisesta käyttöliittymästä.
 

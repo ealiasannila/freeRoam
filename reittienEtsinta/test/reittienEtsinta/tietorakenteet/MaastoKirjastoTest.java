@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  */
 public class MaastoKirjastoTest {
 
-    private MaastoKirjasto kirjasto;
+    private Maastokirjasto kirjasto;
     private Reitti reitti;
     private Reitti reittiUlko;
     private Lista<Polygoni> polygonit;
@@ -26,7 +26,7 @@ public class MaastoKirjastoTest {
     @Before
     public void setUp() {
      
-        kirjasto = new MaastoKirjasto(3);
+        kirjasto = new Maastokirjasto(3);
         reitti = new Reitti(new double[]{0.1, 0.2}, new double[]{0.1, 0.2}, new int[]{0, 1});
         reittiUlko = new Reitti(new double[]{1.1,1.3}, new double[]{1.1, 1.3}, new int[] {0, 1});
 

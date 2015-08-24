@@ -17,14 +17,14 @@ import static org.junit.Assert.*;
 public class VerkkoTest {
 
     private Verkko verkko;
-    private MaastoKirjasto kirjasto;
+    private Maastokirjasto kirjasto;
 
     public VerkkoTest() {
     }
 
     @Before
     public void setUp() {
-        kirjasto = new MaastoKirjasto(3);
+        kirjasto = new Maastokirjasto(3);
         this.verkko = new Verkko(4, kirjasto);
 
         this.verkko.lisaaKaari(0, 1, 1, 0, 0, 0, 1, true);

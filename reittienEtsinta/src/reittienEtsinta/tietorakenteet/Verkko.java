@@ -24,10 +24,10 @@ public class Verkko {
     private int maalisolmu;
     private int lahtosolmu;
 
-    private MaastoKirjasto maastokirjasto;
+    private Maastokirjasto maastokirjasto;
 
     //ei tarvitse kertoa erikseen mistä minne, tai vieruslistoja naapurit tiedätään muutoinkin
-    public Verkko(int solmujenMaara, MaastoKirjasto maastokirjasto) {
+    public Verkko(int solmujenMaara, Maastokirjasto maastokirjasto) {
 
         this.alkuun = new double[solmujenMaara];
         this.loppuun = new double[solmujenMaara];

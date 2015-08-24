@@ -9,7 +9,7 @@ import java.io.File;
 import reittienEtsinta.tiedostonKasittely.GeoJsonLukija;
 import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.Verkontekija;
-import reittienEtsinta.tietorakenteet.MaastoKirjasto;
+import reittienEtsinta.tietorakenteet.Maastokirjasto;
 import reittienEtsinta.tietorakenteet.Lista;
 import reittienEtsinta.tietorakenteet.Polygoni;
 import reittienEtsinta.tietorakenteet.Reitti;
@@ -47,7 +47,8 @@ public class Main {
         }
 
         System.out.println("polygonit luettu, " + polygonilista.koko() + " polygonia");
-
+        int solmuja = lukija.getPisteita();
+        
         File reittiKansio = new File(args[1]);
         Lista<Reitti> reittilista = new Lista(2);
 
@@ -63,7 +64,7 @@ public class Main {
 
         System.out.println("reitit luettu, " + reittilista.koko() + " reittia");
 
-        MaastoKirjasto maastokirjasto = new MaastoKirjasto(maastoja);
+        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja);
 
         maastokirjasto.lisaaReitit(reittilista, polygonilista);
 
@@ -71,7 +72,7 @@ public class Main {
         System.out.println(maastokirjasto);
 
         Verkontekija verkontekija = new Verkontekija(polygonilista, lukija.getLatmin(), lukija.getLatmax(),
-                lukija.getLonmin(), lukija.getLonmax(), lukija.getPisteita(), maastokirjasto);
+                lukija.getLonmin(), lukija.getLonmax(), solmuja, maastokirjasto);
 
         verkontekija.luoVerkko();
         Verkko verkko = verkontekija.getVerkko();
