@@ -14,45 +14,45 @@ Testasin ohjelman suoritusaikoja erikokoisilla syötteillä, sekä etsin karkean
 
 Testasin verkon generointia pääkaupunkiseudun rakennuksista ja tiestöstä koostuvalla aineistolla. Kasvatin verkon kokoa, kunnes sen luonti ei enään onnistunut.
 
-Kaikissa testeissä Verkontekijäluokan naapuroston määriä ohjaileva vakio oli 300, ja testeillä saatu aika 10 testin keskiarvo. Verkontekijä muodostaa siis n*n naapurustoa 
+Kaikissa testeissä Verkontekijäluokan naapuroston määriä ohjaileva vakio oli 300, ja testeillä saatu aika 10 testin keskiarvo paitsi yli 100000 solmua sisältävillä verkoilla, joilla verkon generointi tehtiin vain kerran. Verkontekijä muodostaa siis n*n naapurustoa 
 
 Tulokset: **muuta taulukoksi**
 
 
+polygonit luettu, 17 polygonia
+Solmuja: 104
+n: 1
+Verkon generointiin kului aikaa: 58ms.
+polygonit luettu, 13942 polygonia
+Solmuja: 100001
+n: 333
+Verkon generointiin kului aikaa: 13121ms.
 polygonit luettu, 2 polygonia
 Solmuja: 13
 n: 1
 Verkon generointiin kului aikaa: 0ms.
-
-polygonit luettu, 17 polygonia
-Solmuja: 104
-n: 1
-Verkon generointiin kului aikaa: 5ms.
-
 polygonit luettu, 137 polygonia
 Solmuja: 1001
 n: 3
-Verkon generointiin kului aikaa: 1019ms.
-
+Verkon generointiin kului aikaa: 1516ms.
 polygonit luettu, 1545 polygonia
 Solmuja: 10006
 n: 33
-Verkon generointiin kului aikaa: 4756ms.
-
-polygonit luettu, 2903 polygonia
-Solmuja: 20005
-n: 66
-Verkon generointiin kului aikaa: 3467ms.
+Verkon generointiin kului aikaa: 6983ms.
+polygonit luettu, 48658 polygonia
+Solmuja: 323495
+n: 1078
+Verkon generointiin kului aikaa: 7250ms.
 
 
 ###Reittien etsintä:
 Reittien etsintä testauksessa testasin reitin etsintää ensin samalla pääkaupunkiseutua esittävällä verkolla ja sen osilla. Näissä verkoissa kaikkien kaarien vauhti oli sama. Testasin reitin etsintää kussakin verkossa kymmenestä satunnaisesta solmusta kymmeneen satunnaiseen solmuun. Ajat ovat näiden testien keskiarvoja.
 
 Tulokset: **muuta taulukoksi**
-polygonit luettu, 2 polygonia
-Solmuja: 13
-n: 1
-Reitin etsintään kului aikaa: 0ms.
+polygonit luettu, 813 polygonia
+Solmuja: 5402
+n: 18
+Reitin etsintään kului aikaa: 7ms.
 
 polygonit luettu, 17 polygonia
 Solmuja: 104
@@ -62,13 +62,22 @@ Reitin etsintään kului aikaa: 1ms.
 polygonit luettu, 137 polygonia
 Solmuja: 1001
 n: 3
-Reitin etsintään kului aikaa: 3ms.
+Reitin etsintään kului aikaa: 2ms.
 
 polygonit luettu, 1545 polygonia
 Solmuja: 10006
 n: 33
-Reitin etsintään kului aikaa: 17ms.
+Reitin etsintään kului aikaa: 14ms.
 
+polygonit luettu, 13942 polygonia
+Solmuja: 100001
+n: 333
+Reitin etsintään kului aikaa: 97ms.
+
+polygonit luettu, 2 polygonia
+Solmuja: 13
+n: 1
+Reitin etsintään kului aikaa: 0ms.
 
 
 

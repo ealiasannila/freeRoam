@@ -23,16 +23,147 @@ Luokassa Maastokirjasto pidetään kirjaa siitä minkälaista vauhtia minkäkin 
 Luokka Verkontekijä vastaa verkon generoinnista. Yleisperiaate on se, että solmut muodostuvat syötteenä annettujen polygonien solmuista, ja kaaria yritetään muodostaa jokaisesta solmusta jokaiseen solmuun. Kaarta ei kuitenkaan muodosteta, jos se leikkaa jonkin polygonin reunan. Koska kaarien muodostamisyrityksiä tulisi todella paljon jaetaan polygonit naapurustoihin niiden bounding boxin keskipisteen sijainnin mukaan. Kaaria pyritään muodostamaan vain samassa naapurustossa, sekä naapurustoa ympäröivissä naapurustoissa sijaitsevien polygonien solmujen kanssa. Myöskään kaaren ja polygonin leikkausta ei tarkisteta kuin lähinaapurustoissa. Jos kaari ei leikkaa mitään polygonia lisätään se pisteiden välille. Kaaren painoksi tulee aika-arvio, eli solmujen etäisyys (m)/vauhdilla (m/s).
 
 ### 4. Nopeimman reitin etsintä verkossa
-Reitin etsintä tapahtuu luokssa Verkko A* algoritmia käyttäen. A* toteutus käyttää minimikekoa ja heuristiikkafunktiona pisteen etäisyyttää maalisolmuun * minimivauhti. Verkko käyttää VIERUSLISTOJA/MATRIISIA?.
+Reitin etsintä tapahtuu luokssa Verkko A* algoritmia käyttäen. A* toteutus käyttää minimikekoa ja heuristiikkafunktiona pisteen etäisyyttää maalisolmuun * minimivauhti. Verkko käyttää vieruslistoja. Päädyin tähän ratkaisuun todettuani sen huomattavasti tehokkaammaksi suorituskykytestauksessa.
 
 ### 5. Etsityn reitin kirjoittaminen tiedostoon.
 Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka GeoJsonKirjoittaja tarjoaa metodit reitin kirjoittamiseen geojson tiedostoon, jolloin sen jatkokäyttö esimerkiksi paikkatieto-ohjelmissa on helppoa.
 
 
 ##Aika ja tilavaativuudet:
+Käytetään seuraavia merkintöjä:
 
-* verkon generointi
-* reitin haku
+|V|: verkon solmujen määrä.
+|E|: kaarien määrä.
+
+### Verkon generointi
+
+### Reitin etsintää
+Reitin etsintään käytetään A* algoritmia minimikeolla ja vieruslistoilla. 
+
+Seuraavat operaatiot ovat selkeästi aikavaativuudeltaan O(1), sillä nissä ei ole mitään toistoa tai rekursiota.
+* loysaa(solmu, naapuri, naapurinindeksi)
+* arvio(solmu)
+* minimikeon konstruktori
+* minimikeon vanhempi ja lapsi operaatiot
+* minimikeon vaihda(a, b) operaatio
+* minimikeon tyhja() operaatio
+
+Alustusoperaatio:
+
+    alustus(int lahtosolmu, int maalisolmu) {
+        this.maalisolmu = maalisolmu;					:vakio
+        this.lahtosolmu = lahtosolmu;					:vakio
+        for (int i = 0; i < this.alkuun.length; i++) {  :|V|
+            this.alkuun[i] = Double.MAX_VALUE;			  :vakio
+            this.polku[i] = -1;							  :vakio
+            this.loppuun[i] = this.arvioiEtaisyys(i);	  :vakio
+
+        }
+        this.alkuun[lahtosolmu] = 0;					:vakio
+
+    }
+Alustuksen aikavaativuus on siis O(|V|)
+    
+Minimikeko heapify:
+
+	heapify(int i) {														
+        int v = this.vasenLapsi(i);											:vakio
+        int o = this.oikeaLapsi(i);											:vakio
+        int pienempi;														:vakio
+
+        if (o <= this.keonKoko) {											:vakio
+            if (this.arvio(this.keko[v]) < arvio(this.keko[o])) {			:vakio
+                pienempi = v;												:vakio
+            } else {														:vakio
+                pienempi = o;												:vakio
+            }
+
+            if (arvio(this.keko[i]) > arvio(this.keko[pienempi])) {			:vakio
+                this.vaihda(i, pienempi);									:vakio
+                this.heapify(pienempi);										:suoritetaan enintään keon korkeuden eli log(|V|) kertaa
+            }
+        } else if (v == this.keonKoko && arvio(this.keko[i]) > arvio(this.keko[v])) {	:vakio
+            this.vaihda(i, v);												:vakio
+        }
+    }
+Heapifyn aikavaativuus on siis O(log|V|)
+
+Minimikeko paivita:
+	paivita(int solmu) {
+        int i = this.kekoindeksit[solmu];											:vakio
+        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(this.keko[i])) {	:suoritetaan enintään keon korkeuden eli log(|V|) kertaa
+            this.vaihda(i, this.vanhempi(i));										:vakio
+            i = this.vanhempi(i);													:vakio
+        }
+    }
+Päivitysoperaation aikavaativuus on siis O(log|V|)
+
+
+Minimikeko lisaa:
+	lisaa(int solmu) {
+        this.keonKoko++;														:vakio
+        int i = this.keonKoko;													:vakio
+        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(solmu)) {	suoritetaan enintään keon korkeuden eli log(|V|) kertaa
+            this.keko[i] = keko[this.vanhempi(i)];								:vakio
+            this.kekoindeksit[this.keko[i]] = i;								:vakio
+            i = this.vanhempi(i);												:vakio
+        }
+        this.keko[i] = solmu;													:vakio
+        this.kekoindeksit[solmu] = i;											:vakio
+
+    }    
+
+Lisäyksen aikavaativuus on siis O(log|V|). 
+
+Minimikeko otapienin:
+ 	otaPienin() {
+
+        int eka = this.keko[1];						:vakio
+        this.keko[1] = this.keko[this.keonKoko];	:vakio
+        this.kekoindeksit[this.keko[1]] = 1;		:vakio
+
+        this.keonKoko--;							:vakio
+        this.heapify(1);							:O(log|V|)
+        return eka;									:vakio
+    }
+    
+pienimmän ottamisen aikavaativuus on siis O(log|V|)
+
+
+A*:
+ 	aStar() {
+
+        MinimiKeko keko = new MinimiKeko(this.alkuun.length) { arvio() funktio}; 	:vakio
+
+        for (int i = 0; i < this.alkuun.length; i++) {								:O(|V|)
+            keko.lisaa(i);																:O(log|V|)
+        }
+
+        while (!keko.tyhja()) {														:O(|V|)
+            int solmu = keko.otaPienin();												:O(log|V|)
+            if (solmu == this.maalisolmu) {												:vakio
+                return true;															:vakio
+            }
+            for (int i = 0; i < this.vl[solmu].koko(); i++) {							:O(|solmusta lähtevien kaarien määrä|) 
+                int naapuri = (int) this.vl[solmu].ota(i)[0];								:vakio
+                if (loysaa(solmu, naapuri, i)) {											:vakio
+                    keko.paivita(naapuri);													:O(log|V|)
+                }
+            }
+        }
+        if (this.alkuun[this.maalisolmu] == Double.MAX_VALUE) {						:vakio
+            return false;															:vakio
+        }
+
+        return true;																:vakio
+    }
+
+A* aikavaativuus muodostuu siis O(|V|log|V|) osasta ja O(|E|log|V|) osasta. eli kokonaisaikavaativuus on O((|V|+|E|)log|V|).
+
+Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reittiin nähden. Eli pahimmassa tapauksessa O(|V|) suuntaamattomassa verkossa.
+
+**Reittien etsinnän pahimman tapauksen aikavaativuus on siis kokonaisuudessaan O((|V|+|E|)log|V|).**
+
 
 
 ## Puuteet ja parannusehdotukset:

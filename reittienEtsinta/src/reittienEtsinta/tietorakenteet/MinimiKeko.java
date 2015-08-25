@@ -139,8 +139,6 @@ public abstract class MinimiKeko {
         this.keko[i] = solmu;
         this.kekoindeksit[solmu] = i;
 
-        
-
     }
 
     /**

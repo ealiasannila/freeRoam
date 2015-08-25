@@ -54,7 +54,7 @@ public class ReitinEtsintaTest {
             this.verkko.alustus(random.nextInt(this.verkko.lat.length), random.nextInt(this.verkko.lat.length));
 
             this.verkko.aStar();
-            
+
             long aikaLopussa = System.currentTimeMillis();
             aikasumma += aikaLopussa - aikaAlussa;
 
@@ -81,6 +81,16 @@ public class ReitinEtsintaTest {
     @Test
     public void reitinEtsintaTest10000() {
         this.reitinetsintaTest(10000);
+    }
+
+    @Test
+    public void reitinEtsintaTest100000() {
+        this.reitinetsintaTest(100000);
+    }
+
+    @Test
+    public void reitinEtsintaTest1000000() {
+        this.reitinetsintaTest(1000000);
     }
 
 }

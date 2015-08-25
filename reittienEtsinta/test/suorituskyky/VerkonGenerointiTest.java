@@ -37,38 +37,41 @@ public class VerkonGenerointiTest {
 
     }
 
-    
-    
     @Test
-    public void verkonGenerointiTest10(){
+    public void verkonGenerointiTest10() {
         this.verkonGenerointiAikaTest(10);
     }
-    
+
     @Test
-    public void verkonGenerointiTest100(){
+    public void verkonGenerointiTest100() {
         this.verkonGenerointiAikaTest(100);
     }
-    
+
     @Test
-    public void verkonGenerointiTest1000(){
+    public void verkonGenerointiTest1000() {
         this.verkonGenerointiAikaTest(1000);
     }
-    
+
     @Test
-    public void verkonGenerointiTest10000(){
+    public void verkonGenerointiTest10000() {
         this.verkonGenerointiAikaTest(10000);
     }
-    
+
     @Test
-    public void verkonGenerointiTest20000(){
-        this.verkonGenerointiAikaTest(20000);
+    public void verkonGenerointiTest100000() {
+        this.verkonGenerointiAikaTest(100000);
     }
-    
+
+    @Test
+    public void verkonGenerointiTest1000000() { //ei toimi koska testiverkossa on vain noin 300 000 solmua.
+        this.verkonGenerointiAikaTest(1000000);
+    }
+
     private void verkonGenerointiAikaTest(int maxsolmuja) {
         this.verkontekija = TestausApuLuokka.luePolygonit(maxsolmuja);
-        
+
         long aikasumma = 0;
-        int n = 10;
+        int n = 1;
         for (int i = 0; i < n; i++) {
             long aikaAlussa = System.currentTimeMillis();
             verkontekija.luoVerkko();
