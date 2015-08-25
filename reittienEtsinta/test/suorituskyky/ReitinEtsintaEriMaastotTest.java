@@ -100,10 +100,11 @@ public class ReitinEtsintaEriMaastotTest {
         int solmuja = lukija.getPisteita();
         System.out.println("Solmuja: " + solmuja);
 
+        Verkko verkko = new Verkko(solmuja, maastokirjasto);
         Verkontekija verkontekija = new Verkontekija(polygonilista, lukija.getLatmin(), lukija.getLatmax(),
-                lukija.getLonmin(), lukija.getLonmax(), solmuja, maastokirjasto);
-        verkontekija.luoVerkko();
-        this.verkko = verkontekija.getVerkko();
+                lukija.getLonmin(), lukija.getLonmax(), solmuja);
+        verkontekija.luoVerkko(verkko);
+        this.verkko = verkko;
     }
 
 }

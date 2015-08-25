@@ -14,6 +14,7 @@ import reittienEtsinta.tietorakenteet.Lista;
 import reittienEtsinta.tietorakenteet.Maastokirjasto;
 import reittienEtsinta.tietorakenteet.Polygoni;
 import reittienEtsinta.tietorakenteet.Reitti;
+import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.Verkontekija;
 
 /**
@@ -68,13 +69,14 @@ public class VerkonGenerointiTest {
     }
 
     private void verkonGenerointiAikaTest(int maxsolmuja) {
-        this.verkontekija = TestausApuLuokka.luePolygonit(maxsolmuja);
+        TestausApuLuokka testiapu = new TestausApuLuokka();
+        this.verkontekija = testiapu.luePolygonit(maxsolmuja);
 
         long aikasumma = 0;
         int n = 1;
         for (int i = 0; i < n; i++) {
             long aikaAlussa = System.currentTimeMillis();
-            verkontekija.luoVerkko();
+            verkontekija.luoVerkko(testiapu.getVerkko());
             long aikaLopussa = System.currentTimeMillis();
             aikasumma += (aikaLopussa - aikaAlussa);
         }

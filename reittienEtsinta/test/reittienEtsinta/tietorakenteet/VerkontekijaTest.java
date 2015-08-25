@@ -51,9 +51,10 @@ public class VerkontekijaTest {
         maastoKirjasto.lisaaVauhti(0, 1);
         maastoKirjasto.lisaaVauhti(1, 1);
 
-        verkontekija = new Verkontekija(polygonilista, 0, 3, 0, 3, 8, maastoKirjasto);
+        Verkko verkko = new Verkko(8, maastoKirjasto);
+        verkontekija = new Verkontekija(polygonilista, 0, 3, 0, 3, 8);
 
-        this.verkontekija.luoVerkko();
+        this.verkontekija.luoVerkko(verkko);
         //System.out.println(this.verkontekija.getVerkko().toString());
         assertEquals(
                 "[   ][ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ]\n"
@@ -65,7 +66,7 @@ public class VerkontekijaTest {
                 + "[ 5 ][2.2][2.8][max][3.2][1.0][max][1.0][1.4]\n"
                 + "[ 6 ][max][max][max][max][1.4][1.0][max][1.0]\n"
                 + "[ 7 ][2.2][3.2][max][2.8][1.0][1.4][1.0][max]\n",
-                this.verkontekija.getVerkko().toString());
+                verkko.toString());
     }
 
     @Test
@@ -91,10 +92,10 @@ public class VerkontekijaTest {
         maastoKirjasto.lisaaVauhti(0, 2);
         maastoKirjasto.lisaaVauhti(1, 1);
 
-        verkontekija = new Verkontekija(polygonilista, 0, 3, 0, 3, 8, maastoKirjasto);
+        Verkko verkko = new Verkko(8, maastoKirjasto);
+        verkontekija = new Verkontekija(polygonilista, 0, 3, 0, 3, 8);
 
-        this.verkontekija.luoVerkko();
-        System.out.println(this.verkontekija.getVerkko().toString());
+        this.verkontekija.luoVerkko(verkko);
         assertEquals(
                   "[   ][ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ]\n"
                 + "[ 0 ][max][0.5][1.4][1.0][1.4][2.2][max][2.2]\n"
@@ -105,7 +106,7 @@ public class VerkontekijaTest {
                 + "[ 5 ][2.2][2.8][max][3.2][0.5][max][0.5][1.4]\n"
                 + "[ 6 ][max][max][max][max][1.4][0.5][max][0.5]\n"
                 + "[ 7 ][2.2][3.2][max][2.8][1.0][1.4][0.5][max]\n",
-                this.verkontekija.getVerkko().toString());
+                verkko.toString());
     }
 
     /**

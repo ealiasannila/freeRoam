@@ -23,9 +23,7 @@ import reittienEtsinta.tietorakenteet.Verkontekija;
  * @author elias
  */
 public class ReitinEtsintaTest {
-
     private Verkko verkko;
-
     public ReitinEtsintaTest() {
     }
 
@@ -39,21 +37,23 @@ public class ReitinEtsintaTest {
     }
 
     private void luoVerkko(int maxsolmuja) {
-        Verkontekija verkontekija = TestausApuLuokka.luePolygonit(maxsolmuja);
-        verkontekija.luoVerkko();
-        this.verkko = verkontekija.getVerkko();
+        TestausApuLuokka testiapu = new TestausApuLuokka();
+        Verkontekija verkontekija = testiapu.luePolygonit(maxsolmuja);
+        this.verkko = testiapu.getVerkko();
+        verkontekija.luoVerkko(this.verkko);
     }
 
     private void reitinetsintaTest(int maxsolmuja) {
         this.luoVerkko(maxsolmuja);
+        
         Random random = new Random();
         long aikasumma = 0;
         int n = 10;
         for (int i = 0; i < n; i++) {
             long aikaAlussa = System.currentTimeMillis();
-            this.verkko.alustus(random.nextInt(this.verkko.lat.length), random.nextInt(this.verkko.lat.length));
+            verkko.alustus(random.nextInt(verkko.lat.length), random.nextInt(verkko.lat.length));
 
-            this.verkko.aStar();
+            verkko.aStar();
 
             long aikaLopussa = System.currentTimeMillis();
             aikasumma += aikaLopussa - aikaAlussa;

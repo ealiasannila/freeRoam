@@ -10,6 +10,7 @@ import reittienEtsinta.tiedostonKasittely.GeoJsonLukija;
 import reittienEtsinta.tietorakenteet.Lista;
 import reittienEtsinta.tietorakenteet.Maastokirjasto;
 import reittienEtsinta.tietorakenteet.Polygoni;
+import reittienEtsinta.tietorakenteet.Verkko;
 import reittienEtsinta.tietorakenteet.Verkontekija;
 
 /**
@@ -18,7 +19,10 @@ import reittienEtsinta.tietorakenteet.Verkontekija;
  */
 public class TestausApuLuokka {
     
-    public static Verkontekija luePolygonit(int maxsolmuja) {
+    private int solmuja;
+    private Verkko verkko;
+    
+    public Verkontekija luePolygonit(int maxsolmuja) {
         File polygonKansio = new File("aineisto/pkseutu/");
         if (!polygonKansio.isDirectory()) {
             System.out.println("anna kansio");
@@ -37,7 +41,7 @@ public class TestausApuLuokka {
         }
 
         System.out.println("polygonit luettu, " + polygonilista.koko() + " polygonia");
-        int solmuja = lukija.getPisteita();
+        this.solmuja = lukija.getPisteita();
         System.out.println("Solmuja: " + solmuja);
 
         Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja);
@@ -45,8 +49,17 @@ public class TestausApuLuokka {
             maastokirjasto.lisaaVauhti(i, 1);
         }
 
+        this.verkko = new Verkko(solmuja, maastokirjasto);
         return new Verkontekija(polygonilista, lukija.getLatmin(), lukija.getLatmax(),
-                lukija.getLonmin(), lukija.getLonmax(), solmuja, maastokirjasto);
+                lukija.getLonmin(), lukija.getLonmax(), solmuja);
+    }
+
+    public int getSolmuja() {
+        return solmuja;
+    }
+
+    public Verkko getVerkko() {
+        return verkko;
     }
 
     

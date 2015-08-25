@@ -2,7 +2,7 @@
 
 ## Ohjelman yleisrakenne:
 
-- luokkakkavio tähän.
+![alt tag](luokkakaavio.png)
 
 Ohjelman toiminta jakautuu viiteen osaan:
 
@@ -36,6 +36,8 @@ Käytetään seuraavia merkintöjä:
 |E|: kaarien määrä.
 
 ### Verkon generointi
+
+
 
 ### Reitin etsintää
 Reitin etsintään käytetään A* algoritmia minimikeolla ja vieruslistoilla. 

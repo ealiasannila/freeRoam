@@ -2,7 +2,9 @@
 
 ## Ohjelman yleisrakenne:
 
-- luokkakkavio tähän.
+![alt tag](luokkakaavio.png)
+
+*luokkakaavio. Vain tärkeimmät luokat merkitty*
 
 Ohjelman toiminta jakautuu viiteen osaan:
 
