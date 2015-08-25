@@ -46,6 +46,10 @@ Käytetään seuraavia merkintöjä:
 
 |RK|: kaikkien reittipisteiden määrä.
 
+|N|: naapurustojen määrä.
+
+|NV|: naapurustossa olevien solmujen määrä.
+
 ### Reitin analysointi ja maastokirjaston luonti
 * Reitti
 * Maastokirjasto
@@ -82,7 +86,7 @@ Piste polygonin sisällä:
         return leikkaukset % 2 != 0;																					:vakio
     }
     
-Pisteen sisällä olemisen tarkistamisen aikavaativuus on siis O(n) polygonin pisteiden määrän suhteen    
+Pisteen sisällä olemisen tarkistamisen aikavaativuus on siis O(|PV|)
 
 
 Pisteen etäisyys polygonista
@@ -129,7 +133,7 @@ Reitin lisäys:
     
 Reitin lisäyksen aikavaativuus on siis O(|R||P||PV|) = O(|R||V|)
 
-kaikkien Reittien lisäyksen aikavaativuus on vastaavasti O(|RK||V|)  
+**kaikkien Reittien lisäyksen aikavaativuus on vastaavasti O(|RK||V|)**
 
 ### Verkon generointi
 osallistuvat luokat:
@@ -137,9 +141,203 @@ osallistuvat luokat:
 * polygoni
 * verkontekija
 * maastokirjasto
+* lista
+
+Seuraavat operaatiot ovat selkeästi aikavaativuudeltaan O(1), sillä nissä ei ole mitään toistoa tai rekursiota.
+* listan operaatiot (kasvata on aikavaativuudeltaan O(n), mutta sitä kutsutaan vain harvoin)
+* verkon lisää kaari operaatio
+* Polygonin metodit janatLeikkaavat(), janatKohtaavatPaassa() sekä kiertosuunta()
+* maastokirjaston haeMaastolla() ja haeVauhti() metodit
+* verkontekijan lisaaPolygoni(), naapurustoUlkona() sekä rajat()
+
+Leikkaako kaari polygonin
+    janaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
+        if ((lat1 < this.latmin && lat2 < this.latmin) || (lat1 > this.latmax && lat2 > this.latmax)					:vakio
+                || (lon1 < this.lonmin && lon2 < this.lonmin) || (lon1 > this.lonmax && lon2 > this.lonmax)) {
+            return false;																								:vakio
+        }
+        for (int i = 0; i < this.lat.length; i++) {																		:O(|PV|)
+            int loppu = i + 1;																								:vakio
+            if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan											:vakio
+                loppu = 0;																									:vakio
+            }
+            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[loppu], this.lon[loppu])) {		:vakio
+                return true;																								:vakio
+            }
+        }
+
+        return false;																									:vakio
+
+    }
+Aikavaativuus on siis O(|PV|)
+
+Naapurustojen alustus:
+    alustaNaapurustot(int n) {
+        this.naapurustot = new Lista[n][n];				:vakio
+
+        for (int i = 0; i < n; i++) {					:O(sqrt(|N|))
+            for (int j = 0; j < n; j++) {					:O(sqrt(|N|))
+                this.naapurustot[i][j] = new Lista(8);			:vakio
+
+            }
+        }
+    }
+Aikavaativuus on siis O(|N|)
+
+    lisaaPolygonit(Lista<Polygoni> polygonit) {
+        for (int i = 0; i < polygonit.koko(); i++) {	O(|P|)
+            this.lisaaPolygoni(polygonit.ota(i));			:vakio
+        }
+    }
+    
+Aikavaativuus on siis O(|P|)
+
+Kaaren asettaminen
+    asetaKaari(Verkko verkko, int maasto, int idp, double latp, double lonp, int idk, double latk, double lonk, 
+    		   int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
+        if (Apumetodit.pisteSama(latp, lonp, latk, lonk)) {									:vakio
+            verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);				:vakio
+            return;
+        }
+
+        int[] xRajat = this.rajat(kohdenaapurustoX - naapurustoX);							:vakio
+        int[] yRajat = this.rajat(naapurustoY - kohdenaapurustoY);							:vakio
+
+        for (int i = yRajat[0]; i <= yRajat[1]; i++) {										:vakio for looppi käydään läpi 3-5 kertaa
+            if (this.naapurustoUlkona(i, naapurustoY)) {										:vakio
+                continue;
+            }
+            for (int j = xRajat[0]; j <= xRajat[1]; j++) {									:vakio for looppi käydään läpi 3-5 kertaa	
+                if (this.naapurustoUlkona(j, naapurustoX)) {									:vakio
+                    continue;
+                }
+                Lista<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];		:vakio
+
+                for (int k = 0; k < ruutu.koko(); k++) {										:O(|P|)
+                    if (ruutu.ota(k).janaLeikkaaPolygonin(latp, lonp, latk, lonk)) {				:O(|PV|)
+                        return;
+                    }
+
+                }
+            }
+        }
+
+        verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);					:vakio
+
+    }
+    
+Aikavaativuus on siis O(n) suhteessa lähinaapurustoissa olevien solmujen määrään
+
+Aluemaisen Polygonin kaarien asetus
+    
+    asetaAlueminenKohde(Verkko verkko, Polygoni kohde, int id, int lahtosolmuIndeksi, double lat, double lon, int naapurustoX, int naapurustoY) {
+        for (int l = 0; l < kohde.getId().length; l++) {												:O(|PV|)
+            if (kohde.getId()[l] != id) {																	:vakio
+                if (lahtosolmuIndeksi == l - 1 || lahtosolmuIndeksi == l + 1) { 							:vakio
+                    verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, 					:vakio
+                    				  kohde.getLat()[l], kohde.getLon()[l], true);										
+                } else if ((lahtosolmuIndeksi == kohde.getId().length - 1 && l == 0) 						:vakio
+                			|| (lahtosolmuIndeksi == 0 && l == kohde.getId().length - 1)) {
+                    verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, 					:vakio
+                    				  kohde.getLat()[l], kohde.getLon()[l], true);
+                } else { //kaari alueen läpi
+                    asetaKaari(verkko, kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], :O(|NV|) 
+                    		   kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
+                }
+            }
+        }
+    }
+
+Aikavaativuus on siis O(|PV||NV|)
 
 
+Viivmaisen polygonin kaarien asettaminen
+    
+    asetaViivamainenKohde(Verkko verkko, int id, int lahtosolmuIndeksi, Polygoni kohde, 
+    					  double lat, double lon,int naapurustoX,int naapurustoY) {
+        for (int l = 0; l < kohde.getId().length; l++) {												:O(|PV|)
+            if (kohde.getId()[l] != id) {																	:vakio
+                if (lahtosolmuIndeksi == l - 1 || lahtosolmuIndeksi == l + 1) { 							:vakio
+                    verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, 					:vakio
+                    			      kohde.getLat()[l], kohde.getLon()[l], true);
+                } else { //kaari alueen läpi						
+                    this.asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], 			:O(|NV|) 
+                    				kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
+                }
+            }
+        }
 
+    }
+Aikavaativuus on siis O(|PV||NV|)
+
+Kahden eri polygonin välisen kaaren asettaminen
+
+    asetaTuntemattomanLapi(Verkko verkko, int id, Polygoni kohde, double lat, double lon, 
+						   int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
+        for (int l = 0; l < kohde.getId().length; l++) {														:|PV|
+            if (kohde.getId()[l] != id) {																			:vakio
+                this.asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], 	::O(|NV|) 
+                				naapurustoX, naapurustoY, kohdenaapurustoX, kohdenaapurustoY);
+            }
+        }
+    }
+    
+Aikavaativuus on siis O(|PV||NV|)
+
+Solmusta lähtevien kaarten asettaminen:
+    asetaKaaret(Verkko verkko, int lahtosolmuIndeksi, int id, double lat, double lon, 
+    			int naapurustoX, int naapurustoY, Polygoni lahto) {
+        for (int i = -2; i <= 2; i++) {																	:vakio
+            if (this.naapurustoUlkona(i, naapurustoY)) {													:vakio
+                continue;
+            }
+            for (int j = -2; j <= 2; j++) {																	:vakio
+                if (this.naapurustoUlkona(j, naapurustoX)) {													:vakio
+                    continue;
+                }
+
+                for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].koko(); k++) {			:O(|PV|)
+                    Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].ota(k);						:vakio
+                    if (kohde.getId()[0] == lahto.getId()[0]) {														:vakio
+                        if (lahto.getClass() == AluePolygoni.class) {												:vakio
+                            this.asetaAlueminenKohde(verkko, kohde, id, lahtosolmuIndeksi, 							:O(|PV||NV|)
+                            						 lat, lon, naapurustoX, naapurustoY);
+                        } else {
+                            this.asetaViivamainenKohde(verkko, id, lahtosolmuIndeksi, kohde, 						:O(|PV||NV|)
+                            						   lat, lon, naapurustoX, naapurustoY);
+                        }
+                    } else { 
+                        this.asetaTuntemattomanLapi(verkko, id, kohde, lat, lon, naapurustoX, naapurustoY, 			:O(|PV||NV|)
+                        							naapurustoX + j, naapurustoY + i);
+                    }
+                }
+
+            }
+        }
+    }
+
+Aikavaativuus on siis O((|PV||PV|)|NV|) eli lähtöpolygonin solmujen määrä * kohdepolygonin solmujen määrä * lähinaapurustoissa olevien polygonien solmujen määrä
+
+Verkon luonti
+
+
+    luoVerkko(Verkko verkko) {
+        for (int i = 0; i < this.naapurustot.length; i++) {								:O(sqrt(|N|))
+            for (int j = 0; j < this.naapurustot[i].length; j++) {							:O(sqrt(|N|))
+                for (int k = 0; k < this.naapurustot[i][j].koko(); k++) {						:O(|P|) -joka polygonille koska edelliset
+                    Polygoni polygoni = this.naapurustot[i][j].ota(k);								:vakio
+                    for (int l = 0; l < polygoni.getId().length; l++) {								:O(|PV|) - joka solmulle
+                        this.asetaKaaret(verkko, l, polygoni.getId()[l], 								:O((|PV||PV|)|NV|)
+                                         polygoni.getLat()[l], polygoni.getLon()[l], j, i, polygoni);
+                    }
+                }
+            }
+        }
+    }
+
+Verkon luonnin aikavaativuus on siis O(|V|(|PV||PV|)|NV|). |PV| on käytännössä pieni suhtessa |V| jollei aineistossa ole todella suuria yksittäisiä polygoneja, mitä pitäisi muutenkin välttää. |NV|  on lähes vakio koska naapurustojen määrä määritellään siten, että jokaiseen naapurustoon tulee enintään noin 300 solmua. niimpä:
+Verkon generoinnin aikavaativuus on O(|V|)
+ 
 ### Reitin etsintä
 Reitin etsintään käytetään A* algoritmia minimikeolla ja vieruslistoilla. 
 osallistuvat luokat:
