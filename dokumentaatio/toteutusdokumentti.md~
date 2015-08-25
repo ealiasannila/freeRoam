@@ -35,14 +35,118 @@ Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka Ge
 Käytetään seuraavia merkintöjä:
 
 |V|: verkon solmujen määrä.
+
 |E|: kaarien määrä.
 
+|P|: polygonien määrä.
+
+|PV|: polygonin pisteiden määrä.
+
+|R|: reittipisteiden määrä yhdellä reitillä.
+
+|RK|: kaikkien reittipisteiden määrä.
+
+### Reitin analysointi ja maastokirjaston luonti
+* Reitti
+* Maastokirjasto
+* Polygoni
+* Aluepolygoni
+
+Seuraavat operaatiot ovat selkeästi aikavaativuudeltaan O(1), sillä nissä ei ole mitään toistoa tai rekursiota.
+* Reittiluokan metodit
+* Maastokirjaston metodit lukuunottamatta reitin ja reittien lisäystä.
+* Polygonin tarjoama pisteenEtaisyysJanasta()
+
+Piste polygonin sisällä:
+
+    pisteSisalla(double pLat, double pLon) {
+        if (pLat < this.latmin || pLat > this.latmax || pLon < this.lonmin || pLon > this.lonmax) { 					:vakio
+            return false;																								:vakio
+        }
+        int leikkaukset = 0;																							:vakio
+
+        for (int i = 0; i < this.lat.length; i++) {																		:O(|PV|)
+            int loppu = i + 1;																							:vakio
+            if (i == this.lat.length - 1) { 																			:vakio
+                loppu = 0;																								:vakio
+            }
+
+            if ((this.lat[i] <= pLat && this.lat[loppu] > pLat) || (this.lat[i] > pLat && this.lat[loppu] <= pLat)) {	:vakio
+                double osuusViivasta = (pLat - this.lat[i]) / (this.lat[loppu] - this.lat[i]);							:vakio
+                if (pLon < this.lon[i] + osuusViivasta * (this.lon[loppu] - this.lon[i])) {								:vakio
+                    leikkaukset++;																						:vakio
+                }
+
+            }
+        }
+        return leikkaukset % 2 != 0;																					:vakio
+    }
+    
+Pisteen sisällä olemisen tarkistamisen aikavaativuus on siis O(n) polygonin pisteiden määrän suhteen    
+
+
+Pisteen etäisyys polygonista
+
+    pisteenEtaisyys(double lat, double lon) {
+        double etaisyys = Double.MAX_VALUE;																			:vakio
+        for (int i = 0; i < this.lat.length-1; i++) {																:O(|PV|)
+            double ehdokas = this.pisteJanasta(lat, lon, this.lat[i], this.lon[i], this.lat[i+1], this.lon[i+1]);	:vakio
+            if (etaisyys > ehdokas) {																				:vakio
+                etaisyys = ehdokas;																					:vakio
+            }   
+        }
+        return etaisyys;																							:vakio
+    }
+
+Reitin lisäys:
+    
+    public void lisaaReitti(Reitti reitti, Lista<Polygoni> polygonit) {
+        for (int i = 0; i < reitti.getAika().length - 1; i++) {									:O(|R|)		
+            for (int j = 0; j <= polygonit.koko(); j++) {											:O(|P|)
+                if (j == polygonit.koko()) { 															:vakio
+                    this.lisaaVauhti(this.vauhtiMaastossa.length - 1, reitti.vauhti(i, i + 1));			:vakio
+                    break;
+                }
+
+                if (polygonit.ota(j).getClass().equals(AluePolygoni.class)) {							:vakio
+                    AluePolygoni aluepoly = (AluePolygoni) polygonit.ota(j);							:vakio
+                    if (aluepoly.pisteSisalla(reitti.getLat()[i], reitti.getLon()[i])) {				:O(|PV|)
+                        this.lisaaVauhti(polygonit.ota(j).getMaasto(), reitti.vauhti(i, i + 1));		:vakio
+                        break;
+                    }
+                } else { 
+                    if (polygonit.ota(j).pisteenEtaisyys(reitti.getLat()[i], reitti.getLon()[i]) < 4) { :O(|PV|)
+                        this.lisaaVauhti(polygonit.ota(j).getMaasto(), reitti.vauhti(i, i + 1));		:vakio
+                        break;
+
+                    }
+                }
+            }
+
+        }
+
+    }
+    
+Reitin lisäyksen aikavaativuus on siis O(|R||P||PV|) = O(|R||V|)
+
+kaikkien Reittien lisäyksen aikavaativuus on vastaavasti O(|RK||V|)  
+
 ### Verkon generointi
+osallistuvat luokat:
+* verkko
+* polygoni
+* verkontekija
+* maastokirjasto
 
 
 
-### Reitin etsintää
+### Reitin etsintä
 Reitin etsintään käytetään A* algoritmia minimikeolla ja vieruslistoilla. 
+osallistuvat luokat:
+* Verkko
+* Minimikeko
+* Pino
+
 
 Seuraavat operaatiot ovat selkeästi aikavaativuudeltaan O(1), sillä nissä ei ole mitään toistoa tai rekursiota.
 * loysaa(solmu, naapuri, naapurinindeksi)
@@ -51,6 +155,7 @@ Seuraavat operaatiot ovat selkeästi aikavaativuudeltaan O(1), sillä nissä ei 
 * minimikeon vanhempi ja lapsi operaatiot
 * minimikeon vaihda(a, b) operaatio
 * minimikeon tyhja() operaatio
+* pinon lisää ja ota operaatiot
 
 Alustusoperaatio:
 
@@ -138,7 +243,8 @@ pienimmän ottamisen aikavaativuus on siis O(log|V|)
 
 
 A*:
- 	aStar() {
+
+    aStar() {
 
         MinimiKeko keko = new MinimiKeko(this.alkuun.length) { arvio() funktio}; 	:vakio
 
