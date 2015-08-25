@@ -19,7 +19,7 @@ public class Verkko {
     private double[] alkuun;
     private double[] loppuun;
     private int[] polku;
-    private double[][] vm;
+    private Lista<double[]>[] vl;
 
     private int maalisolmu;
     private int lahtosolmu;
@@ -34,16 +34,14 @@ public class Verkko {
         this.lat = new double[solmujenMaara];
         this.lon = new double[solmujenMaara];
         this.polku = new int[solmujenMaara];
-        this.vm = new double[solmujenMaara][solmujenMaara];
+        this.vl = new Lista[solmujenMaara];
 
         this.maastokirjasto = maastokirjasto;
 
-        for (int i = 0; i < vm.length; i++) {
-            for (int j = 0; j < vm[i].length; j++) {
-                vm[i][j] = Double.MAX_VALUE;
-            }
+        for (int i = 0; i < vl.length; i++) {
+            vl[i] = new Lista<double[]>(10);
         }
-
+       
     }
 
     /**
@@ -73,9 +71,9 @@ public class Verkko {
 
         double etaisyys = Apumetodit.pisteidenEtaisyys(lats, lons, latk, lonk);
         double aika = etaisyys / this.maastokirjasto.haeVauhti(maasto, ulko);
-
-        this.vm[solmu][kohde] = aika;
-        this.vm[kohde][solmu] = aika;
+        
+        this.vl[solmu].lisaa(new double[]{kohde, aika});
+        this.vl[kohde].lisaa(new double[]{solmu, aika});
 
     }
 
@@ -103,12 +101,14 @@ public class Verkko {
 
     }
 
-    private boolean loysaa(int solmu, int naapuri) {
+    private boolean loysaa(int solmu, int naapuri, int naapurinindeksi) {
         if (this.alkuun[solmu] == Double.MAX_VALUE) {
             return false;
         }
-        if (this.alkuun[naapuri] > this.alkuun[solmu] + vm[solmu][naapuri]) {
-            this.alkuun[naapuri] = this.alkuun[solmu] + vm[solmu][naapuri];
+        
+        double kaari = this.vl[solmu].ota(naapurinindeksi)[1];
+        if (this.alkuun[naapuri] > this.alkuun[solmu] + kaari) {
+            this.alkuun[naapuri] = this.alkuun[solmu] + kaari;
             this.polku[naapuri] = solmu;
             return true;
         }
@@ -147,13 +147,15 @@ public class Verkko {
             if (solmu == this.maalisolmu) {
                 return true;
             }
-            for (int naapuri = 0; naapuri < vm.length; naapuri++) {
-
-                if (loysaa(solmu, naapuri)) {
+            for (int i = 0; i < this.vl[solmu].koko(); i++) {
+                int naapuri = (int) this.vl[solmu].ota(i)[0];
+                if (loysaa(solmu, naapuri, i)) {
                     keko.paivita(naapuri);
                 }
 
             }
+
+            
         }
         if (this.alkuun[this.maalisolmu] == Double.MAX_VALUE) { //reittiä ei löytynyt
             return false;
@@ -222,62 +224,12 @@ public class Verkko {
     }
 
     public double haeKaari(int alku, int loppu) {
-        return this.vm[alku][loppu];
-    }
-
-    /**
-     * palauttaa verkon geojson muodossa, käytetään verkon visualisointiin
-     * debuggauksen yhteydessä. Ei vaikuta ohjelman toimintaan
-     *
-     * @return
-     */
-    public JSONObject getVerkko() {
-
-        JSONObject verkko = new JSONObject();
-        verkko.put("type", "FeatureCollection");
-
-        JSONObject properties = new JSONObject();
-        properties.put("name", "urn:ogc:def:crs:EPSG::3047");
-
-        JSONObject crs = new JSONObject();
-        crs.put("type", "name");
-        crs.put("properties", properties);
-
-        verkko.put("crs", crs);
-
-        JSONArray features = new JSONArray();
-
-        for (int i = 0; i < this.vm.length; i++) {
-            for (int j = 0; j < this.vm[i].length; j++) {
-
-                if (vm[i][j] < 0.001) {
-                    continue;
-                }
-
-                JSONObject feature = new JSONObject();
-                feature.put("type", "Feature");
-                feature.put("properties", "{ }");
-
-                JSONObject geometry = new JSONObject();
-                geometry.put("type", "LineString");
-
-                JSONArray coordinates = new JSONArray();
-
-                double[] lahtopiste = new double[]{this.lon[i], this.lat[i]};
-                coordinates.put(new JSONArray(lahtopiste));
-
-                double[] maalipiste = new double[]{this.lon[j], this.lat[j]};
-                coordinates.put(new JSONArray(maalipiste));
-
-                geometry.put("coordinates", coordinates);
-                feature.put("geometry", geometry);
-                features.put(feature);
+        for (int i = 0; i < this.vl[alku].koko(); i++) {
+            if ((int) this.vl[alku].ota(i)[0] == loppu) {
+                return this.vl[alku].ota(i)[1];
             }
         }
-
-        verkko.put("features", features);
-        return verkko;
-
+        return -1.0;
     }
 
     public String toString() {
@@ -286,20 +238,28 @@ public class Verkko {
         StringBuilder koord = new StringBuilder();
 
         koord.append("[   ]");
-        for (int i = 0; i < this.vm.length; i++) {
+        for (int i = 0; i < this.vl.length; i++) {
             koord.append("[ " + i + " ]");
         }
         koord.append("\n");
         builder.append(koord);
-        for (int i = 0; i < this.vm.length; i++) {
+        for (int i = 0; i < this.vl.length; i++) {
             builder.append("[ " + i + " ]");
-            for (int j = 0; j < this.vm[i].length; j++) {
-                if (this.vm[i][j] == Double.MAX_VALUE) {
-                    builder.append("[max]");
-                } else {
-                    String s = String.format("%.1f", this.vm[i][j]);
-                    builder.append("[" + s + "]");
+            for (int j = 0; j < this.vl.length; j++) {
+                boolean jloytyi = false;
+                for (int k = 0; k < this.vl[i].koko(); k++) {
+                    if ((int) this.vl[i].ota(k)[0] == j) {
+                        String s = String.format("%.1f", this.vl[i].ota(k)[1]);
+                        builder.append("[" + s + "]");
+                        jloytyi = true;
+                        break;
+                    }
                 }
+                if (!jloytyi) {
+                    builder.append("[max]");
+
+                }
+
             }
 
             builder.append("\n");

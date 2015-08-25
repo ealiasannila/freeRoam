@@ -23,7 +23,7 @@ Luokassa Maastokirjasto pidetään kirjaa siitä minkälaista vauhtia minkäkin 
 Luokka Verkontekijä vastaa verkon generoinnista. Yleisperiaate on se, että solmut muodostuvat syötteenä annettujen polygonien solmuista, ja kaaria yritetään muodostaa jokaisesta solmusta jokaiseen solmuun. Kaarta ei kuitenkaan muodosteta, jos se leikkaa jonkin polygonin reunan. Koska kaarien muodostamisyrityksiä tulisi todella paljon jaetaan polygonit naapurustoihin niiden bounding boxin keskipisteen sijainnin mukaan. Kaaria pyritään muodostamaan vain samassa naapurustossa, sekä naapurustoa ympäröivissä naapurustoissa sijaitsevien polygonien solmujen kanssa. Myöskään kaaren ja polygonin leikkausta ei tarkisteta kuin lähinaapurustoissa. Jos kaari ei leikkaa mitään polygonia lisätään se pisteiden välille. Kaaren painoksi tulee aika-arvio, eli solmujen etäisyys (m)/vauhdilla (m/s).
 
 ### 4. Nopeimman reitin etsintä verkossa
-Reitin etsintä tapahtuu luokssa Verkko A* algoritmia käyttäen. A* toteutus käyttää minimikekoa ja heuristiikkafunktiona pisteen etäisyyttää maalisolmuun * minimivauhti. Verkko käyttää VIERUSLISTOJA/MATRIISIA?.
+Reitin etsintä tapahtuu luokssa Verkko A* algoritmia käyttäen. A* toteutus käyttää minimikekoa ja heuristiikkafunktiona pisteen etäisyyttää maalisolmuun * minimivauhti. Verkko käyttää vieruslistoja.
 
 ### 5. Etsityn reitin kirjoittaminen tiedostoon.
 Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka GeoJsonKirjoittaja tarjoaa metodit reitin kirjoittamiseen geojson tiedostoon, jolloin sen jatkokäyttö esimerkiksi paikkatieto-ohjelmissa on helppoa.
@@ -37,9 +37,10 @@ Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka Ge
 
 ## Puuteet ja parannusehdotukset:
 
-###Tunnetut bugit
+###Puuteet
 * mikäli kaksi polygonia on täysin vierekkäin voi polygonin läpi muodostua kaari jonka vauhti vastaa tuntemattoman alueen vauhtia.
 * mikäli aineistossa on kovin suuria polygoneja, esimerkiksi pitkiä yhtenäisiä tiepätkiä aiheuttavat ne virheitä verkon muodostuksessa. Tämä johtuu siitä että polygonit jaetaan naapurusotihin niiden bounding boxin keskipisteen perusteella, mutta suuren polygonin vaikutus voi ulottua yli kahden naapuruston päähän.
+* ohjelma ei tue viivamaisia esteitä. Esimerkiksi moottoritie tai aita on käytännössä este jota ei voi ylittää. Koska referenssireitti ei kulje myöskään estettä pitkin saa este vauhdikseen minimivauhdin (= hyvin pieni), eikä sitä pitkin silloin ehdoteta reittejä. Koska viivamaisen kohteen läpi kuljettaessa liikutaan vain yhden solmun läpi, ilman että yksikään kaari olisi viivamaisen kohteen vauhdilla, voi ohjelma ehdottaa reittiä joka kulkee esteen poikki, vaikka näin ei todillisuudessa voitaisi toimia.
 
 
 ###Jatkokehitettävää

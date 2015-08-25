@@ -37,13 +37,14 @@ Verkko tarjoaa metodin lyhyimmän reitin palauttamiseen Reitti oliona. Luokka Ge
 
 ## Puuteet ja parannusehdotukset:
 
-###Tunnetut bugit
+###Puuteet
 * mikäli kaksi polygonia on täysin vierekkäin voi polygonin läpi muodostua kaari jonka vauhti vastaa tuntemattoman alueen vauhtia.
 * mikäli aineistossa on kovin suuria polygoneja, esimerkiksi pitkiä yhtenäisiä tiepätkiä aiheuttavat ne virheitä verkon muodostuksessa. Tämä johtuu siitä että polygonit jaetaan naapurusotihin niiden bounding boxin keskipisteen perusteella, mutta suuren polygonin vaikutus voi ulottua yli kahden naapuruston päähän.
+* ohjelma ei tue viivamaisia esteitä. Esimerkiksi moottoritie tai aita on käytännössä este jota ei voi ylittää. Koska referenssireitti ei kulje myöskään estettä pitkin saa este vauhdikseen minimivauhdin (= hyvin pieni), eikä sitä pitkin silloin ehdoteta reittejä. Koska viivamaisen kohteen läpi kuljettaessa liikutaan vain yhden solmun läpi, ilman että yksikään kaari olisi viivamaisen kohteen vauhdilla, voi ohjelma ehdottaa reittiä joka kulkee esteen poikki, vaikka näin ei todillisuudessa voitaisi toimia.
 
 
 ###Jatkokehitettävää
-* Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olis varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
+* Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olisi varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
 * Usean päällekkäisen muuttujan vaikutus vauhtiin. Yhdessä ylläolevan kanssa mahdollistaisi esimerkiksi korkeusvaihteluiden huomioonottamisen.
 * Ohjelmasta voisi mahdollisesti tehdä esimerkiksi QGis pluginin, jolloin reitin analysoinnin ja reittiehdotuksen antamisen, voisi tehdä paikkatieto-ohjelman sisältä graaffisesta käyttöliittymästä.
 
