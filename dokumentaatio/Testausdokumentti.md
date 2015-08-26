@@ -31,7 +31,7 @@ Tulokset:
 ###Reittien etsintä:
 Reittien etsintä testauksessa testasin reitin etsintää ensin samalla pääkaupunkiseutua esittävällä verkolla ja sen osilla. Näissä verkoissa kaikkien kaarien vauhti oli sama. Testasin reitin etsintää kussakin verkossa kymmenestä satunnaisesta solmusta kymmeneen satunnaiseen solmuun. Ajat ovat näiden testien keskiarvoja.
 
-Tulokset: **muuta taulukoksi**
+Tulokset: 
 
 | Solmuja	| n    	| Reitin etsintään kulunut aika ms	|
 | ----------|:-----:| ---------------------------------:|
@@ -66,6 +66,7 @@ testasin ohjelman reittiehdotuksille antamia aika-arvioita kulkemalla ehdotetun 
     koord 374384,6671020 374869,6670602 aineisto/matinkyla
     Muodostetaan reitti solmusta 445 solmuun 4605
 **Aika arvio reitille: 0h:3m:35s**
+
 **Toteutunut: 0h:3m:48s**
 
 ###reitti2.
@@ -77,6 +78,7 @@ testasin ohjelman reittiehdotuksille antamia aika-arvioita kulkemalla ehdotetun 
     koord 375208,6670444 374384,6671020 aineisto/matinkyla
     Muodostetaan reitti solmusta 3371 solmuun 445
 **Aika arvio reitille: 0h:5m:30s**
+
 **Toteutunut: 0h:5m:51s**
 
 ###Päätelmät:

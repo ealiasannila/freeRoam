@@ -21,9 +21,9 @@ Tulokset:
 | Solmuja	| n    	| Verkon generointiin kulunut aika ms	|
 | ----------|:-----:| -------------------------------------:|
 |13			|1		|0		 								|
-|104		|1		|58		 								|
-|1001 		|3		|1516	 								|
-|10006 		|33		|6983	 								|
+|104		|1		|12		 								|
+|1001 		|3		|1007	 								|
+|10006 		|33		|4948	 								|
 |100001		|333	|13121	    							|
 |323495		|1078	|7250    								|
 
@@ -31,7 +31,7 @@ Tulokset:
 ###Reittien etsintä:
 Reittien etsintä testauksessa testasin reitin etsintää ensin samalla pääkaupunkiseutua esittävällä verkolla ja sen osilla. Näissä verkoissa kaikkien kaarien vauhti oli sama. Testasin reitin etsintää kussakin verkossa kymmenestä satunnaisesta solmusta kymmeneen satunnaiseen solmuun. Ajat ovat näiden testien keskiarvoja.
 
-Tulokset: **muuta taulukoksi**
+Tulokset: 
 
 | Solmuja	| n    	| Reitin etsintään kulunut aika ms	|
 | ----------|:-----:| ---------------------------------:|
