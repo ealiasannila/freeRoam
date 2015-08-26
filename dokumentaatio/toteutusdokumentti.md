@@ -476,7 +476,7 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 
 
 ###Yhteenveto aikavaativuuksista:
-* **Reittien maastokirjastoon lisääminen: O(|RK||V|)**
+* **Reittien maastokirjastoon lisääminen: O(|RK||V|)** (voisi varmaankin parantaa käyttämällä naapurustoja)
 * **Verkon generointi: O(|V|)** (mutta suuret vakiokertoimet)
 * **Reittien etsintä: O((|V|+|E|)log|V|).**
 

@@ -124,3 +124,9 @@ Puretaan reitti
 **Aika arvio reitille: 0h:5m:30s**
 **Toteutunut: 0h:5m:51s**
 
+###Päätelmät:
+Aika-arviot ovat aavistuksen optimistisia. Syitä:
+* joudun suunnistamaan kun seuraan reittiä
+* en ollut yhtä virkeällä poljentapäällä
+
+
