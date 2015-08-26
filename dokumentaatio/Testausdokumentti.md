@@ -111,16 +111,16 @@ Nopeuseroilla ei siis vaikuta olevan hirveän suurta vaikutusta.
 
 
 ##fillaritestit
-reitti 1.
+###reitti 1.
 koord 374384,6671020 374869,6670602 aineisto/matinkyla
 Muodostetaan reitti solmusta 445 solmuun 4605
-Aika arvio reitille: 0h:3m:35s
-Toteutunut: 0h:3m:48s
+**Aika arvio reitille: 0h:3m:35s**
+**Toteutunut: 0h:3m:48s**
 
-reitti2.
+###reitti2.
 koord 375208,6670444 374384,6671020 aineisto/matinkyla
 Muodostetaan reitti solmusta 3371 solmuun 445
 Puretaan reitti
-Aika arvio reitille: 0h:5m:30s
-Toteutunut: 0h:5m:51s
+**Aika arvio reitille: 0h:5m:30s**
+**Toteutunut: 0h:5m:51s**
 

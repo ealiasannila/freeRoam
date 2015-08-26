@@ -475,6 +475,11 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 **Reittien etsinnän pahimman tapauksen aikavaativuus on siis kokonaisuudessaan O((|V|+|E|)log|V|).**
 
 
+###Yhteenveto aikavaativuuksista:
+* **Reittien maastokirjastoon lisääminen: O(|RK||V|)**
+* **Verkon generointi: O(|V|)** (mutta suuret vakiokertoimet)
+* **Reittien etsintä: O((|V|+|E|)log|V|).**
+
 
 ## Puuteet ja parannusehdotukset:
 

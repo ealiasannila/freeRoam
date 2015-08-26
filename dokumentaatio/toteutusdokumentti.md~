@@ -334,7 +334,7 @@ Verkon luonti
         }
     }
 
-Verkon luonnin aikavaativuus on siis O(|V||NV|^2). |NV|  on lähes vakio koska naapurustojen määrä määritellään Verkontekijä luokassa siten, että jokaiseen naapurustoon tulee enintään noin 300 solmua. niimpä:
+Verkon luonnin aikavaativuus on siis O(|V|(|NV|^2)). |NV|  on lähes vakio koska naapurustojen määrä määritellään Verkontekijä luokassa siten, että jokaiseen naapurustoon tulee enintään noin 300 solmua. niimpä:
 **Verkon generoinnin aikavaativuus on O(|V|)**
  
 ### Reitin etsintä
@@ -474,6 +474,11 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 
 **Reittien etsinnän pahimman tapauksen aikavaativuus on siis kokonaisuudessaan O((|V|+|E|)log|V|).**
 
+
+###Yhteenveto aikavaativuuksista:
+* **Reittien maastokirjastoon lisääminen: O(|RK||V|)**
+* **Verkon generointi: O(|V|)**
+* **Reittien etsintä: O((|V|+|E|)log|V|).**
 
 
 ## Puuteet ja parannusehdotukset:
