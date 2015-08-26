@@ -8,8 +8,8 @@ package reittienEtsinta.tietorakenteet;
 import java.util.Arrays;
 
 /**
- * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata onko piste
- * polygonin sisällä, tai leikkaako viiva polygonia.
+ * Laajentaa Polygoni luokkaa tarjoamalla metodin sen testaamiseksi, onko piste polygonin sisällä.
+ * 
  *
  * @author elias
  */

@@ -488,7 +488,6 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 * mikäli aineistossa on kovin suuria polygoneja, esimerkiksi pitkiä yhtenäisiä tiepätkiä aiheuttavat ne virheitä verkon muodostuksessa. Tämä johtuu siitä että polygonit jaetaan naapurusotihin niiden bounding boxin keskipisteen perusteella, mutta suuren polygonin vaikutus voi ulottua yli kahden naapuruston päähän.
 * ohjelma ei tue viivamaisia esteitä. Esimerkiksi moottoritie tai aita on käytännössä este jota ei voi ylittää. Koska referenssireitti ei kulje myöskään estettä pitkin saa este vauhdikseen minimivauhdin (= hyvin pieni), eikä sitä pitkin silloin ehdoteta reittejä. Koska viivamaisen kohteen läpi kuljettaessa liikutaan vain yhden solmun läpi, ilman että yksikään kaari olisi viivamaisen kohteen vauhdilla, voi ohjelma ehdottaa reittiä joka kulkee esteen poikki, vaikka näin ei todillisuudessa voitaisi toimia.
 
-
 ###Jatkokehitettävää
 * Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olisi varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.
 * Usean päällekkäisen muuttujan vaikutus vauhtiin. Yhdessä ylläolevan kanssa mahdollistaisi esimerkiksi korkeusvaihteluiden huomioonottamisen.
