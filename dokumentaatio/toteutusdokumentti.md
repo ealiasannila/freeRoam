@@ -226,7 +226,7 @@ Kaaren asettaminen
 
     }
     
-Aikavaativuus on siis O(n) suhteessa lähinaapurustoissa olevien solmujen määrään
+Aikavaativuus on siis O(|NV|)
 
 Aluemaisen Polygonin kaarien asetus
     
@@ -296,7 +296,7 @@ Solmusta lähtevien kaarten asettaminen:
                     continue;
                 }
 
-                for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].koko(); k++) {			:O(|PV|)
+                for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].koko(); k++) {			:O(|P|) polygonien määrä naapurustossa
                     Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].ota(k);						:vakio
                     if (kohde.getId()[0] == lahto.getId()[0]) {														:vakio
                         if (lahto.getClass() == AluePolygoni.class) {												:vakio
@@ -316,8 +316,7 @@ Solmusta lähtevien kaarten asettaminen:
         }
     }
 
-Aikavaativuus on siis O((|PV||PV|)|NV|) eli lähtöpolygonin solmujen määrä * kohdepolygonin solmujen määrä * lähinaapurustoissa olevien polygonien solmujen määrä
-
+Aikavaativuus on siis O(|P||PV||NV|) eli O(|NV|^2) 
 Verkon luonti
 
 
@@ -327,7 +326,7 @@ Verkon luonti
                 for (int k = 0; k < this.naapurustot[i][j].koko(); k++) {						:O(|P|) -joka polygonille koska edelliset
                     Polygoni polygoni = this.naapurustot[i][j].ota(k);								:vakio
                     for (int l = 0; l < polygoni.getId().length; l++) {								:O(|PV|) - joka solmulle
-                        this.asetaKaaret(verkko, l, polygoni.getId()[l], 								:O((|PV||PV|)|NV|)
+                        this.asetaKaaret(verkko, l, polygoni.getId()[l], 								:O(|NV|^2)
                                          polygoni.getLat()[l], polygoni.getLon()[l], j, i, polygoni);
                     }
                 }
@@ -335,7 +334,7 @@ Verkon luonti
         }
     }
 
-Verkon luonnin aikavaativuus on siis O(|V|(|PV||PV|)|NV|). |PV| on käytännössä pieni suhtessa |V| jollei aineistossa ole todella suuria yksittäisiä polygoneja, mitä pitäisi muutenkin välttää. |NV|  on lähes vakio koska naapurustojen määrä määritellään siten, että jokaiseen naapurustoon tulee enintään noin 300 solmua. niimpä:
+Verkon luonnin aikavaativuus on siis O(|V|(|NV|^2)). |NV|  on lähes vakio koska naapurustojen määrä määritellään Verkontekijä luokassa siten, että jokaiseen naapurustoon tulee enintään noin 300 solmua. niimpä:
 **Verkon generoinnin aikavaativuus on O(|V|)**
  
 ### Reitin etsintä
