@@ -71,10 +71,12 @@ public class Kayttoliittyma {
         System.out.println("Aika arvio reitille: " + tuntia + "h:" + minuuttia + "m:" + sekunttia + "s");
 
         System.out.println("Tallennetaan reitti tiedostoon " + polku + "/reitti.geojson");
-        GeoJsonKirjoittaja.kirjoita(polku + "/reitti.geojson", GeoJsonKirjoittaja.muunnaJsonReitti(lyhyinReitti));
-        
         System.out.println("Tallennetaan reittipisteet tiedostoon " + polku + "/pisteet.geojson");
-        GeoJsonKirjoittaja.kirjoita(polku + "/pisteet.geojson", GeoJsonKirjoittaja.munnaJsonPisteet(lyhyinReitti));
+
+        if (!GeoJsonKirjoittaja.kirjoita(polku + "/reitti.geojson", GeoJsonKirjoittaja.muunnaJsonReitti(lyhyinReitti)) || !GeoJsonKirjoittaja.kirjoita(polku + "/pisteet.geojson", GeoJsonKirjoittaja.munnaJsonPisteet(lyhyinReitti))) {
+            System.out.println("annettua kansiota ei löydy");
+        }
+
         System.out.println("valmis");
     }
 

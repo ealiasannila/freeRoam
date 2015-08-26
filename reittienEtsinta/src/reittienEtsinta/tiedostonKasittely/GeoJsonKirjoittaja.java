@@ -28,19 +28,18 @@ public class GeoJsonKirjoittaja {
      * @param polku
      * @param data
      */
-    public static void kirjoita(String polku, JSONObject data) {
+    public static boolean kirjoita(String polku, JSONObject data) {
         PrintWriter kirjoittaja = null;
         try {
             kirjoittaja = new PrintWriter(polku, "UTF-8");
             kirjoittaja.print(data.toString());
             kirjoittaja.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(GeoJsonKirjoittaja.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(GeoJsonKirjoittaja.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            kirjoittaja.close();
-        }
+            return false;
+        } 
+        return true;
     }
 
     private static JSONObject perusJson() {
@@ -90,7 +89,6 @@ public class GeoJsonKirjoittaja {
 
     public static JSONObject muunnaJsonReitti(Reitti kirjoitettava) {
         JSONObject reitti = perusJson();
-        
 
         JSONArray features = new JSONArray();
 
