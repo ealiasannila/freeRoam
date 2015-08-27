@@ -49,7 +49,6 @@ public class AluePolygoni extends Polygoni {
                 if (pLon < this.lon[i] + osuusViivasta * (this.lon[loppu] - this.lon[i])) {
                     leikkaukset++;
                 }
-
             }
         }
 

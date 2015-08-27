@@ -131,13 +131,11 @@ public class Verkontekija {
                 } else if ((lahtosolmuIndeksi == kohde.getId().length - 1 && l == 0) || (lahtosolmuIndeksi == 0 && l == kohde.getId().length - 1)) {//viimeisestä ekaan
                     verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
                 } else { //kaari alueen läpi
-                    if (this.kaariPolygoninSisalla(kohde, lahtosolmuIndeksi, l)) {
+                   // if (this.kaariPolygoninSisalla(kohde, lahtosolmuIndeksi, l)) {
                         asetaKaari(verkko, kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
-
-                    } else {
-
-                        asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
-                    }
+                    //} else {
+                    //    asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
+                    //}
 
                 }
             }

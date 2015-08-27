@@ -99,10 +99,10 @@ public abstract class MinimiKeko {
      * Palauttaa kekoehdon voimaan, kun alkioon on tehty muutoksia.
      * Aloittaa muokkaamisen tietystä alkiosta
      *
-     * @param alkioso
+     * @param alkio
      */
-    public void paivita(int alkioso) {
-        int i = this.kekoindeksit[alkioso];
+    public void paivita(int alkio) {
+        int i = this.kekoindeksit[alkio];
         while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(this.keko[i])) {
             this.vaihda(i, this.vanhempi(i));
             i = this.vanhempi(i);
