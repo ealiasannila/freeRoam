@@ -6,6 +6,7 @@
 package reittienEtsinta.tietorakenteet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import reittienEtsinta.Apumetodit;
 
@@ -131,11 +132,14 @@ public class Verkontekija {
                 } else if ((lahtosolmuIndeksi == kohde.getId().length - 1 && l == 0) || (lahtosolmuIndeksi == 0 && l == kohde.getId().length - 1)) {//viimeisestä ekaan
                     verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
                 } else { //kaari alueen läpi
-                   // if (this.kaariPolygoninSisalla(kohde, lahtosolmuIndeksi, l)) {
+                    if (this.kaariPolygoninSisalla(kohde, lahtosolmuIndeksi, l)) {
                         asetaKaari(verkko, kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
-                    //} else {
-                    //    asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
-                    //}
+
+                        //System.out.println("id: " + id + " kohde: " + kohde.getId()[l] + " 0");
+                    } else {
+                        //System.out.println("id: " + id + " kohde: " + kohde.getId()[l] + " -1");
+                        asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
+                    }
 
                 }
             }
@@ -149,7 +153,7 @@ public class Verkontekija {
         double latk = polygoni.getLat()[kohde];
         double lonk = polygoni.getLon()[kohde];
 
-        return polygoni.pisteSisalla(Math.min(lats, latk) + (Math.abs(lats - latk)), Math.min(lons, lonk) + (Math.abs(lons - lonk)));
+        return polygoni.pisteSisalla(Math.min(lats, latk) + (Math.abs(lats - latk) / 2), Math.min(lons, lonk) + (Math.abs(lons - lonk) / 2));
 
     }
 
@@ -197,6 +201,7 @@ public class Verkontekija {
     private void asetaTuntemattomanLapi(Verkko verkko, int id, Polygoni kohde, double lat, double lon, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
         for (int l = 0; l < kohde.getId().length; l++) {
             if (kohde.getId()[l] != id) {
+
                 this.asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, kohdenaapurustoX, kohdenaapurustoY);
             }
         }
@@ -278,8 +283,12 @@ public class Verkontekija {
      */
     private void asetaKaari(Verkko verkko, int maasto, int idp, double latp, double lonp, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
+       
+
         if (Apumetodit.pisteSama(latp, lonp, latk, lonk)) {
             verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);
+            
+
             return;
         }
 
@@ -298,13 +307,14 @@ public class Verkontekija {
 
                 for (int k = 0; k < ruutu.koko(); k++) {
                     if (ruutu.ota(k).janaLeikkaaPolygonin(latp, lonp, latk, lonk)) {
+                       
                         return;
                     }
 
                 }
             }
         }
-
+        
         verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);
 
     }

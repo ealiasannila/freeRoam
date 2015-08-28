@@ -40,7 +40,7 @@ public class Reitti {
      * @param loppu
      * @return
      */
-    private double matka(int alku, int loppu) {
+    public double matka(int alku, int loppu) {
         double matka = 0;
         for (int i = alku; i < loppu; i++) {
 
@@ -56,7 +56,7 @@ public class Reitti {
      * @param loppu
      * @return
      */
-    private double aika(int alku, int loppu) {
+    public double aika(int alku, int loppu) {
         return aika[loppu] - aika[alku];
     }
 

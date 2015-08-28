@@ -38,7 +38,7 @@ public class GeoJsonKirjoittaja {
             return false;
         } catch (UnsupportedEncodingException ex) {
             return false;
-        } 
+        }
         return true;
     }
 
@@ -72,6 +72,23 @@ public class GeoJsonKirjoittaja {
 
             JSONObject properties = new JSONObject();
             properties.put("timefromstart", kirjoitettava.getAika()[i]);
+            if (i == kirjoitettava.getAika().length - 1) {
+                properties.put("length", 0);
+                properties.put("time", 0);
+                properties.put("speed", 0);
+
+            } else {
+                properties.put("length", kirjoitettava.matka(i, i + 1));
+                properties.put("time", kirjoitettava.aika(i, i + 1));
+                if (kirjoitettava.aika(i, i + 1) == 0) {
+                    properties.put("speed", -1);
+
+                } else {
+                    double vauhti = (double)kirjoitettava.matka(i, i + 1) / (double)kirjoitettava.aika(i, i + 1);
+                    properties.put("speed", vauhti);
+                }
+
+            }
             properties.put("lat", kirjoitettava.getLat()[i]);
             properties.put("lon", kirjoitettava.getLon()[i]);
 

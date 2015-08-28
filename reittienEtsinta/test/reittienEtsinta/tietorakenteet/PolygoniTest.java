@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 public class PolygoniTest {
 
     private Polygoni polygoni;
+    private Polygoni polygoni2;
 
     public PolygoniTest() {
     }
@@ -28,6 +29,11 @@ public class PolygoniTest {
         this.polygoni.lisaaPiste(1, 0, 2);
         this.polygoni.lisaaPiste(1, 1, 3);
         this.polygoni.lisaaPiste(0, 1, 4);
+
+        this.polygoni2 = new Polygoni(3);
+        this.polygoni2.lisaaPiste(0, 0, 0);
+        this.polygoni2.lisaaPiste(0, 1, 0);
+        this.polygoni2.lisaaPiste(0, 2, 0);
 
     }
 
@@ -92,10 +98,23 @@ public class PolygoniTest {
     /**
      * Test of viivaLeikkaaPolygonin method, of class Polygoni.
      */
+    /*
     @Test
     public void testViivaLeikkaaPolygonin() {
         assertTrue(this.polygoni.janaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
         assertFalse(this.polygoni.janaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
+    }
+    */
+
+    @Test
+    public void testViivaLeikkaaPolygonin2() {
+        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 0.0, 1.0, 1.0));
+        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 0.0, 1.0, 0.0));
+
+        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.0, 1.0, 1.0));
+
+//        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.5, 1.5, 1.5));
+
     }
 
     /**

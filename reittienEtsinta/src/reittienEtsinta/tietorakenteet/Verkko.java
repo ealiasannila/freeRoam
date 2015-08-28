@@ -225,7 +225,7 @@ public class Verkko {
 
     public double haeKaari(int alku, int loppu) {
         for (int i = 0; i < this.vl[alku].koko(); i++) {
-            if ((int) this.vl[alku].ota(i)[0] == loppu) {
+            if (((int) this.vl[alku].ota(i)[0]) == loppu) {
                 return this.vl[alku].ota(i)[1];
             }
         }

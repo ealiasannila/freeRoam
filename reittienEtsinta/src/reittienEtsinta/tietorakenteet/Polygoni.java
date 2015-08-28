@@ -9,7 +9,8 @@ import java.util.Arrays;
 import reittienEtsinta.Apumetodit;
 
 /**
- * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata leikkaako viiva polygonia, tai kuinka lähellä piste on polygonin reunoja.
+ * Polygoni tietorakenne, joka tarjoaa metodit joilla voidaan testata leikkaako
+ * viiva polygonia, tai kuinka lähellä piste on polygonin reunoja.
  *
  * @author elias
  */
@@ -27,7 +28,6 @@ public class Polygoni {
     public void setMaasto(int maasto) {
         this.maasto = maasto;
     }
-    
 
     //boundingbox
     protected double latmin;
@@ -84,17 +84,16 @@ public class Polygoni {
      */
     public boolean janaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
 
-        if ((lat1 < this.latmin && lat2 < this.latmin) || (lat1 > this.latmax && lat2 > this.latmax)
-                || (lon1 < this.lonmin && lon2 < this.lonmin) || (lon1 > this.lonmax && lon2 > this.lonmax)) {
+        //System.out.println("latmax: " + this.latmax);
+        if ((lat1 <= this.latmin && lat2 <= this.latmin) || (lat1 >= this.latmax && lat2 >= this.latmax)
+                || (lon1 <= this.lonmin && lon2 <= this.lonmin) || (lon1 >= this.lonmax && lon2 >= this.lonmax)) {
             return false;
         }
 
-        for (int i = 0; i < this.lat.length; i++) {
-            int loppu = i + 1;
-            if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
-                loppu = 0;
-            }
-            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[loppu], this.lon[loppu])) {
+        for (int i = 0; i < this.lat.length-1; i++) {
+            
+            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[i+1], this.lon[i+1])) {
+                
                 return true;
             }
         }
@@ -103,10 +102,10 @@ public class Polygoni {
 
     }
 
-
-
     /**
-     * testaa kohtaavatko kaksi viivaa päässä, jos kohtaavat emme halua tulkita sitä leikkaukseksi
+     * testaa kohtaavatko kaksi viivaa päässä, jos kohtaavat emme halua tulkita
+     * sitä leikkaukseksi
+     *
      * @param latp1
      * @param lonp1
      * @param latp2
@@ -115,7 +114,7 @@ public class Polygoni {
      * @param lonq1
      * @param latq2
      * @param lonq2
-     * @return 
+     * @return
      */
     private boolean janatKohtaavatPaassa(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
         return Apumetodit.pisteSama(latp1, lonp1, latq1, lonq1) || Apumetodit.pisteSama(latp1, lonp1, latq2, lonq2)
@@ -124,6 +123,7 @@ public class Polygoni {
 
     /**
      * testaa leikkaavatko kaksi janaa
+     *
      * @param latp1
      * @param lonp1
      * @param latp2
@@ -132,9 +132,9 @@ public class Polygoni {
      * @param lonq1
      * @param latq2
      * @param lonq2
-     * @return 
+     * @return
      */
-    private boolean janatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
+    protected boolean janatLeikkaavat(double latp1, double lonp1, double latp2, double lonp2, double latq1, double lonq1, double latq2, double lonq2) {
         if (this.janatKohtaavatPaassa(latp1, lonp1, latp2, lonp2, latq1, lonq1, latq2, lonq2)) {
             return false;
         }
@@ -200,33 +200,35 @@ public class Polygoni {
         this.pisteita++;
     }
 
-    
     /**
-     * antaa pisteen etäisyyden polygonin kaarista. Ei testaa etäisyyttä ensimmäisen ja viimeisen pisteeen väliseen kaareen
+     * antaa pisteen etäisyyden polygonin kaarista. Ei testaa etäisyyttä
+     * ensimmäisen ja viimeisen pisteeen väliseen kaareen
+     *
      * @param lat
      * @param lon
-     * @return 
+     * @return
      */
     public double pisteenEtaisyys(double lat, double lon) {
         double etaisyys = Double.MAX_VALUE;
-        for (int i = 0; i < this.lat.length-1; i++) {
-            double ehdokas = this.pisteJanasta(lat, lon, this.lat[i], this.lon[i], this.lat[i+1], this.lon[i+1]);
+        for (int i = 0; i < this.lat.length - 1; i++) {
+            double ehdokas = this.pisteJanasta(lat, lon, this.lat[i], this.lon[i], this.lat[i + 1], this.lon[i + 1]);
             if (etaisyys > ehdokas) {
                 etaisyys = ehdokas;
-            }   
+            }
         }
         return etaisyys;
     }
 
     /**
      * antaa pisteen etäsiyyden janasta
+     *
      * @param latp
      * @param lonp
      * @param latj1
      * @param lonj1
      * @param latj2
      * @param lonj2
-     * @return 
+     * @return
      */
     private double pisteJanasta(double latp, double lonp, double latj1, double lonj1, double latj2, double lonj2) {
         double jananpituusToiseen = Apumetodit.pisteidenEtaisyysToiseen(latj1, lonj1, latj2, lonj2);

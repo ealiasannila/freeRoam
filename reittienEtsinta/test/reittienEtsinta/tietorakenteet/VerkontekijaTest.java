@@ -30,7 +30,6 @@ public class VerkontekijaTest {
      */
     @Test
     public void testLuoVerkkoAlue() {
-        System.out.println("aluetest");
         Lista<Polygoni> polygonilista = new Lista<Polygoni>(2);
         Polygoni poly1 = new AluePolygoni(4);
         poly1.lisaaPiste(1, 1, 0);
@@ -70,6 +69,43 @@ public class VerkontekijaTest {
     }
 
     @Test
+    public void testLuoVerkkoAlue2() {
+        Lista<Polygoni> polygonilista = new Lista<Polygoni>(2);
+        Polygoni poly1 = new AluePolygoni(8);
+        poly1.lisaaPiste(0, 1, 0);
+        poly1.lisaaPiste(0, 2, 1);
+        poly1.lisaaPiste(1, 3, 2);
+        poly1.lisaaPiste(2, 2, 3);
+        poly1.lisaaPiste(1, 2, 4);
+        poly1.lisaaPiste(1, 1, 5);
+        poly1.lisaaPiste(2, 1, 6);
+        poly1.lisaaPiste(1, 0, 7);
+
+        polygonilista.lisaa(poly1);
+
+        Maastokirjasto maastoKirjasto = new Maastokirjasto(1);
+        maastoKirjasto.lisaaVauhti(0, 2);
+        maastoKirjasto.lisaaVauhti(1, 1);
+
+        Verkko verkko = new Verkko(8, maastoKirjasto);
+        verkontekija = new Verkontekija(polygonilista, 0, 3, 0, 3, 8);
+
+        this.verkontekija.luoVerkko(verkko);
+        //System.out.println(verkko.toString());
+        assertEquals(
+                "[   ][ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ]\n"
+                + "[ 0 ][max][0.5][1.1][max][0.7][0.5][max][0.7]\n"
+                + "[ 1 ][0.5][max][0.7][max][0.5][0.7][max][1.1]\n"
+                + "[ 2 ][1.1][0.7][max][0.7][0.5][max][max][max]\n"
+                + "[ 3 ][max][max][0.7][max][0.5][1.4][1.0][max]\n"
+                + "[ 4 ][0.7][0.5][0.5][0.5][max][0.5][1.4][max]\n"
+                + "[ 5 ][0.5][0.7][max][1.4][0.5][max][0.5][0.5]\n"
+                + "[ 6 ][max][max][max][1.0][1.4][0.5][max][0.7]\n"
+                + "[ 7 ][0.7][1.1][max][max][max][0.5][0.7][max]\n",
+                verkko.toString());
+    }
+
+    @Test
     public void testLuoVerkkoViiva() {
         System.out.println("viivatest");
         Lista<Polygoni> polygonilista = new Lista<Polygoni>(2);
@@ -97,7 +133,7 @@ public class VerkontekijaTest {
 
         this.verkontekija.luoVerkko(verkko);
         assertEquals(
-                  "[   ][ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ]\n"
+                "[   ][ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ]\n"
                 + "[ 0 ][max][0.5][1.4][1.0][1.4][2.2][max][2.2]\n"
                 + "[ 1 ][0.5][max][0.5][1.4][2.2][2.8][max][3.2]\n"
                 + "[ 2 ][1.4][0.5][max][0.5][max][max][max][max]\n"

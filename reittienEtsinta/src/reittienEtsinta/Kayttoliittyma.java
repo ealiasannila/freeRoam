@@ -40,8 +40,7 @@ public class Kayttoliittyma {
 
                 String polku = komentotulkki.next();
                 this.tallennaReitti(polku);
-            }
-            if (komento.substring(0, 3).equals("hae")) {
+            } else if (komento.substring(0, 3).equals("hae")) {
                 Scanner komentotulkki = new Scanner(komento);
                 int alku = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
                 int maali = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
@@ -50,6 +49,13 @@ public class Kayttoliittyma {
                 String polku = komentotulkki.next();
                 this.tallennaReitti(polku);
 
+            } else if (komento.substring(0, 5).equals("kaari")) {
+                Scanner komentotulkki = new Scanner(komento);
+                int alku = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
+                int maali = Integer.parseInt(komentotulkki.findInLine("[0-9]{1,4}"));
+
+                this.haeKaari(alku, maali);
+
             } else if (komento.equals("lopeta")) {
                 return;
             } else {
@@ -57,6 +63,11 @@ public class Kayttoliittyma {
             }
         }
 
+    }
+
+    private void haeKaari(int alku, int loppu) {
+        double haeKaari = this.verkko.haeKaari(alku, loppu);
+        System.out.println("aika solmusta " + alku + " solmuun " + loppu +": " + haeKaari);
     }
 
     private void tallennaReitti(String polku) {
