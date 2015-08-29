@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Testaa listan toimintaa
  * @author elias
  */
 public class ListaTest {
@@ -31,7 +31,7 @@ public class ListaTest {
     }
 
     /**
-     * Test of lisaa method, of class PolygoniLista.
+     * Testaa lisäystä
      */
     @Test
     public void testLisaa() {
@@ -45,7 +45,7 @@ public class ListaTest {
     }
 
     /**
-     * Test of ota method, of class PolygoniLista.
+     * Testaa ottamista
      */
     @Test
     public void testOta() {
@@ -57,7 +57,7 @@ public class ListaTest {
     }
 
     /**
-     * Test of koko method, of class PolygoniLista.
+     * Testaa kokoa
      */
     @Test
     public void testKoko() {

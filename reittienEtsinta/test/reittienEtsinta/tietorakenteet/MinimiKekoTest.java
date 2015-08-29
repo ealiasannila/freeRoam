@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Testaa minimikekoa
  * @author elias
  */
 public class MinimiKekoTest {
@@ -24,6 +24,9 @@ public class MinimiKekoTest {
     public MinimiKekoTest() {
     }
 
+    /**
+     * luo keko-olion
+     */
     @Before
     public void setUp() {
         int n = 10;
@@ -48,7 +51,7 @@ public class MinimiKekoTest {
     }
 
     /**
-     * Test of paivita method, of class MinimiKekoPolygon.
+     * Testaa että keko päivittää rakennettansa, kun loppuun tai alkuun taulukkoa muutetaan
      */
     @Test
     public void testPaivita() {
@@ -62,10 +65,10 @@ public class MinimiKekoTest {
     }
 
     /**
-     * Test of lisaa method, of class MinimiKekoPolygon.
+     * Laitetaan kekoon alkioita ja tarkistetaan että ne tulevat oikeassa järjestyksessä ulos
      */
     @Test
-    public void testLisaa() {
+    public void testLisaaJaOta() {
         for (int i = 0; i < this.alkuun.length; i++) {
             this.keko.lisaa(i);
         }
@@ -79,25 +82,16 @@ public class MinimiKekoTest {
 
     }
 
-    /**
-     * Test of tyhja method, of class MinimiKekoPolygon.
-     */
+    
     @Test
     public void testTyhja() {
+        assertTrue(this.keko.tyhja());
+        this.keko.lisaa(1);
+        assertFalse(this.keko.tyhja());
+        this.keko.otaPienin();
+        assertTrue(this.keko.tyhja());
     }
 
-    /**
-     * Test of otaPienin method, of class MinimiKekoPolygon.
-     */
-    @Test
-    public void testOtaPienin() {
-    }
-
-    /**
-     * Test of toString method, of class MinimiKekoPolygon.
-     */
-    @Test
-    public void testToString() {
-    }
+    
 
 }

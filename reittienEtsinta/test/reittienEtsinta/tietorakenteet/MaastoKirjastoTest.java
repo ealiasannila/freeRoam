@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Testaa maastokirjaston toimintaa
  *
  * @author elias
  */
@@ -24,6 +25,9 @@ public class MaastoKirjastoTest {
     public MaastoKirjastoTest() {
     }
 
+    /**
+     * luo maastokirjaston ja polygonit
+     */
     @Before
     public void setUp() {
 
@@ -45,7 +49,7 @@ public class MaastoKirjastoTest {
 
         polygonit.ota(0).setMaasto(0);
         polygonit.ota(1).setMaasto(1);
-        
+
         this.kirjasto.lisaaReitti(reitti, polygonit);
         this.kirjasto.lisaaReitti(reittiviiva, polygonit);
         this.kirjasto.lisaaReitti(reittiulko, polygonit);
@@ -53,25 +57,29 @@ public class MaastoKirjastoTest {
     }
 
     /**
-     * Test of haeVauhti method, of class MaastoKirjastoPolygoni.
+     * Testaa että alueen sisällä kuljettassa tulee oikea vauhti
      */
     @Test
-    public void testHaeVauhtiAlue() {
+    public void testHaeVauhtiAlueSisa() {
 
-        assertTrue(0.14142135623730953 - this.kirjasto.haeVauhti(0, false) < 0.0001);
-        assertTrue(0.14142135623730953 - this.kirjasto.haeVauhti(0, false) > -0.0001);
-
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(0, true) < 0.0001);
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(0, true) > -0.0001);
+        assertEquals(0.14142135623730953, this.kirjasto.haeVauhti(0, false), 0.0001);
     }
+    /**
+     * testaa että alueen reunaa pitkin kuljettaessa tulee suurempi alueen ja tuntemattoman vauhdeista
+     */
+    @Test
+    public void testHaeVauhtiAlueUlko() {
 
+        assertEquals(0.14142135623730953 * 2, this.kirjasto.haeVauhti(0, true), 0.0001);
+    }
+    /**
+     * testaa että viivaa pitkin kuljettaessa tulee oikea vauhti
+     */
     @Test
     public void testHaeVauhtiViiva() {
 
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(1, true) < 0.0001);
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(1, true) > -0.0001);
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(1, false) < 0.0001);
-        assertTrue(0.14142135623730953 * 2 - this.kirjasto.haeVauhti(1, false) > -0.0001);
+        assertEquals(0.14142135623730953 * 2, this.kirjasto.haeVauhti(1, true), 0.0001);
+        assertEquals(0.14142135623730953 * 2, this.kirjasto.haeVauhti(1, false), 0.0001);
     }
 
 }

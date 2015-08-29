@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Testaa verkontekijän toimintaa
  * @author elias
  */
 public class VerkontekijaTest {
@@ -26,7 +26,7 @@ public class VerkontekijaTest {
     }
 
     /**
-     * Test of luoVerkko method, of class Verkontekija.
+     * Testaa aluemaisen polygonin pohjalta verkon luomista
      */
     @Test
     public void testLuoVerkkoAlue() {
@@ -68,8 +68,12 @@ public class VerkontekijaTest {
                 verkko.toString());
     }
 
+    /**
+     * Testaa verkon luomista sellaisen aluemaisen polygonin pohjalta, missä on sisäkulma.
+     * Tässä tapauksessa polygonin pisteiden välillä kulkee kaari, joka on polygonin ulkopuolella.
+     */
     @Test
-    public void testLuoVerkkoAlueSisakulma() { //sen muotoinen verkko, missä luodaan kaari polygonin solmusta toiseen tuntemattoman alueen läpi
+    public void testLuoVerkkoAlueSisakulma() { 
         Lista<Polygoni> polygonilista = new Lista<Polygoni>(2);
         Polygoni poly1 = new AluePolygoni(8);
         poly1.lisaaPiste(0, 1, 0);
@@ -104,6 +108,10 @@ public class VerkontekijaTest {
                 verkko.toString());
     }
 
+    /**
+     * testaa verkon luomista viivamaisella polygonilla
+     */
+    
     @Test
     public void testLuoVerkkoViiva() {
         Lista<Polygoni> polygonilista = new Lista<Polygoni>(2);

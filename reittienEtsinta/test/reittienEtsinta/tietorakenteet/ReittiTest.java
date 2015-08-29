@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Testaa reitti luokkaa
  *
  * @author elias
  */
@@ -20,6 +21,9 @@ public class ReittiTest {
     public ReittiTest() {
     }
 
+    /**
+     * luo reitin
+     */
     @Before
     public void setUp() {
         int[] aika = new int[]{0, 1};
@@ -29,29 +33,23 @@ public class ReittiTest {
 
     }
 
-    /**
-     * Test of vauhti method, of class Reitti.
-     */
+   
     @Test
     public void testVauhti() {
         assertEquals(1, this.reitti.vauhti(0, 1), 0.001);
 
     }
-    
+
     @Test
-    public void testMatka(){
-        assertEquals(1, this.reitti.matka(0, 1),0.001);
-    }
-    @Test
-    public void testAika(){
-        assertEquals(1, this.reitti.aika(0, 1),0.001);
+    public void testMatka() {
+        assertEquals(1, this.reitti.matka(0, 1), 0.001);
     }
 
-    /**
-     * Test of toString method, of class Reitti.
-     */
     @Test
-    public void testToString() {
+    public void testAika() {
+        assertEquals(1, this.reitti.aika(0, 1), 0.001);
     }
+
+    
 
 }

@@ -170,6 +170,13 @@ public class Verkko {
     protected int[] getPolku() {
         return polku;
     }
+    
+    //testaus käyttää
+    protected double[] getAlkuun() {
+        return alkuun;
+    }
+    
+    
 
     /**
      * palauttaa aStar metodin etsimän lyhyimmän reitin lähtö ja maalisolmun
