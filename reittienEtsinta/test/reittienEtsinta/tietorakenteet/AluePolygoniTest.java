@@ -30,15 +30,49 @@ public class AluePolygoniTest {
 
     }
 
-    
     /**
-     * Test of pisteSisalla method, of class Polygoni.
+     * Testaa onko piste polygonin sisällä
      */
     @Test
-    public void testPisteSisalla() {
+    public void testPisteSisallaOn() {
         assertTrue(this.polygoni.pisteSisalla(0.5, 0.5));
+    }
+
+    @Test
+    public void testPisteSisallaEi() {
         assertFalse(this.polygoni.pisteSisalla(1.5, 1.5));
     }
 
-    
+    @Test
+    public void testPisteSisallaItaRajalla() {
+        assertTrue(this.polygoni.pisteSisalla(0.5, 1.0));
+    }
+
+    @Test
+    public void testPisteSisallaLansiRajalla() {
+        assertTrue(this.polygoni.pisteSisalla(0.5, 0));
+    }
+
+    @Test
+    public void testPisteSisallaPohjoisRajalla() {
+        assertTrue(this.polygoni.pisteSisalla(1, 0.5));
+    }
+
+    @Test
+    public void testPisteSisallaLounaisKulmassa() {
+        assertTrue(this.polygoni.pisteSisalla(0.0, 0.0));
+    }
+     @Test
+    public void testPisteSisallaKoilisKulmassa() {
+        assertTrue(this.polygoni.pisteSisalla(1.0, 1.0));
+    }
+     @Test
+    public void testPisteSisallaKaakkoisKulmassa() {
+        assertTrue(this.polygoni.pisteSisalla(0.0, 1.0));
+    }
+     @Test
+    public void testPisteSisallaLuoteisKulmassa() {
+        assertTrue(this.polygoni.pisteSisalla(1.0, 0.0));
+    }
+
 }

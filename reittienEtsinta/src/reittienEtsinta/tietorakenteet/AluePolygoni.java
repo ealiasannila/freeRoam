@@ -19,26 +19,29 @@ public class AluePolygoni extends Polygoni {
     public AluePolygoni(int pisteidenMaara) {
         super(pisteidenMaara);
     }
-    
 
     /**
-     * tarkistaa pisteen etäisyyden viimeiseen kaareen, muutoin sama kuin Polygon luokassa
+     * tarkistaa pisteen etäisyyden viimeiseen kaareen, muutoin sama kuin
+     * Polygon luokassa
+     *
      * @param lat
      * @param lon
-     * @return 
+     * @return
      */
     @Override
     public double pisteenEtaisyys(double lat, double lon) {
-        return Math.min(super.pisteenEtaisyys(lat, lon), this.pisteJanasta(lat, lon, this.lat[this.lat.length-1], this.lon[this.lat.length-1], this.lat[0], this.lon[0])); //To change body of generated methods, choose Tools | Templates.
+        return Math.min(super.pisteenEtaisyys(lat, lon), this.pisteJanasta(lat, lon, this.lat[this.lat.length - 1], this.lon[this.lat.length - 1], this.lat[0], this.lon[0])); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
-     * tarkistaa leikkaako jana Polygonin viimeisestä solmusta ensimmäiseen kulkevan kaaren, normi janaLeikkaPolygonin operaation lisäksi
+     * tarkistaa leikkaako jana Polygonin viimeisestä solmusta ensimmäiseen
+     * kulkevan kaaren, normi janaLeikkaPolygonin operaation lisäksi
+     *
      * @param lat1
      * @param lon1
      * @param lat2
      * @param lon2
-     * @return 
+     * @return
      */
     @Override
     public boolean janaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
@@ -58,8 +61,10 @@ public class AluePolygoni extends Polygoni {
      */
     public boolean pisteSisalla(double pLat, double pLon) {
         if (pLat < this.latmin || pLat > this.latmax || pLon < this.lonmin || pLon > this.lonmax) {
+
             return false;
         }
+
         int leikkaukset = 0;
 
         for (int i = 0; i < this.lat.length; i++) {
@@ -67,14 +72,29 @@ public class AluePolygoni extends Polygoni {
             if (i == this.lat.length - 1) { //viimeisestä pisteesta takaisin ekaan
                 loppu = 0;
             }
+
+            if((Math.abs(this.lat[i] - pLat) < 0.0001  && Math.abs(this.lat[loppu] - pLat) < 0.0001)){
+               
+                if(pLon - Math.min(this.lon[i], this.lon[loppu]) > -0.00001 && pLon - Math.max(this.lon[i], this.lon[loppu]) < 0.00001){
+                    return true;
+                }
+            }
+            
             if ((this.lat[i] <= pLat && this.lat[loppu] > pLat) || (this.lat[i] > pLat && this.lat[loppu] <= pLat)) { //kaari leikkaa pisteen lat koordinaatin
                 double osuusViivasta = (pLat - this.lat[i]) / (this.lat[loppu] - this.lat[i]);
                 double leikkauslon = this.lon[i] + osuusViivasta * (this.lon[loppu] - this.lon[i]);
+                
+                if (pLon == leikkauslon) { //piste polygonin rajalla
+                    return true;
+                }
                 if (pLon < leikkauslon) { //kaari leikkaa pisteen lat koordinaatin pisteen itäpuolella 
+                    
                     leikkaukset++;
                 }
+
             }
         }
+        
         return leikkaukset % 2 != 0;
     }
 }

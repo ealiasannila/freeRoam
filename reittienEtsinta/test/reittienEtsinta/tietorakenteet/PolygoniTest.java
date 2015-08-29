@@ -41,12 +41,13 @@ public class PolygoniTest {
      * Test of pisteenEtaisyys method, of class Polygoni.
      */
     @Test
-    public void testPisteenEtaisyys() {
-        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 < 0.0001);
-        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 > -0.0001);
+    public void testPisteenEtaisyys1() {
+        assertEquals(polygoni.pisteenEtaisyys(0, 2), 1, 0.0001);
+    }
 
-        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) < 0.0001);
-        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) > -0.0001);
+    @Test
+    public void testPisteenEtaisyys2() {
+        assertEquals(polygoni.pisteenEtaisyys(0, 1), 0, 0.0001);
     }
 
     /**
@@ -62,8 +63,7 @@ public class PolygoniTest {
      */
     @Test
     public void testGetLatmin() {
-        assertTrue(0 - this.polygoni.getLatmin() < 0.00001);
-        assertTrue(0 - this.polygoni.getLatmin() > -0.00001);
+        assertEquals(0, this.polygoni.getLatmin(), 0.00001);
     }
 
     /**
@@ -71,8 +71,7 @@ public class PolygoniTest {
      */
     @Test
     public void testGetLatmax() {
-        assertTrue(1 - this.polygoni.getLatmax() < 0.00001);
-        assertTrue(1 - this.polygoni.getLatmax() > -0.00001);
+        assertEquals(1, this.polygoni.getLatmax(), 0.00001);
     }
 
     /**
@@ -81,8 +80,7 @@ public class PolygoniTest {
     @Test
     public void testGetLonmin() {
 
-        assertTrue(0 - this.polygoni.getLonmin() < 0.00001);
-        assertTrue(0 - this.polygoni.getLonmin() > -0.00001);
+        assertEquals(0, this.polygoni.getLonmin(), 0.00001);
     }
 
     /**
@@ -91,77 +89,48 @@ public class PolygoniTest {
     @Test
     public void testGetLonmax() {
 
-        assertTrue(1 - this.polygoni.getLonmax() < 0.00001);
-        assertTrue(1 - this.polygoni.getLonmax() > -0.00001);
+        assertEquals(1, this.polygoni.getLonmax(), 0.00001);
     }
 
     /**
      * Test of viivaLeikkaaPolygonin method, of class Polygoni.
      */
     @Test
-    public void testViivaLeikkaaPolygonin() {
-        System.out.println("1");
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkona() {
         assertTrue(this.polygoni.janaLeikkaaPolygonin(1.2, 0.5, 0.5, 1.2));
-        System.out.println("2");
+    }
+
+    @Test
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkonaEiLeikkaa() {
         assertFalse(this.polygoni.janaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
     }
 
     @Test
-    public void testViivaLeikkaaPolygonin2() {
-        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 0.0, 1.0, 1.0));
-        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 0.0, 1.0, 0.0));
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliSisalla() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(0.5, 0.5, 0.5, 1.5));
+    }
 
+    @Test
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliSisallaKaartaPitkin() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(0.5, 1, 0.6, 1));
+
+    }
+
+    @Test
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkonKaartaPitkin() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(-0.5, 1, 1.5, 1));
+    }
+
+    @Test
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliSisallaEiLeikkaa() {
+        assertFalse(this.polygoni.janaLeikkaaPolygonin(0.5, 0.5, 0.7, 0.7));
+    }
+
+   
+
+    @Test
+    public void testJanaLeikkaaPolygoninPysahtyySolmuun() {
         assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.0, 1.0, 1.0));
 
     }
-
-    /**
-     * Test of lisaaPiste method, of class Polygoni.
-     */
-    @Test
-    public void testLisaaPiste() {
-    }
-
-    /**
-     * Test of getLat method, of class Polygoni.
-     */
-    @Test
-    public void testGetLat() {
-    }
-
-    /**
-     * Test of getLon method, of class Polygoni.
-     */
-    @Test
-    public void testGetLon() {
-    }
-
-    /**
-     * Test of getId method, of class Polygoni.
-     */
-    @Test
-    public void testGetId() {
-    }
-
-    /**
-     * Test of getBBlat method, of class Polygoni.
-     */
-    @Test
-    public void testGetBBlat() {
-    }
-
-    /**
-     * Test of getBBlon method, of class Polygoni.
-     */
-    @Test
-    public void testGetBBlon() {
-    }
-
-    /**
-     * Test of toString method, of class Polygoni.
-     */
-    @Test
-    public void testToString() {
-    }
-
 }

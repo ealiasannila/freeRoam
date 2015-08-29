@@ -132,11 +132,14 @@ public class Verkontekija {
                 } else if ((lahtosolmuIndeksi == kohde.getId().length - 1 && l == 0) || (lahtosolmuIndeksi == 0 && l == kohde.getId().length - 1)) {//viimeisestä ekaan
                     verkko.lisaaKaari(id, kohde.getId()[l], kohde.getMaasto(), lat, lon, kohde.getLat()[l], kohde.getLon()[l], true);
                 } else { //kaari alueen läpi
+
                     if (this.kaariPolygoninSisalla(kohde, lahtosolmuIndeksi, l)) {
+
                         asetaKaari(verkko, kohde.getMaasto(), id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
 
                         //System.out.println("id: " + id + " kohde: " + kohde.getId()[l] + " 0");
                     } else {
+
                         //System.out.println("id: " + id + " kohde: " + kohde.getId()[l] + " -1");
                         asetaKaari(verkko, -1, id, lat, lon, kohde.getId()[l], kohde.getLat()[l], kohde.getLon()[l], naapurustoX, naapurustoY, naapurustoX, naapurustoY);
                     }
@@ -147,12 +150,13 @@ public class Verkontekija {
     }
 
     private boolean kaariPolygoninSisalla(AluePolygoni polygoni, int solmu, int kohde) {
+
         double lats = polygoni.getLat()[solmu];
         double lons = polygoni.getLon()[solmu];
 
         double latk = polygoni.getLat()[kohde];
         double lonk = polygoni.getLon()[kohde];
-
+       
         return polygoni.pisteSisalla(Math.min(lats, latk) + (Math.abs(lats - latk) / 2), Math.min(lons, lonk) + (Math.abs(lons - lonk) / 2));
 
     }
