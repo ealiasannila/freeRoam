@@ -25,7 +25,11 @@ public class Kayttoliittyma {
 
     public void kaynnista() {
         Scanner lukija = new Scanner(System.in);
-        System.out.println("Komennot: \n koord <lon> <lat> <lon> <lat> <tiedostonimi> \n hae <lahtosolmu> <maalisolmu> <tiedostonimi> \n lopeta");
+        System.out.println("Komennot: \n"
+                + " koord <lon> <lat> <lon> <lat> <tiedostonimi> \n "
+                + "hae <lahtosolmu> <maalisolmu> <tiedostonimi> \n "
+                + "kaari <lahtosolmu> <maalisolmu>\n"
+                + "lopeta");
         while (true) {
             String komento = lukija.nextLine();
             if (komento.substring(0, 5).equals("koord")) {
@@ -67,7 +71,7 @@ public class Kayttoliittyma {
 
     private void haeKaari(int alku, int loppu) {
         double haeKaari = this.verkko.haeKaari(alku, loppu);
-        System.out.println("aika solmusta " + alku + " solmuun " + loppu +": " + haeKaari);
+        System.out.println("aika solmusta " + alku + " solmuun " + loppu + ": " + haeKaari);
     }
 
     private void tallennaReitti(String polku) {
@@ -80,13 +84,14 @@ public class Kayttoliittyma {
         sekunttia = sekunttia % 60;
 
         System.out.println("Aika arvio reitille: " + tuntia + "h:" + minuuttia + "m:" + sekunttia + "s");
-
+        
+        String crs = "urn:ogc:def:crs:EPSG::3047";
+        if (!GeoJsonKirjoittaja.kirjoita(polku + "/reitti.geojson", GeoJsonKirjoittaja.muunnaJsonReitti(lyhyinReitti, crs)) || !GeoJsonKirjoittaja.kirjoita(polku + "/pisteet.geojson", GeoJsonKirjoittaja.munnaJsonPisteet(lyhyinReitti, crs))) {
+            System.out.println("annettua kansiota ei löydy");
+            return;
+        }
         System.out.println("Tallennetaan reitti tiedostoon " + polku + "/reitti.geojson");
         System.out.println("Tallennetaan reittipisteet tiedostoon " + polku + "/pisteet.geojson");
-
-        if (!GeoJsonKirjoittaja.kirjoita(polku + "/reitti.geojson", GeoJsonKirjoittaja.muunnaJsonReitti(lyhyinReitti)) || !GeoJsonKirjoittaja.kirjoita(polku + "/pisteet.geojson", GeoJsonKirjoittaja.munnaJsonPisteet(lyhyinReitti))) {
-            System.out.println("annettua kansiota ei löydy");
-        }
 
         System.out.println("valmis");
     }

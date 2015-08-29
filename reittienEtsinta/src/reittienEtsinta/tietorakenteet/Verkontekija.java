@@ -228,13 +228,13 @@ public class Verkontekija {
 
                 for (int k = 0; k < this.naapurustot[naapurustoY + i][naapurustoX + j].koko(); k++) {
                     Polygoni kohde = this.naapurustot[naapurustoY + i][naapurustoX + j].ota(k);
-                    if (kohde.getId()[0] == lahto.getId()[0]) {
-                        if (lahto.getClass() == AluePolygoni.class) {//alueamainen kohde, asetetaan kaaret alueen läpi joka solmuun
+                    if (kohde.getId()[0] == lahto.getId()[0]) { //kohde ja lähtösolmu samassa polygonissa
+                        if (lahto.getClass() == AluePolygoni.class) {
                             this.asetaAlueminenKohde(verkko, (AluePolygoni) lahto, id, lahtosolmuIndeksi, lat, lon, naapurustoX, naapurustoY);
-                        } else {// viivamainen kohde asetetaan omat kaaret vain seuraavaan solmuun.
+                        } else {
                             this.asetaViivamainenKohde(verkko, id, lahtosolmuIndeksi, kohde, lat, lon, naapurustoX, naapurustoY);
                         }
-                    } else { // asetetaan kaaret tuntemattoman alueen läpi muihin polygoneihin
+                    } else {
                         this.asetaTuntemattomanLapi(verkko, id, kohde, lat, lon, naapurustoX, naapurustoY, naapurustoX + j, naapurustoY + i);
                     }
                 }
@@ -283,12 +283,8 @@ public class Verkontekija {
      */
     private void asetaKaari(Verkko verkko, int maasto, int idp, double latp, double lonp, int idk, double latk, double lonk, int naapurustoX, int naapurustoY, int kohdenaapurustoX, int kohdenaapurustoY) {
 
-       
-
         if (Apumetodit.pisteSama(latp, lonp, latk, lonk)) {
             verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);
-            
-
             return;
         }
 
@@ -303,20 +299,15 @@ public class Verkontekija {
                 if (this.naapurustoUlkona(j, naapurustoX)) {
                     continue;
                 }
-                Lista<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
 
+                Lista<Polygoni> ruutu = this.naapurustot[naapurustoY + i][naapurustoX + j];
                 for (int k = 0; k < ruutu.koko(); k++) {
                     if (ruutu.ota(k).janaLeikkaaPolygonin(latp, lonp, latk, lonk)) {
-                       
                         return;
                     }
-
                 }
             }
         }
-        
         verkko.lisaaKaari(idp, idk, maasto, latp, lonp, latk, lonk, false);
-
     }
-
 }

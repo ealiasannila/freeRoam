@@ -92,7 +92,7 @@ public class ReitinEtsintaEriMaastotTest {
 
             lukija.luePolygonit(polygonTiedostot[maastoja], maastoja, polygonilista);
         }
-        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja);
+        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja, 4);
         for (int i = 0; i <= maastoja; i++) {
             maastokirjasto.lisaaVauhti(i, vauhdit[i]);
         }

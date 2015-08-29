@@ -36,10 +36,8 @@ public class Polygoni {
     protected double lonmax;
 
     private int pisteita;
-    protected boolean alue;
 
     public Polygoni(int pisteidenMaara) {
-        this.alue = false;
         this.pisteita = 0;
         this.latmin = Double.MAX_VALUE;
         this.latmax = Double.MIN_VALUE;
@@ -72,6 +70,11 @@ public class Polygoni {
         return lonmax;
     }
 
+    private boolean janeEiBBnSisalla(double lat1, double lon1, double lat2, double lon2) {
+        return ((lat1 <= this.latmin && lat2 <= this.latmin) || (lat1 >= this.latmax && lat2 >= this.latmax)
+                || (lon1 <= this.lonmin && lon2 <= this.lonmin) || (lon1 >= this.lonmax && lon2 >= this.lonmax));
+    }
+
     /**
      * testaa viivojen pisteistä muodostettujen kolmioiden kiertosuuntiin
      * perustuen leikkaako viiva polygonin
@@ -84,20 +87,14 @@ public class Polygoni {
      */
     public boolean janaLeikkaaPolygonin(double lat1, double lon1, double lat2, double lon2) {
 
-        //System.out.println("latmax: " + this.latmax);
-        if ((lat1 <= this.latmin && lat2 <= this.latmin) || (lat1 >= this.latmax && lat2 >= this.latmax)
-                || (lon1 <= this.lonmin && lon2 <= this.lonmin) || (lon1 >= this.lonmax && lon2 >= this.lonmax)) {
+        if (this.janeEiBBnSisalla(lat1, lon1, lat2, lon2)){
             return false;
         }
-
-        for (int i = 0; i < this.lat.length-1; i++) {
-            
-            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[i+1], this.lon[i+1])) {
-                
+        for (int i = 0; i < this.lat.length - 1; i++) {
+            if (janatLeikkaavat(lat1, lon1, lat2, lon2, this.lat[i], this.lon[i], this.lat[i + 1], this.lon[i + 1])) {
                 return true;
             }
         }
-
         return false;
 
     }
@@ -230,7 +227,7 @@ public class Polygoni {
      * @param lonj2
      * @return
      */
-    private double pisteJanasta(double latp, double lonp, double latj1, double lonj1, double latj2, double lonj2) {
+    protected double pisteJanasta(double latp, double lonp, double latj1, double lonj1, double latj2, double lonj2) {
         double jananpituusToiseen = Apumetodit.pisteidenEtaisyysToiseen(latj1, lonj1, latj2, lonj2);
         if (jananpituusToiseen == 0) {
             return Apumetodit.pisteidenEtaisyys(latp, lonp, latj1, lonj1);
@@ -242,10 +239,9 @@ public class Polygoni {
         if (kerroin < 0.0) {
             return Apumetodit.pisteidenEtaisyys(latj1, lonj1, latp, lonp);
         }
-        if (kerroin > 1.0) {
+        else if (kerroin > 1.0) {
             return Apumetodit.pisteidenEtaisyys(latj2, lonj2, latp, lonp);
         }
-
         return Apumetodit.pisteidenEtaisyys(latp, lonp,
                 latj1 + kerroin * latjana,
                 lonj1 + kerroin * lonjana);

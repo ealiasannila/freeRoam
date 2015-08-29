@@ -42,12 +42,12 @@ public class GeoJsonKirjoittaja {
         return true;
     }
 
-    private static JSONObject perusJson() {
+    private static JSONObject perusJson(String crs) {
         JSONObject perusjson = new JSONObject();
         perusjson.put("type", "FeatureCollection");
 
         JSONObject pisteetcrsproperties = new JSONObject();
-        pisteetcrsproperties.put("name", "urn:ogc:def:crs:EPSG::3047");
+        pisteetcrsproperties.put("name", crs);
 
         JSONObject pisteetcrs = new JSONObject();
         pisteetcrs.put("type", "name");
@@ -57,9 +57,9 @@ public class GeoJsonKirjoittaja {
         return perusjson;
     }
 
-    public static JSONObject munnaJsonPisteet(Reitti kirjoitettava) {
+    public static JSONObject munnaJsonPisteet(Reitti kirjoitettava, String crs) {
 
-        JSONObject reittipisteet = perusJson();
+        JSONObject reittipisteet = perusJson(crs);
 
         JSONArray pistefeatures = new JSONArray();
 
@@ -104,8 +104,8 @@ public class GeoJsonKirjoittaja {
         return reittipisteet;
     }
 
-    public static JSONObject muunnaJsonReitti(Reitti kirjoitettava) {
-        JSONObject reitti = perusJson();
+    public static JSONObject muunnaJsonReitti(Reitti kirjoitettava, String crs) {
+        JSONObject reitti = perusJson(crs);
 
         JSONArray features = new JSONArray();
 

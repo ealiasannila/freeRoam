@@ -41,7 +41,7 @@ public class Apumetodit {
      * @return
      */
     public static boolean pisteSama(double lat1, double lon1, double lat2, double lon2) {
-        return (Math.abs(lat1 - lat2) < 0.1) && (Math.abs(lon1 - lon2) < 0.1);
+        return (Math.abs(lat1 - lat2) < 0.01) && (Math.abs(lon1 - lon2) < 0.01);
     }
 
 }

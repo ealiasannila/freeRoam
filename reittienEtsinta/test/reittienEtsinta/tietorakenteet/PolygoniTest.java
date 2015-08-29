@@ -24,7 +24,7 @@ public class PolygoniTest {
     @Before
     public void setUp() {
 
-        this.polygoni = new Polygoni(4);
+        this.polygoni = new AluePolygoni(4);
         this.polygoni.lisaaPiste(0, 0, 1);
         this.polygoni.lisaaPiste(1, 0, 2);
         this.polygoni.lisaaPiste(1, 1, 3);
@@ -98,13 +98,13 @@ public class PolygoniTest {
     /**
      * Test of viivaLeikkaaPolygonin method, of class Polygoni.
      */
-    /*
     @Test
     public void testViivaLeikkaaPolygonin() {
-        assertTrue(this.polygoni.janaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
+        System.out.println("1");
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(1.2, 0.5, 0.5, 1.2));
+        System.out.println("2");
         assertFalse(this.polygoni.janaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
     }
-    */
 
     @Test
     public void testViivaLeikkaaPolygonin2() {
@@ -112,8 +112,6 @@ public class PolygoniTest {
         assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 0.0, 1.0, 0.0));
 
         assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.0, 1.0, 1.0));
-
-//        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.5, 1.5, 1.5));
 
     }
 

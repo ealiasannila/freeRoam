@@ -24,7 +24,7 @@ public class VerkkoTest {
 
     @Before
     public void setUp() {
-        kirjasto = new Maastokirjasto(3);
+        kirjasto = new Maastokirjasto(3,4);
         this.verkko = new Verkko(4, kirjasto);
 
         this.verkko.lisaaKaari(0, 1, 1, 0, 0, 0, 1, true);

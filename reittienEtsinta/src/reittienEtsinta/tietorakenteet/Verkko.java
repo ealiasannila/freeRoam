@@ -56,9 +56,7 @@ public class Verkko {
      * @param lonk
      */
     public void lisaaKaari(int solmu, int kohde, int maasto, double lats, double lons, double latk, double lonk, boolean ulko) {
-        //lisätään kaari verkkoon ja tarpeen vaatiessa alustetaan solmut
-        //System.out.println(lons);
-        //System.out.println(lonk);
+       
         if (this.loppuun[solmu] < 0.001) {
             this.lat[solmu] = lats;
             this.lon[solmu] = lons;
@@ -101,6 +99,14 @@ public class Verkko {
 
     }
 
+    
+    /**
+     * päivitää alkuun arviota ja polkua
+     * @param solmu
+     * @param naapuri
+     * @param naapurinindeksi
+     * @return 
+     */
     private boolean loysaa(int solmu, int naapuri, int naapurinindeksi) {
         if (this.alkuun[solmu] == Double.MAX_VALUE) {
             return false;
@@ -135,7 +141,6 @@ public class Verkko {
                 }
                 return alkuun[i] + loppuun[i] * 0.00001; //0.00001 = minimivauhti jota voidaan kulkea
             }
-
         };
 
         for (int i = 0; i < this.alkuun.length; i++) {
@@ -152,10 +157,7 @@ public class Verkko {
                 if (loysaa(solmu, naapuri, i)) {
                     keko.paivita(naapuri);
                 }
-
             }
-
-            
         }
         if (this.alkuun[this.maalisolmu] == Double.MAX_VALUE) { //reittiä ei löytynyt
             return false;
@@ -164,7 +166,8 @@ public class Verkko {
         return true;
     }
 
-    public int[] getPolku() {
+    //testaus käyttää
+    protected int[] getPolku() {
         return polku;
     }
 
@@ -178,7 +181,6 @@ public class Verkko {
             return null;
         }
         Pino<Integer> pino = new Pino(this.alkuun.length);
-
         int seuraava = this.polku[this.maalisolmu];
 
         while (seuraava != lahtosolmu) {
@@ -210,6 +212,12 @@ public class Verkko {
         reittiaika[i] = (int) this.alkuun[solmu];
     }
 
+    /**
+     * hakee koordinaatteja lähimmän solmun. Käyttöliittymä käyttää
+     * @param lat
+     * @param lon
+     * @return 
+     */
     public int haeLahinSolmu(double lat, double lon) {
         double etaisyys = Double.MAX_VALUE;
         int solmu = -1;
@@ -223,6 +231,12 @@ public class Verkko {
         return solmu;
     }
 
+    /**
+     * palauttaa kahden solmun välisen kaaren painon
+     * @param alku
+     * @param loppu
+     * @return 
+     */
     public double haeKaari(int alku, int loppu) {
         for (int i = 0; i < this.vl[alku].koko(); i++) {
             if (((int) this.vl[alku].ota(i)[0]) == loppu) {
