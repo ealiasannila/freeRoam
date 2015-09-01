@@ -18,7 +18,7 @@ Kaikissa testeissä Verkontekijäluokan naapuroston määriä ohjaileva vakio ol
 
 Tulokset: 
 
-[!alt tag] (verkon_generointi_testaus_diagrammi.png)
+![verkon generointi] (verkon_generointi_testaus_diagrammi.png)
 
 | Solmuja	| n    	| Verkon generointiin kulunut aika ms kotikone	| aika ms laitoksella | 
 | ----------|:-----:| ---------------------------------------------:| -------------------:|
@@ -35,7 +35,7 @@ Reittien etsintä testauksessa testasin reitin etsintää ensin samalla pääkau
 
 Tulokset: 
 
-[!alt tag] (reittien_etsinta_testaus_diagrammi.png)
+![reittien etsintä] (reittien_etsinta_testaus_diagrammi.png)
 
 | Solmuja	| n    	| Reitin etsintään kulunut aika ms kotikone	| aika ms laitoksella | 
 | ----------|:-----:| -----------------------------------------:| -------------------:|
@@ -63,7 +63,7 @@ Nopeuseroilla ei siis vaikuta olevan hirveän suurta vaikutusta.
 testasin ohjelman reittiehdotuksille antamia aika-arvioita kulkemalla ehdotetun reitin ja katsomalla sekunttikellolla kauanko siihen meni. Referenssireitti, jonka pohjalta reittejä ehdotettiin oli kuljettu polkupyörällä, joten kuljin myös reittiehdotukset fillarilla.
 
 ###reitti 1.
-![alt tag](reitti1.png)
+![reitti1](reitti1.png)
 
 *reitti1 Matinkylässä*
 
@@ -75,7 +75,7 @@ testasin ohjelman reittiehdotuksille antamia aika-arvioita kulkemalla ehdotetun 
 
 ###reitti2.
 
-![alt tag](reitti1.png)
+![reitti2](reitti1.png)
 
 *reitti2 Matinkylässä*
 

@@ -18,6 +18,8 @@ Kaikissa testeissä Verkontekijäluokan naapuroston määriä ohjaileva vakio ol
 
 Tulokset: 
 
+![verkon generointi] (verkon_generointi_testaus_diagrammi.png)
+
 | Solmuja	| n    	| Verkon generointiin kulunut aika ms kotikone	| aika ms laitoksella | 
 | ----------|:-----:| ---------------------------------------------:| -------------------:|
 |13			|1		|0		 										|0
@@ -32,6 +34,8 @@ Tulokset:
 Reittien etsintä testauksessa testasin reitin etsintää ensin samalla pääkaupunkiseutua esittävällä verkolla ja sen osilla. Näissä verkoissa kaikkien kaarien vauhti oli sama. Testasin reitin etsintää kussakin verkossa kymmenestä satunnaisesta solmusta kymmeneen satunnaiseen solmuun. Ajat ovat näiden testien keskiarvoja.
 
 Tulokset: 
+
+![reittien etsintä] (reittien_etsinta_testaus_diagrammi.png)
 
 | Solmuja	| n    	| Reitin etsintään kulunut aika ms kotikone	| aika ms laitoksella | 
 | ----------|:-----:| -----------------------------------------:| -------------------:|
