@@ -476,7 +476,7 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 
 
 ###Yhteenveto aikavaativuuksista:
-* **Reittien maastokirjastoon lisääminen: O(|RK||V|)**
+* **Reittien maastokirjastoon lisääminen: O(|RK||V|)** (voisi varmaankin parantaa käyttämällä naapurustoja)
 * **Verkon generointi: O(|V|)** (mutta suuret vakiokertoimet)
 * **Reittien etsintä: O((|V|+|E|)log|V|).**
 
@@ -487,7 +487,7 @@ Lyhyimmän reitin palautus on aikavaativuudeltaan lineaarinen löytyneeseen reit
 * mikäli kaksi polygonia on täysin vierekkäin voi polygonin läpi muodostua kaari jonka vauhti vastaa tuntemattoman alueen vauhtia.
 * mikäli aineistossa on kovin suuria polygoneja, esimerkiksi pitkiä yhtenäisiä tiepätkiä aiheuttavat ne virheitä verkon muodostuksessa. Tämä johtuu siitä että polygonit jaetaan naapurusotihin niiden bounding boxin keskipisteen perusteella, mutta suuren polygonin vaikutus voi ulottua yli kahden naapuruston päähän.
 * ohjelma ei tue viivamaisia esteitä. Esimerkiksi moottoritie tai aita on käytännössä este jota ei voi ylittää. Koska referenssireitti ei kulje myöskään estettä pitkin saa este vauhdikseen minimivauhdin (= hyvin pieni), eikä sitä pitkin silloin ehdoteta reittejä. Koska viivamaisen kohteen läpi kuljettaessa liikutaan vain yhden solmun läpi, ilman että yksikään kaari olisi viivamaisen kohteen vauhdilla, voi ohjelma ehdottaa reittiä joka kulkee esteen poikki, vaikka näin ei todillisuudessa voitaisi toimia.
-
+* Jos kaari kulkee aluemaisen polygonin reunalta saman polygonin toiseen reunasolmuun alueen ulkopuolella, luulee verkontekijä kaaren olevan polygonin sisällä. Korjaa luomalla kaarelle piste ja tarkistamalla onko piste polygonin sisällä.
 
 ###Jatkokehitettävää
 * Suunnasta riippuvien maastotyyppien toteuttaminen. Reittien etsinnän osalta tämä olisi varmaankin kohtalaisen helppoa, mutta reitin analysoinnin näkökulmasta mahdollisesti haastavaa.

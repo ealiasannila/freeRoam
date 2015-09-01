@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tetsaa pino luokkaa
  * @author elias
  */
 public class PinoTest {

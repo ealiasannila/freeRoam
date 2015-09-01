@@ -10,59 +10,46 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Testaa reitti luokkaa
  *
  * @author elias
  */
 public class ReittiTest {
+
     private Reitti reitti;
-    
+
     public ReittiTest() {
     }
-    
+
+    /**
+     * luo reitin
+     */
     @Before
     public void setUp() {
-    int [] aika = new int[] {0, 1};
-    double[] lat = new double[] {0.0, 0.0};
-    double[] lon = new double[] {0.0, 1.0};
-    this.reitti = new Reitti(lat, lon, aika);
-            
+        int[] aika = new int[]{0, 1};
+        double[] lat = new double[]{0.0, 0.0};
+        double[] lon = new double[]{0.0, 1.0};
+        this.reitti = new Reitti(lat, lon, aika);
+
     }
 
-    /**
-     * Test of getLon method, of class Reitti.
-     */
-    @Test
-    public void testGetLon() {
-    }
-
-    /**
-     * Test of getLat method, of class Reitti.
-     */
-    @Test
-    public void testGetLat() {
-    }
-
-    /**
-     * Test of getAika method, of class Reitti.
-     */
-    @Test
-    public void testGetAika() {
-    }
-
-    /**
-     * Test of vauhti method, of class Reitti.
-     */
+   
     @Test
     public void testVauhti() {
-    assertEquals(1, this.reitti.vauhti(0, 1), 0.001);
-    
+        assertEquals(1, this.reitti.vauhti(0, 1), 0.001);
+
     }
 
-    /**
-     * Test of toString method, of class Reitti.
-     */
     @Test
-    public void testToString() {
+    public void testMatka() {
+        assertEquals(1, this.reitti.matka(0, 1), 0.001);
     }
+
+    @Test
+    public void testAika() {
+        assertEquals(1, this.reitti.aika(0, 1), 0.001);
+    }
+
     
+
 }

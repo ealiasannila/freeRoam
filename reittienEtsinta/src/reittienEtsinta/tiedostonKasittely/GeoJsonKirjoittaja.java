@@ -28,27 +28,26 @@ public class GeoJsonKirjoittaja {
      * @param polku
      * @param data
      */
-    public static void kirjoita(String polku, JSONObject data) {
+    public static boolean kirjoita(String polku, JSONObject data) {
         PrintWriter kirjoittaja = null;
         try {
             kirjoittaja = new PrintWriter(polku, "UTF-8");
             kirjoittaja.print(data.toString());
             kirjoittaja.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(GeoJsonKirjoittaja.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(GeoJsonKirjoittaja.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            kirjoittaja.close();
+            return false;
         }
+        return true;
     }
 
-    private static JSONObject perusJson() {
+    private static JSONObject perusJson(String crs) {
         JSONObject perusjson = new JSONObject();
         perusjson.put("type", "FeatureCollection");
 
         JSONObject pisteetcrsproperties = new JSONObject();
-        pisteetcrsproperties.put("name", "urn:ogc:def:crs:EPSG::3047");
+        pisteetcrsproperties.put("name", crs);
 
         JSONObject pisteetcrs = new JSONObject();
         pisteetcrs.put("type", "name");
@@ -58,9 +57,9 @@ public class GeoJsonKirjoittaja {
         return perusjson;
     }
 
-    public static JSONObject munnaJsonPisteet(Reitti kirjoitettava) {
+    public static JSONObject munnaJsonPisteet(Reitti kirjoitettava, String crs) {
 
-        JSONObject reittipisteet = perusJson();
+        JSONObject reittipisteet = perusJson(crs);
 
         JSONArray pistefeatures = new JSONArray();
 
@@ -73,6 +72,23 @@ public class GeoJsonKirjoittaja {
 
             JSONObject properties = new JSONObject();
             properties.put("timefromstart", kirjoitettava.getAika()[i]);
+            if (i == kirjoitettava.getAika().length - 1) {
+                properties.put("length", 0);
+                properties.put("time", 0);
+                properties.put("speed", 0);
+
+            } else {
+                properties.put("length", kirjoitettava.matka(i, i + 1));
+                properties.put("time", kirjoitettava.aika(i, i + 1));
+                if (kirjoitettava.aika(i, i + 1) == 0) {
+                    properties.put("speed", -1);
+
+                } else {
+                    double vauhti = (double)kirjoitettava.matka(i, i + 1) / (double)kirjoitettava.aika(i, i + 1);
+                    properties.put("speed", vauhti);
+                }
+
+            }
             properties.put("lat", kirjoitettava.getLat()[i]);
             properties.put("lon", kirjoitettava.getLon()[i]);
 
@@ -88,8 +104,9 @@ public class GeoJsonKirjoittaja {
         return reittipisteet;
     }
 
-    public static JSONObject muunnaJsonReitti(Reitti kirjoitettava) {
-        JSONObject reitti = perusJson();
+
+    public static JSONObject muunnaJsonReitti(Reitti kirjoitettava, String crs) {
+        JSONObject reitti = perusJson(crs);
 
         JSONArray features = new JSONArray();
         JSONObject feature = new JSONObject();

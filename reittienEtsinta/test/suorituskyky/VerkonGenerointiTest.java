@@ -73,7 +73,7 @@ public class VerkonGenerointiTest {
         this.verkontekija = testiapu.luePolygonit(maxsolmuja);
 
         long aikasumma = 0;
-        int n = 1;
+        int n = 10;
         for (int i = 0; i < n; i++) {
             long aikaAlussa = System.currentTimeMillis();
             verkontekija.luoVerkko(testiapu.getVerkko());

@@ -6,5 +6,5 @@
 ! jos on kovin isoja yksittäisiä polygoneja ulottuu niiden vaikutust testattavan naapuruston ulkopuolelle eikä tarpeellisia kaaria muodosteta, ja jotain kaaria saattaa mennä läpi. Esim pitkät tie segmentit aiheuttavat.
 
 
-8. testaus:
+
 

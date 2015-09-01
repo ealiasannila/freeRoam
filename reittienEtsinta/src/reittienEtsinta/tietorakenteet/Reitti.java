@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package reittienEtsinta.tietorakenteet;
 
 import java.util.Arrays;
@@ -44,7 +40,7 @@ public class Reitti {
      * @param loppu
      * @return
      */
-    private double matka(int alku, int loppu) {
+    public double matka(int alku, int loppu) {
         double matka = 0;
         for (int i = alku; i < loppu; i++) {
 
@@ -60,7 +56,7 @@ public class Reitti {
      * @param loppu
      * @return
      */
-    private double aika(int alku, int loppu) {
+    public double aika(int alku, int loppu) {
         return aika[loppu] - aika[alku];
     }
 

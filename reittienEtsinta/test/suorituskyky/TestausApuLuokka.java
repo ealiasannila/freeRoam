@@ -44,7 +44,7 @@ public class TestausApuLuokka {
         this.solmuja = lukija.getPisteita();
         System.out.println("Solmuja: " + solmuja);
 
-        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja);
+        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja, 4);
         for (int i = 0; i <= maastoja; i++) {
             maastokirjasto.lisaaVauhti(i, 1);
         }

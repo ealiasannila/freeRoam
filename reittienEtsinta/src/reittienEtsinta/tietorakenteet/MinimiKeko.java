@@ -8,8 +8,9 @@ package reittienEtsinta.tietorakenteet;
 import java.util.Arrays;
 
 /**
- * Minimikeko A* yhteydessä käytettäväksi. Järjestää solmut niiden Alkuun +
- * Loppuun arvion perusteella.
+ * Minimikeko A* yhteydessä käytettäväksi. 
+ * Minimikeon ilmentymän tulee tarjota toteutus arvio() metodille, jonka perusteella minimikeko arvottaa alkionsa.
+ * A* yhteydessä tämä on solmun alkuun ja loppuun arvioiden summa.
  *
  * @author elias
  */
@@ -68,7 +69,7 @@ public abstract class MinimiKeko {
     
 
     /**
-     * Palauttaa kekoehdon voimaan, jos kekoon (tai keossa oleviin solmuihin) on
+     * Palauttaa kekoehdon voimaan, jos kekoon (tai keossa oleviin alkioihin) on
      * tehty muutoksia. Aloittaa keon muokkaamisen tietystä indeksistä.
      *
      * @param i
@@ -95,14 +96,13 @@ public abstract class MinimiKeko {
     }
 
     /**
-     * Palauttaa kekoehdon voimaan, kun solmun alkuun arviota on vähennetty.
-     * Aloittaa muokkaamisen tietystä solmusta. --> toimisiko
-     * this.heapify(solmu.getKekoI())?
+     * Palauttaa kekoehdon voimaan, kun alkioon on tehty muutoksia.
+     * Aloittaa muokkaamisen tietystä alkiosta
      *
-     * @param solmu
+     * @param alkio
      */
-    public void paivita(int solmu) {
-        int i = this.kekoindeksit[solmu];
+    public void paivita(int alkio) {
+        int i = this.kekoindeksit[alkio];
         while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(this.keko[i])) {
             this.vaihda(i, this.vanhempi(i));
             i = this.vanhempi(i);
@@ -110,7 +110,7 @@ public abstract class MinimiKeko {
     }
 
     /**
-     * vaihtaa kahden solmun paikan keossa.
+     * vaihtaa kahden alkion paikan keossa.
      *
      * @param a
      * @param b
@@ -124,20 +124,20 @@ public abstract class MinimiKeko {
     }
 
     /**
-     * lisää kekoon uuden solmun, säilyttäen kekoehdon voimassa.
+     * lisää kekoon uuden alkion, säilyttäen kekoehdon voimassa.
      *
-     * @param solmu
+     * @param alkio
      */
-    public void lisaa(int solmu) {
+    public void lisaa(int alkio) {
         this.keonKoko++;
         int i = this.keonKoko;
-        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(solmu)) {
+        while (i > 1 && arvio(this.keko[this.vanhempi(i)]) > arvio(alkio)) {
             this.keko[i] = keko[this.vanhempi(i)];
             this.kekoindeksit[this.keko[i]] = i;
             i = this.vanhempi(i);
         }
-        this.keko[i] = solmu;
-        this.kekoindeksit[solmu] = i;
+        this.keko[i] = alkio;
+        this.kekoindeksit[alkio] = i;
 
     }
 
@@ -151,7 +151,7 @@ public abstract class MinimiKeko {
     }
 
     /**
-     * ottaa keon ensimmäisen solmun ja palauttaa kekoehdon voimaan heapifyn
+     * ottaa keon ensimmäisen alkion ja palauttaa kekoehdon voimaan heapifyn
      * avulla.
      *
      * @return

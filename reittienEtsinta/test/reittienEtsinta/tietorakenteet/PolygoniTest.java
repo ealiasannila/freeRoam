@@ -10,41 +10,53 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Testaa polygoni luokkaa
  *
  * @author elias
  */
 public class PolygoniTest {
 
     private Polygoni polygoni;
+    private Polygoni polygoni2;
 
     public PolygoniTest() {
     }
 
+    /**
+     * luodaan polygonit
+     */
     @Before
     public void setUp() {
 
-        this.polygoni = new Polygoni(4);
+        this.polygoni = new AluePolygoni(4);
         this.polygoni.lisaaPiste(0, 0, 1);
         this.polygoni.lisaaPiste(1, 0, 2);
         this.polygoni.lisaaPiste(1, 1, 3);
         this.polygoni.lisaaPiste(0, 1, 4);
 
+        this.polygoni2 = new Polygoni(3);
+        this.polygoni2.lisaaPiste(0, 0, 0);
+        this.polygoni2.lisaaPiste(0, 1, 0);
+        this.polygoni2.lisaaPiste(0, 2, 0);
+
     }
 
     /**
-     * Test of pisteenEtaisyys method, of class Polygoni.
+     * Testataaan pisteen etäisyyttä
      */
     @Test
     public void testPisteenEtaisyys() {
-        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 < 0.0001);
-        assertTrue(polygoni.pisteenEtaisyys(0, 2) - 1 > -0.0001);
+        assertEquals(polygoni.pisteenEtaisyys(0, 2), 1, 0.0001);
+    }
 
-        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) < 0.0001);
-        assertTrue(polygoni.pisteenEtaisyys(2, 2) - Math.sqrt(2) > -0.0001);
+    @Test
+    public void testPisteenEtaisyysPisteViivalla() {
+        assertEquals(polygoni.pisteenEtaisyys(0, 1), 0, 0.0001);
     }
 
     /**
-     * Test of getPisteita method, of class Polygoni.
+     * Testaa että polygonin pisteitä muuttuja on saanut oikean arvon pisteitä
+     * lisättäessä
      */
     @Test
     public void testGetPisteita() {
@@ -52,99 +64,95 @@ public class PolygoniTest {
     }
 
     /**
-     * Test of getLatmin method, of class Polygoni.
+     * Testaa polygonin boundingboxia
      */
     @Test
     public void testGetLatmin() {
-        assertTrue(0 - this.polygoni.getLatmin() < 0.00001);
-        assertTrue(0 - this.polygoni.getLatmin() > -0.00001);
+        assertEquals(0, this.polygoni.getLatmin(), 0.00001);
     }
 
     /**
-     * Test of getLatmax method, of class Polygoni.
+     * Testaa polygonin boundingboxia
      */
     @Test
     public void testGetLatmax() {
-        assertTrue(1 - this.polygoni.getLatmax() < 0.00001);
-        assertTrue(1 - this.polygoni.getLatmax() > -0.00001);
+        assertEquals(1, this.polygoni.getLatmax(), 0.00001);
     }
 
     /**
-     * Test of getLonmin method, of class Polygoni.
+     * Testaa polygonin boundingboxia
      */
     @Test
     public void testGetLonmin() {
 
-        assertTrue(0 - this.polygoni.getLonmin() < 0.00001);
-        assertTrue(0 - this.polygoni.getLonmin() > -0.00001);
+        assertEquals(0, this.polygoni.getLonmin(), 0.00001);
     }
 
     /**
-     * Test of getLonmax method, of class Polygoni.
+     * Testaa polygonin boundingboxia
      */
     @Test
     public void testGetLonmax() {
 
-        assertTrue(1 - this.polygoni.getLonmax() < 0.00001);
-        assertTrue(1 - this.polygoni.getLonmax() > -0.00001);
+        assertEquals(1, this.polygoni.getLonmax(), 0.00001);
     }
 
     /**
-     * Test of viivaLeikkaaPolygonin method, of class Polygoni.
+     * Tilanne jossa janan lähtö ja loppupisteet ovat polygonin ulkopuolella,
+     * mutta jana leikkaa polygonin kulman
      */
     @Test
-    public void testViivaLeikkaaPolygonin() {
-        assertTrue(this.polygoni.janaLeikkaaPolygonin(1.1, 0.5, 0.5, 1.1));
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkona() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(1.2, 0.5, 0.5, 1.2));
+    }
+
+    /**
+     * tilanne jossa jane ei leikka polygonia
+     */
+    @Test
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkonaEiLeikkaa() {
         assertFalse(this.polygoni.janaLeikkaaPolygonin(1.5, 1.5, 0.5, 1.5));
     }
 
     /**
-     * Test of lisaaPiste method, of class Polygoni.
+     * tilanne jossa jana lähtee polygonin sisältä
      */
     @Test
-    public void testLisaaPiste() {
+    public void testJanaLeikkaaAluePolygoninLahtoSisalla() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(0.5, 0.5, 0.5, 1.5));
     }
 
     /**
-     * Test of getLat method, of class Polygoni.
+     * Tilanne jossa jana sijaitsee kokonaan polygonin kaarella
      */
     @Test
-    public void testGetLat() {
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliSisallaKaartaPitkin() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(0.5, 1, 0.6, 1));
+
     }
 
     /**
-     * Test of getLon method, of class Polygoni.
+     * tilanne jossa polygonin kaari sijaitsee kokonaan janalla
      */
     @Test
-    public void testGetLon() {
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliUlkonKaartaPitkin() {
+        assertTrue(this.polygoni.janaLeikkaaPolygonin(-0.5, 1, 1.5, 1));
     }
 
     /**
-     * Test of getId method, of class Polygoni.
+     * tilanne jossa jana on kokonaan polygonin sisällä
      */
     @Test
-    public void testGetId() {
+    public void testJanaLeikkaaAluePolygoninLahtoJaMaaliSisallaEiLeikkaa() {
+        assertFalse(this.polygoni.janaLeikkaaPolygonin(0.5, 0.5, 0.7, 0.7));
     }
 
     /**
-     * Test of getBBlat method, of class Polygoni.
+     * tilanne jossa jana kohtaa polygonin solmussa. Tätä ei haluta tulkita leikkaukseksi
      */
     @Test
-    public void testGetBBlat() {
-    }
+    public void testJanaLeikkaaPolygoninPysahtyySolmuun() {
+        assertFalse(this.polygoni2.janaLeikkaaPolygonin(0.0, 1.0, 1.0, 1.0));
 
-    /**
-     * Test of getBBlon method, of class Polygoni.
-     */
-    @Test
-    public void testGetBBlon() {
     }
-
-    /**
-     * Test of toString method, of class Polygoni.
-     */
-    @Test
-    public void testToString() {
-    }
-
 }

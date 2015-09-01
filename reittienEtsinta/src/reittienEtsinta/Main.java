@@ -64,7 +64,7 @@ public class Main {
 
         System.out.println("reitit luettu, " + reittilista.koko() + " reittia");
 
-        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja);
+        Maastokirjasto maastokirjasto = new Maastokirjasto(maastoja, 4);
 
         maastokirjasto.lisaaReitit(reittilista, polygonilista);
 
