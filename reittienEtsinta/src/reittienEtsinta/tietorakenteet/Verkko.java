@@ -1,5 +1,6 @@
 package reittienEtsinta.tietorakenteet;
 
+import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import reittienEtsinta.Apumetodit;
@@ -249,7 +250,7 @@ public class Verkko {
                 boolean jloytyi = false;
                 for (int k = 0; k < this.vl[i].koko(); k++) {
                     if ((int) this.vl[i].ota(k)[0] == j) {
-                        String s = String.format("%.1f", this.vl[i].ota(k)[1]);
+                        String s = String.format(Locale.US, "%.1f", this.vl[i].ota(k)[1]);
                         builder.append("[" + s + "]");
                         jloytyi = true;
                         break;

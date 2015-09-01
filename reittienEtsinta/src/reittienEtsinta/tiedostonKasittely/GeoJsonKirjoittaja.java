@@ -90,16 +90,15 @@ public class GeoJsonKirjoittaja {
 
     public static JSONObject muunnaJsonReitti(Reitti kirjoitettava) {
         JSONObject reitti = perusJson();
-        
 
         JSONArray features = new JSONArray();
-
         JSONObject feature = new JSONObject();
+
         feature.put("type", "Feature");
-        feature.put("properties", "{ }");
+        JSONObject properties = new JSONObject();
+        feature.put("properties", properties);
 
         JSONObject geometry = new JSONObject();
-        geometry.put("type", "LineString");
 
         JSONArray coordinates = new JSONArray();
 
@@ -111,6 +110,8 @@ public class GeoJsonKirjoittaja {
         }
 
         geometry.put("coordinates", coordinates);
+
+        geometry.put("type", "LineString");
         feature.put("geometry", geometry);
         features.put(feature);
 
